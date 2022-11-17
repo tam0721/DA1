@@ -909,15 +909,16 @@
 		</div>
 	</section>
 	<!-- End brand Area -->
-
-	<!-- Deals of the Week -->
-	<section class="related-product-area section_gap_bottom">
+	<!-- Start related-product Area -->
+	<section class="related-product-area section_gap">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-6 text-center">
 					<div class="section-title">
 						<h1>Sản phẩm yêu thích nhất</h1>
-						<p>Các sản phẩm phổ biến nhất trong tuần qua. Top sản phẩm được yêu thích, nhiều lượt xem. Đề xuất bạn thuận tiện tham khảo các khuyến nghị từ các khách hàng khác</p>
+						<p>Các sản phẩm phổ biến nhất trong tuần qua. Top sản phẩm được yêu thích, nhiều lượt xem.
+							 Đề xuất bạn thuận tiện tham khảo các khuyến nghị từ các khách hàng khác.
+						</p>
 					</div>
 				</div>
 			</div>
@@ -925,10 +926,10 @@
 				<div class="col-lg-9">
 					<div class="row">
 						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r1.jpg" alt=""></a>
+							<div class="single-related-product d-flex" id="imgTop">
+								<a href="#"><img src="img/product/Nike CV7562-104.jpg" alt=""></a>
 								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
+									<a href="#" class="title">Nike CV7562-104</a>
 									<div class="price">
 										<h6>$189.00</h6>
 										<h6 class="l-through">$210.00</h6>
@@ -937,10 +938,10 @@
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r2.jpg" alt=""></a>
+							<div class="single-related-product d-flex" id="imgTop">
+								<a href="#"><img src="img/product/Nike React Infinity Run.jpg" alt=""></a>
 								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
+									<a href="#" class="title">Nike React Infinity Run</a>
 									<div class="price">
 										<h6>$189.00</h6>
 										<h6 class="l-through">$210.00</h6>
@@ -949,10 +950,10 @@
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r3.jpg" alt=""></a>
+							<div class="single-related-product d-flex" id="imgTop">
+								<a href="#"><img src="img/product/Nike Air Max 921733-104.jpg" alt=""></a>
 								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
+									<a href="#" class="title">Nike Air Max 921733-104</a>
 									<div class="price">
 										<h6>$189.00</h6>
 										<h6 class="l-through">$210.00</h6>
@@ -961,10 +962,10 @@
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r5.jpg" alt=""></a>
+							<div class="single-related-product d-flex" id="imgTop">
+								<a href="#"><img src="img/product/Adidas Ultraboost FZ4007.jpg" alt=""></a>
 								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
+									<a href="#" class="title">Adidas Ultraboost FZ4007</a>
 									<div class="price">
 										<h6>$189.00</h6>
 										<h6 class="l-through">$210.00</h6>
@@ -973,10 +974,10 @@
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r6.jpg" alt=""></a>
+							<div class="single-related-product d-flex" id="imgTop">
+								<a href="#"><img src="img/product/Adidas Alpha Bounce GY5401.jpg" alt=""></a>
 								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
+									<a href="#" class="title">Adidas Alpha Bounce GY5401</a>
 									<div class="price">
 										<h6>$189.00</h6>
 										<h6 class="l-through">$210.00</h6>
@@ -985,10 +986,10 @@
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r7.jpg" alt=""></a>
+							<div class="single-related-product d-flex" id="imgTop">
+								<a href="#"><img src="img/product/Puma Bmw Mms Drift Cat.jpg" alt=""></a>
 								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
+									<a href="#" class="title">Puma Bmw Mms Drift Cat</a>
 									<div class="price">
 										<h6>$189.00</h6>
 										<h6 class="l-through">$210.00</h6>
@@ -996,11 +997,11 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r9.jpg" alt=""></a>
+						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
+							<div class="single-related-product d-flex" id="imgTop">
+								<a href="#"><img src="img/product/Puma Magnify Nitro Wns.jpg" alt=""></a>
 								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
+									<a href="#" class="title">Puma Magnify Nitro Wns</a>
 									<div class="price">
 										<h6>$189.00</h6>
 										<h6 class="l-through">$210.00</h6>
@@ -1008,11 +1009,11 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r10.jpg" alt=""></a>
+						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
+							<div class="single-related-product d-flex" id="imgTop">
+								<a href="#"><img src="img/product/Puma 375149-01.jpg" alt=""></a>
 								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
+									<a href="#" class="title">Puma 375149-01</a>
 									<div class="price">
 										<h6>$189.00</h6>
 										<h6 class="l-through">$210.00</h6>
@@ -1020,11 +1021,11 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r11.jpg" alt=""></a>
+						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
+							<div class="single-related-product d-flex" id="imgTop">
+								<a href="#"><img src="img/product/Anta 812225586-3.jpg" alt=""></a>
 								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
+									<a href="#" class="title">Anta 812225586-3</a>
 									<div class="price">
 										<h6>$189.00</h6>
 										<h6 class="l-through">$210.00</h6>
@@ -1044,4 +1045,12 @@
 			</div>
 		</div>
 	</section>
-	<!-- End Deals of the Week-->
+	<!-- End related-product Area -->
+
+	<style>
+		#imgTop img{
+			width: 80px;
+			height: 80px;
+			border-radius: 5px;
+		}
+	</style>

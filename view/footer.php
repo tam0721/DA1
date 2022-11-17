@@ -84,7 +84,7 @@
 			</div>
 			<div class="footer-bottom d-flex justify-content-center align-items-center flex-wrap">
 				<p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | My website by <a href="https://www.facebook.com/NTD.26122003" target="_blank">Nhóm 2</a>
+Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | My website by <a href="https://www.facebook.com/NTD.26122003" target="_blank">Group 2 - WE17309</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 </p>
 			</div>
