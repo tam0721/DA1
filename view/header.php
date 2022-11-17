@@ -60,7 +60,7 @@
 								<!--	<li class="nav-item"><a class="nav-link" href="index.php?act=single-product">Product Details</a></li>-->
 									<li class="nav-item"><a class="nav-link" href="index.php?act=checkout">Thanh toán</a></li>
 									<li class="nav-item"><a class="nav-link" href="index.php?act=cart">Giỏ hàng</a></li>
-									<li class="nav-item"><a class="nav-link" href="index.php?act=confirmation">Confirmation</a></li>
+									<li class="nav-item"><a class="nav-link" href="index.php?act=confirmation">Xác nhận</a></li>
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">
