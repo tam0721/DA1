@@ -323,7 +323,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- single product slide 
+		<!-- single product slide -->
 		<div class="single-product-slider">
 			<div class="container">
 				<div class="row justify-content-center">
@@ -603,8 +603,8 @@
 					</div>
 				</div>
 			</div>
-		</div> -->
-		<!-- single product 
+		</div> 
+		<!-- single product -->
 		<div class="single-product-slider">
 			<div class="container">
 				<div class="row justify-content-center">
@@ -882,7 +882,7 @@
 					</div>
 				</div>
 			</div>
-		</div> -->
+		</div> 
 	</section>
 	<!-- End exclusive deal Area -->
 
