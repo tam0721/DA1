@@ -5,8 +5,8 @@
             <div class="col-first">
                 <h1>Admin</h1>
                 <nav class="d-flex align-items-center">
-                    <a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
-                    <a href="category.html">Product</a>
+                    <a href="index.php">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="category.html">Sản phẩm</a>
                 </nav>
             </div>
         </div>

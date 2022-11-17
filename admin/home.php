@@ -6,7 +6,7 @@
 					<h1>Admin</h1>
 					<nav class="d-flex align-items-center">
 						<!-- <a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a> -->
-						<a href="category.html">Home Page</a>
+						<a href="index.php">Trang chủ</a>
 					</nav>
 				</div>
 			</div>
@@ -28,16 +28,15 @@
       <div class="card-body">
 
         <!--Title-->
-        <h4 class="card-title">Statistical</h4>
+        <h4 class="card-title">Thống kê</h4>
         <!--Text-->
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-          card's content.</p>
+        <p class="card-text">Danh sách sản phẩm trong cửa hàng. Giúp người quản trị dễ dàng nắm được thông tin.</p>
         <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
         <!-- <button type="button" class="btn btn-light-blue btn-md">Go to page</button> -->
 
       </div>
       <div class="text-center">
-        <a href="index.php?act=thongke"><button type="button" value="submit" class="btn btn-outline-warning primary-btn" style="height: 40px;line-height:40px;">Let's go !</button></a>
+        <a href="index.php?act=thongke"><button type="button" value="submit" class="btn btn-outline-warning primary-btn" style="height: 40px;line-height:40px;">Đi nào!</button></a>
 			</div>
 
     </div>
@@ -57,16 +56,15 @@
       <div class="card-body">
 
         <!--Title-->
-        <h4 class="card-title">Client</h4>
+        <h4 class="card-title">Khách hàng</h4>
         <!--Text-->
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-          card's content.</p>
+        <p class="card-text">Danh sách khách hàng thành viên của cửa hàng.</p>
         <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
         <!-- <button type="button" class="btn btn-light-blue btn-md">Go to page</button> -->
 
       </div>
       <div class="text-center">
-        <a href="index.php?act=tklist"><button type="button" value="submit" class="btn btn-outline-warning primary-btn" style="height: 40px;line-height:40px;">Let's go !</button></a>
+        <a href="index.php?act=tklist"><button type="button" value="submit" class="btn btn-outline-warning primary-btn" style="height: 40px;line-height:40px;">Đi nào!</button></a>
 			</div>
 
 
@@ -89,13 +87,12 @@
         <!--Title-->
         <h4 class="card-title">Comment</h4>
         <!--Text-->
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-          card's content.</p>
+        <p class="card-text">Danh sách comment của khách hàng. Các thông tin cần thiết, giúp quản trị viên nắm rõ nội dung comment của khách hàng.</p>
         <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
 
       </div>
       <div class="text-center">
-        <a href="index.php?act=binhluan"><button type="button" value="submit" class="btn btn-outline-warning primary-btn" style="height: 40px;line-height:40px;">Let's go !</button></a>
+        <a href="index.php?act=binhluan"><button type="button" value="submit" class="btn btn-outline-warning primary-btn" style="height: 40px;line-height:40px;">Đi nào!</button></a>
 			</div>
 
 
@@ -116,15 +113,14 @@
       <div class="card-body">
 
         <!--Title-->
-        <h4 class="card-title">Product</h4>
+        <h4 class="card-title">Sản phẩm</h4>
         <!--Text-->
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-          card's content.</p>
+        <p class="card-text">Thông tin các sản phẩm, quản trị viên có thể kiểm tra thông tin và cập nhật sản phẩm theo mỗi mùa.</p>
         <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
         <!-- <button type="button" class="btn btn-light-blue btn-md">Go to page</button> -->
       </div>
       <div class="text-center">
-					<a href="index.php?act=listsp"><button type="button" value="submit" class="btn btn-outline-warning primary-btn" style="height: 40px;line-height:40px;">Let's go !</button></a>
+					<a href="index.php?act=listsp"><button type="button" value="submit" class="btn btn-outline-warning primary-btn" style="height: 40px;line-height:40px;">Đi nào!</button></a>
 			</div>
       <!--btn btn-outline-warning primary-btn -->
     </div>
