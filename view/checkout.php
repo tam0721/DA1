@@ -5,7 +5,7 @@
                 <div class="col-first">
                     <h1>Thanh toán</h1>
                     <nav class="d-flex align-items-center">
-                        <a href="index.html">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
+                        <a href="index.php">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
                         <a href="single-product.html">Thanh toán</a>
                     </nav>
                 </div>

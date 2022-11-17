@@ -5,7 +5,7 @@
 				<div class="col-first">
 					<h1>Xác nhận</h1>
 					<nav class="d-flex align-items-center">
-						<a href="index.html">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
+						<a href="index.php">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
 						<a href="category.html">Xác nhận</a>
 					</nav>
 				</div>

@@ -4,10 +4,10 @@
 		<div class="container">
 			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
 				<div class="col-first">
-					<h1>Shop Category page</h1>
+					<h1>Chi tiết sản phẩm</h1>
 					<nav class="d-flex align-items-center">
-						<a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
-						<a href="#">Product details</a>
+						<a href="index.php">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
+						<a href="#">Chi tiết</a>
 						<a href="category.html"></a>
 					</nav>
 				</div>
@@ -33,7 +33,7 @@
             <div class ="col-sm-5">
                 <?php echo '<div style="width=300px;height:500px; border:1px solid #ccc;">'.$hinh.'</div>';?>
                 <div style="margin-top: 20px;">
-                    <h4>Describe</h4>
+                    <h4>Mô tả</h4>
                     <p style="margin-left: 20px;"><?=$sanpham[0]['mota'] ?></p>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                 <h1 style="text-align:center;font-size:22px;"><?php echo $sanpham[0]['name']?></h1>
                 <p style="font-weight:bold; text-align:center; color:red;font-size:25px;">$ <?php echo $sanpham[0]['price_old']?></p>
                 <div class="btn-size">
-                    <h6>Choose Size</h6>
+                    <h6>Chọn size</h6>
                     <button class="btn btn-outline-secondary" style="margin-left: 20px;">35</button>
                     <button class="btn btn-outline-secondary">36</button>
                     <button class="btn btn-outline-secondary">37</button>
@@ -52,7 +52,7 @@
                     <button class="btn btn-outline-secondary">42</button>
                 </div>
                 <div class="">
-                    <h6 style="margin-top: 20px;">Amount</h6> 
+                    <h6 style="margin-top: 20px;">Số lượng</h6> 
                     <div class="amount-form" style="margin-left: 20px;">
                         <button class="btn-minus" id="minus" onclick="handleMinus()"><i class="fa-solid fa-minus"></i></button>
                         <input type="number" value="1" id="amount">
@@ -65,8 +65,8 @@
                     <p style="margin-left: 20px;"><?=$sanpham[0]['ten_loai'] ?></p>
                 </div>
                 <div class="">
-                    <h6 style="margin-top: 20px;">Category</h6>
-                    <p style="margin-left: 20px;">SHOES <?=$sanpham[0]['ten_loai'] ?></p>
+                    <h6 style="margin-top: 20px;">Loại</h6>
+                    <p style="margin-left: 20px;">Giày <?=$sanpham[0]['ten_loai'] ?></p>
                 </div>
                 <script>
                    let amountElement = document.getElementById("amount");
@@ -100,16 +100,16 @@
             <div class ="col-sm content-pr">
                 <div class= "row" style="margin-left: 30px; margin-top: 80px;">
                     <div class ="col-md-5 col-sm-6 text-center" style="word-break: break-all;">
-                        <p><i class="fa-solid fa-rotate"></i>&nbsp;</p><span style="word-wrap: break-word;"> 100% Genuine - Exchange in 1 month (for unused product)</span>
+                        <p><i class="fa-solid fa-rotate"></i>&nbsp;</p><span style="word-wrap: break-word;"> Chính hãng 100% - Đổi trả trong 1 tháng (đối với sản phẩm chưa sử dụng)</span>
                     </div>
                     <div class ="col-md-5 col-sm-6 text-center" style="word-break: break-all;">
-                        <p><i class="fa-solid fa-truck"></i>&nbsp;</p><span> Free delivery for orders from 500,000 VND in the first 10km</span>
+                        <p><i class="fa-solid fa-truck"></i>&nbsp;</p><span> Miễn phí giao hàng cho đơn hàng từ 500.000đ trong 10km đầu tiên</span>
                     </div>
                     <div class ="col-md-5 col-sm-6 text-center" style="word-break: break-all; margin-top: 20px;">
-                        <p><i class="fa-solid fa-share-from-square"></i>&nbsp;</p><span> Cash on delivery, online payment with many methods</span>
+                        <p><i class="fa-solid fa-share-from-square"></i>&nbsp;</p><span> Thu tiền khi nhận hàng, thanh toán trực tuyến với nhiều phương thức</span>
                     </div>
                     <div class ="col-md-5 col-sm-6 text-center" style="word-break: break-all; margin-top: 20px;">
-                        <p><i class="fa-solid fa-headset"></i>&nbsp;</p><span> Call center: 1900.679.679 (7:30 - 22:00)</span>
+                        <p><i class="fa-solid fa-headset"></i>&nbsp;</p><span> Trung tâm cuộc gọi: 1900.679.679 (7:30 - 22:00)</span>
                     </div>
                 </div>
             </div>

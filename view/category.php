@@ -5,7 +5,7 @@
 				<div class="col-first">
 					<h1>Danh mục sản phẩm</h1>
 					<nav class="d-flex align-items-center">
-						<a href="index.html">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
+						<a href="index.php">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
 						<a href="#">Sản phẩm</span></a>
 						<!-- <a href="category.html">Fashon Category</a> -->
 					</nav>
