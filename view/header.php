@@ -54,12 +54,12 @@
 							<li class="nav-item active"><a class="nav-link" href="index.php">Trang chủ</a></li>
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Shop</a>
+								 aria-expanded="false">Cửa hàng</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="index.php?act=category">Cửa hàng</a></li>
+									<li class="nav-item"><a class="nav-link" href="index.php?act=category">Sản phẩm</a></li>
 								<!--	<li class="nav-item"><a class="nav-link" href="index.php?act=single-product">Product Details</a></li>-->
-									<li class="nav-item"><a class="nav-link" href="index.php?act=checkout">Product Checkout</a></li>
-									<li class="nav-item"><a class="nav-link" href="index.php?act=cart">Shopping Cart</a></li>
+									<li class="nav-item"><a class="nav-link" href="index.php?act=checkout">Thanh toán</a></li>
+									<li class="nav-item"><a class="nav-link" href="index.php?act=cart">Giỏ hàng</a></li>
 									<li class="nav-item"><a class="nav-link" href="index.php?act=confirmation">Confirmation</a></li>
 								</ul>
 							</li>
@@ -73,20 +73,20 @@
 							</li>
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Pages</a>
+								 aria-expanded="false">Thành viên</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="index.php?act=login">Login</a></li>
-									<li class="nav-item"><a class="nav-link" href="index.php?act=signup">SignUp</a></li>
+									<li class="nav-item"><a class="nav-link" href="index.php?act=login">Đăng nhập</a></li>
+									<li class="nav-item"><a class="nav-link" href="index.php?act=signup">Đăng ký</a></li>
 									<li class="nav-item"><a class="nav-link" href="index.php?act=elements">Elements</a></li>
 								</ul>
 							</li>
-							<li class="nav-item"><a class="nav-link" href="index.php?act=contact">Contact</a></li>
+							<li class="nav-item"><a class="nav-link" href="index.php?act=contact">Liên hệ</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 						<?php
 							if(isset($_SESSION['user'])&&($_SESSION['user']!="")){
-								echo'<li class="nav-link"><a href="index.php?act=userinfo" class="nav-item"><span style="color:red;font-weight:600;"> '.$_SESSION['user'].'</span></a></li>';
-								echo'<li class="nav-link"><a href="index.php?act=thoat" class="nav-item"><span>LOG OUT</span></a></li>';
+								echo'<li class="nav-link"><a href="index.php?act=userinfo" class="nav-item"><span style="color:red;font-weight:800;"> '.$_SESSION['user'].'</span></a></li>';
+								echo'<li class="nav-link"><a href="index.php?act=thoat" class="nav-item"><span>Đăng xuất</span></a></li>';
 							}else{
 								
 								
