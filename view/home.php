@@ -174,7 +174,7 @@
 					<div class="col-lg-6 text-center">
 						<div class="section-title">
 							<h1>Sản phẩm gần đây</h1>
-							<p style="padding:30px 50px;">Z-MOHN cập nhật nhiều sản phẩm mới từ các thương hiệu Vans, Converse, Adidas, Nike,... Đa dạng chức năng, mẫu mã. Chúng tôi luôn mong muốn mang lại cho bạn những sản phẩm mới lạ nhất.</p>
+							<p style="padding:30px 50px;"> Z-MOHN cập nhật nhiều sản phẩm mới từ các thương hiệu Vans, Converse, Adidas, Nike,... Đa dạng chức năng, mẫu mã. Chúng tôi luôn mong muốn mang lại cho bạn những sản phẩm mới lạ nhất.</p>
 						</div>
 					</div>
 				</div>
