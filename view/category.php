@@ -105,6 +105,9 @@
 							foreach($filtersp as $sp){
 								extract($sp);
 								$hinh=$img_path.$img;
+								$price_1 = $price_old;
+								if ($price_new > 0) $price_1 = $price_new;
+								$price_1;
 								$sphct="index.php?act=sanphamct&idsp=".$id;
 								$cartid="index.php?act=cart&id=".$id;
 								echo '
@@ -118,8 +121,7 @@
 												<h6>'.$name.'</h6>
 											</a>
 											<div class="price">
-												<h6>$'.$price_old.'</h6>
-												<h6 class="l-through">$210.00</h6>
+												<h6>$'.$price_1.'</h6>
 											</div>
 											<div class="prd-bottom">
 			
@@ -148,6 +150,9 @@
 						foreach($spnew as $sp){
 							extract($sp);
 							$hinh=$img_path.$img;
+							$price_1 = $price_old;
+							if ($price_new > 0) $price_1 = $price_new;
+							$price_1;
 							$sphct="index.php?act=sanphamct&idsp=".$id;
 							$cartid="index.php?act=cartprocess&id=".$id;
 							echo '
@@ -159,8 +164,7 @@
 									<div class="product-details">
 										<h6>'.$name.'</h6>
 										<div class="price">
-											<h6>$'.$price_old.'</h6>
-											<h6 class="l-through">$210.00</h6>
+											<h6>$'.$price_1.'</h6>
 										</div>
 										<div class="prd-bottom">
 		
