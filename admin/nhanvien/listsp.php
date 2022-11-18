@@ -18,15 +18,6 @@
         <h3>Danh sách sản phẩm</h3>
     </div>
     <div class="table-responsive-sm">
-        <div class="d-flex ">
-            <input type="submit" value="Chọn tất cả" name="themmoi" class="form-control " style=" width:120px;background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;">
-
-            <a href="index.php?act=addsp"><input type="submit" value="Thêm mới" class="btn btn-default border-0" style="margin:0 0 15px 15px; width:120px; background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;"></a>
-            
-            <a href="index.php?act=addimg"><input type="submit" value="Thêm hình ảnh mới" class="btn btn-default border-0" style="margin:0 0 15px 15px; width:120px; background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;"></a>
-            <!-- end demo -->
-            <input type="submit" value="Sửa" class="btn btn-default border-0" style="margin:0 0 15px 15px; width:120px; background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;">
-        </div>
         <form action="index.php?act=listsp" method="post">
             <select name="iddm" id="" class="form-select form-select-lg mb-3" aria-label=".form-select-sm example">
                 <option selected value="0">Chọn danh mục</option>
@@ -50,10 +41,8 @@
                     <th>Tên sản phẩm</th>
                     <th>Hình ảnh</th>
                     <th>Giá</th>
-                    <th>Giá giảm</th>
                     <th>Mô tả</th>
                     <th>View</th>
-                    <th>Cài đặt</th>
                 </tr>
             </thead>
             <?php
@@ -76,14 +65,8 @@
                             <td>'.$name.'</td>
                             <td class="text-center">'.$hinh.'</td>
                             <td>'.$price_old.'</td>
-                            <td>'.$price_new.'</td>
                             <td>'.$mota.'</td>
                             <td>'.$luotxem.'</td>
-                            <td class="text-center">
-                                <a href="'.$suasp.'"><input type="button" value="Sửa" style="width:120px; margin:5px; border:none;" ></a>
-                                <a href="'.$xoasp.'"><input type="button" value="Xóa" style="width:120px;margin:5px; border:none;"></a>
-                                <a href="'.$imgsp.'"><input type="button" value="Hình ảnh" style="width:120px;margin:5px; border:none;"></a>
-                            </td>
                         </tr>
                     </tbody>';
                 }

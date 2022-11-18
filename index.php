@@ -8,7 +8,8 @@
     include 'model/danhmuc.php';
     include 'model/tintuc.php';
     include 'var.php';
-
+    $_SESSION['giohang']=[];
+    if(isset($_SESSION['giohang'])) $_SESSION['giohang']!=[];
     $spnew =loadall_sanpham_home();
     $ttnew=loadall_tintuc_home();
     $dsdm =loadall_danhmuc();
@@ -22,7 +23,17 @@
             case 'cart':
                 include 'view/cart.php';
                 break;
+            case 'cartprocess':
+                if(isset($_GET['id'])){
+                    $load1sp =loadone_sanpham($_GET['id']);
+                }
+                include 'view/cartprocess.php';
+                break;
             case 'category':
+                if(isset($_GET['iddm']) && $_GET['iddm']!=""){
+                    $filtersp=filter_sanpham($_GET['iddm']);
+                    $react =1;}
+                    else $react =0;
                 include 'view/category.php';
                 break;
             case 'checkout':
@@ -37,6 +48,9 @@
                 break;
             case 'elements':
                 include 'view/elements.php';
+                break;
+            case 'filtersanpham':
+
                 break;
             case 'sanphamct':
                 if (isset($_GET['idsp'])&&($_GET['idsp']>0)){
@@ -57,6 +71,9 @@
                     if($role==1){
                         $_SESSION['role']=$role;
                         header('location: admin/index.php'); //note
+                    }elseif ($role==2){ 
+                        $_SESSION['role']=$role;
+                        header('location: admin/index.php'); 
                     }else{
                         $_SESSION['role']=$role;
                         $_SESSION['iduser']= $kq[0]['id'];
