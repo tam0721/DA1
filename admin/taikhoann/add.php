@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
 				<div class="col-first">
-					<h1>Register</h1>
+					<h1>Đăng ký</h1>
 					<nav class="d-flex align-items-center">
 						<a href="index.php">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
 						<a href="category.html">Thêm tài khoản mới</a>
@@ -46,13 +46,13 @@
 									<label for="f-option2">Admin</label>
 								</div>
 								<div class="creat_account" style="margin-left:40px;">
-									<input type="radio" name="role" value="0" checked>
-									<label for="f-option2">Khách hàng</label>
+									<input type="radio" name="role" value="2" checked>
+									<label for="f-option2">Nhân viên</label>
 								</div>
 							</div>
 							<!--  -->
 							<div class="col-md-12 form-group">
-								<input type="submit" value="Add new" class="primary-btn" name="themtk"></input>
+								<input type="submit" value="Thêm mới" class="primary-btn" name="themtk"></input>
 								<!-- <a href="#">Forgot Password?</a> -->
 							</div>
 						</form>
