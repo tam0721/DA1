@@ -49,7 +49,11 @@
                     </div>
                     <div class="form-group">
                         <label for="pwd">Giá</label>
-                        <input type="text" name="giasp" id="" class=" form-control" value="<?php echo $sanpham[0]['price']?>">
+                        <input type="text" name="giasp" id="" class=" form-control" value="<?php echo $sanpham[0]['price_old']?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Giá giảm</label>
+                        <input type="text" name="giaspnew" id="" class=" form-control" value="<?php echo $sanpham[0]['price_new']?>">
                     </div>
                     <div class="form-group">
                         <label for="pwd">Hình ảnh</label><br>

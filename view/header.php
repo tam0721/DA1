@@ -51,7 +51,7 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto">
-							<li class="nav-item active"><a class="nav-link" href="index.php">Trang chủ</a></li>
+							<li class="nav-item visited"><a class="nav-link" href="index.php">Trang chủ</a></li>
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Cửa hàng</a>
@@ -91,7 +91,7 @@
 								
 								
             				?>
-							<li class="nav-link"><a href="#" class="cart"><span class="ti-bag"></span></a></li>
+							<li class="nav-link"><a href="index.php?act=cart" class="cart"><span class="ti-bag"></span></a></li>
 							<?php } ?>
 							<li class="nav-link">
 								<button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
