@@ -346,7 +346,7 @@
                 case 'lisdm':
                     $sql = "select * from loai order by ten_loai desc";
                     $listdanhmuc= pdo_query($sql);
-                    include "listdm.php";
+                    include 'nhanvien/listdm.php';
                     break;
                 case 'thoat':
                     if(isset($_SESSION['role'])) unset($_SESSION['role']);
@@ -363,23 +363,23 @@
                     $sql = "select * from loai order by ten_loai desc";
                     $listdanhmuc= pdo_query($sql);
                     $listsanpham= loadall_sanpham($kyw,$iddm);
-                    include "listsp.php";
+                    include 'nhanvien/listsp.php';
                     break;
                 case 'dskh':
                     $listtaikhoan= loadall_taikhoan();
-                    include 'listtk.php';
+                    include 'nhanvien/listtk.php';
                     break;
                 case 'binhluan':
                     $listbl=loadall_binhluan_admin();
-                    include 'listbinhluan.php';
+                    include 'nhanvien/listbinhluan.php';
                     break;
                 case 'thongke':
                     $listtk = loadall_thongke();
-                    include 'listthongke.php';
+                    include 'nhanvien/listthongke.php';
                     break; 
                 case 'listtt':
                     $listtintuc = loadall_tintuc();
-                    include 'listblog.php';
+                    include 'nhanvien/listblog.php';
                     break;  
                 default:
                     include 'home.php';
