@@ -39,7 +39,22 @@
             </div>
             <div class ="col-sm-3">
                 <h1 style="text-align:center;font-size:22px;"><?php echo $sanpham[0]['name']?></h1>
-                <p style="font-weight:bold; text-align:center; color:red;font-size:25px;">$ <?php echo $sanpham[0]['price_old']?></p>
+                <!-- <p style="font-weight:bold; text-align:center; color:red;font-size:25px;">$  -->
+                    <?php 
+                        if ($sanpham[0]['price_new'] > 0) {
+                            echo 
+                                '<p style="font-weight:bold; text-align:center; color:red;font-size:25px;">$'
+                                .$sanpham[0]['price_new'].'</p>'.
+                                '<p style="text-align:center; color:black;font-size:15px; text-decoration: line-through;">$'
+                                .$sanpham[0]['price_old'].'</p>';
+                        } else {
+                            echo 
+                                '<p style="font-weight:bold; text-align:center; color:red;font-size:25px;">$'
+                                .$sanpham[0]['price_old'].'</p>';
+                        }
+                        // echo $sanpham[0]['price_old'];
+                    ?>
+                <!-- </p> -->
                 <div class="btn-size">
                     <h6>Chọn size</h6>
                     <button class="btn btn-outline-secondary" style="margin-left: 20px;">35</button>
