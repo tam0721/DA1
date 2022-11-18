@@ -40,6 +40,11 @@
         $sanpham = pdo_query($sql);
         return $sanpham;
     }
+    function filter_sanpham($iddm){
+        $sql = "SELECT * FROM hang_hoa hh WHERE hh.iddm = ".$iddm;
+        $sanpham = pdo_query($sql);
+        return $sanpham;
+    }
     // end
     // function loadone_sanpham($id){
     //     $sql = "SELECT * from hang_hoa WHERE id=".$id;
@@ -56,5 +61,5 @@
             $sql = "UPDATE hang_hoa SET name='".$tensp."',price_old='".$giasp."',price_new='".$giaspnew."',mota='".$mota."' WHERE id=".$id;
         pdo_execute($sql);
     }
-
+    
 ?>
