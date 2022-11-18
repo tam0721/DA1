@@ -122,7 +122,6 @@
 											</a>
 											<div class="price">
 												<h6>$'.$price_1.'</h6>
-												<h6 class="l-through">$210.00</h6>
 											</div>
 											<div class="prd-bottom">
 			
