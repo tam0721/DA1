@@ -12,7 +12,7 @@
     $spnew =loadall_sanpham_home();
     $ttnew=loadall_tintuc_home();
     $dsdm =loadall_danhmuc();
-
+    $spdacbiet=get_product_special();
     if(isset($_GET['act'])){
         $act = $_GET['act'];
         switch ($act) {
