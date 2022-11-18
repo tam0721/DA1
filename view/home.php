@@ -183,6 +183,10 @@
 					
 						foreach($spnew as $sp){
 							extract($sp);
+							$price_1 = $price_old;
+							if($price_new > 0){
+								$price_1 = $price_new;
+							}
 							$hinh=$img_path.$img;
 							$price_1 = $price_old;
 							if ($price_new > 0) $price_1 = $price_new;

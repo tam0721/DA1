@@ -5,7 +5,7 @@
 				<div class="col-first">
 					<h1>Danh mục sản phẩm</h1>
 					<nav class="d-flex align-items-center">
-						<a href="index.php">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
+						<a href="index.php">Trang chủ <span class="lnr lnr-arrow-right"></span></a>
 						<a href="#">Sản phẩm</span></a>
 						<!-- <a href="category.html">Fashon Category</a> -->
 					</nav>
@@ -31,32 +31,37 @@
 							</ul>
 						</li> -->
 						<?php
-						
+						$linkdm0="index.php?act=category";
+							echo'
+							<li class="main-nav-list"><a href="'.$linkdm0.'"><span
+									class="lnr lnr-arrow-right"></span>ALL<span class="number"></span></a></li>';
 							foreach ($dsdm as $dm) {
 								extract($dm);
-								$linkdm="index.php?act=sanpham&iddm=".$ma_loai;
+								$linkdm="index.php?act=category&iddm=".$ma_loai;
 								echo'
+									
 									<li class="main-nav-list"><a href="'.$linkdm.'"><span
 									class="lnr lnr-arrow-right"></span>'.$ten_loai.'<span class="number"></span></a></li>
+									
 								';
 							}
 						
 						?>
-
+	
 					</ul>
 				</div>
 				<div class="sidebar-filter mt-50">
 					<div class="common-filter">
-						<div class="head">Sản phẩm theo giá</div>
+						<!-- <div class="head">Sản phẩm theo giá</div> -->
 						<div class="price-range-area">
-							<div id="price-range"></div>
+							<!-- <div id="price-range"></div> -->
 							<div class="value-wrapper d-flex">
-								<div class="price">Giá:</div>
+								<!-- <div class="price">Giá:</div>
 								<span>$</span>
 								<div id="lower-value"></div>
 								<div class="to"> - </div>
 								<span>$</span>
-								<div id="upper-value"></div>
+								<div id="upper-value"></div> -->
 							</div>
 						</div>
 					</div>
@@ -66,29 +71,19 @@
 				<!-- Start Filter Bar -->
 				<div class="filter-bar d-flex flex-wrap align-items-center">
 					<div class="sorting">
-						<select>
-							<!-- <option value="1">Phân loại</option>
+						<!-- <select>
 							<option value="1">Phân loại</option>
-							<option value="1">Phân loại</option> -->
-							<?php
+							<option value="1">Phân loại</option>
+							<option value="1">Phân loại</option>
 						
-							foreach ($dsdm as $dm) {
-								extract($dm);
-								$linkdm="index.php?act=sanpham&iddm=".$ma_loai;
-								echo'
-									<option value="">'.$ten_loai.'</option>
-								';
-							}
-						
-						?>
-						</select>
+						</select> -->
 					</div>
 					<div class="sorting mr-auto">
-						<select>
+						<!-- <select>
 							<option value="1">Hiển thị 12</option>
 							<option value="1">Hiển thị 12</option>
 							<option value="1">Hiển thị 12</option>
-						</select>
+						</select> -->
 					</div>
 					<div class="pagination">
 						<a href="#" class="prev-arrow"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></a>
@@ -106,7 +101,50 @@
 					<div class="row">
 						<!-- single product -->
 						<?php
-					
+						if($react==1){
+							foreach($filtersp as $sp){
+								extract($sp);
+								$hinh=$img_path.$img;
+								$sphct="index.php?act=sanphamct&idsp=".$id;
+								$cartid="index.php?act=cart&id=".$id;
+								echo '
+								<div class="col-lg-4 col-md-6">
+									<div class="single-product">
+										<a href="'.$sphct.'">
+											<img class="img-fluid" src="'.$hinh.'" alt="" style="height:250px; width:250px;">
+										</a>
+										<div class="product-details">
+											<a href="'.$sphct.'">
+												<h6>'.$name.'</h6>
+											</a>
+											<div class="price">
+												<h6>$'.$price_old.'</h6>
+												<h6 class="l-through">$210.00</h6>
+											</div>
+											<div class="prd-bottom">
+			
+												<a href="'.$cartid.'" class="social-info">
+													<span class="ti-bag"></span>
+													<p class="hover-text">add to bag</p>
+												</a>
+												<a href="" class="social-info">
+													<span class="lnr lnr-heart"></span>
+													<p class="hover-text">Wishlist</p>
+												</a>
+												<a href="" class="social-info">
+													<span class="lnr lnr-sync"></span>
+													<p class="hover-text">compare</p>
+												</a>
+												<a href="" class="social-info">
+													<span class="lnr lnr-move"></span>
+													<p class="hover-text">view more</p>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>';
+						}
+					} else
 						foreach($spnew as $sp){
 							extract($sp);
 							$hinh=$img_path.$img;
@@ -114,6 +152,7 @@
 							if ($price_new > 0) $price_1 = $price_new;
 							$price_1;
 							$sphct="index.php?act=sanphamct&idsp=".$id;
+							$cartid="index.php?act=cartprocess&id=".$id;
 							echo '
 							<div class="col-lg-4 col-md-6">
 								<div class="single-product">
@@ -127,7 +166,7 @@
 										</div>
 										<div class="prd-bottom">
 		
-											<a href="'.$sphct.'" class="social-info">
+											<a href="'.$cartid.'" class="social-info">
 												<span class="ti-bag"></span>
 												<p class="hover-text">add to bag</p>
 											</a>
@@ -148,7 +187,7 @@
 								</div>
 							</div>';
 						}
-					
+						
 					?>
 					</div>
 				</section>
@@ -156,11 +195,11 @@
 				<!-- Start Filter Bar -->
 				<div class="filter-bar d-flex flex-wrap align-items-center">
 					<div class="sorting mr-auto">
-						<select>
+						<!-- <select>
 							<option value="1">Hiển thị 12</option>
 							<option value="1">Hiển thị 12</option>
 							<option value="1">Hiển thị 12</option>
-						</select>
+						</select> -->
 					</div>
 					<div class="pagination">
 						<a href="#" class="prev-arrow"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></a>
