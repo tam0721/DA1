@@ -57,9 +57,9 @@
 							<li class="nav-item"><a class="nav-link" href="index.php?act=listsp">Sản phẩm</a></li>
 							<li class="nav-item"><a class="nav-link" href="index.php?act=addimg">Hình ảnh</a></li>
 							<li class="nav-item"><a class="nav-link" href="index.php?act=dskh">Tài khoản</a></li>
-							<li class="nav-item"><a class="nav-link" href="index.php?act=binhluan">Comment</a></li>
-							<li class="nav-item"><a class="nav-link" href="index.php?act=addtt">Blog</a></li>
-							<li class="nav-item"><a class="nav-link" href="index.php?act=thongke">Statistical</a></li>
+							<li class="nav-item"><a class="nav-link" href="index.php?act=binhluan">Bình luận</a></li>
+							<li class="nav-item"><a class="nav-link" href="index.php?act=listtt">Blog</a></li>
+							<li class="nav-item"><a class="nav-link" href="index.php?act=thongke">Thống kê</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li class="nav-item"><a href="index.php?act=thoat" class="cart"><span>Thoát</span></a></li>
