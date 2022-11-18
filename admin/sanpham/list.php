@@ -50,6 +50,7 @@
                     <th>Tên sản phẩm</th>
                     <th>Hình ảnh</th>
                     <th>Giá</th>
+                    <th>Giá giảm</th>
                     <th>Mô tả</th>
                     <th>View</th>
                     <th>Cài đặt</th>
@@ -75,6 +76,7 @@
                             <td>'.$name.'</td>
                             <td class="text-center">'.$hinh.'</td>
                             <td>'.$price_old.'</td>
+                            <td>'.$price_new.'</td>
                             <td>'.$mota.'</td>
                             <td>'.$luotxem.'</td>
                             <td class="text-center">
