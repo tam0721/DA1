@@ -183,6 +183,10 @@
 					
 						foreach($spnew as $sp){
 							extract($sp);
+							$price_1 = $price_old;
+							if($price_new > 0){
+								$price_1 = $price_new;
+							}
 							$hinh=$img_path.$img;
 							$sphct="index.php?act=sanphamct&idsp=".$id;
 							echo '
@@ -194,7 +198,7 @@
 									<div class="product-details">
 										<h6>'.$name.'</h6>
 										<div class="price">
-											<h6>$'.$price_old.'</h6>
+											<h6>$'.$price_1.'</h6>
 											
 										</div>
 										<div class="prd-bottom">
