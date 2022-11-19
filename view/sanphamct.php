@@ -57,7 +57,7 @@
                     ?>
                 <!-- </p> -->
                 <div class="btn-size">
-                    <h6>Chọn size</h6>
+                    <h6>Chọn size:</h6>
                     <button class="btn btn-outline-secondary" style="margin-left: 20px;">35</button>
                     <button class="btn btn-outline-secondary">36</button>
                     <button class="btn btn-outline-secondary">37</button>
@@ -127,7 +127,7 @@
                         <p><i class="fa-solid fa-share-from-square"></i>&nbsp;</p><span> Thu tiền khi nhận hàng, thanh toán trực tuyến với nhiều phương thức</span>
                     </div>
                     <div class ="col-md-5 col-sm-6 text-center" style="word-break: break-all; margin-top: 20px;">
-                        <p><i class="fa-solid fa-headset"></i>&nbsp;</p><span> Trung tâm cuộc gọi: 1900.679.679 (7:30 - 22:00)</span>
+                        <p><i class="fa-solid fa-headset"></i>&nbsp;</p><span> Trung tâm cuộc gọi: 1900.679.678 (7:30 - 22:00)</span>
                     </div>
                 </div>
             </div>
