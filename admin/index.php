@@ -11,6 +11,8 @@
         include "../model/tintuc.php";
         include "../model/binhluan.php";
         include "../model/hinhanh.php";
+        include "../model/bill.php";
+        
         include "header.php";
         if (isset($_GET['act'])) {
             # code...
@@ -318,6 +320,10 @@
                     }
                     $listimg = loadall_img($_GET['id']);
                     include "hinhanh/list.php";
+                    break;
+                case 'donhanglist':
+                    $listbill= loadall_bill();
+                    include "bill/list.php";
                     break;
                 // -----------------------------------------------------
                 default:
