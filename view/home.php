@@ -208,19 +208,19 @@
 		
 											<a href="'.$sphct.'" class="social-info">
 												<span class="ti-bag"></span>
-												<p class="hover-text">add to bag</p>
+												<p class="hover-text">Thêm giỏ</p>
 											</a>
 											<a href="" class="social-info">
 												<span class="lnr lnr-heart"></span>
-												<p class="hover-text">Wishlist</p>
+												<p class="hover-text">Yêu thích</p>
 											</a>
 											<a href="" class="social-info">
 												<span class="lnr lnr-sync"></span>
-												<p class="hover-text">compare</p>
+												<p class="hover-text">So sánh</p>
 											</a>
 											<a href="" class="social-info">
 												<span class="lnr lnr-move"></span>
-												<p class="hover-text">view more</p>
+												<p class="hover-text">Xem thêm</p>
 											</a>
 										</div>
 									</div>
@@ -825,10 +825,52 @@
 			<div class="row justify-content-center">
 				<div class="col-lg-6 text-center">
 					<div class="section-title">
+						<!-- <h1>Sản phẩm yêu thích nhất</h1>
+						<p>Các sản phẩm phổ biến nhất trong tuần qua. Top sản phẩm được yêu thích, nhiều lượt xem.
+							 Đề xuất bạn thuận tiện tham khảo các khuyến nghị từ các khách hàng khác.
+						</p> -->
+						<h1>Sản phẩm đặc biệt</h1>
+						<p>Sản phẩm đặc biệt nhất trong tuần qua.
+							 Đề xuất bạn thuận tiện tham khảo các khuyến nghị từ các khách hàng khác.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div style="
+				position: relative;
+				width: fullsreen;
+				height: 82vh;
+				background: url('img/sd/banner2.jpg');
+				background-size: cover; /*k bể và canh đều*/
+				background-attachment: fixed;
+				background-position: center; /*lấy giữa tấm hình*/">
+				<?php
+				$sphct="index.php?act=sanphamct&idsp=".$id;
+				echo'
+				<a href="'.$sphct.'"><img class="special-img" class="img-product" src="./upload/'.$spdacbiet['0']['img'].'" alt="" width="30%"></a>
+					<div class="infor-recipe1">
+					<h1 style="color:white"> '.$spdacbiet['0']['name'].'</h1>
+					<h3 style="color:red"> $'.$spdacbiet['0']['price_old'].'</h3>
+					<p>'.$spdacbiet['0']['mota'].'</p>
+					<a href="'.$sphct.'"><button class="boujee-text">Xem thêm</button></a>
+					
+				</div>
+				';
+				?>
+	
+			</div>
+		</div>
+	</section>
+	<section class="related-product-area section_gap">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-6 text-center">
+					<div class="section-title">
 						<h1>Sản phẩm yêu thích nhất</h1>
 						<p>Các sản phẩm phổ biến nhất trong tuần qua. Top sản phẩm được yêu thích, nhiều lượt xem.
 							 Đề xuất bạn thuận tiện tham khảo các khuyến nghị từ các khách hàng khác.
 						</p>
+						
 					</div>
 				</div>
 			</div>
@@ -953,7 +995,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+			 
 	</section>
 	<!-- End related-product Area -->
 
@@ -963,4 +1005,63 @@
 			height: 80px;
 			border-radius: 5px;
 		}
+		
+		.infor-recipe1{
+			position: absolute;
+			right: 50px;
+			top: 20px;
+			height: 300px;
+			width: 60%;
+			
+			padding: 55px 70px;
+		}
+		.infor-recipe1 p{
+			padding: 40px 0;
+			color: #fff;
+		}
+		.infor-recipe1 button{
+			border-radius: 50px;
+			background-color: white;
+			color: var(--black);
+			padding: 10px 30px;
+			font-size: 15px;
+			font-weight: 600;
+			border: none;
+		}
+		.special-img{
+			margin-left: 70px;
+			margin-top: 50px;
+			
+		}
+		
+
+
+		.boujee-text {
+		--bg-size: 400%;
+		--color-one: hsl(15 90% 55%);
+		--color-two: hsl(40 95% 55%);
+		font-family: sans-serif;
+		font-size: clamp(3rem, 25vmin, 8rem);
+		background: linear-gradient(
+			90deg,
+			var(--color-one),
+			var(--color-two),
+			var(--color-one)
+			)
+			0 0 / var(--bg-size) 100%;
+		color: transparent;
+		background-clip: text;
+		}
+
+		@media (prefers-reduced-motion: no-preference) {
+		.boujee-text {
+			animation: move-bg 8s linear infinite;
+		}
+		@keyframes move-bg {
+			to {
+			background-position: var(--bg-size) 0;
+			}
+		}
+		}
+
 	</style>
