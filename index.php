@@ -13,7 +13,7 @@
     $spnew =loadall_sanpham_home();
     $ttnew=loadall_tintuc_home();
     $dsdm =loadall_danhmuc();
-
+    $spdacbiet=get_product_special();
     if(isset($_GET['act'])){
         $act = $_GET['act'];
         switch ($act) {
@@ -71,6 +71,9 @@
                     if($role==1){
                         $_SESSION['role']=$role;
                         header('location: admin/index.php'); //note
+                    }elseif ($role==2){ 
+                        $_SESSION['role']=$role;
+                        header('location: admin/index.php'); 
                     }else{
                         $_SESSION['role']=$role;
                         $_SESSION['iduser']= $kq[0]['id'];

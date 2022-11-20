@@ -319,7 +319,6 @@
                     $listimg = loadall_img($_GET['id']);
                     include "hinhanh/list.php";
                     break;
-
                 // -----------------------------------------------------
                 default:
                     # code...
@@ -331,6 +330,65 @@
         }
 
         include "footer.php";
+    }elseif (isset($_SESSION['role'])&&($_SESSION['role']==2)) {
+        include "../model/pdo.php";
+        include "../model/taikhoan.php";
+        include "../model/danhmuc.php";
+        include "../model/sanpham.php";
+        include "../model/thongke.php";
+        include "../model/tintuc.php";
+        include "../model/binhluan.php";
+        include "../model/hinhanh.php";
+        include 'header.php';
+        if(isset($_GET['act'])){
+            $act = $_GET['act'];
+            switch ($act) {
+                case 'lisdm':
+                    $sql = "select * from loai order by ten_loai desc";
+                    $listdanhmuc= pdo_query($sql);
+                    include 'nhanvien/listdm.php';
+                    break;
+                case 'thoat':
+                    if(isset($_SESSION['role'])) unset($_SESSION['role']);
+                    header('location: ../index.php');
+                    break;
+                case 'listsp':
+                    if (isset($_POST['listgo'])&&($_POST['listgo'])){
+                        $kyw =$_POST['kyw'];
+                        $iddm =$_POST['iddm'];
+                    }else{
+                        $kyw='';
+                        $iddm=0;
+                    }
+                    $sql = "select * from loai order by ten_loai desc";
+                    $listdanhmuc= pdo_query($sql);
+                    $listsanpham= loadall_sanpham($kyw,$iddm);
+                    include 'nhanvien/listsp.php';
+                    break;
+                case 'dskh':
+                    $listtaikhoan= loadall_taikhoan();
+                    include 'nhanvien/listtk.php';
+                    break;
+                case 'binhluan':
+                    $listbl=loadall_binhluan_admin();
+                    include 'nhanvien/listbinhluan.php';
+                    break;
+                case 'thongke':
+                    $listtk = loadall_thongke();
+                    include 'nhanvien/listthongke.php';
+                    break; 
+                case 'listtt':
+                    $listtintuc = loadall_tintuc();
+                    include 'nhanvien/listblog.php';
+                    break;  
+                default:
+                    include 'home.php';
+                    break;
+            }
+        }else{
+            include 'home.php';
+        }
+        include 'footer.php';
     }else {
         header('location: ../index.php');
     }

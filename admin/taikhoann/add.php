@@ -49,6 +49,10 @@
 									<input type="radio" name="role" value="2" checked>
 									<label for="f-option2">Nhân viên</label>
 								</div>
+								<div class="creat_account" style="margin-left:40px;">
+									<input type="radio" name="role" value="0" checked>
+									<label for="f-option2">Khách hàng</label>
+								</div>
 							</div>
 							<!--  -->
 							<div class="col-md-12 form-group">
