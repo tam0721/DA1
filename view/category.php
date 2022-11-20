@@ -107,7 +107,6 @@
 								$hinh=$img_path.$img;
 								$price_1 = $price_old;
 								if ($price_new > 0) $price_1 = $price_new;
-								$price_1;
 								$sphct="index.php?act=sanphamct&idsp=".$id;
 								$cartid="index.php?act=cart&id=".$id;
 								echo '
@@ -152,7 +151,6 @@
 							$hinh=$img_path.$img;
 							$price_1 = $price_old;
 							if ($price_new > 0) $price_1 = $price_new;
-							$price_1;
 							$sphct="index.php?act=sanphamct&idsp=".$id;
 							$cartid="index.php?act=cartprocess&id=".$id;
 							echo '
