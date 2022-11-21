@@ -50,22 +50,22 @@
 	
 					</ul>
 				</div>
-				<div class="sidebar-filter mt-50">
+				<!-- <div class="sidebar-filter mt-50">
 					<div class="common-filter">
-						<!-- <div class="head">Sản phẩm theo giá</div> -->
+						<div class="head">Sản phẩm theo giá</div>
 						<div class="price-range-area">
-							<!-- <div id="price-range"></div> -->
+							<div id="price-range"></div>
 							<div class="value-wrapper d-flex">
-								<!-- <div class="price">Giá:</div>
+								<div class="price">Giá:</div>
 								<span>$</span>
 								<div id="lower-value"></div>
 								<div class="to"> - </div>
 								<span>$</span>
-								<div id="upper-value"></div> -->
+								<div id="upper-value"></div>
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<div class="col-xl-9 col-lg-8 col-md-7">
 				<!-- Start Filter Bar -->
