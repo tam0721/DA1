@@ -291,7 +291,6 @@
                     $listsanpham= loadall_sanpham("", 0);
                     include "sanpham/list.php";
                     break;
-
                 case 'addimg':
                     if (isset($_POST['themmoi'])&&($_POST['themmoi'])) {
                         $ma_hh = $_POST['ma_hh'];
@@ -322,6 +321,7 @@
                     }
                     $listimg = loadall_img($_GET['id']);
                     include "hinhanh/list.php";
+                    header('location: index.php?act=listsp');
                     break;
                 case 'donhanglist':
                     $listbill= loadall_bill();
