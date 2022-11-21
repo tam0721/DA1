@@ -50,22 +50,22 @@
 	
 					</ul>
 				</div>
-				<div class="sidebar-filter mt-50">
+				<!-- <div class="sidebar-filter mt-50">
 					<div class="common-filter">
-						<!-- <div class="head">Sản phẩm theo giá</div> -->
+						<div class="head">Sản phẩm theo giá</div>
 						<div class="price-range-area">
-							<!-- <div id="price-range"></div> -->
+							<div id="price-range"></div>
 							<div class="value-wrapper d-flex">
-								<!-- <div class="price">Giá:</div>
+								<div class="price">Giá:</div>
 								<span>$</span>
 								<div id="lower-value"></div>
 								<div class="to"> - </div>
 								<span>$</span>
-								<div id="upper-value"></div> -->
+								<div id="upper-value"></div>
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<div class="col-xl-9 col-lg-8 col-md-7">
 				<!-- Start Filter Bar -->
@@ -126,19 +126,19 @@
 			
 												<a href="'.$cartid.'" class="social-info">
 													<span class="ti-bag"></span>
-													<p class="hover-text">add to bag</p>
+													<p class="hover-text">Thêm giỏ</p>
 												</a>
 												<a href="" class="social-info">
 													<span class="lnr lnr-heart"></span>
-													<p class="hover-text">Wishlist</p>
+													<p class="hover-text">Yêu thích</p>
 												</a>
 												<a href="" class="social-info">
 													<span class="lnr lnr-sync"></span>
-													<p class="hover-text">compare</p>
+													<p class="hover-text">So sánh</p>
 												</a>
 												<a href="" class="social-info">
 													<span class="lnr lnr-move"></span>
-													<p class="hover-text">view more</p>
+													<p class="hover-text">xem thêm</p>
 												</a>
 											</div>
 										</div>
@@ -168,19 +168,19 @@
 		
 											<a href="'.$cartid.'" class="social-info">
 												<span class="ti-bag"></span>
-												<p class="hover-text">add to bag</p>
+												<p class="hover-text">Thêm giỏ</p>
 											</a>
 											<a href="" class="social-info">
 												<span class="lnr lnr-heart"></span>
-												<p class="hover-text">Wishlist</p>
+												<p class="hover-text">Yêu thích</p>
 											</a>
 											<a href="" class="social-info">
 												<span class="lnr lnr-sync"></span>
-												<p class="hover-text">compare</p>
+												<p class="hover-text">So sánh</p>
 											</a>
-											<a href="" class="social-info">
+											<a href="'.$sphct.'" class="social-info">
 												<span class="lnr lnr-move"></span>
-												<p class="hover-text">view more</p>
+												<p class="hover-text">Xem thêm</p>
 											</a>
 										</div>
 									</div>
