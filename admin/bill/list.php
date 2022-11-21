@@ -26,8 +26,9 @@
                         <th style="width:360px;">Khách hàng</th>
                         <th style="width:360px;">Địa chỉ</th>
                         <th style="width:360px;">Số điện thoại</th>
-                        <th style="width:360px;">Giá trị đơn hàng</th>
-                        <th style="width:360px;">Tình trạng đơn hàng</th>
+                        <th style="width:360px;">Phương thức thanh toán</th>
+                        <th style="width:360px;">Trạng thái đơn hàng</th>
+                        <th style="width:360px;">Trạng thái giao hàng</th>
                         <th style="width:360px;">Ngày đặt hàng</th>
                         <th style="width:360px;">Thao tác</th>
                     </tr>
@@ -36,8 +37,9 @@
                     foreach ($listbill as $bill) {
                         extract($bill);
                         // var_dump($bill);
-                        $suadm="index.php?act=suadm&ma_loai=".$ma_loai;
-                        $xoadm="index.php?act=xoadm&ma_loai=".$ma_loai;
+                        //$suabill="index.php?act=suabill&ma_dh=".$ma_dh;
+                        $xoabill="index.php?act=xoabill&ma_dh=".$ma_dh;
+                        $chitiet_dh="index.php?act=listchitietdh&ma_dh=".$ma_dh;
                         echo '
                         <tbody>
                             <tr>
@@ -48,13 +50,16 @@
                                 <td>'.$sdt_nhan.'</td>
                                 <td>'.$payment.'</td>
                                 <td>'.$trang_thai_tt.'</td>
+                                <td>'.$trang_thai_gh.'</td>
                                 <td>'.$ngay_dat.'</td>
-                                <td><a href="'.$suadm.'"><input type="button" value="Sửa" ></a> <a href="'.$xoadm.'"><input type="button" value="Xóa"></a></td>
+                                <td> <a href="'.$xoabill.'"><input type="button" value="Xóa"></a> <a href="'.$chitiet_dh.'"><input type="button" value="Chi tiết"></a></td>
+                               
                             </tr>
                         </tbody>';
                     }
                 ?> 
             </table>
+            <!-- <a href="'.$suabill.'"><input type="button" value="Sửa" ></a> -->
                 <div class="d-flex justify-content-center">
                 <input type="submit" value="Chọn tất cả" name="" class="form-control " style=" width:120px;background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;">
                 <a href="index.php?act=adddm"><input type="submit" value="Thêm mới" name="themmoi" class="btn btn-default border-0" style="margin:0 0 15px 15px; width:120px; background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;"></a>

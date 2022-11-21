@@ -12,6 +12,8 @@
         include "../model/binhluan.php";
         include "../model/hinhanh.php";
         include "../model/bill.php";
+        include "../model/chitietdh.php";
+
         
         include "header.php";
         if (isset($_GET['act'])) {
@@ -324,6 +326,21 @@
                 case 'donhanglist':
                     $listbill= loadall_bill();
                     include "bill/list.php";
+                    break;
+                case 'xoabill':
+                    if (isset($_GET['ma_dh'])&&($_GET['ma_dh']>0)) {
+                        delete_bill($_GET['ma_dh']);
+                    }
+                    $listbill= loadall_bill("", 0);
+                    include "bill/list.php";
+                break;
+                case 'listchitietdh':
+                    if(isset($_GET['ma_dh'])&&($_GET['ma_dh']>0)){
+                        $listchitietdh = loadone_chitietdh($_GET['ma_dh']);
+                    }
+                    $sql = "select * from don_hang order by ma_dh desc";
+                    $chitietdh= pdo_query($sql);
+                    include "bill/chitiet_dh.php";
                     break;
                 // -----------------------------------------------------
                 default:
