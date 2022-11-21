@@ -67,5 +67,4 @@
         $sanpham = pdo_query($sql);
         return $sanpham;
      }
-
 ?>

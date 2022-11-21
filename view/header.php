@@ -61,6 +61,13 @@
 									<li class="nav-item"><a class="nav-link" href="index.php?act=checkout">Thanh toán</a></li>
 									<li class="nav-item"><a class="nav-link" href="index.php?act=cart">Giỏ hàng</a></li>
 									<li class="nav-item"><a class="nav-link" href="index.php?act=confirmation">Xác nhận</a></li>
+									<?php
+										if(isset($_SESSION['user'])&&($_SESSION['user']!="")){
+											
+											echo'<li class="nav-item"><a class="nav-link" href="index.php?act=confirmation">Chi tiết đơn hàng</a></li>';
+										}
+									?>
+										
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">
@@ -90,9 +97,9 @@
 							}else{
 								
 								
-            				?>
+            			?>
 							<li class="nav-link"><a href="index.php?act=cart" class="cart"><span class="ti-bag"></span></a></li>
-							<?php } ?>
+						<?php } ?>
 							<li class="nav-link">
 								<button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
 							</li>

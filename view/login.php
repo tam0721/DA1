@@ -35,6 +35,7 @@
 
 							if(isset($_SESSION['user'])){
 								extract($_SESSION['user']);
+								// var_dump($user);}
 						?>
 						
 							<!-- <div class="col-md-12 form-group">
