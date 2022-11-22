@@ -103,8 +103,8 @@
                
                 <form action="<?=$_SERVER['PHP_SELF'];?>" method="post">
                     <input type="hidden" name="idpro" value="<?=$idpro?>">
-                    <input type="text" name="noidung" style="outline: none; border:1px solid #ccc">
-                    <input type="submit" name="guibinhluan" value="Publish">
+                    <input type="text" name="noidung" style="outline: none; border:1px solid #ccc; border-radius: 5px;padding-left:10px;">
+                    <input type="submit" name="guibinhluan" value="Publish" class="" style=" width:90px;margin-top:10px;border:none;border-radius: 5px;background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;">
                 </form>
                 <?php
                 if(isset($_POST['guibinhluan'])&&($_POST['guibinhluan'])){
