@@ -30,11 +30,12 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="login_form_inner">
-						<h3>Đăng nhập để vào</h3>
+						<h3>Đăng nhập</h3>
 						<?php
 
 							if(isset($_SESSION['user'])){
 								extract($_SESSION['user']);
+								// var_dump($user);}
 						?>
 						
 							<!-- <div class="col-md-12 form-group">
@@ -68,7 +69,7 @@
 								<div class="creat_account form-check">
                                     <div class="col-md-12 form-group">
 									    <input type="checkbox" id="invalidCheck"  class="form-check-input" required>
-									    <label for="f-option2" class="form-check-label">Giữ tôi luôn đăng nhập</label>
+									    <label for="f-option2" class="form-check-label">Nhớ mật khẩu</label>
                                         <div class="invalid-feedback">Vui lòng xác nhận rằng tất cả dữ liệu đã nhập đều chính xác!</div>
                                     </div>
 								</div>

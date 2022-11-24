@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 18, 2022 lúc 05:03 PM
+-- Thời gian đã tạo: Th10 21, 2022 lúc 11:03 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -45,9 +45,18 @@ CREATE TABLE `chi_tiet_don_hang` (
   `ma_ctdh` int(11) NOT NULL,
   `ma_dh` int(10) NOT NULL,
   `ma_hh` int(11) NOT NULL,
+  `ten_sp` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `tongtien` int(10) NOT NULL,
   `size` int(11) NOT NULL,
   `quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `chi_tiet_don_hang`
+--
+
+INSERT INTO `chi_tiet_don_hang` (`ma_ctdh`, `ma_dh`, `ma_hh`, `ten_sp`, `tongtien`, `size`, `quantity`) VALUES
+(1, 1, 114, '', 150000, 40, 2);
 
 -- --------------------------------------------------------
 
@@ -62,12 +71,19 @@ CREATE TABLE `don_hang` (
   `nguoi_nhan` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `sdt_nhan` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `dia_chi_nhan` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `payment` tinyint(1) NOT NULL,
-  `trang_thai_tt` tinyint(1) NOT NULL,
-  `trang_thai_gh` tinyint(1) NOT NULL DEFAULT 0,
+  `payment` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `trang_thai_tt` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `trang_thai_gh` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `ghi_chu_kh` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ghi_chu_ad` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `don_hang`
+--
+
+INSERT INTO `don_hang` (`ma_dh`, `ma_tk`, `ngay_dat`, `nguoi_nhan`, `sdt_nhan`, `dia_chi_nhan`, `payment`, `trang_thai_tt`, `trang_thai_gh`, `ghi_chu_kh`, `ghi_chu_ad`) VALUES
+(1, 128, '2022-11-18', 'Hồ Viết Thuận', '0335923884', 'Quận 12', 'Tiền mặt', 'Chưa thanh toán', 'Đang giao hàng', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -93,10 +109,10 @@ CREATE TABLE `hang_hoa` (
 --
 
 INSERT INTO `hang_hoa` (`id`, `name`, `price_old`, `price_new`, `img`, `mota`, `iddm`, `luotxem`, `trang_thai`, `special`) VALUES
-(101, 'Ralph Sampson', 100.00, 0.00, 'puma-Ralph Sampson.jpg', 'fdf', 38, 0, 1, 0),
+(101, 'Ralph Sampson', 100.00, 0.00, 'puma-Ralph Sampson.jpg', 'Mua Giày Puma Ralph Sampson MC \'Grey Violet\' 374066-02 chính hãng 100% có sẵn tại Authentic Shoes. Giao hàng miễn phí trong 1 ngày. Cam kết đền tiền X5 nếu phát hiện Fake. Đổi trả miễn phí size. Mua ngay', 38, 0, 1, 1),
 (103, 'Vans Classic Slip On ', 57.00, 0.00, 'vans-classic-slipon.jpg', 'Classic Slipon', 39, 0, 1, 0),
 (104, 'ADIDAS HYPERTURF', 167.00, 0.00, 'adidas-HYPERTURF.jpg', 'HYPERTURF', 37, 0, 1, 0),
-(105, 'Puma RS-X', 130.00, 0.00, 'puma-RS-X.jpg', 'Mẫu Sneaker Puma RSX là một trong những thiết kế huyền thoại của Puma. Đây là mẫu giày Chunky được đánh giá là xuất sắc nhất của hãng, thu hút được sự yêu thích của đông đảo giới trẻ. Đây thực sự là mẫu giày đã góp phần làm nên tên tuổi của Puma như hiện tại.', 38, 0, 1, 1),
+(105, 'Puma RS-X', 130.00, 0.00, 'puma-RS-X.jpg', 'Mẫu Sneaker Puma RSX là một trong những thiết kế huyền thoại của Puma. Đây là mẫu giày Chunky được đánh giá là xuất sắc nhất của hãng, thu hút được sự yêu thích của đông đảo giới trẻ. Đây thực sự là mẫu giày đã góp phần làm nên tên tuổi của Puma như hiện tại.', 38, 0, 1, 0),
 (106, 'Jordan Series Mid', 99.00, 0.00, 'Jordan Series Mid.jpg', 'Nike Jordan Series Mid', 36, 0, 1, 0),
 (112, 'VANS VN0A5', 83.00, 0.00, 'vans VN0A5KRDBZW.jpg', 'Vans VN0A5KRDBZW thuộc dòng Authentic Collage Black/White mới nhất trong bộ sưu tập của thương hiệu Vans', 39, 0, 1, 0),
 (113, 'SuperStart', 99.00, 0.00, 'superstart1.jpg', 'z', 37, 0, 1, 0),
@@ -265,13 +281,13 @@ ALTER TABLE `binh_luan`
 -- AUTO_INCREMENT cho bảng `chi_tiet_don_hang`
 --
 ALTER TABLE `chi_tiet_don_hang`
-  MODIFY `ma_ctdh` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ma_ctdh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `don_hang`
 --
 ALTER TABLE `don_hang`
-  MODIFY `ma_dh` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ma_dh` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
 
 --
 -- AUTO_INCREMENT cho bảng `hang_hoa`

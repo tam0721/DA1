@@ -55,9 +55,10 @@
 							<li class="nav-item active"><a class="nav-link" href="index.php">Trang chủ</a></li>
 							<li class="nav-item"><a class="nav-link" href="index.php?act=lisdm">Danh mục</a></li>
 							<li class="nav-item"><a class="nav-link" href="index.php?act=listsp">Sản phẩm</a></li>
-							<li class="nav-item"><a class="nav-link" href="index.php?act=addimg">Hình ảnh</a></li>
+							<!-- <li class="nav-item"><a class="nav-link" href="index.php?act=addimg">Hình ảnh</a></li> -->
 							<li class="nav-item"><a class="nav-link" href="index.php?act=dskh">Tài khoản</a></li>
 							<li class="nav-item"><a class="nav-link" href="index.php?act=binhluan">Bình luận</a></li>
+							<li class="nav-item"><a class="nav-link" href="index.php?act=donhanglist">Đơn hàng</a></li>
 							<li class="nav-item"><a class="nav-link" href="index.php?act=listtt">Blog</a></li>
 							<li class="nav-item"><a class="nav-link" href="index.php?act=thongke">Thống kê</a></li>
 						</ul>

@@ -46,14 +46,14 @@
             <thead class="thead-light">
                 <tr>
                     <th></th>
-                    <th>Mã sản phẩm</th>
+                    <th style="max-width:80px">Mã sản phẩm</th>
                     <th>Tên sản phẩm</th>
                     <th>Hình ảnh</th>
                     <th>Giá</th>
                     <th>Giá giảm</th>
-                    <th>Mô tả</th>
+                    <th style="width:400px">Mô tả</th>
                     <th>View</th>
-                    <th>Cài đặt</th>
+                    <th style="width:150px">Cài đặt</th>
                 </tr>
             </thead>
             <?php
