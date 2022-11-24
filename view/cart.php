@@ -73,7 +73,7 @@
                                                 </div>
                                                 <div class="product_count">
                                                     <a href="'.$upd.'">
-                                                        +
+                                                        
                                                     </a>
                                                 </div>
                                             </td>
