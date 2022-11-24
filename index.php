@@ -7,13 +7,15 @@
     include 'model/sanpham.php';
     include 'model/danhmuc.php';
     include 'model/tintuc.php';
+    include 'model/cart.php';
     include 'var.php';
-    $_SESSION['giohang']=[];
-    if(isset($_SESSION['giohang'])) $_SESSION['giohang']!=[];
+
     $spnew =loadall_sanpham_home();
     $ttnew=loadall_tintuc_home();
     $dsdm =loadall_danhmuc();
     $spdacbiet=get_product_special();
+    $cart=loadall_giohang();
+    $note = 0;
     if(isset($_GET['act'])){
         $act = $_GET['act'];
         switch ($act) {
@@ -21,13 +23,35 @@
                 include 'view/blog.php';
                 break;
             case 'cart':
-                include 'view/cart.php';
+                include "view/cart.php";
+                // if(isset($_SESSION['giohang'])&&(count($_SESSION['giohang'])>0)){
+                    
+                //     include "view/cart.php";
+                // }else {
+                //     echo ' 
+                //     <a href="index.php?act=category" style="color: red; margin:40em 20em ; font-size: 30px">GIỎ HÀNG TRỐNG</a>
+                    
+                //     <script>    
+                //         alert:"Giỏ hàng Trống" 
+                //     </script>';
+                // }    
                 break;
             case 'cartprocess':
-                if(isset($_GET['id'])){
-                    $load1sp =loadone_sanpham($_GET['id']);
-                }
                 include 'view/cartprocess.php';
+                break;
+            case 'cartupdate':
+                include 'view/cartprocess.php';
+                break;
+            case 'delcart':
+                // if (isset($_GET['idsp'])&&($_GET['idsp']>=0)){
+                //     $id=$_GET['idsp'];
+                //     if(isset($id)){
+                //         // $id = $_POST['id'];
+                //           // if(isset($_POST['id']) && $_POST['id'] == $_GET['id']){
+                //             array_splice($_SESSION['giohang'],$_GET['id'],1);
+                //           }
+                // }
+                    include 'view/delcart.php';
                 break;
             case 'category':
                 if(isset($_GET['iddm']) && $_GET['iddm']!=""){

@@ -45,6 +45,11 @@
         $sanpham = pdo_query($sql);
         return $sanpham;
     }
+    function giohang_sanpham($ma_hh){
+        $sql = "SELECT * FROM hang_hoa hh WHERE hh.id = ".$ma_hh;
+        $sanpham = pdo_query($sql);
+        return $sanpham;
+    }
     // end
     // function loadone_sanpham($id){
     //     $sql = "SELECT * from hang_hoa WHERE id=".$id;

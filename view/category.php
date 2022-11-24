@@ -13,6 +13,12 @@
 			</div>
 		</div>
 	</section>
+	<?php
+		if($note ==1)
+		echo "
+		<script>alert('Da them vao gio hang');</script>";
+
+	?>
 	<!-- End Banner Area -->
 	<div class="container">
 		<div class="row">
@@ -108,27 +114,33 @@
 								$price_1 = $price_old;
 								if ($price_new > 0) $price_1 = $price_new;
 								$sphct="index.php?act=sanphamct&idsp=".$id;
-								$cartid="index.php?act=cart&id=".$id;
 								echo '
-								<div class="col-lg-4 col-md-6">
-									<div class="single-product">
-										<a href="'.$sphct.'">
-											<img class="img-fluid" src="'.$hinh.'" alt="" style="height:250px; width:250px;">
-										</a>
-										<div class="product-details">
+									<div class="col-lg-4 col-md-6">
+										<div class="single-product">
 											<a href="'.$sphct.'">
-												<h6>'.$name.'</h6>
+												<img class="img-fluid" src="'.$hinh.'" alt="" style="height:250px; width:250px;">
 											</a>
+											<div class="product-details">
+												<h6>'.$name.'</h6>
 											<div class="price">
 												<h6>$'.$price_1.'</h6>
 											</div>
+											
+											<form action="index.php?act=cartprocess" method="post">
+													<input type="hidden" name="id" value="'.$id.'">
+													<input type="hidden" name="name" value="'.$name.'">
+													<input type="hidden" name="price" value="'.$price_1.'">
+													<input type="hidden" name="img" value="'.$img.'">
+													<input type="hidden" name="soluong" value="1">
 											<div class="prd-bottom">
-			
-												<a href="'.$cartid.'" class="social-info">
+												<lable for="them" class="social-info">
 													<span class="ti-bag"></span>
-													<p class="hover-text">add to bag</p>
-												</a>
-												<a href="" class="social-info">
+													<p class="hover-text">
+														<input type="submit" name="addgiohang" id="them" value="Them vao gio" style="background: transparent;border: none !important;">
+													</p>
+												</lable>
+											</form>
+												<a href="#" class="social-info">
 													<span class="lnr lnr-heart"></span>
 													<p class="hover-text">Wishlist</p>
 												</a>
@@ -152,25 +164,33 @@
 							$price_1 = $price_old;
 							if ($price_new > 0) $price_1 = $price_new;
 							$sphct="index.php?act=sanphamct&idsp=".$id;
-							$cartid="index.php?act=cartprocess&id=".$id;
 							echo '
-							<div class="col-lg-4 col-md-6">
-								<div class="single-product">
-									<a href="'.$sphct.'">
-										<img class="img-fluid" src="'.$hinh.'" alt="" style="height:250px; width:250px;">
-									</a>
-									<div class="product-details">
-										<h6>'.$name.'</h6>
+								<div class="col-lg-4 col-md-6">
+									<div class="single-product">
+										<a href="'.$sphct.'">
+											<img class="img-fluid" src="'.$hinh.'" alt="" style="height:250px; width:250px;">
+										</a>
+										<div class="product-details">
+											<h6>'.$name.'</h6>
 										<div class="price">
 											<h6>$'.$price_1.'</h6>
 										</div>
+										
+										<form action="index.php?act=cartprocess" method="post">
+												<input type="hidden" name="id" value="'.$id.'">
+												<input type="hidden" name="name" value="'.$name.'">
+												<input type="hidden" name="price" value="'.$price_1.'">
+												<input type="hidden" name="img" value="'.$img.'">
+												<input type="hidden" name="soluong" value="1">
 										<div class="prd-bottom">
-		
-											<a href="'.$cartid.'" class="social-info">
+											<lable for="them" class="social-info">
 												<span class="ti-bag"></span>
-												<p class="hover-text">add to bag</p>
-											</a>
-											<a href="" class="social-info">
+												<p class="hover-text">
+													<input type="submit" name="addgiohang" id="them" value="Them vao gio" style="background: transparent;border: none !important;">
+												</p>
+											</lable>
+										</form>
+											<a href="#" class="social-info">
 												<span class="lnr lnr-heart"></span>
 												<p class="hover-text">Wishlist</p>
 											</a>
@@ -188,9 +208,11 @@
 							</div>';
 						}
 						
-					?>
+					?>		
+				
 					</div>
 				</section>
+			
 				<!-- End Best Seller -->
 				<!-- Start Filter Bar -->
 				<div class="filter-bar d-flex flex-wrap align-items-center">
