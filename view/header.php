@@ -98,7 +98,9 @@
 								
 								
             			?>
-							<li class="nav-link"><a href="index.php?act=cart" class="cart"><span class="ti-bag"></span></a></li>
+							<li class="nav-link"><a href="index.php?act=cart" class="cart"><span class="ti-bag"></span></a>
+                                <span class="badge text-secondary rounded-circle" style="padding-bottom: 2px;"></span>
+							</li>
 						<?php } ?>
 							<li class="nav-link">
 								<button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>

@@ -91,7 +91,7 @@
                                     <td>
                                         <?php
                                             echo '
-                                            <a href="'.$up.'"><input type="submit" name="upgiohang" class="gray_btn" value="Cập nhập giỏ hàng"></a>
+                                                <input type="submit" name="upgiohang" class="gray_btn" value="Cập nhập giỏ hàng">
                                                 </form>
                                             ';
                                         ?>

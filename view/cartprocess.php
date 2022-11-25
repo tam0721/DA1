@@ -14,18 +14,17 @@
                  break;
              }
              $i++;
-        $ma_hh=$_POST['id'];
-        $ten=$_POST['name'];
-        $gia=$_POST['price'];
-        $hinh=$_POST['img'];
-        $soluong=$_POST['soluong'];
+
         }
         if($fg==0){
+            $ma_hh=$_POST['id'];
+            $ten=$_POST['name'];
+            $gia=$_POST['price'];
+            $hinh=$_POST['img'];
+            $soluong=$_POST['soluong'];
             insert_giohang($ma_hh,$ten,$gia,$hinh,$soluong);
             header('location: index.php?act=category');
         }
     }
-
-
 
 ?>
