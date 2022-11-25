@@ -99,18 +99,22 @@
 								
             			?>
 						<?php
-							if(isset($cart)&& $dem=sizeof($cart,1)>0){
+							if(isset($_SESSION['giohang'])&& count($_SESSION['giohang'],1)>0){
+								$dem = count($_SESSION['giohang']);
 								echo '
 									<li class="nav-link"><a href="index.php?act=cart" class="cart"><span class="ti-bag"></span></a>
-										<span class="badge text-secondary rounded-circle" style="padding-bottom: 2px;">3</span>
+										<span class="badge text-secondary rounded-circle" style="padding-bottom: 2px;">'.$dem.'</span>
 									</li>
-								';}else{
+								
+								';
+							}else{
 								echo '
 									<li class="nav-link"><a href="index.php?act=cart" class="cart"><span class="ti-bag"></span></a>
-										<span class="badge text-secondary rounded-circle" style="padding-bottom: 2px;">3</span>
+										<span class="badge text-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
 									</li>
 								';	
 								}
+							
 						?>
 						<?php } ?>
 							<li class="nav-link">

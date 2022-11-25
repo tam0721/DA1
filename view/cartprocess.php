@@ -14,7 +14,6 @@
                  break;
              }
              $i++;
-
         }
         if($fg==0){
             $ma_hh=$_POST['id'];
@@ -23,6 +22,8 @@
             $hinh=$_POST['img'];
             $soluong=$_POST['soluong'];
             insert_giohang($ma_hh,$ten,$gia,$hinh,$soluong);
+            $cartsp=[$ma_hh,$ten,$gia,$hinh,$soluong];
+            array_push($_SESSION['giohang'],$cartsp);
             header('location: index.php?act=category');
         }
     }

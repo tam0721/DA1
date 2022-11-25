@@ -13,7 +13,9 @@
         </div>
     </section>
     <!-- End Banner Area -->
-    
+    <!-- <?php 
+        var_dump($_SESSION['giohang']);
+    ?> -->
     <!--================Cart Area =================-->
     <section class="cart_area">
         <div class="container">
