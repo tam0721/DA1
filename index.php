@@ -9,12 +9,12 @@
     include 'model/tintuc.php';
     include 'model/cart.php';
     include 'var.php';
-
     $spnew =loadall_sanpham_home();
     $ttnew=loadall_tintuc_home();
     $dsdm =loadall_danhmuc();
     $spdacbiet=get_product_special();
     $cart=loadall_giohang();
+    if(!isset($_SESSION['giohang'])) $_SESSION['giohang'] = [];
     $note = 0;
     if(isset($_GET['act'])){
         $act = $_GET['act'];
@@ -43,14 +43,14 @@
                 include 'view/cartprocess.php';
                 break;
             case 'delcart':
-                // if (isset($_GET['idsp'])&&($_GET['idsp']>=0)){
-                //     $id=$_GET['idsp'];
-                //     if(isset($id)){
-                //         // $id = $_POST['id'];
-                //           // if(isset($_POST['id']) && $_POST['id'] == $_GET['id']){
-                //             array_splice($_SESSION['giohang'],$_GET['id'],1);
-                //           }
-                // }
+                if (isset($_GET['idsp'])&&($_GET['idsp']>=0)){
+                    $id=$_GET['idsp'];
+                    if(isset($id)){
+                        // $id = $_POST['id'];
+                          // if(isset($_POST['id']) && $_POST['id'] == $_GET['id']){
+                            array_splice($_SESSION['giohang'],$_GET['id'],1);
+                          }
+                }
                     include 'view/delcart.php';
                 break;
             case 'category':

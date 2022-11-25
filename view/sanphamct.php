@@ -74,7 +74,7 @@
                         <?php
                                echo'
                                <form action="index.php?act=cartprocess" method="post">
-                                <input type="number" value="1"  name="soluong" step="1">
+                                <input type="number" value="1"  name="soluong" step="1" min="1" max="99999">
                                 <input type="hidden" name="id" value="'.$sanpham[0]['id'].'">
                                 <input type="hidden" name="name" value="'.$sanpham[0]['name'].'">
                                 <input type="hidden" name="price" value="'.$sanpham[0]['price_old'].'">

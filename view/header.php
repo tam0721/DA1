@@ -82,37 +82,41 @@
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Thành viên</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="index.php?act=login">Đăng nhập</a></li>
-									<li class="nav-item"><a class="nav-link" href="index.php?act=signup">Đăng ký</a></li>
-									<li class="nav-item"><a class="nav-link" href="index.php?act=elements">Elements</a></li>
+									<?php
+											if(isset($_SESSION['user'])&&($_SESSION['user']!="")){
+												echo'<li class="nav-item"><a href="index.php?act=userinfo" class="nav-link"><span style="color:red;font-weight:800;"> '.$_SESSION['user'].'</span></a></li>';
+												echo'<li class="nav-item"><a href="index.php?act=capnhat_tk" class="nav-link"><span>Cập nhật</span></a></li>';
+												echo'<li class="nav-item"><a href="index.php?act=thoat" class="nav-link"><span>Đăng xuất</span></a></li>';
+											}else{
+									
+									
+										?>
+											<li class="nav-item"><a class="nav-link" href="index.php?act=login">Đăng nhập</a></li>
+											<li class="nav-item"><a class="nav-link" href="index.php?act=signup">Đăng ký</a></li>	
+										<?php } ?>
 								</ul>
 							</li>
 							<li class="nav-item"><a class="nav-link" href="index.php?act=contact">Liên hệ</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
-						<?php
-							if(isset($_SESSION['user'])&&($_SESSION['user']!="")){
-								echo'<li class="nav-link"><a href="index.php?act=userinfo" class="nav-item"><span style="color:red;font-weight:800;"> '.$_SESSION['user'].'</span></a></li>';
-								echo'<li class="nav-link"><a href="index.php?act=thoat" class="nav-item"><span>Đăng xuất</span></a></li>';
-							}else{
+							<?php
+								if(isset($_SESSION['giohang'])&& count($_SESSION['giohang'],1)>0){
+									$dem = count($_SESSION['giohang']);
+									echo '
+										<li class="nav-link"><a href="index.php?act=cart" class="cart"><span class="ti-bag"></span></a>
+											<span class="badge text-secondary rounded-circle" style="padding-bottom: 2px;">'.$dem.'</span>
+										</li>
+									
+									';
+								}else{
+									echo '
+										<li class="nav-link"><a href="index.php?act=cart" class="cart"><span class="ti-bag"></span></a>
+											<span class="badge text-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+										</li>
+									';	
+									}
 								
-								
-            			?>
-						<?php
-							if(isset($cart)&& $dem=sizeof($cart,1)>0){
-								echo '
-									<li class="nav-link"><a href="index.php?act=cart" class="cart"><span class="ti-bag"></span></a>
-										<span class="badge text-secondary rounded-circle" style="padding-bottom: 2px;">3</span>
-									</li>
-								';}else{
-								echo '
-									<li class="nav-link"><a href="index.php?act=cart" class="cart"><span class="ti-bag"></span></a>
-										<span class="badge text-secondary rounded-circle" style="padding-bottom: 2px;">3</span>
-									</li>
-								';	
-								}
-						?>
-						<?php } ?>
+							?>
 							<li class="nav-link">
 								<button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
 							</li>

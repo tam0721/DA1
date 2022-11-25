@@ -13,12 +13,98 @@
         </div>
     </section>
     <!-- End Banner Area -->
-    
+    <!-- <?php 
+        var_dump($_SESSION['giohang']);
+    ?> -->
     <!--================Cart Area =================-->
     <section class="cart_area">
         <div class="container">
             <div class="cart_inner">
-                       
+                <?php
+                    if(count($_SESSION['giohang']) ==0){
+                        echo'
+                        <div class="notice info"><p>This is a an info notice, it provides feedback of a neutral nature to the user.</p></div>
+                        ';
+                    
+                ?>
+                <style>
+                    body {
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  color: #34495e;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6em;
+}
+
+p {
+  margin: 0;
+}
+
+.notice {
+  position: relative;
+  margin: 1em;
+  background: #F9F9F9;
+  padding: 1em 1em 1em 2em;
+  border-left: 4px solid #DDD;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
+}
+
+.notice:before {
+  position: absolute;
+  top: 50%;
+  margin-top: -17px;
+  left: -17px;
+  background-color: #DDD;
+  color: #FFF;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+  font-family: Georgia;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.info {
+  border-color: #0074D9;
+}
+
+.info:before {
+  content: "i";
+  background-color: #0074D9;
+}
+
+.success {
+  border-color: #2ECC40;
+}
+
+.success:before {
+  content: "√";
+  background-color: #2ECC40;
+}
+
+.warning {
+  border-color: #FFDC00;
+}
+
+.warning:before {
+  content: "!";
+  background-color: #FFDC00;
+}
+
+.error {
+  border-color: #FF4136;
+}
+
+.error:before {
+  content: "X";
+  background-color: #FF4136;
+}
+
+                </style>
+                <?php 
+                    }else{
+                ?>
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -36,97 +122,99 @@
                             // ob_start();
                             ?>
                             <?php
-                                $all =0;
-                                foreach($cart as $sp){
-                                    extract($sp);
-                                    if($ma_hh)
-                                    $tong = $so_luong * $price;
-                                    $ttien = 0;
-                                    $ttien += $tong;
-                                    $all +=$ttien;
-                                    $del="index.php?act=delcart&idsp=".$ma_hh;
-                                    $upd="index.php?act=cart&id=".$ma_hh;
-                                    $up="index.php?act=cartupdate&id=".$ma_hh;
-                                    $sphct="index.php?act=sanphamct&idsp=".$ma_hh;
-                                    echo '
-                                        <form action="index.php?act=cartupdate" method="post">
-                                        <tr>
-                                            <td>
-                                                <div class="media">
-                                                    <div class="d-flex">
-                                                        <a href="'.$sphct.'">
-                                                            <img src="upload/'.$img.'" alt="">
+                                
+                                    $all =0;
+                                    foreach($cart as $sp){
+                                        extract($sp);
+                                        if($ma_hh)
+                                        $tong = $so_luong * $price;
+                                        $ttien = 0;
+                                        $ttien += $tong;
+                                        $all +=$ttien;
+                                        $del="index.php?act=delcart&idsp=".$ma_hh;
+                                        $upd="index.php?act=cart&id=".$ma_hh;
+                                        $up="index.php?act=cartupdate&id=".$ma_hh;
+                                        $sphct="index.php?act=sanphamct&idsp=".$ma_hh;
+                                        echo '
+                                            <form action="index.php?act=cartupdate" method="post">
+                                            <tr>
+                                                <td>
+                                                    <div class="media">
+                                                        <div class="d-flex">
+                                                            <a href="'.$sphct.'">
+                                                                <img src="upload/'.$img.'" alt="">
+                                                            </a>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <p>"'.$name.'"</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <h5>$'.number_format($price,2).'</h5>
+                                                </td>
+                                                <td>
+                                                    <div class="product_count">
+                                                        <input type="text" name="soluong" id="sst"  value="'.$so_luong.'" title="Quantity:"class="input-text qty">
+                                                        <input type="hidden" name="id" value="'.$ma_hh.'" class="input-text qty">
+                                                    </div>
+                                                    <div class="product_count">
+                                                        <a href="'.$upd.'">
+                                                            
                                                         </a>
                                                     </div>
-                                                    <div class="media-body">
-                                                        <p>"'.$name.'"</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <h5>$'.number_format($price,2).'</h5>
-                                            </td>
-                                            <td>
-                                                <div class="product_count">
-                                                    <input type="text" name="soluong" id="sst"  value="'.$so_luong.'" title="Quantity:"class="input-text qty">
-                                                    <input type="hidden" name="id" value="'.$ma_hh.'" class="input-text qty">
-                                                </div>
-                                                <div class="product_count">
-                                                    <a href="'.$upd.'">
-                                                        
-                                                    </a>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <h5>$'.number_format($ttien,2).'</h5>
-                                            </td>
-                                            <td>
-                                                <h5><a href="'.$del.'">XÓA</a></h5>
-                                            </td>
-                                        </tr>
-                                    ';  
-                                } 
-                            ?>
-                                <tr class="bottom_button">
-                                    <td>
-                                        <?php
-                                            echo '
-                                                <input type="submit" name="upgiohang" class="gray_btn" value="Cập nhập giỏ hàng">
-                                                </form>
-                                            ';
-                                        ?>
+                                                </td>
+                                                <td>
+                                                    <h5>$'.number_format($ttien,2).'</h5>
+                                                </td>
+                                                <td>
+                                                    <h5><a href="'.$del.'">XÓA</a></h5>
+                                                </td>
+                                            </tr>
+                                        ';  
+                                    } 
+                                ?>
+                                    <tr class="bottom_button">
+                                        <td>
+                                            <?php
+                                                echo '
+                                                    <input type="submit" name="upgiohang" class="gray_btn" value="Cập nhập giỏ hàng">
+                                                    </form>
+                                                ';    
+                                            ?>
+                                        </td>
+                                
+                                        <td>
                                     </td>
-                            
                                     <td>
-                                </td>
-                                <td>
 
-                                </td>
-                                <td>
-                                    <div class="cupon_text d-flex align-items-center">
-                                        <input type="text" placeholder="Coupon Code">
-                                        <a class="primary-btn" href="#">Nhập</a>
-                                        <a class="gray_btn" href="#">Đóng</a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    <h5>Thành tiền</h5>
-                                </td>
-                                <?php 
-                                    echo '
-                                    <td>
-                                        <h5>$'.number_format($all,2).'</h5>
                                     </td>
-                                    
-                                    ';
+                                    <td>
+                                        <div class="cupon_text d-flex align-items-center">
+                                            <input type="text" placeholder="Coupon Code">
+                                            <a class="primary-btn" href="#">Nhập</a>
+                                            <a class="gray_btn" href="#">Đóng</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+                                        <h5>Thành tiền</h5>
+                                    </td>
+                                    <?php 
+                                        echo '
+                                        <td>
+                                            <h5>$'.number_format($all,2).'</h5>
+                                        </td>
+                                        
+                                        ';
+                                
                                 ?>
                             </tr>
                             <!-- <tr class="shipping_area">
@@ -242,21 +330,4 @@
                                         <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
                                             class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button> -->
                                     </div>
-                                    
-                                    
-                        <!-- <?php 
-                            //     echo '  
-                            //             </td>
-
-                            //             <td>
-                            //                 <h5>$'.number_format($tong,2).'</h5>
-                            //             </td>
-                            //             <td>
-                            //                 <h5><a href="'.$del.'">XÓA</a></h5>
-
-                            //             </td>
-                            //         </tr>
-                            //     ';
-                            // }
-                         
-                        ?> -->
+                        <?php }?>
