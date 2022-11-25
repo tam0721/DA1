@@ -135,18 +135,16 @@
 											<div class="prd-bottom">
 												<lable for="them" class="social-info">
 													<span class="ti-bag"></span>
-<<<<<<< HEAD
+
 													<p class="hover-text">
 														<input type="submit" name="addgiohang" id="them" value="Them vao gio" style="background: transparent;border: none !important;">
 													</p>
 												</lable>
 											</form>
 												<a href="#" class="social-info">
-=======
 													<p class="hover-text">Thêm giỏ</p>
 												</a>
 												<a href="" class="social-info">
->>>>>>> 08254aa56eed29616a6087f0cbdaedfec17a8934
 													<span class="lnr lnr-heart"></span>
 													<p class="hover-text">Yêu thích</p>
 												</a>
