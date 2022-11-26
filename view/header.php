@@ -98,9 +98,20 @@
 								
 								
             			?>
-							<li class="nav-link"><a href="index.php?act=cart" class="cart"><span class="ti-bag"></span></a>
-                                <span class="badge text-secondary rounded-circle" style="padding-bottom: 2px;"></span>
-							</li>
+						<?php
+							if(isset($cart)&& $dem=sizeof($cart,1)>0){
+								echo '
+									<li class="nav-link"><a href="index.php?act=cart" class="cart"><span class="ti-bag"></span></a>
+										<span class="badge text-secondary rounded-circle" style="padding-bottom: 2px;">3</span>
+									</li>
+								';}else{
+								echo '
+									<li class="nav-link"><a href="index.php?act=cart" class="cart"><span class="ti-bag"></span></a>
+										<span class="badge text-secondary rounded-circle" style="padding-bottom: 2px;">3</span>
+									</li>
+								';	
+								}
+						?>
 						<?php } ?>
 							<li class="nav-link">
 								<button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
