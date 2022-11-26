@@ -40,7 +40,7 @@
                 include 'view/cartprocess.php';
                 break;
             case 'cartupdate':
-                include 'view/cartprocess.php';
+                include 'view/cartupdate.php';
                 break;
             case 'delcart':
                 if (isset($_GET['idsp'])&&($_GET['idsp']>=0)){

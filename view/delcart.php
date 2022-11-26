@@ -1,6 +1,6 @@
  <?php 
-session_start();
-ob_start();
+// session_start();
+// ob_start();
   //  if(isset($_GET['idsp'])){
   //   $id = $_POST['id'];
   //     if(isset($_POST['id']) && $_POST['id'] == $_GET['id']){

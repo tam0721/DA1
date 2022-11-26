@@ -1,8 +1,8 @@
 <?php 
 
-function insert_giohang($ma_hh,$ten,$gia,$hinh,$soluong){
-    $sql = "INSERT INTO gio_hang (ma_hh,name,price,img,so_luong)
-    VALUES ('$ma_hh','$ten','$gia','$hinh','$soluong')";
+function insert_giohang($ma_hh,$ten,$gia,$hinh,$soluong,$size){
+    $sql = "INSERT INTO gio_hang (ma_hh,name,price,img,so_luong,size)
+    VALUES ('$ma_hh','$ten','$gia','$hinh','$soluong','$size')";
     pdo_execute($sql);
 }
 
