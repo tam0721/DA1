@@ -196,7 +196,12 @@
 									<div class="product-details">
 										<h6>'.$name.'</h6>
 										<div class="price">
+<<<<<<< HEAD
 											<h6>$'.$price_1.'</h6>
+=======
+											<h6>$'.$price_new.'</h6>
+											<h6 class="l-through">$'.$price_old.'</h6>
+>>>>>>> cba0514120042a38028e4bfa98c0d8a631814a09
 										</div>
 										<form action="index.php?act=cartprocess" method="post">
 											<input type="hidden" name="id" value="'.$id.'">

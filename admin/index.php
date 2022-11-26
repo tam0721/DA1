@@ -331,7 +331,8 @@
                     if (isset($_GET['ma_dh'])&&($_GET['ma_dh']>0)) {
                         delete_bill($_GET['ma_dh']);
                     }
-                    $listbill= loadall_bill("", 0);
+                    $listbill= loadall_bill();
+                    // $listbill= loadall_bill("", 0);
                     include "bill/list.php";
                 break;
                 case 'listchitietdh':
