@@ -196,8 +196,8 @@
 									<div class="product-details">
 										<h6>'.$name.'</h6>
 										<div class="price">
-											<h6>$'.$price_1.'</h6>
-											
+											<h6>$'.$price_new.'</h6>
+											<h6 class="l-through">$'.$price_old.'</h6>
 										</div>
 										<div class="prd-bottom">
 		
