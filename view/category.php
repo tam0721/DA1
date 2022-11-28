@@ -123,19 +123,20 @@
 											<div class="product-details">
 												<h6>'.$name.'</h6>
 											<div class="price">
-												<h6>$'.$price_1.'</h6>
+												<h6>$'.$price_new.'</h6>
+												<h6 class="l-through">$'.$price_old.'</h6>
 											</div>
 											
 											<form action="index.php?act=cartprocess" method="post">
 													<input type="hidden" name="id" value="'.$id.'">
 													<input type="hidden" name="name" value="'.$name.'">
-													<input type="hidden" name="price" value="'.$price_1.'">
+													<input type="hidden" name="price" value="'.$price_new.'">
 													<input type="hidden" name="img" value="'.$img.'">
 													<input type="hidden" name="soluong" value="1">
 											<div class="prd-bottom">
 												<lable for="them" class="social-info">
 													<span class="ti-bag"></span>
-
+<<<<<<< HEAD
 													<p class="hover-text">
 														<input type="submit" name="addgiohang" id="them" value="Them vao gio" style="background: transparent;border: none !important;">
 													</p>
@@ -145,6 +146,7 @@
 													<p class="hover-text">Thêm giỏ</p>
 												</a>
 												<a href="" class="social-info">
+>>>>>>> 08254aa56eed29616a6087f0cbdaedfec17a8934
 													<span class="lnr lnr-heart"></span>
 													<p class="hover-text">Yêu thích</p>
 												</a>
@@ -177,13 +179,14 @@
 										<div class="product-details">
 											<h6>'.$name.'</h6>
 										<div class="price">
-											<h6>$'.$price_1.'</h6>
+											<h6>$'.$price_new.'</h6>
+											<h6 class="l-through">$'.$price_old.'</h6>
 										</div>
 										
 										<form action="index.php?act=cartprocess" method="post">
 												<input type="hidden" name="id" value="'.$id.'">
 												<input type="hidden" name="name" value="'.$name.'">
-												<input type="hidden" name="price" value="'.$price_1.'">
+												<input type="hidden" name="price" value="'.$price_new.'">
 												<input type="hidden" name="img" value="'.$img.'">
 												<input type="hidden" name="soluong" value="1">
 										<div class="prd-bottom">

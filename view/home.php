@@ -197,8 +197,17 @@
 										<h6>'.$name.'</h6>
 										<div class="price">
 											<h6>$'.$price_1.'</h6>
-											
+
+											<h6>$'.$price_new.'</h6>
+											<h6 class="l-through">$'.$price_old.'</h6>
+
 										</div>
+										<form action="index.php?act=cartprocess" method="post">
+											<input type="hidden" name="id" value="'.$id.'">
+											<input type="hidden" name="name" value="'.$name.'">
+											<input type="hidden" name="price" value="'.$price_1.'">
+											<input type="hidden" name="img" value="'.$img.'">
+											<input type="hidden" name="soluong" value="1">
 										<div class="prd-bottom">
 		
 											<a href="'.$sphct.'" class="social-info">
