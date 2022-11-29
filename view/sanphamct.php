@@ -181,6 +181,7 @@
                                 }
                             </script>
                         </form>
+<<<<<<< HEAD
                         <button class="btn-minus" id="minus" onclick="handleMinus()"><i class="fa-solid fa-minus"></i></button>
 >>>>>>> 02bbc35f52719615351b07668263a5f8fb5ede72
                         <input type="number" value="1" id="amount">
@@ -192,6 +193,8 @@
 =======
                         </a>
 >>>>>>> 02bbc35f52719615351b07668263a5f8fb5ede72
+=======
+>>>>>>> 25bc2a29cc4ab4e45cd101a408e2defa326c4d5f
                     </div>
                 </div>
                 <div class="">

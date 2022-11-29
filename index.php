@@ -121,6 +121,19 @@
                 }
                 include 'view/signup.php';
                 break;
+            case 'quenmk':
+                if(isset($_POST['guiemail'])&&($_POST['guiemail'])){
+                    $email=$_POST['email'];
+                    $checkemail=checkemail($email);
+                    if(is_array($checkemail)){
+                        $thongbao="Mật khẩu của bạn là: ".$checkemail['pass'];
+                    } else {
+                        $thongbao="Email này không tồn tại!";
+                    }
+                    //header('Location:index.php?act=edit_taikhoan');
+                }
+                include "view/quenmk.php";
+                break;    
             case 'thoat':
                 unset($_SESSION['user']);
                 unset($_SESSION['iduser']);
