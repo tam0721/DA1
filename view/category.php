@@ -128,9 +128,21 @@
 											<div class="prd-bottom">
 												<a href="'.$sphct.'" class="social-info">
 													<span class="ti-bag"></span>
+<<<<<<< HEAD
 													<p class="hover-text"> Thêm vào giỏ </p>
+=======
+<<<<<<< HEAD
+													<p class="hover-text">
+														<input type="submit" name="addgiohang" id="them" value="Them vao gio" style="background: transparent;border: none !important;">
+													</p>
+												</lable>
+											</form>
+												<a href="#" class="social-info">
+													<p class="hover-text">Thêm giỏ</p>
+>>>>>>> 4b5b97bcab0bf75a3eda06f1f13b2c8358d11431
 												</a>
 												<a href="" class="social-info">
+>>>>>>> 08254aa56eed29616a6087f0cbdaedfec17a8934
 													<span class="lnr lnr-heart"></span>
 													<p class="hover-text">Yêu thích</p>
 												</a>

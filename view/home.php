@@ -197,6 +197,10 @@
 										<h6>'.$name.'</h6>
 										<div class="price">
 											<h6>$'.$price_1.'</h6>
+
+											<h6>$'.$price_new.'</h6>
+											<h6 class="l-through">$'.$price_old.'</h6>
+
 										</div>
 										<form action="index.php?act=cartprocess" method="post">
 											<input type="hidden" name="id" value="'.$id.'">

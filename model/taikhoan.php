@@ -54,6 +54,12 @@
         $kq = $stmt ->fetchAll();
         return $kq;
     }
+    function checkemail($email){
+        $sql= "select * from tai_khoan where email='".$email."'";
+        $kp=pdo_query_one($sql);
+        return $kp;
+    }
+
     // function getall_taikhoan(){
     //     $conn=pdo_get_connection();
     //     $stmt = $conn->prepare("SELECT * FROM tai_khoan");
