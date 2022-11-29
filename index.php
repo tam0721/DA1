@@ -37,6 +37,7 @@
                 // }    
                 break;
             case 'cartprocess':
+
                 include 'view/cartprocess.php';
                 break;
             case 'cartupdate':
@@ -49,7 +50,8 @@
                         // $id = $_POST['id'];
                           // if(isset($_POST['id']) && $_POST['id'] == $_GET['id']){
                             array_splice($_SESSION['giohang'],$_GET['id'],1);
-                          }
+                          }else
+                           unset($_SESSION['giohang']);
                 }
                     include 'view/delcart.php';
                 break;
