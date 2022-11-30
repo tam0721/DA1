@@ -1,9 +1,9 @@
 <?php 
 
-    function insert_binhluan($noidung,$idpro,$ngaybinhluan){
+    function insert_binhluan($noidung,$idpro,$user,$ngaybinhluan){
         // $sql = "INSERT INTO hang_hoa (name,price,img,mo_ta,iddm) VALUES ('$tensp','$giasp','$hinh','$mota','$iddm')";
-        $sql = "INSERT INTO binh_luan(noi_dung, idpro, ngay_bl)
-        VALUES ('$noidung' , '$idpro', '$ngaybinhluan')";
+        $sql = "INSERT INTO binh_luan(noi_dung, idpro, user, ngay_bl)
+        VALUES ('$noidung' , '$idpro', '$user', '$ngaybinhluan')";
         pdo_execute($sql);
     }
     function loadall_binhluan($idpro){
