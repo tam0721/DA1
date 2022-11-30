@@ -165,7 +165,7 @@
                         
                         <!-- <button class="btn-plus" id="plus" onclick="handlePlus()"><i class="fa-solid fa-plus"></i></button>  -->
                         
-<<<<<<< HEAD
+
                         <input type="submit" name="addgiohang" value="<?=$sanpham[0]['trang_thai']? " Đặt hàng":"Hết hàng"?>" <?=$sanpham[0]['trang_thai']? "":"disabled"?> class="btn btn-default border-0" style="margin:0px 0 15px 15px; width:120px; background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;">
 
                         
@@ -190,11 +190,10 @@
                             <input type="submit" value="<?=$sanpham[0]['trang_thai']? "Đặt hàng":"Hết hàng"?>" <?=$sanpham[0]['trang_thai']? "":"disabled"?> class="btn btn-default border-0" style="margin:0 0 15px 15px; width:120px; background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;">
 <<<<<<< HEAD
                         </a> -->
-=======
+
                         </a>
->>>>>>> 02bbc35f52719615351b07668263a5f8fb5ede72
-=======
->>>>>>> 25bc2a29cc4ab4e45cd101a408e2defa326c4d5f
+
+
                     </div>
                 </div>
                 <div class="">

@@ -72,4 +72,14 @@
         $sanpham = pdo_query($sql);
         return $sanpham;
      }
+    // function load_ten_dm($ma_loai){
+    //     if($ma_loai>0){
+    //         $sql="select * from loai where id=".$ma_loai;
+    //         $dm= pdo_query_one($sql);
+    //         extract($dm);
+    //         return $name;
+    //     }else{
+    //         return "";
+    //     }
+    // }
 ?>

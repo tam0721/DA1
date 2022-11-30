@@ -92,6 +92,12 @@
 						</select> -->
 					</div>
 					<div class="pagination">
+						<div>
+							<form action="index.php?act=sanpham" method="post">
+								<input type="text" name="kyw" id="">
+								<input type="submit" name="timkiem" value="Tìm kiếm">
+							</form>
+						</div>
 						<a href="#" class="prev-arrow"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></a>
 						<a href="#" class="active">1</a>
 						<a href="#">2</a>
@@ -136,7 +142,7 @@
 											<div class="prd-bottom">
 												<lable for="them" class="social-info">
 													<span class="ti-bag"></span>
-<<<<<<< HEAD
+
 													<p class="hover-text">
 														<input type="submit" name="addgiohang" id="them" value="Them vao gio" style="background: transparent;border: none !important;">
 													</p>
@@ -146,7 +152,7 @@
 													<p class="hover-text">Thêm giỏ</p>
 												</a>
 												<a href="" class="social-info">
->>>>>>> 08254aa56eed29616a6087f0cbdaedfec17a8934
+
 													<span class="lnr lnr-heart"></span>
 													<p class="hover-text">Yêu thích</p>
 												</a>

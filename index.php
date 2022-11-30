@@ -53,6 +53,20 @@
                 }
                     include 'view/delcart.php';
                 break;
+            // case 'sanpham':
+            //     if(isset($_POST['kyw'])&&($_POST['kyw']!="")){
+            //         $kyw=$_POST['kyw'];
+            //     }else{
+            //         $kyw="";
+            //     }
+            //     if(isset($_GET['ma_loai'])&&($_GET['ma_loai']>0)){
+            //         $ma_loai=$_GET['ma_loai'];
+            //     }else{
+            //         $ma_loai="";
+            //     }
+            //     $dssp=loadall_sanpham($kyw,$ma_loai);
+            //     $ten_loai=load_ten_dm($ma_loai);
+            //     include 'view/category.php';
             case 'category':
                 if(isset($_GET['iddm']) && $_GET['iddm']!=""){
                     $filtersp=filter_sanpham($_GET['iddm']);
@@ -145,6 +159,9 @@
                 break;
             case 'single-product':
                 include 'view/single-product.php';
+                break;
+            case 'banner':
+                include 'view/banner.php';
                 break;
             default:
                 include 'view/home.php';
