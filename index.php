@@ -10,6 +10,7 @@
     include 'model/cart.php';
     include 'var.php';
     $spnew =loadall_sanpham_home();
+    $topview = get_product_top10();
     $ttnew=loadall_tintuc_home();
     $dsdm =loadall_danhmuc();
     $spdacbiet=get_product_special();
@@ -68,7 +69,6 @@
                 break;
             case 'contact':
                 include 'view/contact.php';
-                // include 'view/.php';
                 break;
             case 'elements':
                 include 'view/elements.php';

@@ -17,33 +17,13 @@
     <!--================Checkout Area =================-->
     <section class="checkout_area section_gap">
         <div class="container">
-            <div class="returning_customer">
-                <div class="check_title">
-                    <h2>Phản hồi của khách hàng? <a href="#">Ấn vào để đăng nhập</a></h2>
-                </div>
-                <p>Nếu bạn đã mua sắm với chúng tôi trước đây, vui lòng nhập thông tin chi tiết của bạn vào ô bên dưới. Nếu bạn là người mới
-                     khách hàng, vui lòng chuyển đến phần Thanh toán & Giao hàng.</p>
-                  
-                <form class="row contact_form" action="index.php?act=login" method="post" novalidate="novalidate">
-                    <div class="col-md-6 form-group p_star">
-                    <input type="text" class="form-control" id="name" name="user" placeholder="Tên đăng nhập" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tên đăng nhập'" required>
-                        <span class="placeholder" data-placeholder="Tên đăng nhập"></span>
-                    </div>
-                    <div class="col-md-6 form-group p_star">
-                    <input type="password" class="form-control" id="name" name="pass" placeholder="Mật khẩu" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mật khẩu'" required>
-                        <span class="placeholder" data-placeholder="Mật khẩu"></span>
-                    </div>
-                    <div class="col-md-12 form-group">
-                        <input type="submit" value="Đăng nhập" class="primary-btn" name="dangnhap" id="submit"></input>
-                        <div class="creat_account">
-                            <input type="checkbox" id="f-option" name="selector">
-                            <label for="f-option">Nhớ mật khẩu</label>
-                        </div>
-                        <a class="lost_pass" href="#">Quên mật khẩu?</a>
-                    </div>
-                </form>
-           
-            </div>
+            <?php
+                if (!isset($_SESSION['user'])) {
+                    echo '<h4 class="text-danger"><a href="index.php?act=login">Đăng nhập</a> để thanh toán</h4>';
+                } else {
+                    $sql = "SELECT * FROM tai_khoan WHERE user = '".$_SESSION['user']."'";
+                    extract(pdo_query_one($sql));
+            ?>
             <div class="cupon_area">
                 <div class="check_title">
                     <h2>Lấy mã giảm giá? <a href="#">Click vào đây</a></h2>
@@ -54,28 +34,25 @@
             <div class="billing_details">
                 <div class="row">
                     <div class="col-lg-8">
-                        <h3>Thông tin thanh toán</h3>
+                        <h3>Thông tin giao hàng</h3>
                         <form class="row contact_form" action="#" method="post" novalidate="novalidate">
                             <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="first" name="name">
-                                <span class="placeholder" data-placeholder="Họ"></span>
+                                <label>Họ tên</label>
+                                <input placeholder="Họ tên" type="text" class="form-control" id="first" name="name" value="<?=$ho_ten?>">
                             </div>
                             <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="last" name="name">
-                                <span class="placeholder" data-placeholder="Tên"></span>
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <input type="text" class="form-control" id="company" name="company" placeholder="Địa chỉ công ty">
+                                <label>Số điện thoại</label>
+                                <input placeholder="Số điện thoại" type="text" class="form-control" id="number" name="number" value="<?=$tel?>">
                             </div>
                             <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="number" name="number">
-                                <span class="placeholder" data-placeholder="Số điện thoại"></span>
+                                <label>Email</label>
+                                <input placeholder="Địa chỉ Email" type="text" class="form-control" id="email" name="compemailany" value="<?=$email?>">
                             </div>
                             <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="email" name="compemailany">
-                                <span class="placeholder" data-placeholder="Địa chỉ Email"></span>
+                                <label>Địa chỉ nhận hàng</label>
+                                <input placeholder="Địa chỉ nhận hàng" type="text" class="form-control" id="email" name="compemailany" value="<?=$address?>">
                             </div>
-                            <div class="col-md-12 form-group p_star">
+                            <!-- <div class="col-md-12 form-group p_star">
                                 <select class="country_select">
                                     <option value="1" selected>Chọn tỉnh</option>
                                     <option value="2">TP.Hồ Chí Minh</option>
@@ -84,7 +61,7 @@
                                     <option value="5">Hà Nội</option>
                                     <option value="6">Lâm Đồng</option>
                                 </select>
-                            </div>
+                            </div> -->
                             <!-- <div class="col-md-12 form-group p_star">
                                 <input type="text" class="form-control" id="add1" name="add1">
                                 <span class="placeholder" data-placeholder="Address line 01"></span>
@@ -97,7 +74,7 @@
                                 <input type="text" class="form-control" id="city" name="city">
                                 <span class="placeholder" data-placeholder="Town/City"></span>
                             </div> -->
-                            <div class="col-md-12 form-group p_star">
+                            <!-- <div class="col-md-12 form-group p_star">
                                 <select class="country_select">
                                     <option value="1">Quận/Huyện</option>
                                     <option value="2">Q.12</option>
@@ -109,19 +86,19 @@
                             </div>
                             <div class="col-md-12 form-group">
                                 <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip Code">
-                            </div>
-                            <div class="col-md-12 form-group">
+                            </div> -->
+                            <!-- <div class="col-md-12 form-group">
                                 <div class="creat_account">
                                     <input type="checkbox" id="f-option2" name="selector">
                                     <label for="f-option2">Xác nhận thông tin</label>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="col-md-12 form-group">
-                                <div class="creat_account">
+                                <!-- <div class="creat_account">
                                     <h3>Thông tin vận chuyển</h3>
-                                    <!-- <input type="checkbox" id="f-option3" name="selector">
-                                    <label for="f-option3">Địa chỉ khác</label> -->
-                                </div>
+                                    <input type="checkbox" id="f-option3" name="selector">
+                                    <label for="f-option3">Địa chỉ khác</label>
+                                </div> -->
                                 <textarea class="form-control" name="message" id="message" rows="1" placeholder="Ghi chú"></textarea>
                             </div>
                         </form>
@@ -167,6 +144,7 @@
                     </div>
                 </div>
             </div>
+            <?php } ?>
         </div>
     </section>
     <!--================End Checkout Area =================-->
