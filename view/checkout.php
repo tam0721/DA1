@@ -52,53 +52,16 @@
                                 <label>Địa chỉ nhận hàng</label>
                                 <input placeholder="Địa chỉ nhận hàng" type="text" class="form-control" id="email" name="compemailany" value="<?=$address?>">
                             </div>
-                            <!-- <div class="col-md-12 form-group p_star">
-                                <select class="country_select">
-                                    <option value="1" selected>Chọn tỉnh</option>
-                                    <option value="2">TP.Hồ Chí Minh</option>
-                                    <option value="3">Đà nẵng</option>
-                                    <option value="4">Cần Thơ</option>
-                                    <option value="5">Hà Nội</option>
-                                    <option value="6">Lâm Đồng</option>
-                                </select>
-                            </div> -->
-                            <!-- <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" id="add1" name="add1">
-                                <span class="placeholder" data-placeholder="Address line 01"></span>
-                            </div> -->
-                            <!-- <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" id="add2" name="add2">
-                                <span class="placeholder" data-placeholder="Address line 02"></span>
-                            </div> -->
-                            <!-- <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" id="city" name="city">
-                                <span class="placeholder" data-placeholder="Town/City"></span>
-                            </div> -->
-                            <!-- <div class="col-md-12 form-group p_star">
-                                <select class="country_select">
-                                    <option value="1">Quận/Huyện</option>
-                                    <option value="2">Q.12</option>
-                                    <option value="3">Q.Gò Vấp</option>
-                                    <option value="4">Đà Lạt</option>
-                                    <option value="5">Q.Hoàng Mai</option>
-                                    <option value="6">Q.Hoàn Kiếm</option>
-                                </select>
+                            <!-- <div class="col-md-12 form-group">
+                                <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip Code">
                             </div>
                             <div class="col-md-12 form-group">
-                                <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip Code">
-                            </div> -->
-                            <!-- <div class="col-md-12 form-group">
                                 <div class="creat_account">
                                     <input type="checkbox" id="f-option2" name="selector">
                                     <label for="f-option2">Xác nhận thông tin</label>
                                 </div>
                             </div> -->
                             <div class="col-md-12 form-group">
-                                <!-- <div class="creat_account">
-                                    <h3>Thông tin vận chuyển</h3>
-                                    <input type="checkbox" id="f-option3" name="selector">
-                                    <label for="f-option3">Địa chỉ khác</label>
-                                </div> -->
                                 <textarea class="form-control" name="message" id="message" rows="1" placeholder="Ghi chú"></textarea>
                             </div>
                         </form>
