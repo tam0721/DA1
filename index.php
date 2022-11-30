@@ -123,6 +123,26 @@
                 }
                 include 'view/signup.php';
                 break;
+            case 'suatk':
+                if(isset($_GET['ma_tk'])&&($_GET['ma_tk'])){
+                    // $id=$_GET['id'];
+                    $sql = "SELECT * FROM tai_khoan WHERE ma_tk =".$_GET['ma_tk'];
+                    $dm = pdo_query_one($sql);
+                }
+                include "view/capnhat_tk.php";
+                break;     
+            case 'capnhat_tk':
+                if(isset($_POST['capnhap'])&&($_POST['capnhap'])){
+                    $ma_tk = $_POST['ma_tk'];
+                    $fullname = $_POST['fullname'];
+                    $user = $_POST['user']; 
+                    $pass = $_POST['pass'];
+                    $address = $_POST['address'];
+                    $tel = $_POST['tel'];
+                    update_taikhoan($ma_tk,$fullname,$user,$pass,$address,$tel); 
+                }
+                include 'view/capnhat_tk.php';
+                break;
             case 'quenmk':
                 if(isset($_POST['guiemail'])&&($_POST['guiemail'])){
                     $email=$_POST['email'];

@@ -85,7 +85,7 @@
 									<?php
 											if(isset($_SESSION['user'])&&($_SESSION['user']!="")){
 												echo'<li class="nav-item"><a href="index.php?act=userinfo" class="nav-link"><span style="color:red;font-weight:800;"> '.$_SESSION['user'].'</span></a></li>';
-												echo'<li class="nav-item"><a href="index.php?act=capnhat_tk" class="nav-link"><span>Cập nhật</span></a></li>';
+												echo'<li class="nav-item"><a href="index.php?act=suatk&user='.$_SESSION['user'].'" class="nav-link"><span>Cập nhật</span></a></li>';
 												echo'<li class="nav-item"><a href="index.php?act=thoat" class="nav-link"><span>Đăng xuất</span></a></li>';
 											}else{
 									
