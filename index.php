@@ -10,6 +10,7 @@
     include 'model/cart.php';
     include 'var.php';
     $spnew =loadall_sanpham_home();
+    $topview = get_product_top10();
     $ttnew=loadall_tintuc_home();
     $dsdm =loadall_danhmuc();
     $spdacbiet=get_product_special();
@@ -37,6 +38,7 @@
                 // }    
                 break;
             case 'cartprocess':
+
                 include 'view/cartprocess.php';
                 break;
             case 'cartupdate':
@@ -49,7 +51,8 @@
                         // $id = $_POST['id'];
                           // if(isset($_POST['id']) && $_POST['id'] == $_GET['id']){
                             array_splice($_SESSION['giohang'],$_GET['id'],1);
-                          }
+                          }else
+                           unset($_SESSION['giohang']);
                 }
                     include 'view/delcart.php';
                 break;
@@ -82,7 +85,6 @@
                 break;
             case 'contact':
                 include 'view/contact.php';
-                // include 'view/.php';
                 break;
             case 'elements':
                 include 'view/elements.php';
@@ -134,6 +136,26 @@
                     $thongbao="Đăng ký thành công. Vui lòng <a href='index.php?act=login'>đăng nhập</a>";
                 }
                 include 'view/signup.php';
+                break;
+            case 'suatk':
+                if(isset($_GET['ma_tk'])&&($_GET['ma_tk'])){
+                    // $id=$_GET['id'];
+                    $sql = "SELECT * FROM tai_khoan WHERE ma_tk =".$_GET['ma_tk'];
+                    $dm = pdo_query_one($sql);
+                }
+                include "view/capnhat_tk.php";
+                break;     
+            case 'capnhat_tk':
+                if(isset($_POST['capnhap'])&&($_POST['capnhap'])){
+                    $ma_tk = $_POST['ma_tk'];
+                    $fullname = $_POST['fullname'];
+                    $user = $_POST['user']; 
+                    $pass = $_POST['pass'];
+                    $address = $_POST['address'];
+                    $tel = $_POST['tel'];
+                    update_taikhoan($ma_tk,$fullname,$user,$pass,$address,$tel); 
+                }
+                include 'view/capnhat_tk.php';
                 break;
             case 'quenmk':
                 if(isset($_POST['guiemail'])&&($_POST['guiemail'])){

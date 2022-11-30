@@ -75,7 +75,9 @@
 		</div>
 	</section>
 	<!-- End Banner Area -->
+
     <?php
+        updateview($id);
         extract($sanpham);
         // var_dump($sanpham);
         // echo $id;
@@ -117,12 +119,13 @@
             
                 <!-- </p> -->
                 <?php
+                
                                echo'
                                <form action="index.php?act=cartprocess" method="post">
                                     <div class="btn-size">
                                         <h6>Chọn size:</h6>
                                         <div class="switch-field">
-                                          <input type="radio" id="radio-1" name="size" value="35" />
+                                          <input type="radio" id="radio-1" name="size" value="35" checked/>
                                           <label for="radio-1">35</label> 
                                           <input type="radio" id="radio-2" name="size" value="36" />
                                           <label for="radio-2">36</label> 
@@ -133,7 +136,7 @@
                                           <input type="radio" id="radio-5" name="size" value="39" />
                                           <label for="radio-5">39</label>
                                         </div>
-                                        <div class="switch-field">
+                                        <div class="switch-field" >
                                           <input type="radio" id="radio-6" name="size" value="40" />
                                           <label for="radio-6">40</label>
                                           <input type="radio" id="radio-7" name="size" value="41" />
@@ -145,23 +148,24 @@
                                           <input type="radio" id="radio-10" name="size" value="44" />
                                           <label for="radio-10">44</label>
                                         </div>
-                                      
                                      </div>
-
-                <div class="">
-                    <h6 style="margin-top: 20px;">Số lượng</h6> 
-                    <div class="amount-form" style="margin-left: 20px;">
-                        <!-- <button class="btn-minus" id="minus" onclick="handleMinus()"><i class="fa-solid fa-minus"></i></button> -->
-                       
-                                <input type="number" value="1"  name="soluong" step="1" min="1" max="99999">
-                                <input type="hidden" name="id" value="'.$sanpham[0]['id'].'">
-                                <input type="hidden" name="name" value="'.$sanpham[0]['name'].'">
-                                <input type="hidden" name="price" value="'.$sanpham[0]['price_old'].'">
-                                <input type="hidden" name="img" value="'.$sanpham[0]['img'].'">
-                                <input type="hidden" name="note" value="0">
-                               ';
-                               
+                            
+                                    <div id="output"></div>
+                                
+                                    <div class="">
+                                        <h6 style="margin-top: 20px;">Số lượng</h6> 
+                                        <div class="amount-form" style="margin-left: 20px;">
+                                            <!-- <button class="btn-minus" id="minus" onclick="handleMinus()"><i class="fa-solid fa-minus"></i></button> -->
+                                
+                                            <input type="number" value="1"  name="soluong" step="1" min="1" max="900">
+                                            <input type="hidden" name="id" value="'.$sanpham[0]['id'].'">
+                                            <input type="hidden" name="name" value="'.$sanpham[0]['name'].'">
+                                            <input type="hidden" name="price" value="'.$sanpham[0]['price_old'].'">
+                                            <input type="hidden" name="img" value="'.$sanpham[0]['img'].'">
+                                            <input type="hidden" name="note" value="0">
+                                        ';       
                         ?>
+<<<<<<< HEAD
                         
                         <!-- <button class="btn-plus" id="plus" onclick="handlePlus()"><i class="fa-solid fa-plus"></i></button>  -->
                         
@@ -194,6 +198,10 @@
                         </a>
 
 
+=======
+                            <input type="submit" name="addgiohang"  id="btn" value="<?=$sanpham[0]['trang_thai']? " Đặt hàng":"Hết hàng"?>" <?=$sanpham[0]['trang_thai']? "":"disabled"?> class="btn btn-default border-0" style="margin:0 0 15px 15px; width:120px; background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;">
+                        </form>
+>>>>>>> 669e37ced96a6e11856aec1e4278a36bf44445ab
                     </div>
                 </div>
                 <div class="">
@@ -204,34 +212,7 @@
                     <h6 style="margin-top: 20px;">Loại</h6>
                     <p style="margin-left: 20px;">Giày <?=$sanpham[0]['ten_loai'] ?></p>
                 </div>
-                <script>
-                   let amountElement = document.getElementById("amount");
-                    let amount = amountElement.value;
-                    let render = (amount) => {
-                    amountElement.value = amount;
-                    }
-                    let handlePlus = () => {
-                    if(amount<15){
-                    amount++;
-                    render(amount);
-                    }
-                    }
-
-                    let handleMinus = () => {
-                    if(amount>1){
-                    amount--;
-                    render(amount);
-                    }
-                    }
-
-                    amountElement.addEventListener('input',  () => {
-                    amount = amountElement.value;
-                    amount = parseInt(amount);
-                    amount = (isNaN(amount) || amount == 0)?1:amount;
-                    render(amount);
-                    })
-
-                </script>
+               
             </div>
             <div class ="col-sm content-pr">
                 <div class= "row" style="margin-left: 30px; margin-top: 80px;">

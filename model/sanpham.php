@@ -67,19 +67,8 @@
         pdo_execute($sql);
     }
     function get_product_special(){
-
         $sql= "SELECT * FROM hang_hoa WHERE special=1 order by id DESC";
         $sanpham = pdo_query($sql);
         return $sanpham;
      }
-    // function load_ten_dm($ma_loai){
-    //     if($ma_loai>0){
-    //         $sql="select * from loai where id=".$ma_loai;
-    //         $dm= pdo_query_one($sql);
-    //         extract($dm);
-    //         return $name;
-    //     }else{
-    //         return "";
-    //     }
-    // }
 ?>

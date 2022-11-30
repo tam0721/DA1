@@ -77,12 +77,10 @@
 				<!-- Start Filter Bar -->
 				<div class="filter-bar d-flex flex-wrap align-items-center">
 					<div class="sorting">
-						<!-- <select>
-							<option value="1">Phân loại</option>
-							<option value="1">Phân loại</option>
-							<option value="1">Phân loại</option>
-						
-						</select> -->
+						<select>
+							<option value="1">Giá từ thấp tới cao</option>
+							<option value="1">Giá từ cao tới thấp</option>
+						</select>
 					</div>
 					<div class="sorting mr-auto">
 						<!-- <select>
@@ -130,29 +128,25 @@
 												<h6>'.$name.'</h6>
 											<div class="price">
 												<h6>$'.$price_1.'</h6>
-												<h6 class="l-through">$'.$price_old.'</h6>
 											</div>
 											
-											<form action="index.php?act=cartprocess" method="post">
-													<input type="hidden" name="id" value="'.$id.'">
-													<input type="hidden" name="name" value="'.$name.'">
-													<input type="hidden" name="price" value="'.$price_1.'">
-													<input type="hidden" name="img" value="'.$img.'">
-													<input type="hidden" name="soluong" value="1">
 											<div class="prd-bottom">
-												<lable for="them" class="social-info">
+												<a href="'.$sphct.'" class="social-info">
 													<span class="ti-bag"></span>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 669e37ced96a6e11856aec1e4278a36bf44445ab
 													<p class="hover-text">
-														<input type="submit" name="addgiohang" id="them" value="Them vao gio" style="background: transparent;border: none !important;">
+														<input type="submit" name="addgiohang" id="them" value="THÊM GIỎ" style="background: transparent;border: none !important;">
 													</p>
 												</lable>
 											</form>
-												<a href="#" class="social-info">
-													<p class="hover-text">Thêm giỏ</p>
-												</a>
 												<a href="" class="social-info">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 669e37ced96a6e11856aec1e4278a36bf44445ab
 													<span class="lnr lnr-heart"></span>
 													<p class="hover-text">Yêu thích</p>
 												</a>
@@ -187,32 +181,22 @@
 										<div class="price">
 											<h6>$'.$price_1.'</h6>
 										</div>
-										
-										<form action="index.php?act=cartprocess" method="post">
-												<input type="hidden" name="id" value="'.$id.'">
-												<input type="hidden" name="name" value="'.$name.'">
-												<input type="hidden" name="price" value="'.$price_1.'">
-												<input type="hidden" name="img" value="'.$img.'">
-												<input type="hidden" name="soluong" value="1">
 										<div class="prd-bottom">
-											<lable for="them" class="social-info">
-												<span class="ti-bag"></span>
-												<p class="hover-text">
-													<input type="submit" name="addgiohang" id="them" value="Them vao gio" style="background: transparent;border: none !important;">
-												</p>
-											</lable>
-										</form>
+											<a href="'.$sphct.'" class="social-info">
+													<span class="ti-bag"></span>
+													<p class="hover-text"> THÊM GIỎ </p>
+											</a>
 											<a href="#" class="social-info">
 												<span class="lnr lnr-heart"></span>
-												<p class="hover-text">Yêu thích</p>
+												<p class="hover-text">YÊU THÍCH</p>
 											</a>
 											<a href="" class="social-info">
 												<span class="lnr lnr-sync"></span>
-												<p class="hover-text">So sánh</p>
+												<p class="hover-text">SO SÁNH</p>
 											</a>
 											<a href="'.$sphct.'" class="social-info">
 												<span class="lnr lnr-move"></span>
-												<p class="hover-text">Xem thêm</p>
+												<p class="hover-text">XEM THÊM</p>
 											</a>
 										</div>
 									</div>
@@ -266,114 +250,29 @@
 			<div class="row">
 				<div class="col-lg-9">
 					<div class="row">
-						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex" id="imgDeal">
-								<a href="#"><img src="img/product/Nike CV7562-104.jpg" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Nike CV7562-104</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex" id="imgDeal">
-								<a href="#"><img src="img/product/Nike React Infinity Run.jpg" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Nike React Infinity Run</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex" id="imgDeal">
-								<a href="#"><img src="img/product/Nike Air Max 921733-104.jpg" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Nike Air Max 921733-104</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex" id="imgDeal">
-								<a href="#"><img src="img/product/Adidas Ultraboost FZ4007.jpg" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Adidas Ultraboost FZ4007</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex" id="imgDeal">
-								<a href="#"><img src="img/product/Adidas Alpha Bounce GY5401.jpg" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Adidas Alpha Bounce GY5401</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex" id="imgDeal">
-								<a href="#"><img src="img/product/Puma Bmw Mms Drift Cat.jpg" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Puma Bmw Mms Drift Cat</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex" id="imgDeal">
-								<a href="#"><img src="img/product/Puma Magnify Nitro Wns.jpg" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Puma Magnify Nitro Wns</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex" id="imgDeal">
-								<a href="#"><img src="img/product/Puma 375149-01.jpg" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Puma 375149-01</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex" id="imgDeal">
-								<a href="#"><img src="img/product/Anta 812225586-3.jpg" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Anta 812225586-3</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
+						<?php 
+							foreach ($topview as $sptop) {
+								extract($sptop);
+								$hinh=$img_path.$img;
+								$price_1 = $price_old;
+								if ($price_new > 0) $price_1 = $price_new;
+								$sphct="index.php?act=sanphamct&idsp=".$id;
+								echo '
+									<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
+										<div class="single-related-product d-flex" id="imgDeal">
+											<a href="'.$sphct.'">
+												<img src="'.$hinh.'" alt="">
+											</a>
+											<div class="desc">
+												<a href="'.$sphct.'" class="title">'.$name.'</a>
+												<div class="price">
+													<h6>$'.$price_1.'</h6>
+												</div>
+											</div>
+										</div>
+									</div>';
+							}
+						?>
 					</div>
 				</div>
 				<div class="col-lg-3">
