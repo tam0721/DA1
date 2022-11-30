@@ -23,32 +23,11 @@
 					<div class="details_item">
 						<h4>Thông tin đặt hàng</h4>
 						<ul class="list">
-							<li><a href="#"><span>Số điện thoại</span> : 1900 9999</a></li>
-							<li><a href="#"><span>Ngày</span> : Q.12</a></li>
-							<li><a href="#"><span>Tổng</span> : USD 671</a></li>
-							<li><a href="#"><span>Phương thức</span> : Tiền mặt</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="details_item">
-						<h4>Hóa đơn</h4>
-						<ul class="list">
-							<li><a href="#"><span>Đường</span> : 56/8</a></li>
-							<li><a href="#"><span>Quận/Huyện</span> : Q.12</a></li>
-							<li><a href="#"><span>Tỉnh</span> : TP.Hồ Chí Minh</a></li>
-							<li><a href="#"><span>Zip Code </span> : 700000</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="details_item">
-						<h4>Địa chỉ giao hàng</h4>
-						<ul class="list">
-							<li><a href="#"><span>Đường</span> : 56/8</a></li>
-							<li><a href="#"><span>Quận/Huyện</span> : Q.12</a></li>
-							<li><a href="#"><span>Tỉnh</span> : TP.Hồ Chí Minh</a></li>
-							<li><a href="#"><span>Zip Code </span> : 700000</a></li>
+							<li><a href="#"><span>Họ tên</span>: </a></li>
+							<li><a href="#"><span>Email</span>: </a></li>
+							<li><a href="#"><span>Số điện thoại</span>: 1900 9999</a></li>
+							<li><a href="#"><span>Địa chỉ</span>: </a></li>
+							<li><a href="#"><span>Phương thức thanh toán</span>: </a></li>
 						</ul>
 					</div>
 				</div>
