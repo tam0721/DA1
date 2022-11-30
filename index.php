@@ -2,6 +2,7 @@
     ob_start(); 
     session_start();
     include 'view/header.php';
+    include 'model/bill.php';
     include 'model/pdo.php';
     include 'model/taikhoan.php';
     include 'model/sanpham.php';
@@ -81,6 +82,21 @@
                 include 'view/checkout.php';
                 break;
             case 'confirmation':
+                
+                    if(isset($_POST['confirmation'])&&($_POST['confirmation'])){
+                        $nguoi_nhan=$_POST['nguoi_nhan'];
+                        $dia_chi_nhan=$_POST['dia_chi_nhan'];
+                        $sdt_nhan=$_POST['sdt_nhan'];
+                        $payment=$_POST['payment'];
+                        $email=$_POST['email'];      
+                        // $ma_tk=$_POST['ma_tk'];       
+
+                        $sql = "INSERT INTO don_hang (nguoi_nhan,dia_chi_nhan,sdt_nhan,payment,email)
+                        VALUES ('$nguoi_nhan','$dia_chi_nhan','$sdt_nhan','$payment','$email')";
+                        // taodonhang($nguoi_nhan,$dia_chi_nhan,$sdt_nhan,$payment,$email,$ma_tk);
+                        // trả về in đơn
+                        
+                    }
                 include 'view/confirmation.php';
                 break;
             case 'contact':
