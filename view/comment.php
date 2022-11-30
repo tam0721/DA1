@@ -100,13 +100,18 @@
           </table>
             <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
             <div class="d-flex flex-start w-100">
-               
+            <?php
+                if (!isset($_SESSION['user'])) {
+                    echo '<h6 class="text-danger"><a href="index.php?act=login">Đăng nhập</a> để bình luận</h6>';
+                } else {
+            ?>
                 <form action="<?=$_SERVER['PHP_SELF'];?>" method="post">
                     <input type="hidden" name="idpro" value="<?=$idpro?>">
                     <input type="text" name="user" value="<?=$_SESSION['user']?>" disabled>
                     <input type="text" name="noidung" style="outline: none; border:1px solid #ccc; border-radius: 5px;padding-left:10px;">
                     <input type="submit" name="guibinhluan" value="Publish" class="" style=" width:90px;margin-top:10px;border:none;border-radius: 5px;background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;">
                 </form>
+            <?php } ?>
                 <?php
                 //echo $_SESSION['user'];
                 if(isset($_POST['guibinhluan'])&&($_POST['guibinhluan'])){
