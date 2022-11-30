@@ -77,7 +77,7 @@
 	<!-- End Banner Area -->
 
     <?php
-        updateview($id);
+      //  updateview($id);
         extract($sanpham);
         // var_dump($sanpham);
         // echo $id;
