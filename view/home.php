@@ -515,7 +515,7 @@
 		</div> 
 	</section>
 	<!-- End exclusive deal Area -->
-
+	
 	<!-- Start brand Area -->
 	<section class="brand-area section_gap">
 		<div class="container">
@@ -537,7 +537,10 @@
 				</a>
 			</div>
 		</div>
+	
 	</section>
+	
+	
 	<!-- End brand Area -->
 	<!-- Start related-product Area -->
 	<section class="related-product-area section_gap">
@@ -625,12 +628,12 @@
 				<div class="col-lg-3">
 					<div class="ctg-right">
 						<a href="#" target="_blank">
-							<img class="img-fluid d-block mx-auto" src="img/category/c5.jpg" alt="">
+						<iframe src="view/banner.html" frameborder="0" width="100%" height="300px"></iframe>
 						</a>
 					</div>
 				</div>
 			</div>
-			 
+			
 	</section>
 	<!-- End related-product Area -->
 
@@ -698,5 +701,8 @@
 			}
 		}
 		}
+		@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap");
+
 
 	</style>
+	   

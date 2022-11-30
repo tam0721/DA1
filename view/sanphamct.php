@@ -165,8 +165,43 @@
                                             <input type="hidden" name="note" value="0">
                                         ';       
                         ?>
+<<<<<<< HEAD
+                        
+                        <!-- <button class="btn-plus" id="plus" onclick="handlePlus()"><i class="fa-solid fa-plus"></i></button>  -->
+                        
+
+                        <input type="submit" name="addgiohang" value="<?=$sanpham[0]['trang_thai']? " Đặt hàng":"Hết hàng"?>" <?=$sanpham[0]['trang_thai']? "":"disabled"?> class="btn btn-default border-0" style="margin:0px 0 15px 15px; width:120px; background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;">
+
+                        
+                        
+                        </form>
+                        <!-- <button class="btn-minus" id="minus" onclick="handleMinus()"><i class="fa-solid fa-minus"></i></button>
+=======
+                            <input type="submit" name="addgiohang" id="btn" value="<?=$sanpham[0]['trang_thai']? " Đặt hàng":"Hết hàng"?>" <?=$sanpham[0]['trang_thai']? "":"disabled"?> class="btn btn-default border-0" style="margin:0 0 15px 15px; width:120px; background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;">
+                            <script language="javascript">
+                                var button = document.getElementById("btn");
+                                button.onclick = function(){
+                                    alert("Đã thêm vào giỏ hàng");
+                                }
+                            </script>
+                        </form>
+<<<<<<< HEAD
+                        <button class="btn-minus" id="minus" onclick="handleMinus()"><i class="fa-solid fa-minus"></i></button>
+>>>>>>> 02bbc35f52719615351b07668263a5f8fb5ede72
+                        <input type="number" value="1" id="amount">
+                        <button class="btn-plus" id="plus" onclick="handlePlus()"><i class="fa-solid fa-plus"></i></button> 
+                        <a href="index.php?act=cartprocess&id=<?=$sanpham[0]['id'] ?>"> 
+                            <input type="submit" value="<?=$sanpham[0]['trang_thai']? "Đặt hàng":"Hết hàng"?>" <?=$sanpham[0]['trang_thai']? "":"disabled"?> class="btn btn-default border-0" style="margin:0 0 15px 15px; width:120px; background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;">
+<<<<<<< HEAD
+                        </a> -->
+
+                        </a>
+
+
+=======
                             <input type="submit" name="addgiohang"  id="btn" value="<?=$sanpham[0]['trang_thai']? " Đặt hàng":"Hết hàng"?>" <?=$sanpham[0]['trang_thai']? "":"disabled"?> class="btn btn-default border-0" style="margin:0 0 15px 15px; width:120px; background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;">
                         </form>
+>>>>>>> 669e37ced96a6e11856aec1e4278a36bf44445ab
                     </div>
                 </div>
                 <div class="">

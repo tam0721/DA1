@@ -56,6 +56,20 @@
                 }
                     include 'view/delcart.php';
                 break;
+            // case 'sanpham':
+            //     if(isset($_POST['kyw'])&&($_POST['kyw']!="")){
+            //         $kyw=$_POST['kyw'];
+            //     }else{
+            //         $kyw="";
+            //     }
+            //     if(isset($_GET['ma_loai'])&&($_GET['ma_loai']>0)){
+            //         $ma_loai=$_GET['ma_loai'];
+            //     }else{
+            //         $ma_loai="";
+            //     }
+            //     $dssp=loadall_sanpham($kyw,$ma_loai);
+            //     $ten_loai=load_ten_dm($ma_loai);
+            //     include 'view/category.php';
             case 'category':
                 if(isset($_GET['iddm']) && $_GET['iddm']!=""){
                     $filtersp=filter_sanpham($_GET['iddm']);
@@ -123,6 +137,26 @@
                 }
                 include 'view/signup.php';
                 break;
+            case 'suatk':
+                if(isset($_GET['ma_tk'])&&($_GET['ma_tk'])){
+                    // $id=$_GET['id'];
+                    $sql = "SELECT * FROM tai_khoan WHERE ma_tk =".$_GET['ma_tk'];
+                    $dm = pdo_query_one($sql);
+                }
+                include "view/capnhat_tk.php";
+                break;     
+            case 'capnhat_tk':
+                if(isset($_POST['capnhap'])&&($_POST['capnhap'])){
+                    $ma_tk = $_POST['ma_tk'];
+                    $fullname = $_POST['fullname'];
+                    $user = $_POST['user']; 
+                    $pass = $_POST['pass'];
+                    $address = $_POST['address'];
+                    $tel = $_POST['tel'];
+                    update_taikhoan($ma_tk,$fullname,$user,$pass,$address,$tel); 
+                }
+                include 'view/capnhat_tk.php';
+                break;
             case 'quenmk':
                 if(isset($_POST['guiemail'])&&($_POST['guiemail'])){
                     $email=$_POST['email'];
@@ -147,6 +181,9 @@
                 break;
             case 'single-product':
                 include 'view/single-product.php';
+                break;
+            case 'banner':
+                include 'view/banner.php';
                 break;
             default:
                 include 'view/home.php';
