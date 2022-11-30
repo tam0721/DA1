@@ -23,11 +23,11 @@
 					<div class="details_item">
 						<h4>Thông tin đặt hàng</h4>
 						<ul class="list">
-							<li><a href="#"><span>Họ tên</span>: </a></li>
-							<li><a href="#"><span>Email</span>: </a></li>
-							<li><a href="#"><span>Số điện thoại</span>: 1900 9999</a></li>
-							<li><a href="#"><span>Địa chỉ</span>: </a></li>
-							<li><a href="#"><span>Phương thức thanh toán</span>: </a></li>
+							<li><a href="#"><span>Họ tên </span>:<?=$nguoi_nhan?> </a></li>
+							<li><a href="#"><span>Email</span>:<?=$email?> </a></li>
+							<li><a href="#"><span>Số điện thoại</span>: <?=$sdt_nhan?></a></li>
+							<li><a href="#"><span>Địa chỉ</span>: <?=$dia_chi_nhan?> </a></li>
+							<li><a href="#"><span>Phương thức thanh toán</span>:<?=$payment?> </a></li>
 						</ul>
 					</div>
 				</div>
@@ -39,44 +39,109 @@
 						<thead>
 							<tr>
 								<th scope="col">Sản phẩm</th>
+								<th scope="col">Size</th>
+								<th scope="col">Giá</th>
 								<th scope="col">Số lượng</th>
-								<th scope="col">Tổng</th>
+								<th scope="col">Tổng giá sản phẩm</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>
-									<p>Puma Bmw Mms Drift Cat</p>
-								</td>
-								<td>
-									<h5>x 02</h5>
-								</td>
-								<td>
-									<p>$720.00</p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<p>Puma Bmw Mms Drift Cat</p>
-								</td>
-								<td>
-									<h5>x 02</h5>
-								</td>
-								<td>
-									<p>$720.00</p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<p>Puma Bmw Mms Drift Cat</p>
-								</td>
-								<td>
-									<h5>x 02</h5>
-								</td>
-								<td>
-									<p>$720.00</p>
-								</td>
-							</tr>
+                            <?php 
+                        
+                            ob_start();
+                            ?>
+                            <?php
+                                
+                                    $all =0;
+                                    foreach($cart as $sp){
+                                        extract($sp);
+                                        if($ma_hh)
+                                        $tong = $so_luong * $price;
+                                        $ttien = 0;
+                                        $ttien += $tong;
+                                        $all +=$ttien;
+										$tien=$all+50;
+                                        $del="index.php?act=delcart&idsp=".$ma_hh;
+                                        $upd="index.php?act=cart&id=".$ma_hh;
+                                        $up="index.php?act=cartupdate&id=".$ma_hh;
+                                        $sphct="index.php?act=sanphamct&idsp=".$ma_hh;
+                                        echo '
+                                            <form action="index.php?act=cartupdate" method="post">
+                                            <tr>
+                                                <td>
+                                                    <div class="media" >
+                                                        <div class="d-flex">
+                                                            <a href="'.$sphct.'">
+                                                                <img src="upload/'.$img.'" alt="">
+                                                            </a>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <p>"'.$name.'"</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <h5>'.$size.'</h5>
+                                                </td>
+                                                <td>
+                                                    <h5>$'.number_format($price,2).'</h5>
+                                                </td>
+                                                <td>
+                                                    <div class="product_count">
+                                                        <label for="ma_hh">
+														<h5>'.$so_luong.'</h5>
+                                                            </label>
+                                                        </div>
+                                                        <input type="hidden" name="id" id="ma_hh" value="'.$ma_hh.'">
+                                                    <div class="product_count">
+                                                        <a href="'.$upd.'">
+                                                            
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <h5>$'.number_format($ttien,2).'</h5>
+                                                </td>
+                                                
+                                            </tr>
+                                        ';  
+                                    } 
+                                ?>
+                                    <tr class="bottom_button">
+                                        <td>
+									
+                                        </td>
+                                
+                                        <td>
+                                    </td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+                                        <h5>Tổng tiền sản phẩm</h5>
+                                    </td>
+                                    <?php 
+                                        echo '
+                                        <td>
+                                            <h7>$'.number_format($all,2).'</h7>
+                                        </td>
+                                        
+                                        ';
+                                
+                                ?>
+								<style>
+    .media img{
+        width: 120px;
+        height: 130px;
+    }
+</style>
+                            </tr>
 							<tr>
 								<td>
 									<h4>Giảm giá</h4>
@@ -85,7 +150,7 @@
 									<h5></h5>
 								</td>
 								<td>
-									<p>$2160.00</p>
+									<p>0.00</p>
 								</td>
 							</tr>
 							<tr>
@@ -101,16 +166,25 @@
 							</tr>
 							<tr>
 								<td>
-									<h4>Tổng</h4>
+									<h4>Thành tiền</h4>
 								</td>
 								<td>
 									<h5></h5>
 								</td>
 								<td>
-									<p>$2210.00</p>
+									<p>
+										<?php
+										echo "$$tien.00";
+										?>
+									</p>
 								</td>
 							</tr>
-						</tbody>
+                            
+                                
+                            </tr>
+                        </tbody>
+						
+						
 					</table>
 				</div>
 			</div>

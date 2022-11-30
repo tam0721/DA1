@@ -35,75 +35,218 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <h3>Thông tin giao hàng</h3>
-                        <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                        <form class="row contact_form" action="index.php?act=confirmation" method="post" novalidate="novalidate">
                             <div class="col-md-6 form-group p_star">
                                 <label>Họ tên</label>
-                                <input placeholder="Họ tên" type="text" class="form-control" id="first" name="name" value="<?=$ho_ten?>">
+                                <input placeholder="Họ tên" type="text" class="form-control" id="first" name="nguoi_nhan" value="<?=$ho_ten?>">
                             </div>
                             <div class="col-md-6 form-group p_star">
                                 <label>Số điện thoại</label>
-                                <input placeholder="Số điện thoại" type="text" class="form-control" id="number" name="number" value="<?=$tel?>">
+                                <input placeholder="Số điện thoại" type="text" class="form-control" id="number" name="sdt_nhan" value="<?=$tel?>">
                             </div>
                             <div class="col-md-6 form-group p_star">
                                 <label>Email</label>
-                                <input placeholder="Địa chỉ Email" type="text" class="form-control" id="email" name="compemailany" value="<?=$email?>">
+                                <input placeholder="Địa chỉ Email" type="text" class="form-control" id="email" name="email" value="<?=$email?>">
                             </div>
                             <div class="col-md-6 form-group p_star">
                                 <label>Địa chỉ nhận hàng</label>
-                                <input placeholder="Địa chỉ nhận hàng" type="text" class="form-control" id="email" name="compemailany" value="<?=$address?>">
+                                <input placeholder="Địa chỉ nhận hàng" type="text" class="form-control" id="email" name="dia_chi_nhan" value="<?=$address?>">
                             </div>
-                            <!-- <div class="col-md-12 form-group">
-                                <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip Code">
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <div class="creat_account">
-                                    <input type="checkbox" id="f-option2" name="selector">
-                                    <label for="f-option2">Xác nhận thông tin</label>
-                                </div>
-                            </div> -->
+                           
                             <div class="col-md-12 form-group">
                                 <textarea class="form-control" name="message" id="message" rows="1" placeholder="Ghi chú"></textarea>
                             </div>
-                        </form>
+                            
+                            
+                        
                     </div>
-                    <div class="col-lg-4">
+                    
+                    <!-- <div class="col-lg-4">
                         <div class="order_box">
-                            <h2>Hóa đơn của bạn</h2>
-                            <ul class="list">
-                                <li><a href="#">Sản phẩm <span>Tổng</span></a></li>
-                                <li><a href="#">Nike Infinity <span class="middle">x 02</span> <span class="last">$189.00</span></a></li>
-                                <li><a href="#">Ultraboost FZ4007 <span class="middle">x 01</span> <span class="last">$189.00</span></a></li>
-                                <li><a href="#">Puma Bmw <span class="middle">x 01</span> <span class="last">$189.00</span></a></li>
-                            </ul>
-                            <ul class="list list_2">
-                                <li><a href="#">Giảm giá <span>$90.00</span></a></li>
-                                <li><a href="#">Phí vận chuyển <span> $5.00</span></a></li>
-                                <li><a href="#">Tổng <span>$671.00</span></a></li>
-                            </ul>
+                            <h2>Hóa đơn của bạn</h2> -->
+                            <div class="order_details_table">
+				<h2>Thông tin chi tiết</h2>
+				<div class="table-responsive">
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col">Sản phẩm</th>
+								<th scope="col">Size</th>
+								<th scope="col">Giá</th>
+								<th scope="col">Số lượng</th>
+								<th scope="col">Tổng giá sản phẩm</th>
+							</tr>
+						</thead>
+						<tbody>
+                            <?php 
+                        
+                            ob_start();
+                            ?>
+                            <?php
+                                
+                                    $all =0;
+                                    foreach($cart as $sp){
+                                        extract($sp);
+                                        if($ma_hh)
+                                        $tong = $so_luong * $price;
+                                        $ttien = 0;
+                                        $ttien += $tong;
+                                        $all +=$ttien;
+                                        $tien=$all+50;
+                                        $del="index.php?act=delcart&idsp=".$ma_hh;
+                                        $upd="index.php?act=cart&id=".$ma_hh;
+                                        $up="index.php?act=cartupdate&id=".$ma_hh;
+                                        $sphct="index.php?act=sanphamct&idsp=".$ma_hh;
+                                        echo '
+                                            <form action="index.php?act=cartupdate" method="post">
+                                            <tr>
+                                                <td>
+                                                    <div class="media" >
+                                                        <div class="d-flex">
+                                                            <a href="'.$sphct.'">
+                                                                <img src="upload/'.$img.'" alt="">
+                                                            </a>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <p>"'.$name.'"</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <h5>'.$size.'</h5>
+                                                </td>
+                                                <td>
+                                                    <h5>$'.number_format($price,2).'</h5>
+                                                </td>
+                                                <td>
+                                                    <div class="product_count">
+                                                        <label for="ma_hh">
+                                                           <h5>'.$so_luong.'</h5>
+                                                            </label>
+                                                        </div>
+                                                        <input type="hidden" name="id" id="ma_hh" value="'.$ma_hh.'">
+                                                    <div class="product_count">
+                                                        <a href="'.$upd.'">
+                                                            
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <h5>$'.number_format($ttien,2).'</h5>
+                                                </td>
+                                                
+                                            </tr>
+                                        ';  
+                                    } 
+                                ?>
+                                    <tr class="bottom_button">
+                                        <td>
+									
+                                        </td>
+                                
+                                        <td>
+                                    </td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+                                        <h5>Tổng tiền sản phẩm</h5>
+                                    </td>
+                                    <?php 
+                                        echo '
+                                        <td>
+                                            <h7>$'.number_format($all,2).'</h7>
+                                        </td>
+                                        
+                                        ';
+                                
+                                ?>
+								<style>
+    .media img{
+        width: 120px;
+        height: 130px;
+    }
+</style>
+                            </tr>
+							<tr>
+								<td>
+									<h4>Giảm giá</h4>
+								</td>
+								<td>
+									<h5></h5>
+								</td>
+								<td>
+									<p>0.00</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<h4>Phí vận chuyển</h4>
+								</td>
+								<td>
+									<h5></h5>
+								</td>
+								<td>
+									<p>Phí: $50.00</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<h4>Thành tiền</h4>
+								</td>
+								<td>
+									<h5></h5>
+								</td>
+								<td>
+									<p>
+										<?php
+										echo "$$tien.00";
+										?>
+									</p>
+								</td>
+							</tr>
+                            
+                                
+                            </tr>
+                        </tbody>
+						
+						
+					</table>
+				</div>
+                           
                             <div class="payment_item">
                                 <div class="radion_btn">
                                     <input type="radio" id="f-option5" name="selector">
                                     <label for="f-option5">Xác nhận đúng thông tin</label>
                                     <div class="check"></div>
                                 </div>
-                                <p>Gửi đến địa chỉ...</p>
+                                
                             </div>
-                            <div class="payment_item active">
-                                <div class="radion_btn">
-                                    <input type="radio" id="f-option6" name="selector">
-                                    <label for="f-option6">Phương thức thanh toán </label>
-                                    <img src="img/product/card.jpg" alt="">
-                                    <div class="check"></div>
-                                </div>
-                                <p>Bạn có thẻ thanh toán bằng thẻ tín ATM hoặc tiền mặt khi nhận hàng.</p>
-                            </div>
+                            <tr>
+                        <td>
+                            <input type="radio" name="payment" value="thanh toán khi nhận hàng">  Thanh toán khi nhận hàng <br>
+
+
+                            <input type="radio" name="payment" value="1">  Thanh toán bằng thẻ <br>
+                            <div class="check"></div>
+                        </td>
+                    </tr>
                             <div class="creat_account">
                                 <input type="checkbox" id="f-option4" name="selector">
                                 <label for="f-option4">Tôi đã đọc và chấp nhận </label>
                                 <a href="#">điều kiện & điều khoản</a>
                             </div>
-                            <a class="primary-btn" href="#">Thanh toán</a>
+                            <!-- <a class="primary-btn" href="#">Thanh toán</a> -->
+                            <input type="submit"  name="confirmation"  class="primary-btn" value="Đặt Hàng">
                         </div>
+                        
+                        </form>
                     </div>
                 </div>
             </div>
