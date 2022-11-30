@@ -80,4 +80,15 @@
         $mostview = pdo_query($sql);
         return $mostview;
     }
+    // function load_ten_dm($iddm){
+    //     if($iddm>0){
+    //         $sql="select * from hang_hoa where id=".$iddm;
+    //         $dm=pdo_query_one($sql);
+    //         extract($dm);
+    //         return $name;
+
+    //     } else {
+    //         return "";
+    //     }
+    // }
 ?>
