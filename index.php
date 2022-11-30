@@ -38,6 +38,7 @@
                 // }    
                 break;
             case 'cartprocess':
+
                 include 'view/cartprocess.php';
                 break;
             case 'cartupdate':
@@ -50,7 +51,8 @@
                         // $id = $_POST['id'];
                           // if(isset($_POST['id']) && $_POST['id'] == $_GET['id']){
                             array_splice($_SESSION['giohang'],$_GET['id'],1);
-                          }
+                          }else
+                           unset($_SESSION['giohang']);
                 }
                     include 'view/delcart.php';
                 break;
@@ -121,6 +123,19 @@
                 }
                 include 'view/signup.php';
                 break;
+            case 'quenmk':
+                if(isset($_POST['guiemail'])&&($_POST['guiemail'])){
+                    $email=$_POST['email'];
+                    $checkemail=checkemail($email);
+                    if(is_array($checkemail)){
+                        $thongbao="Mật khẩu của bạn là: ".$checkemail['pass'];
+                    } else {
+                        $thongbao="Email này không tồn tại!";
+                    }
+                    //header('Location:index.php?act=edit_taikhoan');
+                }
+                include "view/quenmk.php";
+                break;    
             case 'thoat':
                 unset($_SESSION['user']);
                 unset($_SESSION['iduser']);

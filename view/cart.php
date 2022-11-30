@@ -13,9 +13,7 @@
         </div>
     </section>
     <!-- End Banner Area -->
-    <!-- <?php 
-        var_dump($_SESSION['giohang']);
-    ?> -->
+ 
     <!--================Cart Area =================-->
     
     <section class="cart_area">
@@ -93,8 +91,8 @@
                         </thead>
                         <tbody>
                             <?php 
-                            // var_dump($_SESSION['giohang']);
-                            // ob_start();
+                        
+                            ob_start();
                             ?>
                             <?php
                                 
@@ -133,9 +131,11 @@
                                                 </td>
                                                 <td>
                                                     <div class="product_count">
-                                                        <input type="text" name="soluong" id="sl" value="'.$so_luong.'" title="Quantity:"class="input-text qty">
+                                                        <label for="ma_hh">
+                                                            <input type="text" name="soluong" id="sl" value="'.$so_luong.'" title="Quantity:"class="input-text qty">
+                                                            </label>
                                                         </div>
-                                                        <input type="radio" name="id" value="'.$ma_hh.'">
+                                                        <input type="hidden" name="id" id="ma_hh" value="'.$ma_hh.'">
                                                     <div class="product_count">
                                                         <a href="'.$upd.'">
                                                             

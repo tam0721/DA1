@@ -77,12 +77,10 @@
 				<!-- Start Filter Bar -->
 				<div class="filter-bar d-flex flex-wrap align-items-center">
 					<div class="sorting">
-						<!-- <select>
-							<option value="1">Phân loại</option>
-							<option value="1">Phân loại</option>
-							<option value="1">Phân loại</option>
-						
-						</select> -->
+						<select>
+							<option value="1">Giá từ thấp tới cao</option>
+							<option value="1">Giá từ cao tới thấp</option>
+						</select>
 					</div>
 					<div class="sorting mr-auto">
 						<!-- <select>
@@ -127,15 +125,13 @@
 												<h6 class="l-through">$'.$price_old.'</h6>
 											</div>
 											
-											<form action="index.php?act=cartprocess" method="post">
-													<input type="hidden" name="id" value="'.$id.'">
-													<input type="hidden" name="name" value="'.$name.'">
-													<input type="hidden" name="price" value="'.$price_1.'">
-													<input type="hidden" name="img" value="'.$img.'">
-													<input type="hidden" name="soluong" value="1">
 											<div class="prd-bottom">
-												<lable for="them" class="social-info">
+												<a href="'.$sphct.'" class="social-info">
 													<span class="ti-bag"></span>
+<<<<<<< HEAD
+													<p class="hover-text"> Thêm vào giỏ </p>
+=======
+<<<<<<< HEAD
 													<p class="hover-text">
 														<input type="submit" name="addgiohang" id="them" value="Them vao gio" style="background: transparent;border: none !important;">
 													</p>
@@ -143,8 +139,10 @@
 											</form>
 												<a href="#" class="social-info">
 													<p class="hover-text">Thêm giỏ</p>
+>>>>>>> 4b5b97bcab0bf75a3eda06f1f13b2c8358d11431
 												</a>
 												<a href="" class="social-info">
+>>>>>>> 08254aa56eed29616a6087f0cbdaedfec17a8934
 													<span class="lnr lnr-heart"></span>
 													<p class="hover-text">Yêu thích</p>
 												</a>
@@ -179,21 +177,11 @@
 										<div class="price">
 											<h6>$'.$price_1.'</h6>
 										</div>
-										
-										<form action="index.php?act=cartprocess" method="post">
-												<input type="hidden" name="id" value="'.$id.'">
-												<input type="hidden" name="name" value="'.$name.'">
-												<input type="hidden" name="price" value="'.$price_1.'">
-												<input type="hidden" name="img" value="'.$img.'">
-												<input type="hidden" name="soluong" value="1">
 										<div class="prd-bottom">
-											<lable for="them" class="social-info">
-												<span class="ti-bag"></span>
-												<p class="hover-text">
-													<input type="submit" name="addgiohang" id="them" value="Them vao gio" style="background: transparent;border: none !important;">
-												</p>
-											</lable>
-										</form>
+											<a href="'.$sphct.'" class="social-info">
+													<span class="ti-bag"></span>
+													<p class="hover-text"> Thêm vào giỏ </p>
+											</a>
 											<a href="#" class="social-info">
 												<span class="lnr lnr-heart"></span>
 												<p class="hover-text">Yêu thích</p>
