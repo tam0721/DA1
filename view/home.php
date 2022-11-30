@@ -235,7 +235,7 @@
 		</div>
 		
 		<!-- single product -->
-		<div class="single-product-slider">
+		<div class="single-produc t-slider">
 			<div class="container">
 				<div class="row justify-content-center">
 					<div class="col-lg-6 text-center">
