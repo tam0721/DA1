@@ -68,7 +68,7 @@
 							<div class="col-md-12 form-group">
 								<div class="creat_account form-check">
                                     <div class="col-md-12 form-group">
-									    <input type="checkbox" id="invalidCheck"  class="form-check-input" required>
+									    <input type="checkbox" id="invalidCheck"  class="form-check-input">
 									    <label for="f-option2" class="form-check-label">Nhớ mật khẩu</label>
                                         <div class="invalid-feedback">Vui lòng xác nhận rằng tất cả dữ liệu đã nhập đều chính xác!</div>
                                     </div>
