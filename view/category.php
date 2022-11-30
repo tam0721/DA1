@@ -133,20 +133,12 @@
 											<div class="prd-bottom">
 												<a href="'.$sphct.'" class="social-info">
 													<span class="ti-bag"></span>
-<<<<<<< HEAD
-
-=======
->>>>>>> 669e37ced96a6e11856aec1e4278a36bf44445ab
 													<p class="hover-text">
 														<input type="submit" name="addgiohang" id="them" value="THÊM GIỎ" style="background: transparent;border: none !important;">
 													</p>
 												</lable>
 											</form>
 												<a href="" class="social-info">
-<<<<<<< HEAD
-
-=======
->>>>>>> 669e37ced96a6e11856aec1e4278a36bf44445ab
 													<span class="lnr lnr-heart"></span>
 													<p class="hover-text">Yêu thích</p>
 												</a>
