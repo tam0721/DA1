@@ -51,14 +51,15 @@
             //     }else{
             //         $kyw="";
             //     }
-            //     if(isset($_GET['iddm'])&&($_GET['iddm']>0)){
-            //         $iddm=$_GET['iddm'];
-            //     }else{
-            //         $iddm="";
-            //     }
+            //     // if(isset($_GET['iddm'])&&($_GET['iddm']>0)){
+            //     //     $iddm=$_GET['iddm'];
+            //     // }else{
+            //     //     $iddm="";
+            //     // }
             //     $dssp=loadall_sanpham($kyw,$iddm);
-            //     $ten_loai=load_ten_dm($iddm);
+            //     // $ten_loai=load_ten_dm($iddm);
             //     include 'view/category.php';
+            //     break;
             
             case 'category':
                 $react = 0;
