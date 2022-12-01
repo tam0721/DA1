@@ -113,10 +113,10 @@
 							
 							foreach($value as $sp){
 								extract($sp);
-								$price_1==0;
+								$price_1=0;
 								$hinh=$img_path.$img;
-								$price_1 == $price_old;
-								if ($price_new > 0) $price_1 == $price_new;
+								$price_1 = $price_old;
+								if ($price_new > 0) $price_1 = $price_new;
 								$sphct="index.php?act=sanphamct&idsp=".$id;
 								echo '
 									<div class="col-lg-4 col-md-6">
@@ -128,7 +128,6 @@
 												<h6>'.$name.'</h6>
 											<div class="price">
 												<h6>$'.$price_1.'</h6>
-												<h6 class="l-through">$'.$price_old.'</h6>
 											</div>
 											
 											<form action="index.php?act=cartprocess" method="post">
