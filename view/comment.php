@@ -68,7 +68,7 @@
                 echo '<div class="card-body">
                 <div class="d-flex flex-start align-items-center">
                   <div>
-                    <h6 class="fw-bold text-primary mb-1">Lily Coleman</h6>
+                    <h6 class="fw-bold text-primary mb-1">'.$_SESSION['user'].'</h6>
                     <p class="text-muted small mb-0">
                       Shared publicly - '.$ngay_bl.'
                     </p>
@@ -100,19 +100,27 @@
           </table>
             <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
             <div class="d-flex flex-start w-100">
-               
+            <?php
+                if (!isset($_SESSION['user'])) {
+                    echo '<h6 class="text-danger"><a href="index.php?act=login">Đăng nhập</a> để bình luận</h6>';
+                } else {
+            ?>
                 <form action="<?=$_SERVER['PHP_SELF'];?>" method="post">
                     <input type="hidden" name="idpro" value="<?=$idpro?>">
+                    <input type="text" name="user" value="<?=$_SESSION['user']?>" disabled>
                     <input type="text" name="noidung" style="outline: none; border:1px solid #ccc; border-radius: 5px;padding-left:10px;">
                     <input type="submit" name="guibinhluan" value="Publish" class="" style=" width:90px;margin-top:10px;border:none;border-radius: 5px;background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;">
                 </form>
+            <?php } ?>
                 <?php
+                //echo $_SESSION['user'];
                 if(isset($_POST['guibinhluan'])&&($_POST['guibinhluan'])){
                     $noidung=$_POST['noidung'];
                     $idpro=$_POST['idpro'];
-                    // $iduser=$_SESSION['iduser']['id']; 
+                    $user=$_SESSION['user'];
+                    //$iduser=$_SESSION['user']['ma_tk']; 
                     $ngaybinhluan = date("d M, y");
-                    insert_binhluan($noidung,$idpro,$ngaybinhluan); 
+                    insert_binhluan($noidung,$idpro,$user,$ngaybinhluan); 
                     header("location: ".$_SERVER['HTTP_REFERER']);
                 }
                 

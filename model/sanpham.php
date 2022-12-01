@@ -77,9 +77,28 @@
         pdo_execute($sql);
     }
     function get_product_special(){
-
         $sql= "SELECT * FROM hang_hoa WHERE special=1 order by id DESC";
         $sanpham = pdo_query($sql);
         return $sanpham;
-     }
+    }
+    function updateview($id) {
+        $sql = "UPDATE hang_hoa SET luotxem = luotxem + 1 WHERE id=".$id;
+        pdo_execute($sql);
+    }
+    function get_product_top9() {
+        $sql = "SELECT * FROM hang_hoa ORDER BY luotxem DESC LIMIT 9";
+        $mostview = pdo_query($sql);
+        return $mostview;
+    }
+    // function load_ten_dm($iddm){
+    //     if($iddm>0){
+    //         $sql="select * from hang_hoa where id=".$iddm;
+    //         $dm=pdo_query_one($sql);
+    //         extract($dm);
+    //         return $name;
+
+    //     } else {
+    //         return "";
+    //     }
+    // }
 ?>

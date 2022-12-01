@@ -2,6 +2,7 @@
     ob_start(); 
     session_start();
     include 'view/header.php';
+    include 'model/bill.php';
     include 'model/pdo.php';
     include 'model/taikhoan.php';
     include 'model/sanpham.php';
@@ -10,6 +11,7 @@
     include 'model/cart.php';
     include 'var.php';
     $spnew =loadall_sanpham_home();
+    $topview = get_product_top9();
     $ttnew=loadall_tintuc_home();
     $dsdm =loadall_danhmuc();
     $spdacbiet=get_product_special();
@@ -43,6 +45,21 @@
                 }
                     include 'view/delcart.php';
                 break;
+            // case 'sanpham':
+            //     if(isset($_POST['kyw'])&&($_POST['kyw']!="")){
+            //         $kyw=$_POST['kyw'];
+            //     }else{
+            //         $kyw="";
+            //     }
+            //     if(isset($_GET['iddm'])&&($_GET['iddm']>0)){
+            //         $iddm=$_GET['iddm'];
+            //     }else{
+            //         $iddm="";
+            //     }
+            //     $dssp=loadall_sanpham($kyw,$iddm);
+            //     $ten_loai=load_ten_dm($iddm);
+            //     include 'view/category.php';
+            
             case 'category':
                 $react = 0;
                 $spnew_tang = loadall_sanpham_tang();
@@ -78,11 +95,25 @@
                 include 'view/checkout.php';
                 break;
             case 'confirmation':
+                
+                    if(isset($_POST['confirmation'])&&($_POST['confirmation'])){
+                        $nguoi_nhan=$_POST['nguoi_nhan'];
+                        $dia_chi_nhan=$_POST['dia_chi_nhan'];
+                        $sdt_nhan=$_POST['sdt_nhan'];
+                        $payment=$_POST['payment'];
+                        $email=$_POST['email'];      
+                        // $ma_tk=$_POST['ma_tk'];       
+
+                        $sql = "INSERT INTO don_hang (nguoi_nhan,dia_chi_nhan,sdt_nhan,payment,email)
+                        VALUES ('$nguoi_nhan','$dia_chi_nhan','$sdt_nhan','$payment','$email')";
+                        // taodonhang($nguoi_nhan,$dia_chi_nhan,$sdt_nhan,$payment,$email,$ma_tk);
+                        // trả về in đơn
+                        
+                    }
                 include 'view/confirmation.php';
                 break;
             case 'contact':
                 include 'view/contact.php';
-                // include 'view/.php';
                 break;
             case 'elements':
                 include 'view/elements.php';
@@ -134,6 +165,26 @@
                 }
                 include 'view/signup.php';
                 break;
+            case 'suatk':
+                if(isset($_GET['ma_tk'])&&($_GET['ma_tk'])){
+                    // $id=$_GET['id'];
+                    $sql = "SELECT * FROM tai_khoan WHERE ma_tk =".$_GET['ma_tk'];
+                    $dm = pdo_query_one($sql);
+                }
+                include "view/capnhat_tk.php";
+                break;     
+            case 'capnhat_tk':
+                if(isset($_POST['capnhap'])&&($_POST['capnhap'])){
+                    $ma_tk = $_POST['ma_tk'];
+                    $fullname = $_POST['fullname'];
+                    $user = $_POST['user']; 
+                    $pass = $_POST['pass'];
+                    $address = $_POST['address'];
+                    $tel = $_POST['tel'];
+                    update_taikhoan($ma_tk,$fullname,$user,$pass,$address,$tel); 
+                }
+                include 'view/capnhat_tk.php';
+                break;
             case 'quenmk':
                 if(isset($_POST['guiemail'])&&($_POST['guiemail'])){
                     $email=$_POST['email'];
@@ -158,6 +209,9 @@
                 break;
             case 'single-product':
                 include 'view/single-product.php';
+                break;
+            case 'banner':
+                include 'view/banner.php';
                 break;
             default:
                 include 'view/home.php';
