@@ -22,8 +22,8 @@
         return $listsanpham;
     }
     function loadall_sanpham_home(){
-        $sql = "SELECT * from hang_hoa WHERE 1 order by id desc";
-        // $sql = "SELECT * from hang_hoa WHERE 1 order by id desc limit 0.8";   //load 8 sản phẩm
+        // $sql = "SELECT * from hang_hoa WHERE 1 order by id desc";
+        $sql = "SELECT * from hang_hoa WHERE 1 order by id desc limit 9";   //load 8 sản phẩm
         // if ($kyw!="") {
         //     $sql.=" and name like '%".$kyw."%'";
         // }
@@ -31,6 +31,16 @@
         //     $sql.=" and iddm ='".$iddm."'";
         // }
         // $sql.=" order by id desc";
+        $listsanpham = pdo_query($sql);
+        return $listsanpham;
+    }
+    function loadall_sanpham_tang(){
+        $sql = "SELECT * from hang_hoa WHERE 1 order by price_old ";
+        $listsanpham = pdo_query($sql);
+        return $listsanpham;
+    }
+    function loadall_sanpham_giam(){
+        $sql = "SELECT * from hang_hoa WHERE 1 order by price_old desc";
         $listsanpham = pdo_query($sql);
         return $listsanpham;
     }

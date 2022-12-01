@@ -13,12 +13,6 @@
 			</div>
 		</div>
 	</section>
-	<?php
-		if($note ==1)
-		echo "
-		<script>alert('Da them vao gio hang');</script>";
-
-	?>
 	<!-- End Banner Area -->
 	<div class="container">
 		<div class="row">
@@ -39,13 +33,19 @@
 						<?php
 						$linkdm0="index.php?act=category";
 							echo'
-							<li class="main-nav-list"><a href="'.$linkdm0.'"><span
+							<li class="main-nav-list"><a data-toggle="collapse" href="#fruitsVegetable" aria-expanded="false" aria-controls="fruitsVegetable"><span
+								 class="lnr lnr-arrow-right"></span>Sắp xếp<span class="number">(2)</span></a>
+								<ul class="collapse" id="fruitsVegetable" data-toggle="collapse" aria-expanded="false" aria-controls="fruitsVegetable">
+									<li class="main-nav-list child"><a href="'.$linkdm0.'&react=2">Giá từ thấp đến cao<span class="number"></span></a></li>
+									<li class="main-nav-list child"><a href="'.$linkdm0.'&react=3">Giá từ cao đến thấp<span class="number"></span></a></li>
+								</ul>
+							</li>
+							<li class="main-nav-list"><a href="'.$linkdm0.'&react=0"><span
 									class="lnr lnr-arrow-right"></span>ALL<span class="number"></span></a></li>';
 							foreach ($dsdm as $dm) {
 								extract($dm);
 								$linkdm="index.php?act=category&iddm=".$ma_loai;
 								echo'
-									
 									<li class="main-nav-list"><a href="'.$linkdm.'"><span
 									class="lnr lnr-arrow-right"></span>'.$ten_loai.'<span class="number"></span></a></li>
 									
@@ -76,12 +76,10 @@
 			<div class="col-xl-9 col-lg-8 col-md-7">
 				<!-- Start Filter Bar -->
 				<div class="filter-bar d-flex flex-wrap align-items-center">
-					<div class="sorting">
-						<select>
-							<option value="1">Giá từ thấp tới cao</option>
-							<option value="1">Giá từ cao tới thấp</option>
-						</select>
-					</div>
+					<!-- <div class="">
+						<a href="index.php?act=category&react=2">Giá từ thấp tới cao</a>
+						<a href="index.php?act=category&react=3">Giá từ cao tới thấp</a>
+					</div> -->
 					<div class="sorting mr-auto">
 						<!-- <select>
 							<option value="1">Hiển thị 12</option>
@@ -104,9 +102,8 @@
 				<section class="lattest-product-area pb-40 category-list">
 					<div class="row">
 						<!-- single product -->
-						<?php
-						if($react==1){
-							foreach($filtersp as $sp){
+						<?php	
+							foreach($value as $sp){
 								extract($sp);
 								$hinh=$img_path.$img;
 								$price_1 = $price_old;
@@ -128,10 +125,7 @@
 											<div class="prd-bottom">
 												<a href="'.$sphct.'" class="social-info">
 													<span class="ti-bag"></span>
-<<<<<<< HEAD
 													<p class="hover-text"> Thêm vào giỏ </p>
-=======
-<<<<<<< HEAD
 													<p class="hover-text">
 														<input type="submit" name="addgiohang" id="them" value="Them vao gio" style="background: transparent;border: none !important;">
 													</p>
@@ -139,10 +133,8 @@
 											</form>
 												<a href="#" class="social-info">
 													<p class="hover-text">Thêm giỏ</p>
->>>>>>> 4b5b97bcab0bf75a3eda06f1f13b2c8358d11431
 												</a>
 												<a href="" class="social-info">
->>>>>>> 08254aa56eed29616a6087f0cbdaedfec17a8934
 													<span class="lnr lnr-heart"></span>
 													<p class="hover-text">Yêu thích</p>
 												</a>
@@ -158,46 +150,6 @@
 										</div>
 									</div>
 								</div>';
-						}
-					} else
-						foreach($spnew as $sp){
-							extract($sp);
-							$hinh=$img_path.$img;
-							$price_1 = $price_old;
-							if ($price_new > 0) $price_1 = $price_new;
-							$sphct="index.php?act=sanphamct&idsp=".$id;
-							echo '
-								<div class="col-lg-4 col-md-6">
-									<div class="single-product">
-										<a href="'.$sphct.'">
-											<img class="img-fluid" src="'.$hinh.'" alt="" style="height:250px; width:250px;">
-										</a>
-										<div class="product-details">
-											<h6>'.$name.'</h6>
-										<div class="price">
-											<h6>$'.$price_1.'</h6>
-										</div>
-										<div class="prd-bottom">
-											<a href="'.$sphct.'" class="social-info">
-													<span class="ti-bag"></span>
-													<p class="hover-text"> Thêm vào giỏ </p>
-											</a>
-											<a href="#" class="social-info">
-												<span class="lnr lnr-heart"></span>
-												<p class="hover-text">Yêu thích</p>
-											</a>
-											<a href="" class="social-info">
-												<span class="lnr lnr-sync"></span>
-												<p class="hover-text">So sánh</p>
-											</a>
-											<a href="'.$sphct.'" class="social-info">
-												<span class="lnr lnr-move"></span>
-												<p class="hover-text">Xem thêm</p>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>';
 						}
 						
 					?>		

@@ -24,20 +24,8 @@
                 break;
             case 'cart':
                 include "view/cart.php";
-                // if(isset($_SESSION['giohang'])&&(count($_SESSION['giohang'])>0)){
-                    
-                //     include "view/cart.php";
-                // }else {
-                //     echo ' 
-                //     <a href="index.php?act=category" style="color: red; margin:40em 20em ; font-size: 30px">GIỎ HÀNG TRỐNG</a>
-                    
-                //     <script>    
-                //         alert:"Giỏ hàng Trống" 
-                //     </script>';
-                // }    
                 break;
             case 'cartprocess':
-
                 include 'view/cartprocess.php';
                 break;
             case 'cartupdate':
@@ -56,10 +44,34 @@
                     include 'view/delcart.php';
                 break;
             case 'category':
+                $react = 0;
+                $spnew_tang = loadall_sanpham_tang();
+                $spnew_giam = loadall_sanpham_giam();
+                if(isset($_GET['react'])){
+                    if($_GET['react']==2)$react =2;
+                }else $react =3;
                 if(isset($_GET['iddm']) && $_GET['iddm']!=""){
                     $filtersp=filter_sanpham($_GET['iddm']);
-                    $react =1;}
-                    else $react =0;
+                    $react =1; 
+                }
+                switch($react){
+                    case "0":
+                        $value=$spnew;
+                    break;
+                    case "1":
+                        $value=$filtersp;
+                    break;
+                    case "2":
+                        $value=$spnew_tang;
+                    break;
+                    case "3":
+                        $value=$spnew_giam;
+                    break;
+                    default:
+                        $value=$spnew;
+                    break;
+                }
+                
                 include 'view/category.php';
                 break;
             case 'checkout':
@@ -76,7 +88,6 @@
                 include 'view/elements.php';
                 break;
             case 'filtersanpham':
-
                 break;
             case 'sanphamct':
                 if (isset($_GET['idsp'])&&($_GET['idsp']>0)){
