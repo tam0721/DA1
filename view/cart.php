@@ -100,7 +100,9 @@
                                     foreach($cart as $sp){
                                         extract($sp);
                                         if($ma_hh)
-                                        $tong = $so_luong * $price;
+                                        $price_1 = $price_old;
+								        if ($price_new > 0) $price_1 = $price_new;
+                                        $tong = $so_luong * $price_1;
                                         $ttien = 0;
                                         $ttien += $tong;
                                         $all +=$ttien;
@@ -127,7 +129,7 @@
                                                     <h5>'.$size.'</h5>
                                                 </td>
                                                 <td>
-                                                    <h5>$'.number_format($price,2).'</h5>
+                                                    <h5>$'.number_format($price_1,2).'</h5>
                                                 </td>
                                                 <td>
                                                     <div class="product_count">

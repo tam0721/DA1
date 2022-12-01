@@ -21,15 +21,12 @@
      
         if($fg==0){
             $ma_hh=$_POST['id'];
-            $ten=$_POST['name'];
-            $gia=$_POST['price'];
-            $hinh=$_POST['img'];
             $note=$_POST['note'];
             $soluong=$_POST['soluong'];
             $size=$_POST['size'];
             if(isset($_POST['size']) && $size !=" " && $size > 0){
              
-                insert_giohang($ma_hh,$ten,$gia,$hinh,$soluong,$size);
+                insert_giohang($ma_hh,$soluong,$size);
                 $cartsp=[$ma_hh,$ten,$gia,$hinh,$soluong,$size];
                 array_push($_SESSION['giohang'],$cartsp);
                 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2022 at 04:26 PM
+-- Generation Time: Dec 01, 2022 at 04:54 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -82,14 +82,6 @@ CREATE TABLE `gio_hang` (
   `size` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `gio_hang`
---
-
-INSERT INTO `gio_hang` (`id`, `ma_hh`, `so_luong`, `size`) VALUES
-(115, 112, 1, 39),
-(116, 114, 1, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -114,14 +106,14 @@ CREATE TABLE `hang_hoa` (
 --
 
 INSERT INTO `hang_hoa` (`id`, `name`, `price_old`, `price_new`, `img`, `mota`, `iddm`, `luotxem`, `trang_thai`, `special`) VALUES
-(101, 'Ralph Sampson', 100.00, 0.00, 'puma-Ralph Sampson.jpg', 'fdf', 38, 0, 1, 0),
+(101, 'Ralph Sampson', 100.00, 0.00, 'puma-Ralph Sampson.jpg', 'fdf', 38, 2, 1, 0),
 (103, 'Vans Classic Slip On ', 57.00, 0.00, 'vans-classic-slipon.jpg', 'Classic Slipon', 39, 0, 1, 0),
-(104, 'ADIDAS HYPERTURF', 167.00, 0.00, 'adidas-HYPERTURF.jpg', 'HYPERTURF', 37, 1, 1, 0),
-(105, 'Puma RS-X', 130.00, 0.00, 'puma-RS-X.jpg', 'Mẫu Sneaker Puma RSX là một trong những thiết kế huyền thoại của Puma. Đây là mẫu giày Chunky được đánh giá là xuất sắc nhất của hãng, thu hút được sự yêu thích của đông đảo giới trẻ. Đây thực sự là mẫu giày đã góp phần làm nên tên tuổi của Puma như hiện tại.', 38, 0, 1, 1),
+(104, 'ADIDAS HYPERTURF', 167.00, 0.00, 'adidas-HYPERTURF.jpg', 'HYPERTURF', 37, 11, 1, 0),
+(105, 'Puma RS-X', 130.00, 0.00, 'puma-RS-X.jpg', 'Mẫu Sneaker Puma RSX là một trong những thiết kế huyền thoại của Puma. Đây là mẫu giày Chunky được đánh giá là xuất sắc nhất của hãng, thu hút được sự yêu thích của đông đảo giới trẻ. Đây thực sự là mẫu giày đã góp phần làm nên tên tuổi của Puma như hiện tại.', 38, 2, 1, 1),
 (106, 'Jordan Series Mid', 99.00, 0.00, 'Jordan Series Mid.jpg', 'Nike Jordan Series Mid', 36, 0, 1, 0),
-(112, 'VANS VN0A5', 83.00, 0.00, 'vans VN0A5KRDBZW.jpg', 'Vans VN0A5KRDBZW thuộc dòng Authentic Collage Black/White mới nhất trong bộ sưu tập của thương hiệu Vans', 39, 0, 1, 0),
-(113, 'SuperStart', 99.00, 0.00, 'superstart1.jpg', 'z', 37, 1, 1, 0),
-(114, 'LeBron 19', 124.00, 100.00, 'LeBron 19.jpg', '', 36, 0, 0, 0);
+(112, 'VANS VN0A5', 83.00, 0.00, 'vans VN0A5KRDBZW.jpg', 'Vans VN0A5KRDBZW thuộc dòng Authentic Collage Black/White mới nhất trong bộ sưu tập của thương hiệu Vans', 39, 4, 1, 0),
+(113, 'SuperStart', 99.00, 0.00, 'superstart1.jpg', 'z', 37, 9, 1, 0),
+(114, 'LeBron 19', 124.00, 100.00, 'LeBron 19.jpg', '', 36, 2, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -305,7 +297,7 @@ ALTER TABLE `don_hang`
 -- AUTO_INCREMENT for table `gio_hang`
 --
 ALTER TABLE `gio_hang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
 
 --
 -- AUTO_INCREMENT for table `hang_hoa`
