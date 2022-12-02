@@ -141,12 +141,9 @@
                                             </tr>
                                         ';  
                                         echo'
-                                        <div class="col-md-6 form-group p_star">
-                                        <label>Ma_hh</label>
-                                        <input placeholder="" type="text" class="form-control" id="email" name="ma_hh[]" value="'.$ma_hh.'">
-                                        <input placeholder="" type="text" class="form-control" id="email" name="size[]" value="'.$size.'">
-                                        <input placeholder="" type="text" class="form-control" id="email" name="so_luong[]" value="'.$so_luong.'">
-                                    </div>';
+                                        <input style="display:none;" type="text" class="form-control" id="email" name="ma_hh[]" value="'.$ma_hh.'">
+                                        <input style="display:none;" type="text" class="form-control" id="email" name="size[]" value="'.$size.'">
+                                        <input style="display:none;" type="text" class="form-control" id="email" name="so_luong[]" value="'.$so_luong.'">';
                                     } 
                                 ?>
                                     <tr class="bottom_button">
@@ -240,8 +237,8 @@
                             </div>
                             <tr>
                         <td>
-                            <input type="radio" name="payment" value="0">  Thanh toán khi nhận hàng <br>
-                            <input type="radio" name="payment" value="1">  Thanh toán bằng thẻ <br>
+                            <label><input type="radio" name="payment" value="0">  Thanh toán khi nhận hàng </label> <br>
+                            <label><input type="radio" name="payment" value="1">  Thanh toán bằng thẻ </label> <br>
                             <div class="check"></div>
                         </td>
                     </tr>
