@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2022 at 06:22 PM
+-- Generation Time: Dec 02, 2022 at 06:33 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -89,13 +89,6 @@ CREATE TABLE `gio_hang` (
   `so_luong` int(11) NOT NULL,
   `size` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `gio_hang`
---
-
-INSERT INTO `gio_hang` (`id`, `ma_hh`, `so_luong`, `size`) VALUES
-(123, 113, 1, 35);
 
 -- --------------------------------------------------------
 
