@@ -36,6 +36,7 @@
                     <div class="col-lg-8">
                         <h3>Thông tin giao hàng</h3>
                         <form class="row contact_form" action="index.php?act=confirmation" method="post" novalidate="novalidate">
+                            <input placeholder="ID" type="text" class="form-control" id="first" name="ma_tk" value="<?=$ma_tk?>" style="display:none;">
                             <div class="col-md-6 form-group p_star">
                                 <label>Họ tên</label>
                                 <input placeholder="Họ tên" type="text" class="form-control" id="first" name="nguoi_nhan" value="<?=$ho_ten?>">
@@ -84,15 +85,17 @@
                             ?>
                             <?php
                                 
-                                    $all =0;
+                                    $all = 0;
                                     foreach($cart as $sp){
                                         extract($sp);
                                         if($ma_hh)
-                                        $tong = $so_luong * $price;
+                                        $price_1 = $price_old;
+								        if ($price_new > 0) $price_1 = $price_new;
+                                        $tong = $so_luong * $price_1;
                                         $ttien = 0;
                                         $ttien += $tong;
                                         $all +=$ttien;
-                                        $tien=$all+50;
+                                        $tien=$all+20000;
                                         $del="index.php?act=delcart&idsp=".$ma_hh;
                                         $upd="index.php?act=cart&id=".$ma_hh;
                                         $up="index.php?act=cartupdate&id=".$ma_hh;
@@ -116,7 +119,7 @@
                                                     <h5>'.$size.'</h5>
                                                 </td>
                                                 <td>
-                                                    <h5>$'.number_format($price,2).'</h5>
+                                                    <h5>$'.number_format($price_1,2).'</h5>
                                                 </td>
                                                 <td>
                                                     <div class="product_count">
@@ -137,6 +140,13 @@
                                                 
                                             </tr>
                                         ';  
+                                        echo'
+                                        <div class="col-md-6 form-group p_star">
+                                        <label>Ma_hh</label>
+                                        <input placeholder="" type="text" class="form-control" id="email" name="ma_hh[]" value="'.$ma_hh.'">
+                                        <input placeholder="" type="text" class="form-control" id="email" name="size[]" value="'.$size.'">
+                                        <input placeholder="" type="text" class="form-control" id="email" name="so_luong[]" value="'.$so_luong.'">
+                                    </div>';
                                     } 
                                 ?>
                                     <tr class="bottom_button">
@@ -193,7 +203,7 @@
 									<h5></h5>
 								</td>
 								<td>
-									<p>Phí: $50.00</p>
+									<p>Phí: 20.000 đ</p>
 								</td>
 							</tr>
 							<tr>
@@ -222,7 +232,7 @@
                            
                             <div class="payment_item">
                                 <div class="radion_btn">
-                                    <input type="radio" id="f-option5" name="selector">
+                                    <input type="radio" id="f-option5" name="selector" required>
                                     <label for="f-option5">Xác nhận đúng thông tin</label>
                                     <div class="check"></div>
                                 </div>
@@ -230,15 +240,13 @@
                             </div>
                             <tr>
                         <td>
-                            <input type="radio" name="payment" value="thanh toán khi nhận hàng">  Thanh toán khi nhận hàng <br>
-
-
+                            <input type="radio" name="payment" value="0">  Thanh toán khi nhận hàng <br>
                             <input type="radio" name="payment" value="1">  Thanh toán bằng thẻ <br>
                             <div class="check"></div>
                         </td>
                     </tr>
                             <div class="creat_account">
-                                <input type="checkbox" id="f-option4" name="selector">
+                                <input type="checkbox" id="f-option4" name="selector" required>
                                 <label for="f-option4">Tôi đã đọc và chấp nhận </label>
                                 <a href="#">điều kiện & điều khoản</a>
                             </div>

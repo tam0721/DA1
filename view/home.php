@@ -605,8 +605,8 @@
 							foreach ($topview as $sptop) {
 								extract($sptop);
 								$hinh=$img_path.$img;
-								$price_1 == $price_old;
-								if ($price_new > 0) $price_1 == $price_new;
+								$price_1 = $price_old;
+								if ($price_new > 0) $price_1 = $price_new;
 								$sphct="index.php?act=sanphamct&idsp=".$id;
 								echo '
 									<div class="col-lg-4 col-md-4 col-sm-6 mb-20">

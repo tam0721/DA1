@@ -50,14 +50,15 @@
             //     }else{
             //         $kyw="";
             //     }
-            //     if(isset($_GET['iddm'])&&($_GET['iddm']>0)){
-            //         $iddm=$_GET['iddm'];
-            //     }else{
-            //         $iddm="";
-            //     }
+            //     // if(isset($_GET['iddm'])&&($_GET['iddm']>0)){
+            //     //     $iddm=$_GET['iddm'];
+            //     // }else{
+            //     //     $iddm="";
+            //     // }
             //     $dssp=loadall_sanpham($kyw,$iddm);
-            //     $ten_loai=load_ten_dm($iddm);
+            //     // $ten_loai=load_ten_dm($iddm);
             //     include 'view/category.php';
+            //     break;
             
             case 'category':
                 $react = 0;
@@ -94,18 +95,38 @@
                 break;
             case 'confirmation':
                     if(isset($_POST['confirmation'])&&($_POST['confirmation'])){
+                        $ma_tk = $_POST['ma_tk'];
+                        // $ma_hh = $_POST['ma_hh'];
+                        // $size = $_POST['size'];
+                        // $quantity = $_POST['so_luong'];
                         $nguoi_nhan=$_POST['nguoi_nhan'];
                         $dia_chi_nhan=$_POST['dia_chi_nhan'];
                         $sdt_nhan=$_POST['sdt_nhan'];
                         $payment=$_POST['payment'];
-                        $email=$_POST['email'];      
-                        // $ma_tk=$_POST['ma_tk'];       
+                        $email=$_POST['email'];
+                        $ngay_dat = date("Y-m-d",time());  
 
-                        $sql = "INSERT INTO don_hang (nguoi_nhan,dia_chi_nhan,sdt_nhan,payment,email)
-                        VALUES ('$nguoi_nhan','$dia_chi_nhan','$sdt_nhan','$payment','$email')";
+                        $sql1 = "INSERT INTO don_hang (ma_tk,ngay_dat,nguoi_nhan,dia_chi_nhan,sdt_nhan,payment,email)
+                                VALUES ('$ma_tk','$ngay_dat','$nguoi_nhan','$dia_chi_nhan','$sdt_nhan','$payment','$email')";
                         // taodonhang($nguoi_nhan,$dia_chi_nhan,$sdt_nhan,$payment,$email,$ma_tk);
                         // trả về in đơn
-                        
+                        pdo_execute($sql1);
+
+                        $sql2 = "SELECT ma_dh FROM don_hang WHERE ma_tk = " .$ma_tk;
+                        extract(pdo_query_one($sql2));
+
+                        for ($i=0; $i<count($_SESSION['giohang']); $i++) {
+                            $ma_hh = $_POST['ma_hh'][$i];
+                            $size = $_POST['size'][$i];
+                            $quantity = $_POST['so_luong'][$i];
+                            $sql = "INSERT INTO chi_tiet_don_hang (ma_dh, ma_hh, size, quantity)
+                                VALUES ('$ma_dh', '$ma_hh', $size, $quantity)";
+                            pdo_execute($sql);
+                        }
+
+                        // $sql = "INSERT INTO chi_tiet_don_hang (ma_dh, ma_hh, size, quantity)
+                        //         VALUES ('$ma_dh', '$ma_hh', $size, $quantity)";
+                        // pdo_execute($sql);
                     }
                 include 'view/confirmation.php';
                 break;

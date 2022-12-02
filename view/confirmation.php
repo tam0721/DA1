@@ -23,11 +23,11 @@
 					<div class="details_item">
 						<h4>Thông tin đặt hàng</h4>
 						<ul class="list">
-							<li><a href="#"><span>Họ tên </span>:<?=$nguoi_nhan?> </a></li>
-							<li><a href="#"><span>Email</span>:<?=$email?> </a></li>
+							<li><a href="#"><span>Họ tên </span>: <?=$nguoi_nhan?> </a></li>
+							<li><a href="#"><span>Email</span>: <?=$email?> </a></li>
 							<li><a href="#"><span>Số điện thoại</span>: <?=$sdt_nhan?></a></li>
 							<li><a href="#"><span>Địa chỉ</span>: <?=$dia_chi_nhan?> </a></li>
-							<li><a href="#"><span>Phương thức thanh toán</span>:<?=$payment?> </a></li>
+							<li><a href="#"><span>Phương thức thanh toán</span>:<?=($payment==0)? "Thanh toán khi nhận hàng":"Thanh toán bằng thẻ"?> </a></li>
 						</ul>
 					</div>
 				</div>
@@ -56,11 +56,13 @@
                                     foreach($cart as $sp){
                                         extract($sp);
                                         if($ma_hh)
-                                        $tong = $so_luong * $price;
+										$price_1 = $price_old;
+								        if ($price_new > 0) $price_1 = $price_new;
+                                        $tong = $so_luong * $price_1;
                                         $ttien = 0;
                                         $ttien += $tong;
                                         $all +=$ttien;
-										$tien=$all+50;
+										$tien=$all+20000;
                                         $del="index.php?act=delcart&idsp=".$ma_hh;
                                         $upd="index.php?act=cart&id=".$ma_hh;
                                         $up="index.php?act=cartupdate&id=".$ma_hh;
@@ -84,7 +86,7 @@
                                                     <h5>'.$size.'</h5>
                                                 </td>
                                                 <td>
-                                                    <h5>$'.number_format($price,2).'</h5>
+                                                    <h5>$'.number_format($price_1,2).'</h5>
                                                 </td>
                                                 <td>
                                                     <div class="product_count">
@@ -161,7 +163,7 @@
 									<h5></h5>
 								</td>
 								<td>
-									<p>Phí: $50.00</p>
+									<p>Phí: 20.000 đ</p>
 								</td>
 							</tr>
 							<tr>

@@ -99,8 +99,15 @@
                                     $all =0;
                                     foreach($cart as $sp){
                                         extract($sp);
+<<<<<<< HEAD
                                         
                                         $tong = $so_luong * $price;
+=======
+                                        if($ma_hh)
+                                        $price_1 = $price_old;
+								        if ($price_new > 0) $price_1 = $price_new;
+                                        $tong = $so_luong * $price_1;
+>>>>>>> d17608d158f8060021ed4d982a22b860e4be5b8e
                                         $ttien = 0;
                                         $ttien += $tong;
                                         $all +=$ttien;
@@ -127,7 +134,7 @@
                                                     <h5>'.$size.'</h5>
                                                 </td>
                                                 <td>
-                                                    <h5>$'.number_format($price,2).'</h5>
+                                                    <h5>$'.number_format($price_1,2).'</h5>
                                                 </td>
                                                 <td>
                                                     <div class="product_count">
