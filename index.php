@@ -36,10 +36,9 @@
             case 'delcart':
                 if (isset($_GET['idsp'])&&($_GET['idsp']>=0)){
                     $id=$_GET['idsp'];
-                    if(isset($id)){
-                        // $id = $_POST['id'];
-                          // if(isset($_POST['id']) && $_POST['id'] == $_GET['id']){
-                            array_splice($_SESSION['giohang'],$_GET['id'],1);
+                    $size=$_GET['size'];
+                    if(isset($id,$size)){
+                            array_splice($_SESSION['giohang'], $_GET['id']&&$size,1);
                           }else
                            unset($_SESSION['giohang']);
                 }
@@ -88,14 +87,12 @@
                         $value=$spnew;
                     break;
                 }
-                
                 include 'view/category.php';
                 break;
             case 'checkout':
                 include 'view/checkout.php';
                 break;
             case 'confirmation':
-                
                     if(isset($_POST['confirmation'])&&($_POST['confirmation'])){
                         $nguoi_nhan=$_POST['nguoi_nhan'];
                         $dia_chi_nhan=$_POST['dia_chi_nhan'];
@@ -124,6 +121,7 @@
                 if (isset($_GET['idsp'])&&($_GET['idsp']>0)){
                     $id=$_GET['idsp'];
                     $sanpham=loadone_sanpham($id);
+                    $cart_one=loadone_giohang($id);
                     include 'view/sanphamct.php';
                 }else{
                     include 'view/home.php';

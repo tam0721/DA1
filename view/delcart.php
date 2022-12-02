@@ -13,12 +13,10 @@
   //     if (count($_SESSION['giohang'])>0) header('location: index.php?act=cart');
   //     else header('location: index.php?act=product');
   //   }  
-    
-    
-   
   if(isset($_GET['idsp'])&&$_GET['idsp']){
     $ma_hh =$_GET['idsp'];
-    delete_giohang($ma_hh);
+    $size =$_GET['size'];
+    delete_giohang($ma_hh,$size);
     header('location: index.php?act=cart');
   }
   

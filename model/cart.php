@@ -11,13 +11,18 @@ function update_giohang($soluong,$ma_hh){
     $sql = "UPDATE gio_hang SET so_luong='".$soluong."' WHERE ma_hh=".$ma_hh;
     pdo_execute($sql);
 }
-function delete_giohang($ma_hh){
-    $sql = "DELETE FROM gio_hang WHERE ma_hh=".$ma_hh;
+function delete_giohang($ma_hh,$size){
+    $sql = "DELETE FROM gio_hang WHERE ma_hh=$ma_hh AND size=$size" ;
     pdo_execute($sql);
 }
 
 function loadall_giohang(){
     $sql = "SELECT * from gio_hang ";
+    $cart = pdo_query($sql);
+    return $cart;
+}
+function loadone_giohang($id){
+    $sql = "SELECT * from gio_hang where ma_hh=".$id;
     $cart = pdo_query($sql);
     return $cart;
 }
