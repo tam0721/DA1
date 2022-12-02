@@ -40,7 +40,7 @@
                 <!-- demo -->
                 <div style="width:300px; text-align: center;">
                     <?php
-                        echo '<img src=upload/'.$sanpham[0]['img'].' width=20% onclick="myFunction(this)">';
+                        echo '<img src='.$ha.' width=20% onclick="myFunction(this)">';
                         foreach ($images as $img) {
                             echo '<img src=upload/'.$img['img'].' width=20% onclick="myFunction(this)">';
                         }
