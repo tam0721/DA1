@@ -20,11 +20,12 @@
     <?php
         updateview($id);
         extract($sanpham);
+        extract($images);
         var_dump($_SESSION['giohang']);
         // echo $id;
         $ha="upload/".$sanpham[0]['img'];
-            if (is_file($ha)) {
-            $hinh="<img src='".$ha."' height='100%' width='100%'>";
+        if (is_file($ha)) {
+            $hinh="<img id='show' src='".$ha."' height='100%' width='100%'>";
         }else{
             $hinh="Không tìm thấy hình";
         }
@@ -35,6 +36,18 @@
         <div class= "row">
             <div class ="col-sm-5">
                 <?php echo '<div style="width=300px;height:500px; border:1px solid #ccc;">'.$hinh.'</div>';?>
+
+                <!-- demo -->
+                <div style="width:300px; text-align: center;">
+                    <?php
+                        echo '<img src=upload/'.$sanpham[0]['img'].' width=20% onclick="myFunction(this)">';
+                        foreach ($images as $img) {
+                            echo '<img src=upload/'.$img['img'].' width=20% onclick="myFunction(this)">';
+                        }
+                    ?>
+                </div>
+                <!-- end demo -->
+
                 <div style="margin-top: 20px;">
                     <h4>Mô tả</h4>
                     <p style="margin-left: 20px;"><?=$sanpham[0]['mota'] ?></p>
@@ -47,13 +60,13 @@
                         if ($sanpham[0]['price_new'] > 0) {
                             echo 
                                 '<p style="font-weight:bold; text-align:center; color:red;font-size:25px;">'
-                                .$sanpham[0]['price_new'].'.000₫</p>'.
+                                .$sanpham[0]['price_new'].'.000 ₫</p>'.
                                 '<p style="text-align:center; color:black;font-size:15px; text-decoration: line-through;">'
-                                .$sanpham[0]['price_old'].'.000₫</p>';
+                                .$sanpham[0]['price_old'].'.000 ₫</p>';
                         } else {
                             echo 
                                 '<p style="font-weight:bold; text-align:center; color:red;font-size:25px;">'
-                                .$sanpham[0]['price_old'].'.000₫</p>';
+                                .$sanpham[0]['price_old'].'.000 ₫</p>';
                         }
                         // echo $sanpham[0]['price_old'];
                     ?>
@@ -141,29 +154,6 @@
                     </div>
                 </div>
             </div>
-            <div class="slide-link" style="margin-top: 1px; margin-left:190px;">  
-            <?php
-                
-                    extract($sanpham);
-                    
-                    // $han="../upload/".$hinhanh[0]['img'];
-                    // if (is_file($han)) {
-                    //    $hinh="<img src='".$han."' width='10%'>";
-                    // }else{
-                    //     $hinh="Không tìm thấy hình";
-                    // }
-                    // echo '
-                    // <tbody>
-                    //     <tr>
-                           
-                    //         <td class="text-center">'.$hinh.'</td>
-                            
-                    //     </tr>
-                    // </tbody>';
-                
-            ?>
-            <!-- <?php echo '<div style="width=300px;height:500px; border:1px solid #ccc;">'.$hinh.'</div>';?>          -->
-        </div>
     </div>
     <!--  -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -174,6 +164,11 @@
                 $("#binhluan").load("view/comment.php", {idpro: <?=$id?>});
             // });
             });
+
+            function myFunction(imgs) {
+                var expandImg = document.getElementById("show");
+                expandImg.src = imgs.src;
+            }
         </script>
         <div class="form-group" id="binhluan">
             

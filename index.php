@@ -9,6 +9,7 @@
     include 'model/danhmuc.php';
     include 'model/tintuc.php';
     include 'model/cart.php';
+    include 'model/hinhanh.php';
     include 'var.php';
     $spnew =loadall_sanpham_home();
     $topview = get_product_top9();
@@ -141,6 +142,7 @@
                 if (isset($_GET['idsp'])&&($_GET['idsp']>0)){
                     $id=$_GET['idsp'];
                     $sanpham=loadone_sanpham($id);
+                    $images = loadall_img($id);
                     include 'view/sanphamct.php';
                 }else{
                     include 'view/home.php';
