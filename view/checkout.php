@@ -36,6 +36,7 @@
                     <div class="col-lg-8">
                         <h3>Thông tin giao hàng</h3>
                         <form class="row contact_form" action="index.php?act=confirmation" method="post" novalidate="novalidate">
+                            <input placeholder="ID" type="text" class="form-control" id="first" name="ma_tk" value="<?=$ma_tk?>" style="display:none;">
                             <div class="col-md-6 form-group p_star">
                                 <label>Họ tên</label>
                                 <input placeholder="Họ tên" type="text" class="form-control" id="first" name="nguoi_nhan" value="<?=$ho_ten?>">
@@ -139,6 +140,13 @@
                                                 
                                             </tr>
                                         ';  
+                                        echo'
+                                        <div class="col-md-6 form-group p_star">
+                                        <label>Ma_hh</label>
+                                        <input placeholder="" type="text" class="form-control" id="email" name="ma_hh[]" value="'.$ma_hh.'">
+                                        <input placeholder="" type="text" class="form-control" id="email" name="size[]" value="'.$size.'">
+                                        <input placeholder="" type="text" class="form-control" id="email" name="so_luong[]" value="'.$so_luong.'">
+                                    </div>';
                                     } 
                                 ?>
                                     <tr class="bottom_button">

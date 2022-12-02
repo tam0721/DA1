@@ -88,8 +88,7 @@
 							<option value="1">Hiển thị 12</option>
 							<option value="1">Hiển thị 12</option>
 						</select> -->
-					</div>
-					
+					</div>	
 					<div class="pagination">
 					    <!-- <div>
 							<form action="index.php?act=sanpham" method="post">
@@ -111,13 +110,19 @@
 				<section class="lattest-product-area pb-40 category-list">
 					<div class="row">
 						<!-- single product -->
+<<<<<<< HEAD
 						<?php
 						if($react==1){
 							foreach($filtersp as $sp){
+=======
+						<?php	
+							foreach($value as $sp){
+>>>>>>> d2f84ad4507441444f0e6315c9b65a4506ed12ef
 								extract($sp);
 								$hinh=$img_path.$img;
-								$price_1 = $price_old;
 								if ($price_new > 0) $price_1 = $price_new;
+								else $price_1 = $price_old;
+								if($price_old == $price_1) $price_old = 0;
 								$sphct="index.php?act=sanphamct&idsp=".$id;
 								echo '
 									<div class="col-lg-4 col-md-6">
@@ -131,16 +136,10 @@
 												<h6>$'.$price_1.'</h6>
 												<h6 class="l-through">$'.$price_old.'</h6>
 											</div>
-											
-											<form action="index.php?act=cartprocess" method="post">
-													<input type="hidden" name="id" value="'.$id.'">
-													<input type="hidden" name="name" value="'.$name.'">
-													<input type="hidden" name="price" value="'.$price_1.'">
-													<input type="hidden" name="img" value="'.$img.'">
-													<input type="hidden" name="soluong" value="1">
 											<div class="prd-bottom">
-												<lable for="them" class="social-info">
+												<a href="'.$sphct.'" class="social-info">
 													<span class="ti-bag"></span>
+<<<<<<< HEAD
 
 													<p class="hover-text">
 														<input type="submit" name="addgiohang" id="them" value="Them vao gio" style="background: transparent;border: none !important;">
@@ -152,6 +151,12 @@
 												</a>
 												<a href="" class="social-info">
 
+=======
+													<p class="hover-text"> Thêm vào giỏ </p>
+												</a>
+											
+												<a href="" class="social-info">
+>>>>>>> d2f84ad4507441444f0e6315c9b65a4506ed12ef
 													<span class="lnr lnr-heart"></span>
 													<p class="hover-text">Yêu thích</p>
 												</a>

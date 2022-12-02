@@ -68,7 +68,7 @@
                 echo '<div class="card-body">
                 <div class="d-flex flex-start align-items-center">
                   <div>
-                    <h6 class="fw-bold text-primary mb-1">'.$_SESSION['user'].'</h6>
+                    <h6 class="fw-bold text-primary mb-1">'.$user.'</h6>
                     <p class="text-muted small mb-0">
                       Shared publicly - '.$ngay_bl.'
                     </p>
@@ -115,12 +115,14 @@
                 <?php
                 //echo $_SESSION['user'];
                 if(isset($_POST['guibinhluan'])&&($_POST['guibinhluan'])){
+                    $sql = "SELECT * FROM tai_khoan WHERE user = '".$_SESSION['user']."'";
+                    extract(pdo_query_one($sql));
                     $noidung=$_POST['noidung'];
                     $idpro=$_POST['idpro'];
-                    $user=$_SESSION['user'];
+                    $iduser=$ma_tk;
                     //$iduser=$_SESSION['user']['ma_tk']; 
                     $ngaybinhluan = date("d M, y");
-                    insert_binhluan($noidung,$idpro,$user,$ngaybinhluan); 
+                    insert_binhluan($noidung,$idpro,$iduser,$ngaybinhluan); 
                     header("location: ".$_SERVER['HTTP_REFERER']);
                 }
                 

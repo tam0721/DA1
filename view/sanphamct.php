@@ -20,7 +20,7 @@
     <?php
         updateview($id);
         extract($sanpham);
-        // var_dump($sanpham);
+        var_dump($_SESSION['giohang']);
         // echo $id;
         $ha="upload/".$sanpham[0]['img'];
             if (is_file($ha)) {
