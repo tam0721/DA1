@@ -99,9 +99,9 @@
                 
                     if(isset($_POST['confirmation'])&&($_POST['confirmation'])){
                         $ma_tk = $_POST['ma_tk'];
-                        $ma_hh = $_POST['ma_hh'];
-                        $size = $_POST['size'];
-                        $quantity = $_POST['so_luong'];
+                        // $ma_hh = $_POST['ma_hh'];
+                        // $size = $_POST['size'];
+                        // $quantity = $_POST['so_luong'];
                         $nguoi_nhan=$_POST['nguoi_nhan'];
                         $dia_chi_nhan=$_POST['dia_chi_nhan'];
                         $sdt_nhan=$_POST['sdt_nhan'];
@@ -118,9 +118,18 @@
                         $sql2 = "SELECT ma_dh FROM don_hang WHERE ma_tk = " .$ma_tk;
                         extract(pdo_query_one($sql2));
 
-                        $sql = "INSERT INTO chi_tiet_don_hang (ma_dh, ma_hh, size, quantity)
+                        for ($i=0; $i<count($_SESSION['giohang']); $i++) {
+                            $ma_hh = $_POST['ma_hh'][$i];
+                            $size = $_POST['size'][$i];
+                            $quantity = $_POST['so_luong'][$i];
+                            $sql = "INSERT INTO chi_tiet_don_hang (ma_dh, ma_hh, size, quantity)
                                 VALUES ('$ma_dh', '$ma_hh', $size, $quantity)";
-                        pdo_execute($sql);
+                            pdo_execute($sql);
+                        }
+
+                        // $sql = "INSERT INTO chi_tiet_don_hang (ma_dh, ma_hh, size, quantity)
+                        //         VALUES ('$ma_dh', '$ma_hh', $size, $quantity)";
+                        // pdo_execute($sql);
                     }
                 include 'view/confirmation.php';
                 break;

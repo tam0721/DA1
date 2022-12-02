@@ -143,9 +143,9 @@
                                         echo'
                                         <div class="col-md-6 form-group p_star">
                                         <label>Ma_hh</label>
-                                        <input placeholder="" type="text" class="form-control" id="email" name="ma_hh" value="'.$ma_hh.'">
-                                        <input placeholder="" type="text" class="form-control" id="email" name="size" value="'.$size.'">
-                                        <input placeholder="" type="text" class="form-control" id="email" name="so_luong" value="'.$so_luong.'">
+                                        <input placeholder="" type="text" class="form-control" id="email" name="ma_hh[]" value="'.$ma_hh.'">
+                                        <input placeholder="" type="text" class="form-control" id="email" name="size[]" value="'.$size.'">
+                                        <input placeholder="" type="text" class="form-control" id="email" name="so_luong[]" value="'.$so_luong.'">
                                     </div>';
                                     } 
                                 ?>
