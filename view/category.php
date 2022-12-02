@@ -1,3 +1,33 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+ 
+@thuan711 
+Tam0721
+/
+DA1
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+DA1/view/category.php /
+@Tam0721
+Tam0721 uploadcode
+Latest commit aae4210 1 hour ago
+ History
+ 4 contributors
+@vietbh@Tam0721@thuan711@Ciasssssss
+298 lines (285 sloc)  10.2 KB
+
 	<!-- Start Banner Area -->
 	<section class="banner-area organic-breadcrumb">
 		<div class="container">
@@ -133,14 +163,12 @@
 											<div class="prd-bottom">
 												<a href="'.$sphct.'" class="social-info">
 													<span class="ti-bag"></span>
-
 													<p class="hover-text">
 														<input type="submit" name="addgiohang" id="them" value="Thêm giỏ" style="background: transparent;border: none !important;">
 													</p>
 												</lable>
 											</form>
 												<a href="" class="social-info">
-
 													<span class="lnr lnr-heart"></span>
 													<p class="hover-text">Yêu thích</p>
 												</a>
@@ -296,3 +324,4 @@
 			border-radius: 5px;
 		}
 	</style>
+
