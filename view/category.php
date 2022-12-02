@@ -128,7 +128,7 @@
 											<div class="product-details">
 												<h6>'.$name.'</h6>
 											<div class="price">
-												<h6>$'.$price_1.'</h6>
+												<h6>'.$price_1.'.000 ₫</h6>
 											</div>
 											<div class="prd-bottom">
 												<a href="'.$sphct.'" class="social-info">
@@ -173,7 +173,7 @@
 										<div class="product-details">
 											<h6>'.$name.'</h6>
 										<div class="price">
-											<h6>$'.$price_1.'</h6>
+											<h6>'.$price_1.'.000 ₫</h6>
 										</div>
 										
 										<form action="index.php?act=cartprocess" method="post">
@@ -268,7 +268,7 @@
 											<div class="desc">
 												<a href="'.$sphct.'" class="title">'.$name.'</a>
 												<div class="price">
-													<h6>$'.$price_1.'</h6>
+													<h6>'.$price_1.'.000 ₫</h6>
 												</div>
 											</div>
 										</div>

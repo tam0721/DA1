@@ -146,20 +146,20 @@
                 
                     extract($sanpham);
                     
-                    $han="../upload/".$hinhanh[0]['img'];
-                    if (is_file($han)) {
-                       $hinh="<img src='".$han."' width='10%'>";
-                    }else{
-                        $hinh="Không tìm thấy hình";
-                    }
-                    echo '
-                    <tbody>
-                        <tr>
+                    // $han="../upload/".$hinhanh[0]['img'];
+                    // if (is_file($han)) {
+                    //    $hinh="<img src='".$han."' width='10%'>";
+                    // }else{
+                    //     $hinh="Không tìm thấy hình";
+                    // }
+                    // echo '
+                    // <tbody>
+                    //     <tr>
                            
-                            <td class="text-center">'.$hinh.'</td>
+                    //         <td class="text-center">'.$hinh.'</td>
                             
-                        </tr>
-                    </tbody>';
+                    //     </tr>
+                    // </tbody>';
                 
             ?>
             <!-- <?php echo '<div style="width=300px;height:500px; border:1px solid #ccc;">'.$hinh.'</div>';?>          -->
