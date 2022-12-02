@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2022 at 06:33 PM
+-- Generation Time: Dec 02, 2022 at 07:49 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -114,14 +114,14 @@ CREATE TABLE `hang_hoa` (
 --
 
 INSERT INTO `hang_hoa` (`id`, `name`, `price_old`, `price_new`, `img`, `mota`, `iddm`, `luotxem`, `trang_thai`, `special`) VALUES
-(101, 'Ralph Sampson', 4.998, 0.00, 'puma-Ralph Sampson.jpg', 'fdf', 38, 2, 1, 0),
-(103, 'Vans Classic Slip On ', 5.599, 0.00, 'vans-classic-slipon.jpg', 'Classic Slipon', 39, 7, 1, 0),
-(104, 'ADIDAS HYPERTURF', 3.199, 0.00, 'adidas-HYPERTURF.jpg', 'HYPERTURF', 37, 4, 1, 0),
-(105, 'Puma RS-X', 2.135, 0.00, 'puma-RS-X.jpg', 'Mẫu Sneaker Puma RSX là một trong những thiết kế huyền thoại của Puma. Đây là mẫu giày Chunky được đánh giá là xuất sắc nhất của hãng, thu hút được sự yêu thích của đông đảo giới trẻ. Đây thực sự là mẫu giày đã góp phần làm nên tên tuổi của Puma như hiện tại.', 38, 3, 1, 1),
-(106, 'Jordan Series Mid', 4.485, 0.00, 'Jordan Series Mid.jpg', 'Nike Jordan Series Mid', 36, 5, 1, 0),
-(112, 'VANS VN0A5', 890.000, 0.00, 'vans VN0A5KRDBZW.jpg', 'Vans VN0A5KRDBZW thuộc dòng Authentic Collage Black/White mới nhất trong bộ sưu tập của thương hiệu Vans', 39, 2, 1, 0),
-(113, 'SuperStart', 2.145, 0.00, 'superstart1.jpg', 'z', 37, 26, 1, 0),
-(114, 'LeBron 19', 4.382, 0.00, 'le19.webp', 'Hệ thống đệm được trang bị lại kết hợp Max Air có thể nhìn thấy được với bộ phận Zoom Air dày, nhạy dưới bàn chân trước. Max Air giúp tiêu tan lực tác động, trong khi Zoom Air giúp đẩy bạn xuống sân. Phần dưới của giày được thiết kế trông giống như các van và ống tạo nên hoạt động bên trong của nó.', 36, 25, 0, 0);
+(101, 'Ralph Sampson', 4.998, 0.00, 'puma-Ralph-Sampson.jpg', 'fdf', 38, 7, 1, 0),
+(103, 'Vans Classic Slip On ', 5.599, 0.00, 'vans-classic-slipon.jpg', 'Classic Slipon', 39, 9, 1, 0),
+(104, 'ADIDAS HYPERTURF', 3.199, 0.00, 'adidas-HYPERTURF.jpg', 'HYPERTURF', 37, 6, 1, 0),
+(105, 'Puma RS-X', 2.135, 0.00, 'puma-RS-X.jpg', 'Mẫu Sneaker Puma RSX là một trong những thiết kế huyền thoại của Puma. Đây là mẫu giày Chunky được đánh giá là xuất sắc nhất của hãng, thu hút được sự yêu thích của đông đảo giới trẻ. Đây thực sự là mẫu giày đã góp phần làm nên tên tuổi của Puma như hiện tại.', 38, 7, 1, 1),
+(106, 'Jordan Series Mid', 4.485, 0.00, 'Jordan-Series-Mid.jpg', 'Nike Jordan Series Mid', 36, 7, 1, 0),
+(112, 'VANS VN0A5', 890.000, 0.00, 'vans-VN0A5KRDBZW.jpg', 'Vans VN0A5KRDBZW thuộc dòng Authentic Collage Black/White mới nhất trong bộ sưu tập của thương hiệu Vans', 39, 7, 1, 0),
+(113, 'SuperStart', 2.145, 0.00, 'superstart1.jpg', 'z', 37, 30, 1, 0),
+(114, 'LeBron 19', 4.382, 0.00, 'le19.webp', 'Hệ thống đệm được trang bị lại kết hợp Max Air có thể nhìn thấy được với bộ phận Zoom Air dày, nhạy dưới bàn chân trước. Max Air giúp tiêu tan lực tác động, trong khi Zoom Air giúp đẩy bạn xuống sân. Phần dưới của giày được thiết kế trông giống như các van và ống tạo nên hoạt động bên trong của nó.', 36, 60, 0, 0);
 
 -- --------------------------------------------------------
 
