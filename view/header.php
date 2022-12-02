@@ -70,14 +70,15 @@
 										
 								</ul>
 							</li>
-							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+							<li class="nav-item"><a class="nav-link" href="index.php?act=blog">Blog</a></li>
+							<!-- <li class="nav-item submenu dropdown">
+								<a href="index.php?act=blog" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Blog</a>
-								<ul class="dropdown-menu">
+								 <ul class="dropdown-menu">
 									<li class="nav-item"><a class="nav-link" href="index.php?act=blog">Blog</a></li>
 									<li class="nav-item"><a class="nav-link" href="index.php?act=single-blog">Blog Details</a></li>
-								</ul>
-							</li>
+								</ul> 
+							</li> -->
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Thành viên</a>
