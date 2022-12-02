@@ -95,7 +95,7 @@
                                         $ttien = 0;
                                         $ttien += $tong;
                                         $all +=$ttien;
-                                        $tien=$all+20000;
+                                        $tien=$all+5;
                                         $del="index.php?act=delcart&idsp=".$ma_hh;
                                         $upd="index.php?act=cart&id=".$ma_hh;
                                         $up="index.php?act=cartupdate&id=".$ma_hh;
@@ -203,7 +203,7 @@
 									<h5></h5>
 								</td>
 								<td>
-									<p>Phí: 20.000 đ</p>
+									<p>Phí: $5.00</p>
 								</td>
 							</tr>
 							<tr>
