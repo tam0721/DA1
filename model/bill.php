@@ -16,5 +16,11 @@
         $sql = "DELETE FROM don_hang WHERE ma_dh=".$ma_dh;
         pdo_execute($sql);
     }
-    
+    function taodonhang($nguoi_nhan,$dia_chi_nhan,$sdt_nhan,$payment,$email,$ma_tk){
+        
+        $sql = "INSERT INTO don_hang (nguoi_nhan,dia_chi_nhan,sdt_nhan,payment,email ,ma_tk)
+            VALUES ('$nguoi_nhan','$dia_chi_nhan','$sdt_nhan','$payment','$email','$ma_tk')";
+        pdo_execute($sql);
+                      
+    }
 ?>
