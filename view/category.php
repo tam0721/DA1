@@ -91,12 +91,12 @@
 					</div>
 					
 					<div class="pagination">
-					    <div>
+					    <!-- <div>
 							<form action="index.php?act=sanpham" method="post">
 								<input type="text" name="search" id="">
 								<input type="submit" name="timkiem" value="Tìm kiếm">
 							</form>
-						</div>
+						</div> -->
 						<a href="#" class="prev-arrow"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></a>
 						<a href="#" class="active">1</a>
 						<a href="#">2</a>

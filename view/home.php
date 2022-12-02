@@ -180,7 +180,7 @@
 				</div>
 				<div class="row">
 					<?php
-					
+						
 						foreach($spnew as $sp){
 							extract($sp);
 							$hinh=$img_path.$img;
@@ -196,7 +196,7 @@
 									<div class="product-details">
 										<h6>'.$name.'</h6>
 										<div class="price">
-											<h6>$'.$price_1.'</h6>
+											<h6>'.$price_1.'.000 ₫</h6>
 										</div>
 										<form action="index.php?act=cartprocess" method="post">
 											<input type="hidden" name="id" value="'.$id.'">
@@ -573,7 +573,7 @@
 				<a href="'.$sphct.'"><img class="special-img" class="img-product" src="./upload/'.$spdacbiet['0']['img'].'" alt="" width="30%"></a>
 					<div class="infor-recipe1">
 					<h1 style="color:white"> '.$spdacbiet['0']['name'].'</h1>
-					<h3 style="color:red"> $'.$spdacbiet['0']['price_old'].'</h3>
+					<h3 style="color:red"> '.$spdacbiet['0']['price_old'].'.000₫</h3>
 					<p>'.$spdacbiet['0']['mota'].'</p>
 					<a href="'.$sphct.'"><button class="boujee-text">Xem thêm</button></a>
 					
@@ -601,6 +601,7 @@
 				<div class="col-lg-9">
 					<div class="row">
 						<?php
+							$price_1 == 0;
 							foreach ($topview as $sptop) {
 								extract($sptop);
 								$hinh=$img_path.$img;
@@ -616,7 +617,7 @@
 											<div class="desc">
 												<a href="'.$sphct.'" class="title">'.$name.'</a>
 												<div class="price">
-													<h6>$'.$price_1.'</h6>
+													<h6>'.$price_1.'.000 ₫</h6>
 												</div>
 											</div>
 										</div>

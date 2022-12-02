@@ -1,8 +1,8 @@
 <?php 
 
-function insert_giohang($ma_hh,$ten,$gia,$hinh,$soluong,$size){
-    $sql = "INSERT INTO gio_hang (ma_hh,name,price,img,so_luong,size)
-    VALUES ('$ma_hh','$ten','$gia','$hinh','$soluong','$size')";
+function insert_giohang($ma_hh,$soluong,$size){
+    $sql = "INSERT INTO gio_hang (ma_hh,so_luong,size)
+    VALUES ('$ma_hh','$soluong','$size')";
     pdo_execute($sql);
 }
 
@@ -17,7 +17,7 @@ function delete_giohang($ma_hh){
 }
 
 function loadall_giohang(){
-    $sql = "SELECT * from gio_hang ";
+    $sql = "SELECT gh.ma_hh, gh.so_luong, gh.size, hh.name, hh.price_old, hh.price_new, hh.img FROM gio_hang gh INNER JOIN hang_hoa hh ON gh.ma_hh = hh.id";
     $cart = pdo_query($sql);
     return $cart;
 }
@@ -36,5 +36,5 @@ function loadall_giohang(){
 //     $listsanpham = pdo_query($sql);
 //     return $listsanpham;
 // }
-
+    
 ?>

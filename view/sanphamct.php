@@ -1,62 +1,3 @@
-<!--  -->
-<style>
-    .switch-field {
-  display: flex;
-  margin-bottom: 5px;
-  overflow: hidden;
-}
-
-.switch-field input {
-  position: absolute !important;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  width: 1px;
-  border: 0;
-  overflow: hidden;
-}
-
-.switch-field label {
-  background-color: #ffffff;
-  color: black;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1;
-  text-align: center;
-  padding: 8px 16px;
-  margin-right: -1px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
-  transition: all 0.1s ease-in-out;
-}
-
-.switch-field label:hover {
-  cursor: pointer;
-}
-
-.switch-field input:checked + label {
-  background-color: orange;
-  box-shadow: none;
-}
-
-.switch-field label:first-of-type {
-  border-radius: 4px 0 0 4px;
-}
-
-.switch-field label:last-of-type {
-  border-radius: 0 4px 4px 0;
-}
-
-/* This is just for CodePen. */
-
-.form {
-  max-width: 600px;
-  font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
-  font-weight: normal;
-  line-height: 1.625;
-  margin: 8px auto;
-  padding: 16px;
-}
-
 </style>
 	<!-- Start Banner Area -->
 	<section class="banner-area organic-breadcrumb">
@@ -105,68 +46,60 @@
                     <?php 
                         if ($sanpham[0]['price_new'] > 0) {
                             echo 
-                                '<p style="font-weight:bold; text-align:center; color:red;font-size:25px;">$'
-                                .$sanpham[0]['price_new'].'</p>'.
-                                '<p style="text-align:center; color:black;font-size:15px; text-decoration: line-through;">$'
-                                .$sanpham[0]['price_old'].'</p>';
+                                '<p style="font-weight:bold; text-align:center; color:red;font-size:25px;">'
+                                .$sanpham[0]['price_new'].'.000₫</p>'.
+                                '<p style="text-align:center; color:black;font-size:15px; text-decoration: line-through;">'
+                                .$sanpham[0]['price_old'].'.000₫</p>';
                         } else {
                             echo 
-                                '<p style="font-weight:bold; text-align:center; color:red;font-size:25px;">$'
-                                .$sanpham[0]['price_old'].'</p>';
+                                '<p style="font-weight:bold; text-align:center; color:red;font-size:25px;">'
+                                .$sanpham[0]['price_old'].'.000₫</p>';
                         }
                         // echo $sanpham[0]['price_old'];
                     ?>
-            
-                <!-- </p> -->
-                <?php
-                
-                               echo'
-                               <form action="index.php?act=cartprocess" method="post">
-                                    <div class="btn-size">
-                                        <h6>Chọn size:</h6>
-                                        <div class="switch-field">
-                                          <input type="radio" id="radio-1" name="size" value="35" checked/>
-                                          <label for="radio-1">35</label> 
-                                          <input type="radio" id="radio-2" name="size" value="36" />
-                                          <label for="radio-2">36</label> 
-                                          <input type="radio" id="radio-3" name="size" value="37" />
-                                          <label for="radio-3">37</label> 
-                                          <input type="radio" id="radio-4" name="size" value="38" />
-                                          <label for="radio-4">38</label> 
-                                          <input type="radio" id="radio-5" name="size" value="39" />
-                                          <label for="radio-5">39</label>
-                                        </div>
-                                        <div class="switch-field" >
-                                          <input type="radio" id="radio-6" name="size" value="40" />
-                                          <label for="radio-6">40</label>
-                                          <input type="radio" id="radio-7" name="size" value="41" />
-                                          <label for="radio-7">41</label>
-                                          <input type="radio" id="radio-8" name="size" value="42" />
-                                          <label for="radio-8">42</label>
-                                          <input type="radio" id="radio-9" name="size" value="43" />
-                                          <label for="radio-9">43</label>
-                                          <input type="radio" id="radio-10" name="size" value="44" />
-                                          <label for="radio-10">44</label>
-                                        </div>
-                                     </div>
-                            
-                                    <div id="output"></div>
-                                
-                                    <div class="">
-                                        <h6 style="margin-top: 20px;">Số lượng</h6> 
-                                        <div class="amount-form" style="margin-left: 20px;">
-                                            <!-- <button class="btn-minus" id="minus" onclick="handleMinus()"><i class="fa-solid fa-minus"></i></button> -->
-                                
-                                            <input type="number" value="1"  name="soluong" step="1" min="1" max="900">
-                                            <input type="hidden" name="id" value="'.$sanpham[0]['id'].'">
-                                            <input type="hidden" name="name" value="'.$sanpham[0]['name'].'">
-                                            <input type="hidden" name="price" value="'.$sanpham[0]['price_old'].'">
-                                            <input type="hidden" name="img" value="'.$sanpham[0]['img'].'">
-                                            <input type="hidden" name="note" value="0">
-                                        ';       
-                        ?>
-
-                        
+                    <?php
+                        echo'
+                        <form action="index.php?act=cartprocess" method="post">
+                            <div class="btn-size">
+                                <h6>Chọn size:</h6>
+                                <div class="switch-field">
+                                    <input type="radio" id="radio-1" name="size" value="35" checked/>
+                                    <label for="radio-1">35</label> 
+                                    <input type="radio" id="radio-2" name="size" value="36" />
+                                    <label for="radio-2">36</label> 
+                                    <input type="radio" id="radio-3" name="size" value="37" />
+                                    <label for="radio-3">37</label> 
+                                    <input type="radio" id="radio-4" name="size" value="38" />
+                                    <label for="radio-4">38</label> 
+                                    <input type="radio" id="radio-5" name="size" value="39" />
+                                    <label for="radio-5">39</label>
+                                </div>
+                                <div class="switch-field" >
+                                    <input type="radio" id="radio-6" name="size" value="40" />
+                                    <label for="radio-6">40</label>
+                                    <input type="radio" id="radio-7" name="size" value="41" />
+                                    <label for="radio-7">41</label>
+                                    <input type="radio" id="radio-8" name="size" value="42" />
+                                    <label for="radio-8">42</label>
+                                    <input type="radio" id="radio-9" name="size" value="43" />
+                                    <label for="radio-9">43</label>
+                                    <input type="radio" id="radio-10" name="size" value="44" />
+                                    <label for="radio-10">44</label>
+                                </div>
+                                </div>        
+                            <div id="output"></div>          
+                            <div class="">
+                                <h6 style="margin-top: 20px;">Số lượng</h6> 
+                                <div class="amount-form" style="margin-left: 20px;">
+                                    <!-- <button class="btn-minus" id="minus" onclick="handleMinus()"><i class="fa-solid fa-minus"></i></button> -->   
+                                    <input type="number" value="1"  name="soluong" step="1" min="1" max="900">
+                                    <input type="hidden" name="id" value="'.$sanpham[0]['id'].'">
+                                    <input type="hidden" name="name" value="'.$sanpham[0]['name'].'">
+                                    <input type="hidden" name="price" value="'.$sanpham[0]['price_old'].'">
+                                    <input type="hidden" name="img" value="'.$sanpham[0]['img'].'">
+                                    <input type="hidden" name="note" value="0">
+                        ';       
+                    ?>
                         <!-- <button class="btn-plus" id="plus" onclick="handlePlus()"><i class="fa-solid fa-plus"></i></button>  -->
                         
 
@@ -174,36 +107,14 @@
 
                         
                         
-                        </form>
-                        <!-- <button class="btn-minus" id="minus" onclick="handleMinus()"><i class="fa-solid fa-minus"></i></button>
-=======
-                            
-                            <script language="javascript">
-                                var button = document.getElementById("btn");
-                                button.onclick = function(){
-                                    alert("Đã thêm vào giỏ hàng");
-                                }
-                            </script>
-                        </form>
-<<<<<<< HEAD
-                        <button class="btn-minus" id="minus" onclick="handleMinus()"><i class="fa-solid fa-minus"></i></button>
->>>>>>> 02bbc35f52719615351b07668263a5f8fb5ede72
-                        <input type="number" value="1" id="amount">
-                        <button class="btn-plus" id="plus" onclick="handlePlus()"><i class="fa-solid fa-plus"></i></button> 
-                        <a href="index.php?act=cartprocess&id=<?=$sanpham[0]['id'] ?>"> 
-                            
-<<<<<<< HEAD
-                        </a> -->
-
-                        </a>
-
-
-
-                            
-                        </form>
-
-                    </div>
+                    </form>
+                    </a>
+                        <!-- <input type="submit" name="addgiohang"  id="btn" value="<?=$sanpham[0]['trang_thai']? " Đặt hàng":"Hết hàng"?>" <?=$sanpham[0]['trang_thai']? "":"disabled"?> class="btn btn-default border-0" style="margin:0 0 15px 15px; width:120px; background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;"> -->
+                    </form>
                 </div>
+            </div>
+                
+        
                 <div class="">
                     <h6 style="margin-top: 10px;">SKU</h6>
                     <p style="margin-left: 20px;"><?=$sanpham[0]['ten_loai'] ?></p>
@@ -230,6 +141,29 @@
                     </div>
                 </div>
             </div>
+            <div class="slide-link" style="margin-top: 1px; margin-left:190px;">  
+            <?php
+                
+                    extract($sanpham);
+                    
+                    $han="../upload/".$hinhanh[0]['img'];
+                    if (is_file($han)) {
+                       $hinh="<img src='".$han."' width='10%'>";
+                    }else{
+                        $hinh="Không tìm thấy hình";
+                    }
+                    echo '
+                    <tbody>
+                        <tr>
+                           
+                            <td class="text-center">'.$hinh.'</td>
+                            
+                        </tr>
+                    </tbody>';
+                
+            ?>
+            <!-- <?php echo '<div style="width=300px;height:500px; border:1px solid #ccc;">'.$hinh.'</div>';?>          -->
+        </div>
     </div>
     <!--  -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -280,6 +214,80 @@
             height: 35px;
             width: 35px;
             background-color: #cccc;
+        }
+        .slide-link {
+            margin-left: 140px;
+            margin-top: -50px;
+            display: flex;
+            justify-content: space-around;
+            justify-items: center;
+            width: 400px;
+        }
+        .slide-link a{
+            width: 80px;
+            height: 80px;
+        }
+        .slide-link a img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    
+        .switch-field {
+            display: flex;
+            margin-bottom: 5px;
+            overflow: hidden;
+        }
+
+        .switch-field input {
+            position: absolute !important;
+            clip: rect(0, 0, 0, 0);
+            height: 1px;
+            width: 1px;
+            border: 0;
+            overflow: hidden;
+        }
+
+        .switch-field label {
+            background-color: #ffffff;
+            color: black;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1;
+            text-align: center;
+            padding: 8px 16px;
+            margin-right: -1px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+            transition: all 0.1s ease-in-out;
+        }
+
+        .switch-field label:hover {
+            cursor: pointer;
+        }
+
+        .switch-field input:checked + label {
+            background-color: orange;
+            box-shadow: none;
+        }
+
+        .switch-field label:first-of-type {
+            border-radius: 4px 0 0 4px;
+        }
+
+        .switch-field label:last-of-type {
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* This is just for CodePen. */
+
+        .form {
+            max-width: 600px;
+            font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+            font-weight: normal;
+            line-height: 1.625;
+            margin: 8px auto;
+            padding: 16px;
         }
     </style>
 </div>
