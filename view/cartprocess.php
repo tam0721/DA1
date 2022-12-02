@@ -27,8 +27,8 @@
             $soluong = $_POST['soluong'];
             $size = $_POST['size'];
             if (isset($_POST['size']) && $size != " " && $size > 0) {
-                insert_giohang($ma_hh, $ten, $gia, $hinh, $soluong, $size);
-                $cartsp = [$ma_hh, $ten, $gia, $hinh, $soluong, $size];
+                insert_giohang($ma_hh, $soluong, $size);
+                $cartsp = [$ma_hh, $soluong, $size];
                 array_push($_SESSION['giohang'], $cartsp);
             }
         } else {

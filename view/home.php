@@ -184,7 +184,7 @@
 						foreach($spnew as $sp){
 							extract($sp);
 							$hinh=$img_path.$img;
-							// $price_1 = $price_old;
+							$price_1 = $price_old;
 							if ($price_new > 0) $price_old = $price_new;
 							$sphct="index.php?act=sanphamct&idsp=".$id;
 							echo '

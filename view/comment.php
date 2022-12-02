@@ -117,10 +117,10 @@
                 if(isset($_POST['guibinhluan'])&&($_POST['guibinhluan'])){
                     $noidung=$_POST['noidung'];
                     $idpro=$_POST['idpro'];
-                    $user=$_SESSION['user'];
+                    $iduser=$_SESSION['user'];
                     //$iduser=$_SESSION['user']['ma_tk']; 
                     $ngaybinhluan = date("d M, y");
-                    insert_binhluan($noidung,$idpro,$user,$ngaybinhluan); 
+                    insert_binhluan($noidung,$idpro,$iduser,$ngaybinhluan); 
                     header("location: ".$_SERVER['HTTP_REFERER']);
                 }
                 
