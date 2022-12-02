@@ -7,7 +7,7 @@
         pdo_execute($sql);
     }
     function loadall_binhluan($idpro){
-        $sql="select * from binh_luan where idpro='".$idpro."' order by id desc ";
+        $sql="SELECT * FROM binh_luan bl INNER JOIN tai_khoan tk ON bl.iduser=tk.ma_tk WHERE idpro='".$idpro."' order by id desc ";
         $listbl=pdo_query($sql);
         return $listbl;
     }
