@@ -142,7 +142,6 @@
                 if (isset($_GET['idsp'])&&($_GET['idsp']>0)){
                     $id=$_GET['idsp'];
                     $sanpham=loadone_sanpham($id);
-                    $cart_one=loadone_giohang($id);
                     include 'view/sanphamct.php';
                 }else{
                     include 'view/home.php';

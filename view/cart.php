@@ -95,19 +95,12 @@
                             ob_start();
                             ?>
                             <?php
-                                
                                     $all =0;
                                     foreach($cart as $sp){
                                         extract($sp);
-<<<<<<< HEAD
-                                        
-                                        $tong = $so_luong * $price;
-=======
-                                        if($ma_hh)
-                                        $price_1 = $price_old;
 								        if ($price_new > 0) $price_1 = $price_new;
+                                        else $price_1 = $price_old;
                                         $tong = $so_luong * $price_1;
->>>>>>> d17608d158f8060021ed4d982a22b860e4be5b8e
                                         $ttien = 0;
                                         $ttien += $tong;
                                         $all +=$ttien;
@@ -139,11 +132,11 @@
                                                 <td>
                                                     <div class="product_count">
                                                         <label for="ma_hh">
-                                                            <input type="text" name="soluong" id="sl" value="'.$so_luong.'" title="Quantity:"class="input-text qty">
+                                                            <input type="text" name="soluong" id="sl" value="'.$so_luong.'" title="Quantity:So Luong"class="input-text qty">
                                                             </label>
                                                         </div>
                                                         <input type="hidden" name="id" id="ma_hh" value="'.$ma_hh.'">
-                                                        <input type="hidden" name="id" id="size" value="'.$size.'">
+                                                        <input type="hidden" name="size" id="ma_hh" value="'.$size.'">
                                                     <div class="product_count">
                                                         <a href="'.$upd.'">
                                                             
@@ -225,4 +218,4 @@
         height: 130px;
     }
 </style>
-                        <?php }?>
+<?php }?>

@@ -111,17 +111,10 @@
 						<?php	
 							foreach($value as $sp){
 								extract($sp);
-<<<<<<< HEAD
 								$hinh=$img_path.$img;
 								if ($price_new > 0) $price_1 = $price_new;
 								else $price_1 = $price_old;
 								if($price_old == $price_1) $price_old = 0;
-=======
-								$price_1=0;
-								$hinh=$img_path.$img;
-								$price_1 = $price_old;
-								if ($price_new > 0) $price_1 = $price_new;
->>>>>>> d17608d158f8060021ed4d982a22b860e4be5b8e
 								$sphct="index.php?act=sanphamct&idsp=".$id;
 								echo '
 									<div class="col-lg-4 col-md-6">
@@ -137,17 +130,9 @@
 											<div class="prd-bottom">
 												<a href="'.$sphct.'" class="social-info">
 													<span class="ti-bag"></span>
-<<<<<<< HEAD
 													<p class="hover-text"> Thêm vào giỏ </p>
 												</a>
 											
-=======
-													<p class="hover-text">
-														<input type="submit" name="addgiohang" id="them" value="Thêm giỏ" style="background: transparent;border: none !important;">
-													</p>
-												</lable>
-											</form>
->>>>>>> d17608d158f8060021ed4d982a22b860e4be5b8e
 												<a href="" class="social-info">
 													<span class="lnr lnr-heart"></span>
 													<p class="hover-text">Yêu thích</p>
