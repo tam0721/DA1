@@ -37,9 +37,7 @@
                 if (isset($_GET['idsp'])&&($_GET['idsp']>=0)){
                     $id=$_GET['idsp'];
                     $size=$_GET['size'];
-                    if(isset($id,$size)){
-                            array_splice($_SESSION['giohang'], $_GET['id']&&$size,1);
-                          }else
+               
                            unset($_SESSION['giohang']);
                 }
                     include 'view/delcart.php';

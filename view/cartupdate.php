@@ -1,8 +1,8 @@
 <?php
         if(isset($_POST['upgiohang']) && $_POST['upgiohang']){
             $ma_hh = $_POST['id'];
-            $size = $_POST['size'];
             $sl=$_POST['soluong'];
+            $size = $_POST['size'];
             if($sl <= 0){
                 if (isset($_POST['id'],$_POST['size']) && ($_POST['id']>=0)){
                     $size=$_POST['size'];

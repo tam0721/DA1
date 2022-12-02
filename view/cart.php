@@ -132,7 +132,7 @@
                                                 <td>
                                                     <div class="product_count">
                                                         <label for="ma_hh">
-                                                            <input type="text" name="soluong" id="sl" value="'.$so_luong.'" title="Quantity:So Luong"class="input-text qty">
+                                                            <input type="number" min=0; max=999; step = 1; name="soluong" id="sl" value="'.$so_luong.'" title="Quantity:So Luong"class="input-text qty">
                                                             </label>
                                                         </div>
                                                         <input type="hidden" name="id" id="ma_hh" value="'.$ma_hh.'">
@@ -155,13 +155,8 @@
                                 ?>
                                     <tr class="bottom_button">
                                         <td>
-                                            <?php
-                                                echo '
-                                                    <input type="submit" name="upgiohang" id="up" class="gray_btn" value="Cập nhập giỏ hàng">
-                                                   
-                                                    </form>
-                                                ';    
-                                            ?>
+                                            <input type="submit" name="upgiohang" id="up" class="gray_btn" value="Cập nhập giỏ hàng">
+                                            </form>
                                         </td>
                                 
                                         <td>
