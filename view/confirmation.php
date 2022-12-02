@@ -62,7 +62,7 @@
                                         $ttien = 0;
                                         $ttien += $tong;
                                         $all +=$ttien;
-										$tien=$all+20000;
+										$tien=$all+20;
                                         $del="index.php?act=delcart&idsp=".$ma_hh;
                                         $upd="index.php?act=cart&id=".$ma_hh;
                                         $up="index.php?act=cartupdate&id=".$ma_hh;
@@ -176,7 +176,7 @@
 								<td>
 									<p>
 										<?php
-										echo "$$tien.00";
+										echo "$tien.000 ₫";
 										?>
 									</p>
 								</td>
