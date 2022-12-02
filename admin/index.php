@@ -13,6 +13,7 @@
         include "../model/hinhanh.php";
         include "../model/bill.php";
         include "../model/chitietdh.php";
+        include "../model/magiamgia.php";
 
         
         include "header.php";
@@ -175,7 +176,32 @@
                     $sql = "select * from tai_khoan order by ma_tk desc";
                     $listtaikhoan= pdo_query($sql);
                     include "taikhoann/list.php";
-                    break; 
+                    break;
+                // case 'dsmgg':
+                //     include "magiamgia/list.php";
+                //     break;
+                case 'addmgg':
+                    if (isset($_POST['themma'])&&($_POST['themma'])) {
+                        $ma_gg="Z-".rand(0,99999);
+                        $ngay_bd=$_POST['ngay_bd'];
+                        $ngay_kt=$_POST['ngay_kt'];
+                        $giatri = $_POST['giatri'];
+                        insert_magiam($ma_gg,$ngay_bd,$ngay_kt,$giatri);
+                        $thongbao ="Thêm thành công";
+                    }
+                    include "magiamgia/add.php";
+                    break;
+                case 'dsmgg':
+                    $listmagiam=loadall_magiam();
+                    include "magiamgia/list.php";
+                    break;
+                case 'xoamgg':
+                    if (isset($_GET['ma_gg'])&&($_GET['ma_gg']>0)) {
+                        delete_magiam($_GET['ma_gg']);
+                    }
+                    $listmagiam=loadall_magiam();
+                    include "magiamgia/list.php";
+                    break;
                 case 'thoat':
                     if(isset($_SESSION['role'])) unset($_SESSION['role']);
                     header('location: ../index.php');
