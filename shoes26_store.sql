@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2022 at 07:49 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Dec 03, 2022 at 07:38 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `binh_luan` (
   `id` int(11) NOT NULL,
   `noi_dung` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `iduser` int(11) NOT NULL,
+  `user` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
   `idpro` int(11) NOT NULL,
   `ngay_bl` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -39,8 +39,10 @@ CREATE TABLE `binh_luan` (
 -- Dumping data for table `binh_luan`
 --
 
-INSERT INTO `binh_luan` (`id`, `noi_dung`, `iduser`, `idpro`, `ngay_bl`) VALUES
-(3, 'demo', 191, 113, '02 Dec, 22');
+INSERT INTO `binh_luan` (`id`, `noi_dung`, `user`, `idpro`, `ngay_bl`) VALUES
+(17, 'sada', 'ntd', 112, '30 Nov, 22'),
+(18, 'hello', 'ntd', 103, '30 Nov, 22'),
+(19, 'wala', 'ntd', 101, '02 Dec, 22');
 
 -- --------------------------------------------------------
 
@@ -69,7 +71,6 @@ CREATE TABLE `don_hang` (
   `nguoi_nhan` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `sdt_nhan` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `dia_chi_nhan` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `payment` tinyint(1) NOT NULL,
   `trang_thai_tt` tinyint(1) NOT NULL,
   `trang_thai_gh` tinyint(1) NOT NULL DEFAULT 0,
@@ -86,9 +87,20 @@ CREATE TABLE `don_hang` (
 CREATE TABLE `gio_hang` (
   `id` int(11) NOT NULL,
   `ma_hh` int(11) NOT NULL,
+  `name` varchar(150) NOT NULL,
+  `price` double(10,0) NOT NULL,
+  `img` varchar(250) NOT NULL,
   `so_luong` int(11) NOT NULL,
   `size` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `gio_hang`
+--
+
+INSERT INTO `gio_hang` (`id`, `ma_hh`, `name`, `price`, `img`, `so_luong`, `size`) VALUES
+(121, 105, 'Puma RS-X', 130, 'puma-RS-X.jpg', 2, 35),
+(122, 103, 'Vans Classic Slip On ', 57, 'vans-classic-slipon.jpg', 1, 42);
 
 -- --------------------------------------------------------
 
@@ -99,7 +111,7 @@ CREATE TABLE `gio_hang` (
 CREATE TABLE `hang_hoa` (
   `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `price_old` double(10,3) NOT NULL,
+  `price_old` double(10,2) NOT NULL,
   `price_new` double(10,2) NOT NULL DEFAULT 0.00,
   `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `mota` text COLLATE utf8_unicode_ci NOT NULL,
@@ -114,14 +126,14 @@ CREATE TABLE `hang_hoa` (
 --
 
 INSERT INTO `hang_hoa` (`id`, `name`, `price_old`, `price_new`, `img`, `mota`, `iddm`, `luotxem`, `trang_thai`, `special`) VALUES
-(101, 'Ralph Sampson', 4.998, 0.00, 'puma-Ralph-Sampson.jpg', 'fdf', 38, 7, 1, 0),
-(103, 'Vans Classic Slip On ', 5.599, 0.00, 'vans-classic-slipon.jpg', 'Classic Slipon', 39, 9, 1, 0),
-(104, 'ADIDAS HYPERTURF', 3.199, 0.00, 'adidas-HYPERTURF.jpg', 'HYPERTURF', 37, 6, 1, 0),
-(105, 'Puma RS-X', 2.135, 0.00, 'puma-RS-X.jpg', 'Mẫu Sneaker Puma RSX là một trong những thiết kế huyền thoại của Puma. Đây là mẫu giày Chunky được đánh giá là xuất sắc nhất của hãng, thu hút được sự yêu thích của đông đảo giới trẻ. Đây thực sự là mẫu giày đã góp phần làm nên tên tuổi của Puma như hiện tại.', 38, 7, 1, 1),
-(106, 'Jordan Series Mid', 4.485, 0.00, 'Jordan-Series-Mid.jpg', 'Nike Jordan Series Mid', 36, 7, 1, 0),
-(112, 'VANS VN0A5', 890.000, 0.00, 'vans-VN0A5KRDBZW.jpg', 'Vans VN0A5KRDBZW thuộc dòng Authentic Collage Black/White mới nhất trong bộ sưu tập của thương hiệu Vans', 39, 7, 1, 0),
-(113, 'SuperStart', 2.145, 0.00, 'superstart1.jpg', 'z', 37, 30, 1, 0),
-(114, 'LeBron 19', 4.382, 0.00, 'le19.webp', 'Hệ thống đệm được trang bị lại kết hợp Max Air có thể nhìn thấy được với bộ phận Zoom Air dày, nhạy dưới bàn chân trước. Max Air giúp tiêu tan lực tác động, trong khi Zoom Air giúp đẩy bạn xuống sân. Phần dưới của giày được thiết kế trông giống như các van và ống tạo nên hoạt động bên trong của nó.', 36, 60, 0, 0);
+(101, 'Ralph Sampson', 100.00, 0.00, 'puma-Ralph Sampson.jpg', 'fdf', 38, 5, 1, 0),
+(103, 'Vans Classic Slip On ', 57.00, 0.00, 'vans-classic-slipon.jpg', 'Classic Slipon', 39, 11, 1, 0),
+(104, 'ADIDAS HYPERTURF', 167.00, 0.00, 'adidas-HYPERTURF.jpg', 'HYPERTURF', 37, 7, 1, 0),
+(105, 'Puma RS-X', 130.00, 0.00, 'puma-RS-X.jpg', 'Mẫu Sneaker Puma RSX là một trong những thiết kế huyền thoại của Puma. Đây là mẫu giày Chunky được đánh giá là xuất sắc nhất của hãng, thu hút được sự yêu thích của đông đảo giới trẻ. Đây thực sự là mẫu giày đã góp phần làm nên tên tuổi của Puma như hiện tại.', 38, 6, 1, 1),
+(106, 'Jordan Series Mid', 99.00, 0.00, 'Jordan Series Mid.jpg', 'Nike Jordan Series Mid', 36, 21, 1, 0),
+(112, 'VANS VN0A5', 83.00, 0.00, 'vans VN0A5KRDBZW.jpg', 'Vans VN0A5KRDBZW thuộc dòng Authentic Collage Black/White mới nhất trong bộ sưu tập của thương hiệu Vans', 39, 16, 1, 0),
+(113, 'SuperStart', 99.00, 0.00, 'superstart1.jpg', 'z', 37, 10, 1, 0),
+(114, 'LeBron 19', 124.00, 0.00, 'LeBron 19.jpg', '', 36, 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -134,16 +146,6 @@ CREATE TABLE `hinh_anh` (
   `ma_hh` int(11) NOT NULL,
   `img` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `hinh_anh`
---
-
-INSERT INTO `hinh_anh` (`id`, `ma_hh`, `img`) VALUES
-(18, 114, 'le19-2.webp'),
-(19, 114, 'le19-3.webp'),
-(20, 114, 'le19-4.webp'),
-(21, 114, 'le19-3.webp');
 
 -- --------------------------------------------------------
 
@@ -175,8 +177,19 @@ INSERT INTO `loai` (`ma_loai`, `ten_loai`) VALUES
 CREATE TABLE `ma_giam_gia` (
   `ma_gg` varchar(255) NOT NULL,
   `ngay_bd` date NOT NULL,
-  `ngay_kt` date NOT NULL
+  `ngay_kt` date NOT NULL,
+  `giatri` double(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ma_giam_gia`
+--
+
+INSERT INTO `ma_giam_gia` (`ma_gg`, `ngay_bd`, `ngay_kt`, `giatri`) VALUES
+('Z-32426', '2022-12-03', '2022-12-07', 20000),
+('Z-85558', '2022-12-02', '2022-12-06', 30000),
+('Z-MOHN44519', '2022-12-02', '2022-12-03', 100),
+('Z-MOHN63064', '2022-12-02', '2022-12-10', 50000);
 
 -- --------------------------------------------------------
 
@@ -202,7 +215,7 @@ CREATE TABLE `tai_khoan` (
 
 INSERT INTO `tai_khoan` (`ma_tk`, `img`, `ho_ten`, `user`, `pass`, `email`, `address`, `tel`, `role`) VALUES
 (128, '', 'Admin', 'admin', '123', '', 'Thôn 1, Lộc Ngãi, Bảo Lâm, Lâm Đồng', '0383383053', 1),
-(191, '', 'bé Duy', 'ntd', '456', 'ng.tanduy261203@gmail.com', 'Thới An, Quận 12', '123', 0);
+(191, '', 'Nguyễn Tấn Duy', 'ntd', '456', 'ng.tanduy261203@gmail.com', 'Thới An, Quận 12', '123', 0);
 
 -- --------------------------------------------------------
 
@@ -228,7 +241,7 @@ CREATE TABLE `tin_tuc` (
 ALTER TABLE `binh_luan`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_bl_hh` (`idpro`),
-  ADD KEY `fk_bl_tk` (`iduser`);
+  ADD KEY `fk_bl_tk` (`user`);
 
 --
 -- Indexes for table `chi_tiet_don_hang`
@@ -298,25 +311,25 @@ ALTER TABLE `tin_tuc`
 -- AUTO_INCREMENT for table `binh_luan`
 --
 ALTER TABLE `binh_luan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `chi_tiet_don_hang`
 --
 ALTER TABLE `chi_tiet_don_hang`
-  MODIFY `ma_ctdh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ma_ctdh` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `don_hang`
 --
 ALTER TABLE `don_hang`
-  MODIFY `ma_dh` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ma_dh` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `gio_hang`
 --
 ALTER TABLE `gio_hang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
 
 --
 -- AUTO_INCREMENT for table `hang_hoa`
@@ -328,7 +341,7 @@ ALTER TABLE `hang_hoa`
 -- AUTO_INCREMENT for table `hinh_anh`
 --
 ALTER TABLE `hinh_anh`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `loai`
@@ -356,8 +369,7 @@ ALTER TABLE `tin_tuc`
 -- Constraints for table `binh_luan`
 --
 ALTER TABLE `binh_luan`
-  ADD CONSTRAINT `fk_bl_hh` FOREIGN KEY (`idpro`) REFERENCES `hang_hoa` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_bl_tk` FOREIGN KEY (`iduser`) REFERENCES `tai_khoan` (`ma_tk`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_bl_hh` FOREIGN KEY (`idpro`) REFERENCES `hang_hoa` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `chi_tiet_don_hang`
