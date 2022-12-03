@@ -12,84 +12,59 @@
 		</div>
 	</section>
 	<!-- End Banner Area -->
-    <div class="container">
-    <div class="row-title text-center" style="margin-top:20px;">
-        <h3>Cập nhật người dùng</h3>
-    </div>
-    <?php
-        $sql = "SELECT * FROM tai_khoan WHERE user = '".$_SESSION['user']."'";
-        extract(pdo_query_one($sql));
-    ?>
-    <form action="index.php?act=capnhat_tk" method="POST" enctype="multipart/form-data">
-        <div class="form-row" style="padding-left: 55px;">
-            <div class="col">
-                <label for="exampleInputEmail1">Họ tên</label>
-                <input type="text" class="control" name="fullname" placeholder="" value="<?=$ho_ten?>">
-            </div>
-            <div class="col">
-                <label for="exampleInputEmail1">Username</label>
-                <input type="text" class="control" name="user" placeholder="" value="<?=$user?>">
-            </div>
-            <div class="col">
-                <label for="exampleInputEmail1">Mật khẩu</label>
-                <input type="text" class="control" name="pass" placeholder="" value="<?=$pass?>">
-            </div>
-            <div class="col">
-                <label for="exampleInputEmail1">Email</label>
-                <input type="text" class="control" name="email" placeholder="" value="<?=$email?>" disabled>
-            </div>
-            <div class="col">
-                <label for="exampleInputEmail1">Địa chỉ</label>
-                <input type="text" class="control" name="address" placeholder="" value="<?=$address?>">
-            </div>
-            <div class="col">
-                <label for="exampleInputEmail1">Số điện thoại</label>
-                <input type="text" class="control" name="tel" placeholder="" value="<?=$tel?>">
-            </div>
+    <!--================Login Box Area =================-->
+	<section class="login_box_area section_gap">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="login_box_img" style="width:100%;">
+						<img class="img-fluid" src="img/capnhat_tk.jpg" alt="">
+						<div class="hover">
+							<h4>Thông tin cá nhân của bạn cần chỉnh sửa?</h4>
+							<p>Cập nhật thông tin cá nhân, họ tên, tên người dùng, địa chỉ, số điện thoại. Để thông tin giao hàng của bạn luôn chính xác 100%</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="login_form_inner">
+						<h3>Cập nhật người dùng</h3>
+                        <?php
+                            $sql = "SELECT * FROM tai_khoan WHERE user = '".$_SESSION['user']."'";
+                            extract(pdo_query_one($sql));
+                        ?>
+                        <form action="index.php?act=capnhat_tk" method="POST" enctype="multipart/form-data" class="row login_form requires-validation">
+                                <div class="col-md-12 form-group">
+                                    <input type="text" class="form-control" name="fullname" placeholder="Họ tên" value="<?=$ho_ten?>">
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <input type="text" class="form-control" name="user" placeholder="Username" value="<?=$user?>">
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <input type="text" class="form-control" name="pass" placeholder="Mật khẩu" value="<?=$pass?>">
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <input type="text" class="form-control" name="email" placeholder="Email" value="<?=$email?>" disabled>
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <input type="text" class="form-control" name="address" placeholder="Địa chỉ" value="<?=$address?>">
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <input type="text" class="form-control" name="tel" placeholder="Số điện thoại" value="<?=$tel?>">
+                                </div>
             <!-- <div class="d-flex justify-content-center">
                 <input type="submit" value="Cập nhập" name="capnhap" class="form-control" style=" width:120px;background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;margin-bottom:15px">
             </div> -->
-        </div>
-        <div class="d-flex justify-content-center">
-            <input type="hidden" name="ma_tk" value="<?=$ma_tk?>">
-            <input type="hidden" name="role" value="<?=$role?>">
-            <input type="submit" value="Cập nhật" name="capnhap" class="form-control" style=" width:120px;background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;margin-bottom:15px">
-        </div>
-    </form>
+                            
+                                <div class="d-flex justify-content-center">
+                                    <input type="hidden" name="ma_tk" value="<?=$ma_tk?>">
+                                    <input type="hidden" name="role" value="<?=$role?>">
+                                    <input type="submit" value="Cập nhật" name="capnhap" class="form-control" style=" width:120px;background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;margin-bottom:15px">
+                        </div>
+                        </form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Login Box Area =================-->
     
-</div>
-
-
-<style>
-  @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-
-
-form { max-width:420px; margin:50px auto; }
-
-.col {
-  color:black;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight:500;
-  font-size: 18px;
-  border-radius: 5px;
-  line-height: 22px;
-  background-color: transparent;
-  border:2px solid #fff ;
-  transition: all 0.3s;
-  padding: 13px;
-  margin-bottom: 15px;
-  width:90%;
-  box-sizing: border-box;
-  outline:0;
-}
-.control {
-    border:2px solid #FFA500;
-}
-textarea {
-  height: 150px;
-  line-height: 150%;
-  resize:vertical;
-}
-
-
-</style>
