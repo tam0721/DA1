@@ -119,6 +119,7 @@
                                 VALUES ('$ma_dh', '$ma_hh', $size, $quantity)";
                             pdo_execute($sql);
                         }
+                        unset($_SESSION['giohang']);
                     }
                 include 'view/confirmation.php';
                 break;
