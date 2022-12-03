@@ -59,15 +59,6 @@
         $kp=pdo_query_one($sql);
         return $kp;
     }
-
-    // function getall_taikhoan(){
-    //     $conn=pdo_get_connection();
-    //     $stmt = $conn->prepare("SELECT * FROM tai_khoan");
-    //     $stmt->execute();
-    //     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    //     $listtaikhoan = $stmt->fetchAll();
-    //     return $listtaikhoan;
-    // }
     // -------------------------------------------------------------------
 
 ?>

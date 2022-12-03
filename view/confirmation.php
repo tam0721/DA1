@@ -62,7 +62,7 @@
                                         $ttien = 0;
                                         $ttien += $tong;
                                         $all +=$ttien;
-										$tien=$all+20000;
+										$tien=$all+20;
                                         $del="index.php?act=delcart&idsp=".$ma_hh;
                                         $upd="index.php?act=cart&id=".$ma_hh;
                                         $up="index.php?act=cartupdate&id=".$ma_hh;
@@ -86,7 +86,7 @@
                                                     <h5>'.$size.'</h5>
                                                 </td>
                                                 <td>
-                                                    <h5>$'.number_format($price_1,2).'</h5>
+													<h5>'.$price_1.'.000 ₫</h5>
                                                 </td>
                                                 <td>
                                                     <div class="product_count">
@@ -102,7 +102,7 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <h5>$'.number_format($ttien,2).'</h5>
+                                                    <h5>'.$ttien.'.000 ₫</h5>
                                                 </td>
                                                 
                                             </tr>
@@ -131,7 +131,7 @@
                                     <?php 
                                         echo '
                                         <td>
-                                            <h7>$'.number_format($all,2).'</h7>
+                                            <h7>'.$all.'.000 ₫</h7>
                                         </td>
                                         
                                         ';
@@ -176,7 +176,7 @@
 								<td>
 									<p>
 										<?php
-										echo "$$tien.00";
+										echo "$tien.000 ₫";
 										?>
 									</p>
 								</td>

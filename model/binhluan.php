@@ -1,13 +1,13 @@
 <?php 
 
-    function insert_binhluan($noidung,$idpro,$user,$ngaybinhluan){
+    function insert_binhluan($noidung,$idpro,$iduser,$ngaybinhluan){
         // $sql = "INSERT INTO hang_hoa (name,price,img,mo_ta,iddm) VALUES ('$tensp','$giasp','$hinh','$mota','$iddm')";
-        $sql = "INSERT INTO binh_luan(noi_dung, idpro, user, ngay_bl)
-        VALUES ('$noidung' , '$idpro', '$user', '$ngaybinhluan')";
+        $sql = "INSERT INTO binh_luan(noi_dung, idpro, iduser, ngay_bl)
+        VALUES ('$noidung' , '$idpro', '$iduser', '$ngaybinhluan')";
         pdo_execute($sql);
     }
     function loadall_binhluan($idpro){
-        $sql="select * from binh_luan where idpro='".$idpro."' order by id desc ";
+        $sql="SELECT * FROM binh_luan bl INNER JOIN tai_khoan tk ON bl.iduser=tk.ma_tk WHERE idpro='".$idpro."' order by id desc ";
         $listbl=pdo_query($sql);
         return $listbl;
     }

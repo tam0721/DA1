@@ -1,3 +1,33 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+ 
+@thuan711 
+Tam0721
+/
+DA1
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+DA1/view/category.php /
+@Tam0721
+Tam0721 uploadcode
+Latest commit aae4210 1 hour ago
+ History
+ 4 contributors
+@vietbh@Tam0721@thuan711@Ciasssssss
+298 lines (285 sloc)  10.2 KB
+
 	<!-- Start Banner Area -->
 	<section class="banner-area organic-breadcrumb">
 		<div class="container">
@@ -13,6 +43,12 @@
 			</div>
 		</div>
 	</section>
+	<?php
+		if($note ==1)
+		echo "
+		<script>alert('Da them vao gio hang');</script>";
+
+	?>
 	<!-- End Banner Area -->
 	<div class="container">
 		<div class="row">
@@ -33,19 +69,13 @@
 						<?php
 						$linkdm0="index.php?act=category";
 							echo'
-							<li class="main-nav-list"><a data-toggle="collapse" href="#fruitsVegetable" aria-expanded="false" aria-controls="fruitsVegetable"><span
-								 class="lnr lnr-arrow-right"></span>Sắp xếp<span class="number">(2)</span></a>
-								<ul class="collapse" id="fruitsVegetable" data-toggle="collapse" aria-expanded="false" aria-controls="fruitsVegetable">
-									<li class="main-nav-list child"><a href="'.$linkdm0.'&react=2">Giá từ thấp đến cao<span class="number"></span></a></li>
-									<li class="main-nav-list child"><a href="'.$linkdm0.'&react=3">Giá từ cao đến thấp<span class="number"></span></a></li>
-								</ul>
-							</li>
-							<li class="main-nav-list"><a href="'.$linkdm0.'&react=0"><span
+								<li class="main-nav-list"><a href="'.$linkdm0.'"><span
 									class="lnr lnr-arrow-right"></span>ALL<span class="number"></span></a></li>';
 							foreach ($dsdm as $dm) {
 								extract($dm);
 								$linkdm="index.php?act=category&iddm=".$ma_loai;
 								echo'
+									
 									<li class="main-nav-list"><a href="'.$linkdm.'"><span
 									class="lnr lnr-arrow-right"></span>'.$ten_loai.'<span class="number"></span></a></li>
 									
@@ -76,10 +106,12 @@
 			<div class="col-xl-9 col-lg-8 col-md-7">
 				<!-- Start Filter Bar -->
 				<div class="filter-bar d-flex flex-wrap align-items-center">
-					<!-- <div class="">
-						<a href="index.php?act=category&react=2">Giá từ thấp tới cao</a>
-						<a href="index.php?act=category&react=3">Giá từ cao tới thấp</a>
-					</div> -->
+					<div class="sorting">
+						<select>
+							<option value="1">Giá từ thấp tới cao</option>
+							<option value="1">Giá từ cao tới thấp</option>
+						</select>
+					</div>
 					<div class="sorting mr-auto">
 						<!-- <select>
 							<option value="1">Hiển thị 12</option>
@@ -108,8 +140,9 @@
 				<section class="lattest-product-area pb-40 category-list">
 					<div class="row">
 						<!-- single product -->
-						<?php	
-							foreach($value as $sp){
+						<?php
+						if($react==1){
+							foreach($filtersp as $sp){
 								extract($sp);
 								$hinh=$img_path.$img;
 								if ($price_new > 0) $price_1 = $price_new;
@@ -125,14 +158,16 @@
 											<div class="product-details">
 												<h6>'.$name.'</h6>
 											<div class="price">
-												<h6>$'.$price_1.'</h6>
+												<h6>'.$price_1.'.000 ₫</h6>
 											</div>
 											<div class="prd-bottom">
 												<a href="'.$sphct.'" class="social-info">
 													<span class="ti-bag"></span>
-													<p class="hover-text"> Thêm vào giỏ </p>
-												</a>
-											
+													<p class="hover-text">
+														<input type="submit" name="addgiohang" id="them" value="Thêm giỏ" style="background: transparent;border: none !important;">
+													</p>
+												</lable>
+											</form>
 												<a href="" class="social-info">
 													<span class="lnr lnr-heart"></span>
 													<p class="hover-text">Yêu thích</p>
@@ -150,7 +185,57 @@
 									</div>
 								</div>';
 						}
-
+					} else
+						foreach($spnew as $sp){
+							extract($sp);
+							$hinh=$img_path.$img;
+							$price_1 = $price_old;
+							if ($price_new > 0) $price_1 = $price_new;
+							$sphct="index.php?act=sanphamct&idsp=".$id;
+							echo '
+								<div class="col-lg-4 col-md-6">
+									<div class="single-product">
+										<a href="'.$sphct.'">
+											<img class="img-fluid" src="'.$hinh.'" alt="" style="height:250px; width:250px;">
+										</a>
+										<div class="product-details">
+											<h6>'.$name.'</h6>
+										<div class="price">
+											<h6>'.$price_1.'.000 ₫</h6>
+										</div>
+										
+										<form action="index.php?act=cartprocess" method="post">
+												<input type="hidden" name="id" value="'.$id.'">
+												<input type="hidden" name="name" value="'.$name.'">
+												<input type="hidden" name="price" value="'.$price_1.'">
+												<input type="hidden" name="img" value="'.$img.'">
+												<input type="hidden" name="soluong" value="1">
+										<div class="prd-bottom">
+											<lable for="them" class="social-info">
+												<span class="ti-bag"></span>
+												<p class="hover-text">
+													<input type="submit" name="addgiohang" id="them" value="Thêm giỏ" style="background: transparent;border: none !important;">
+												</p>
+											</lable>
+										</form>
+											<a href="#" class="social-info">
+												<span class="lnr lnr-heart"></span>
+												<p class="hover-text">Yêu thích</p>
+											</a>
+											<a href="" class="social-info">
+												<span class="lnr lnr-sync"></span>
+												<p class="hover-text">So sánh</p>
+											</a>
+											<a href="'.$sphct.'" class="social-info">
+												<span class="lnr lnr-move"></span>
+												<p class="hover-text">Xem thêm</p>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>';
+						}
+						
 					?>		
 				
 					</div>
@@ -198,27 +283,25 @@
 				<div class="col-lg-9">
 					<div class="row">
 						<?php
-						foreach ($topview as $sptop) {
-							extract($sptop);
-							$hinh=$img_path.$img;
-							$price_1 = $price_old;
-							if ($price_new > 0) $price_1 = $price_new;
-							$sphct="index.php?act=sanphamct&idsp=".$id;
-							echo '
-								<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-									<div class="single-related-product d-flex" id="imgDeal">
-										<a href="'.$sphct.'">
-											<img src="'.$hinh.'" alt="">
-										</a>
-										<div class="desc">
-											<a href="'.$sphct.'" class="title">'.$name.'</a>
-											<div class="price">
-												<h6>$'.$price_1.'</h6>
+							foreach ($topview as $sptop) {
+								extract($sptop);
+								$hinh=$img_path.$img;
+								$price_1 = $price_old;
+								if ($price_new > 0) $price_1 = $price_new;
+								$sphct="index.php?act=sanphamct&idsp=".$id;
+								echo '
+									<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
+										<div class="single-related-product d-flex" id="imgDeal">
+											<a href="'.$sphct.'"><img src="'.$hinh.'" alt=""></a>
+											<div class="desc">
+												<a href="'.$sphct.'" class="title">'.$name.'</a>
+												<div class="price">
+													<h6>'.$price_1.'.000 ₫</h6>
+												</div>
 											</div>
 										</div>
-									</div>
-								</div>';
-						}
+									</div>';
+							}
 						?>
 					</div>
 				</div>
@@ -241,3 +324,4 @@
 			border-radius: 5px;
 		}
 	</style>
+

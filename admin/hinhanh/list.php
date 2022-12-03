@@ -45,9 +45,9 @@
                 foreach ($listimg as $hinhanh) {
                     extract($hinhanh);
                     $xoaimg="index.php?act=xoaimg&id=".$id;
-                    $ha="../upload/".$img;
-                    if (is_file($ha)) {
-                       $hinh="<img src='".$ha."' width='10%'>";
+                    $han="../upload/".$img;
+                    if (is_file($han)) {
+                       $hinh="<img src='".$han."' width='10%'>";
                     }else{
                         $hinh="Không tìm thấy hình";
                     }

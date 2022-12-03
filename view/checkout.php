@@ -95,7 +95,7 @@
                                         $ttien = 0;
                                         $ttien += $tong;
                                         $all +=$ttien;
-                                        $tien=$all+5;
+                                        $tien=$all+20;
                                         $del="index.php?act=delcart&idsp=".$ma_hh;
                                         $upd="index.php?act=cart&id=".$ma_hh;
                                         $up="index.php?act=cartupdate&id=".$ma_hh;
@@ -119,7 +119,7 @@
                                                     <h5>'.$size.'</h5>
                                                 </td>
                                                 <td>
-                                                    <h5>$'.number_format($price_1,2).'</h5>
+                                                    <h5>'.$price_1.'.000 ₫</h5>
                                                 </td>
                                                 <td>
                                                     <div class="product_count">
@@ -135,18 +135,15 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <h5>$'.number_format($ttien,2).'</h5>
+                                                    <h5>'.$ttien.'.000 ₫</h5>
                                                 </td>
                                                 
                                             </tr>
                                         ';  
                                         echo'
-                                        <div class="col-md-6 form-group p_star">
-                                        <label>Ma_hh</label>
-                                        <input placeholder="" type="text" class="form-control" id="email" name="ma_hh[]" value="'.$ma_hh.'">
-                                        <input placeholder="" type="text" class="form-control" id="email" name="size[]" value="'.$size.'">
-                                        <input placeholder="" type="text" class="form-control" id="email" name="so_luong[]" value="'.$so_luong.'">
-                                    </div>';
+                                        <input style="display:none;" type="text" class="form-control" id="email" name="ma_hh[]" value="'.$ma_hh.'">
+                                        <input style="display:none;" type="text" class="form-control" id="email" name="size[]" value="'.$size.'">
+                                        <input style="display:none;" type="text" class="form-control" id="email" name="so_luong[]" value="'.$so_luong.'">';
                                     } 
                                 ?>
                                     <tr class="bottom_button">
@@ -171,7 +168,7 @@
                                     <?php 
                                         echo '
                                         <td>
-                                            <h7>$'.number_format($all,2).'</h7>
+                                            <h7>'.$all.'.000 ₫</h7>
                                         </td>
                                         
                                         ';
@@ -203,7 +200,7 @@
 									<h5></h5>
 								</td>
 								<td>
-									<p>Phí: $5.00</p>
+									<p>Phí: 20.000 ₫</p>
 								</td>
 							</tr>
 							<tr>
@@ -216,7 +213,7 @@
 								<td>
 									<p>
 										<?php
-										echo "$$tien.00";
+										echo "$tien";
 										?>
 									</p>
 								</td>
@@ -240,8 +237,8 @@
                             </div>
                             <tr>
                         <td>
-                            <input type="radio" name="payment" value="0">  Thanh toán khi nhận hàng <br>
-                            <input type="radio" name="payment" value="1">  Thanh toán bằng thẻ <br>
+                            <label><input type="radio" name="payment" value="0">  Thanh toán khi nhận hàng </label> <br>
+                            <label><input type="radio" name="payment" value="1">  Thanh toán bằng thẻ </label> <br>
                             <div class="check"></div>
                         </td>
                     </tr>
