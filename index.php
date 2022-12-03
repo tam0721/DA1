@@ -95,9 +95,6 @@
             case 'confirmation':
                     if(isset($_POST['confirmation'])&&($_POST['confirmation'])){
                         $ma_tk = $_POST['ma_tk'];
-                        // $ma_hh = $_POST['ma_hh'];
-                        // $size = $_POST['size'];
-                        // $quantity = $_POST['so_luong'];
                         $nguoi_nhan=$_POST['nguoi_nhan'];
                         $dia_chi_nhan=$_POST['dia_chi_nhan'];
                         $sdt_nhan=$_POST['sdt_nhan'];
@@ -111,7 +108,7 @@
                         // trả về in đơn
                         pdo_execute($sql1);
 
-                        $sql2 = "SELECT ma_dh FROM don_hang WHERE ma_tk = " .$ma_tk;
+                        $sql2 = "SELECT * FROM don_hang WHERE ma_tk = " .$ma_tk;
                         extract(pdo_query_one($sql2));
 
                         for ($i=0; $i<count($_SESSION['giohang']); $i++) {

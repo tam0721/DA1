@@ -196,7 +196,7 @@
 									<div class="product-details">
 										<h6>'.$name.'</h6>
 										<div class="price">
-											<h6>'.$price_1.'.000 ₫</h6>	
+											<h6>'.number_format($price_1, 0, '.', '.').'.000 ₫</h6>	
 										</div>
 										<form action="index.php?act=cartprocess" method="post">
 											<input type="hidden" name="id" value="'.$id.'">
@@ -572,9 +572,15 @@
 				echo'
 				<a href="'.$sphct.'"><img class="special-img" class="img-product" src="./upload/'.$spdacbiet['0']['img'].'" alt="" width="30%"></a>
 					<div class="infor-recipe1">
-					<h1 style="color:white"> '.$spdacbiet['0']['name'].'</h1>
-					<h3 style="color:red"> '.$spdacbiet['0']['price_old'].'.000₫</h3>
-					<p>'.$spdacbiet['0']['mota'].'</p>
+					<h1 style="color:white"> '.$spdacbiet['0']['name'].'</h1>';
+					if ($spdacbiet['0']['price_new'] > 0) {
+						echo '
+							<h2 style="color:red;"> '.number_format($spdacbiet[0]['price_new'], 0, '.', '.').'.000₫</h2>
+							<h4 style="color:black; text-decoration:line-through;"> '.number_format($spdacbiet[0]['price_old'], 0, '.', '.').'.000₫</h4>';
+					} else {
+						echo '<h2 style="color:red"> '.number_format($spdacbiet[0]['price_old'], 0, '.', '.').'.000₫</h2>';
+					}
+				echo	'<p>'.$spdacbiet['0']['mota'].'</p>
 					<a href="'.$sphct.'"><button class="boujee-text">Xem thêm</button></a>
 					
 				</div>
@@ -616,7 +622,7 @@
 											<div class="desc">
 												<a href="'.$sphct.'" class="title">'.$name.'</a>
 												<div class="price">
-													<h6>'.$price_1.'.000 ₫</h6>
+													<h6>'.number_format($price_1, 0, '.', '.').'.000 ₫</h6>
 												</div>
 											</div>
 										</div>

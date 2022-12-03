@@ -60,13 +60,13 @@
                         if ($sanpham[0]['price_new'] > 0) {
                             echo 
                                 '<p style="font-weight:bold; text-align:center; color:red;font-size:25px;">'
-                                .$sanpham[0]['price_new'].'.000 ₫</p>'.
+                                .number_format($sanpham[0]['price_new'], 0, '.', '.').'.000 ₫</p>'.
                                 '<p style="text-align:center; color:black;font-size:15px; text-decoration: line-through;">'
-                                .$sanpham[0]['price_old'].'.000 ₫</p>';
+                                .number_format($sanpham[0]['price_old'], 0, '.', '.').'.000 ₫</p>';
                         } else {
                             echo 
                                 '<p style="font-weight:bold; text-align:center; color:red;font-size:25px;">'
-                                .$sanpham[0]['price_old'].'.000 ₫</p>';
+                                .number_format($sanpham[0]['price_old'], 0, '.', '.').'.000 ₫</p>';
                         }
                         // echo $sanpham[0]['price_old'];
                     ?>
