@@ -17,10 +17,24 @@
 	<!--================Order Details Area =================-->
 	<section class="order_details section_gap">
 		<div class="container">
+			<?php
+				$sql = "SELECT ma_tk FROM tai_khoan WHERE user = '".$_SESSION['user']."'";
+				extract(pdo_query_one($sql));
+
+				$sql1 = "SELECT count(ma_dh) as sdh FROM don_hang WHERE ma_tk = '".$ma_tk."' GROUP BY ma_tk";
+				$kq = pdo_query_one($sql1);
+				
+				if ($kq == 0) {
+					echo '<h3 class="title_confirmation">Bạn chưa có đơn hàng nào.</h3>';
+				} else {
+					$sql = "SELECT * FROM don_hang WHERE ma_tk = " .$ma_tk;
+					extract(pdo_query_one($sql));
+			?>
 			<h3 class="title_confirmation">Cảm ơn! Đơn hàng của bạn đang được xử lý.</h3>
 			<div class="row order_d_inner">
 				<div class="col-lg-4">
 					<div class="details_item">
+						
 						<h4>Thông tin đặt hàng</h4>
 						<ul class="list">
 							<li><a href="#"><span>Họ tên </span>: <?=$nguoi_nhan?> </a></li>
@@ -190,6 +204,7 @@
 					</table>
 				</div>
 			</div>
+			<?php } ?>
 		</div>
 	</section>
 	<!--================End Order Details Area =================-->
