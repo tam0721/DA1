@@ -2,10 +2,17 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
+<<<<<<< HEAD
 -- Máy chủ: 127.0.0.1
 -- Thời gian đã tạo: Th12 03, 2022 lúc 07:58 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
+=======
+-- Host: 127.0.0.1
+-- Generation Time: Dec 03, 2022 at 07:38 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
+>>>>>>> 2fcf3a60fb5167f107499095f362003eb9b89872
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,11 +37,23 @@ SET time_zone = "+00:00";
 CREATE TABLE `binh_luan` (
   `id` int(11) NOT NULL,
   `noi_dung` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `iduser` int(11) NOT NULL,
+  `user` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
   `idpro` int(11) NOT NULL,
   `ngay_bl` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+<<<<<<< HEAD
+=======
+--
+-- Dumping data for table `binh_luan`
+--
+
+INSERT INTO `binh_luan` (`id`, `noi_dung`, `user`, `idpro`, `ngay_bl`) VALUES
+(17, 'sada', 'ntd', 112, '30 Nov, 22'),
+(18, 'hello', 'ntd', 103, '30 Nov, 22'),
+(19, 'wala', 'ntd', 101, '02 Dec, 22');
+
+>>>>>>> 2fcf3a60fb5167f107499095f362003eb9b89872
 -- --------------------------------------------------------
 
 --
@@ -86,6 +105,7 @@ CREATE TABLE `gio_hang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+<<<<<<< HEAD
 -- Đang đổ dữ liệu cho bảng `gio_hang`
 --
 
@@ -96,6 +116,14 @@ INSERT INTO `gio_hang` (`id`, `ma_hh`, `name`, `price`, `img`, `so_luong`, `size
 (119, 104, 'ADIDAS HYPERTURF', 167, 'adidas-HYPERTURF.jpg', 1, 44),
 (120, 101, 'Ralph Sampson', 100, 'puma-Ralph Sampson.jpg', 1, 43),
 (121, 103, '', 0, '', 1, 43);
+=======
+-- Dumping data for table `gio_hang`
+--
+
+INSERT INTO `gio_hang` (`id`, `ma_hh`, `name`, `price`, `img`, `so_luong`, `size`) VALUES
+(121, 105, 'Puma RS-X', 130, 'puma-RS-X.jpg', 2, 35),
+(122, 103, 'Vans Classic Slip On ', 57, 'vans-classic-slipon.jpg', 1, 42);
+>>>>>>> 2fcf3a60fb5167f107499095f362003eb9b89872
 
 -- --------------------------------------------------------
 
@@ -106,7 +134,7 @@ INSERT INTO `gio_hang` (`id`, `ma_hh`, `name`, `price`, `img`, `so_luong`, `size
 CREATE TABLE `hang_hoa` (
   `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `price_old` double(10,3) NOT NULL,
+  `price_old` double(10,2) NOT NULL,
   `price_new` double(10,2) NOT NULL DEFAULT 0.00,
   `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `mota` text COLLATE utf8_unicode_ci NOT NULL,
@@ -121,6 +149,7 @@ CREATE TABLE `hang_hoa` (
 --
 
 INSERT INTO `hang_hoa` (`id`, `name`, `price_old`, `price_new`, `img`, `mota`, `iddm`, `luotxem`, `trang_thai`, `special`) VALUES
+<<<<<<< HEAD
 (101, 'Ralph Sampson', 1.899, 0.00, 'puma-Ralph Sampson.jpg', 'Giày Puma Ralph Samspon Lo là một trong mẫu giày Classic huyền thoại của Puma. Được làm bằng da mềm mại, cao cấp, sang trọng, đế giày cực kỳ bền đẹp. Đây là một mẫu giày tuyệt vời dành để đi học, đi làm, đi chơi...', 38, 3, 1, 0),
 (103, 'Vans Classic Slip On ', 6.785, 0.00, 'vans-classic-slipon.jpg', 'VANS SLIP-ON với ưu điểm lớn phần đế giày được thiết kế bằng chất liệu cao su lưu hoá, cùng phần Upper đệm thun có thể dễ dàng tùy chỉnh, tiện lợi và linh động hơn trong việc sử dụng sản phẩm. Đối với siêu phẩm VANS SLIP-ON, VANS cần gắn liền với một họa tiết đỉnh cao làm nên tên tuổi của nó - có lẽ ai cũng biết đó chính là Checkerboard. ', 39, 10, 1, 0),
 (104, 'ADIDAS HYPERTURF', 3.199, 0.00, 'adidas-HYPERTURF.jpg', 'Bạn không cần phải đi đâu xa để tìm kiếm sự phiêu lưu. Chỉ cần bước ra khỏi cửa trước của bạn và lạc vào sự sôi động của thành phố. Trên đôi chân của mình, bạn sẽ muốn có đôi giày adidas Hyperturf này. Chúng được thiết kế theo phong cách chắc chắn của giày dép ngoài trời, với sự kết hợp bền bỉ giữa da lộn, nubuck và vải ripstop phía trên. Dưới chân bạn có lớp đệm Adiprene+ hấp thụ sốc và FORMOTION để đảm bảo sự thoải mái. Bây giờ là lúc để đi lang thang.\r\n', 37, 7, 1, 0),
@@ -129,6 +158,16 @@ INSERT INTO `hang_hoa` (`id`, `name`, `price_old`, `price_new`, `img`, `mota`, `
 (112, 'VANS VN0A5', 890.000, 0.00, 'vans VN0A5KRDBZW.jpg', 'Vans VN0A5KRDBZW thuộc dòng Authentic Collage Black/White mới nhất trong bộ sưu tập của thương hiệu Vans', 39, 2, 1, 0),
 (113, 'SuperStart', 2.145, 0.00, 'superstart1.jpg', 'Suốt hơn 50 năm, đôi sneaker adidas Superstar luôn là lựa chọn hàng đầu của các huyền thoại thể thao và thời trang đường phố, kết nối các nhà kiến tạo đến từ mọi nền văn hóa.', 37, 12, 1, 0),
 (114, 'LeBron 19', 4.413, 0.00, 'le19.webp', 'Hệ thống đệm được trang bị lại kết hợp Max Air có thể nhìn thấy được với bộ phận Zoom Air dày, nhạy dưới bàn chân trước. Max Air giúp tiêu tan lực tác động, trong khi Zoom Air giúp đẩy bạn xuống sân. Phần dưới của giày được thiết kế trông giống như các van và ống tạo nên hoạt động bên trong của nó.', 36, 24, 0, 0);
+=======
+(101, 'Ralph Sampson', 100.00, 0.00, 'puma-Ralph Sampson.jpg', 'fdf', 38, 5, 1, 0),
+(103, 'Vans Classic Slip On ', 57.00, 0.00, 'vans-classic-slipon.jpg', 'Classic Slipon', 39, 11, 1, 0),
+(104, 'ADIDAS HYPERTURF', 167.00, 0.00, 'adidas-HYPERTURF.jpg', 'HYPERTURF', 37, 7, 1, 0),
+(105, 'Puma RS-X', 130.00, 0.00, 'puma-RS-X.jpg', 'Mẫu Sneaker Puma RSX là một trong những thiết kế huyền thoại của Puma. Đây là mẫu giày Chunky được đánh giá là xuất sắc nhất của hãng, thu hút được sự yêu thích của đông đảo giới trẻ. Đây thực sự là mẫu giày đã góp phần làm nên tên tuổi của Puma như hiện tại.', 38, 6, 1, 1),
+(106, 'Jordan Series Mid', 99.00, 0.00, 'Jordan Series Mid.jpg', 'Nike Jordan Series Mid', 36, 21, 1, 0),
+(112, 'VANS VN0A5', 83.00, 0.00, 'vans VN0A5KRDBZW.jpg', 'Vans VN0A5KRDBZW thuộc dòng Authentic Collage Black/White mới nhất trong bộ sưu tập của thương hiệu Vans', 39, 16, 1, 0),
+(113, 'SuperStart', 99.00, 0.00, 'superstart1.jpg', 'z', 37, 10, 1, 0),
+(114, 'LeBron 19', 124.00, 0.00, 'LeBron 19.jpg', '', 36, 1, 0, 0);
+>>>>>>> 2fcf3a60fb5167f107499095f362003eb9b89872
 
 -- --------------------------------------------------------
 
@@ -142,6 +181,7 @@ CREATE TABLE `hinh_anh` (
   `img` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+<<<<<<< HEAD
 --
 -- Đang đổ dữ liệu cho bảng `hinh_anh`
 --
@@ -152,6 +192,8 @@ INSERT INTO `hinh_anh` (`id`, `ma_hh`, `img`) VALUES
 (20, 114, 'le19-4.webp'),
 (21, 114, 'le19-3.webp');
 
+=======
+>>>>>>> 2fcf3a60fb5167f107499095f362003eb9b89872
 -- --------------------------------------------------------
 
 --
@@ -182,8 +224,19 @@ INSERT INTO `loai` (`ma_loai`, `ten_loai`) VALUES
 CREATE TABLE `ma_giam_gia` (
   `ma_gg` varchar(255) NOT NULL,
   `ngay_bd` date NOT NULL,
-  `ngay_kt` date NOT NULL
+  `ngay_kt` date NOT NULL,
+  `giatri` double(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ma_giam_gia`
+--
+
+INSERT INTO `ma_giam_gia` (`ma_gg`, `ngay_bd`, `ngay_kt`, `giatri`) VALUES
+('Z-32426', '2022-12-03', '2022-12-07', 20000),
+('Z-85558', '2022-12-02', '2022-12-06', 30000),
+('Z-MOHN44519', '2022-12-02', '2022-12-03', 100),
+('Z-MOHN63064', '2022-12-02', '2022-12-10', 50000);
 
 -- --------------------------------------------------------
 
@@ -209,7 +262,7 @@ CREATE TABLE `tai_khoan` (
 
 INSERT INTO `tai_khoan` (`ma_tk`, `img`, `ho_ten`, `user`, `pass`, `email`, `address`, `tel`, `role`) VALUES
 (128, '', 'Admin', 'admin', '123', '', 'Thôn 1, Lộc Ngãi, Bảo Lâm, Lâm Đồng', '0383383053', 1),
-(191, '', 'bé Duy', 'ntd', '456', 'ng.tanduy261203@gmail.com', 'Thới An, Quận 12', '123', 0);
+(191, '', 'Nguyễn Tấn Duy', 'ntd', '456', 'ng.tanduy261203@gmail.com', 'Thới An, Quận 12', '123', 0);
 
 -- --------------------------------------------------------
 
@@ -245,7 +298,12 @@ INSERT INTO `tin_tuc` (`id`, `name`, `img`, `mota`, `ngaydang`) VALUES
 --
 ALTER TABLE `binh_luan`
   ADD PRIMARY KEY (`id`),
+<<<<<<< HEAD
   ADD KEY `fk_bl_hh` (`idpro`);
+=======
+  ADD KEY `fk_bl_hh` (`idpro`),
+  ADD KEY `fk_bl_tk` (`user`);
+>>>>>>> 2fcf3a60fb5167f107499095f362003eb9b89872
 
 --
 -- Chỉ mục cho bảng `chi_tiet_don_hang`
@@ -315,7 +373,11 @@ ALTER TABLE `tin_tuc`
 -- AUTO_INCREMENT cho bảng `binh_luan`
 --
 ALTER TABLE `binh_luan`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+>>>>>>> 2fcf3a60fb5167f107499095f362003eb9b89872
 
 --
 -- AUTO_INCREMENT cho bảng `chi_tiet_don_hang`
@@ -333,7 +395,11 @@ ALTER TABLE `don_hang`
 -- AUTO_INCREMENT cho bảng `gio_hang`
 --
 ALTER TABLE `gio_hang`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
+>>>>>>> 2fcf3a60fb5167f107499095f362003eb9b89872
 
 --
 -- AUTO_INCREMENT cho bảng `hang_hoa`
@@ -345,7 +411,7 @@ ALTER TABLE `hang_hoa`
 -- AUTO_INCREMENT cho bảng `hinh_anh`
 --
 ALTER TABLE `hinh_anh`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT cho bảng `loai`
