@@ -25,7 +25,7 @@
         // echo $id;
         $ha="upload/".$sanpham[0]['img'];
         if (is_file($ha)) {
-            $hinh="<img id='show' src='".$ha."' height='100%' width='100%'>";
+            $hinh="<img id='show' src='".$ha."' width='70%'>";
         }else{
             $hinh="Không tìm thấy hình";
         }
@@ -35,14 +35,14 @@
     <div class="container-fluid" style="margin-top: 30px;">
         <div class= "row">
             <div class ="col-sm-5">
-                <?php echo '<div style="width=300px;height:500px; border:1px solid #ccc;">'.$hinh.'</div>';?>
+                <?php echo '<div style="text-align: center; border:1px solid #ccc;">'.$hinh.'</div>';?>
 
                 <!-- demo -->
-                <div style="width:300px; text-align: center;">
+                <div style="text-align: center; margin-top: 10px;">
                     <?php
-                        echo '<img src='.$ha.' width=20% onclick="myFunction(this)">';
+                        echo '<img src='.$ha.' width=15% onclick="myFunction(this)">';
                         foreach ($images as $img) {
-                            echo '<img src=upload/'.$img['img'].' width=20% onclick="myFunction(this)">';
+                            echo '<img src=upload/'.$img['img'].' width=15% onclick="myFunction(this)">';
                         }
                     ?>
                 </div>
@@ -108,7 +108,7 @@
                                     <input type="number" value="1"  name="soluong" step="1" min="1" max="900">
                                     <input type="hidden" name="id" value="'.$sanpham[0]['id'].'">
                                     <input type="hidden" name="name" value="'.$sanpham[0]['name'].'">
-                                    <input type="hidden" name="price" value="'.$sanpham[0]['price_old'].'">
+                                    <input type="hidden" name="price" value="'.(($sanpham[0]['price_new'] > 0)? $sanpham[0]['price_new']:$sanpham[0]['price_old']).'">
                                     <input type="hidden" name="img" value="'.$sanpham[0]['img'].'">
                                     <input type="hidden" name="note" value="0">
                         ';       

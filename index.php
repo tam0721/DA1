@@ -119,10 +119,6 @@
                                 VALUES ('$ma_dh', '$ma_hh', $size, $quantity)";
                             pdo_execute($sql);
                         }
-
-                        // $sql = "INSERT INTO chi_tiet_don_hang (ma_dh, ma_hh, size, quantity)
-                        //         VALUES ('$ma_dh', '$ma_hh', $size, $quantity)";
-                        // pdo_execute($sql);
                     }
                 include 'view/confirmation.php';
                 break;

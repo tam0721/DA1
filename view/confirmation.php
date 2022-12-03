@@ -102,7 +102,7 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <h5>'.$ttien.'.000 ₫</h5>
+                                                    <h5>'.number_format($ttien, 0, '.', '.').'.000 ₫</h5>
                                                 </td>
                                                 
                                             </tr>
@@ -131,7 +131,7 @@
                                     <?php 
                                         echo '
                                         <td>
-                                            <h7>'.$all.'.000 ₫</h7>
+                                            <h7>'.number_format($all, 0, '.', '.').'.000 ₫</h7>
                                         </td>
                                         
                                         ';
@@ -176,7 +176,7 @@
 								<td>
 									<p>
 										<?php
-										echo $tien.'.000 ₫';
+										echo number_format($tien, 0, '.', '.').'.000 ₫';
 										?>
 									</p>
 								</td>

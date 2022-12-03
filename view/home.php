@@ -185,7 +185,7 @@
 							extract($sp);
 							$hinh=$img_path.$img;
 							$price_1 = $price_old;
-							if ($price_new > 0) $price_old = $price_new;
+							if ($price_new > 0) $price_1 = $price_new;
 							$sphct="index.php?act=sanphamct&idsp=".$id;
 							echo '
 							<div class="col-lg-3 col-md-6">

@@ -127,7 +127,7 @@
                                                     <h5>'.$size.'</h5>
                                                 </td>
                                                 <td>
-                                                    <h5>'.$price_1.'.000 ₫</h5>
+                                                    <h5>'.number_format($price_1, 0, '.', '.').'.000 ₫</h5>
                                                 </td>
                                                 <td>
                                                     <div class="product_count">
@@ -144,7 +144,7 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <h5>'.$ttien.'.000 ₫</h5>
+                                                    <h5>'.number_format($ttien, 0, '.', '.').'.000 ₫</h5>
                                                 </td>
                                                 <td>
                                                     <h5><a href="'.$del.'">XÓA</a></h5>
@@ -186,7 +186,7 @@
                                     <?php 
                                         echo '
                                         <td>
-                                            <h5>'.$all.'.000 ₫</h5>
+                                            <h5>'.number_format($all, 0, '.', '.').'.000 ₫</h5>
                                         </td>
                                         
                                         ';
