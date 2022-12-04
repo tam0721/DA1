@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2022 at 09:32 AM
+-- Generation Time: Dec 04, 2022 at 02:47 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -56,14 +56,6 @@ CREATE TABLE `chi_tiet_don_hang` (
   `quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `chi_tiet_don_hang`
---
-
-INSERT INTO `chi_tiet_don_hang` (`ma_ctdh`, `ma_dh`, `ma_hh`, `size`, `quantity`) VALUES
-(11, 14, 112, 35, 1),
-(12, 14, 112, 35, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -85,14 +77,6 @@ CREATE TABLE `don_hang` (
   `ghi_chu_ad` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `don_hang`
---
-
-INSERT INTO `don_hang` (`ma_dh`, `ma_tk`, `ngay_dat`, `nguoi_nhan`, `sdt_nhan`, `dia_chi_nhan`, `email`, `payment`, `trang_thai_tt`, `trang_thai_gh`, `ghi_chu_kh`, `ghi_chu_ad`) VALUES
-(14, 191, '2022-12-03', 'bé Duy', '123', 'Thới An, Quận 12', 'ng.tanduy261203@gmail.com', 1, 0, 0, NULL, NULL),
-(15, 191, '2022-12-03', 'bé Duy', '123', 'Thới An, Quận 12', 'ng.tanduy261203@gmail.com', 1, 0, 0, NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -105,13 +89,6 @@ CREATE TABLE `gio_hang` (
   `so_luong` int(11) NOT NULL,
   `size` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `gio_hang`
---
-
-INSERT INTO `gio_hang` (`id`, `ma_hh`, `so_luong`, `size`) VALUES
-(131, 112, 1, 35);
 
 -- --------------------------------------------------------
 
@@ -137,14 +114,14 @@ CREATE TABLE `hang_hoa` (
 --
 
 INSERT INTO `hang_hoa` (`id`, `name`, `price_old`, `price_new`, `img`, `mota`, `iddm`, `luotxem`, `trang_thai`, `special`) VALUES
-(101, 'Ralph Sampson', 4998, 0, 'puma-Ralph-Sampson.jpg', 'fdf', 38, 7, 1, 0),
+(101, 'Ralph Sampson', 4998, 0, 'puma-Ralph-Sampson.jpg', 'fdf', 38, 8, 1, 0),
 (103, 'Vans Classic Slip On ', 5559, 0, 'vans-classic-slipon.jpg', 'Classic Slipon', 39, 12, 1, 0),
-(104, 'ADIDAS HYPERTURF', 3199, 0, 'adidas-HYPERTURF.jpg', 'HYPERTURF', 37, 11, 1, 0),
-(105, 'Puma RS-X', 2135, 0, 'puma-RS-X.jpg', 'Mẫu Sneaker Puma RSX là một trong những thiết kế huyền thoại của Puma. Đây là mẫu giày Chunky được đánh giá là xuất sắc nhất của hãng, thu hút được sự yêu thích của đông đảo giới trẻ. Đây thực sự là mẫu giày đã góp phần làm nên tên tuổi của Puma như hiện tại.', 38, 7, 1, 1),
-(106, 'Jordan Series Mid', 4485, 0, 'Jordan-Series-Mid.jpg', 'Nike Jordan Series Mid', 36, 8, 1, 0),
+(104, 'ADIDAS HYPERTURF', 3199, 0, 'adidas-HYPERTURF.jpg', 'HYPERTURF', 37, 15, 1, 0),
+(105, 'Puma RS-X', 2135, 0, 'puma-RS-X.jpg', 'Mẫu Sneaker Puma RSX là một trong những thiết kế huyền thoại của Puma. Đây là mẫu giày Chunky được đánh giá là xuất sắc nhất của hãng, thu hút được sự yêu thích của đông đảo giới trẻ. Đây thực sự là mẫu giày đã góp phần làm nên tên tuổi của Puma như hiện tại.', 38, 9, 1, 1),
+(106, 'Jordan Series Mid', 4485, 0, 'Jordan-Series-Mid.jpg', 'Nike Jordan Series Mid', 36, 10, 1, 0),
 (112, 'VANS VN0A5', 890, 0, 'vans-VN0A5KRDBZW.jpg', 'Vans VN0A5KRDBZW thuộc dòng Authentic Collage Black/White mới nhất trong bộ sưu tập của thương hiệu Vans', 39, 14, 1, 0),
-(113, 'SuperStart', 2145, 0, 'superstart1.jpg', 'z', 37, 41, 1, 0),
-(114, 'LeBron 19', 4382, 0, 'le19.webp', 'Hệ thống đệm được trang bị lại kết hợp Max Air có thể nhìn thấy được với bộ phận Zoom Air dày, nhạy dưới bàn chân trước. Max Air giúp tiêu tan lực tác động, trong khi Zoom Air giúp đẩy bạn xuống sân. Phần dưới của giày được thiết kế trông giống như các van và ống tạo nên hoạt động bên trong của nó.', 36, 63, 0, 0);
+(113, 'SuperStart', 2145, 1000, 'superstart1.jpg', 'z', 37, 52, 1, 0),
+(114, 'LeBron 19', 4382, 0, 'le19.webp', 'Hệ thống đệm được trang bị lại kết hợp Max Air có thể nhìn thấy được với bộ phận Zoom Air dày, nhạy dưới bàn chân trước. Max Air giúp tiêu tan lực tác động, trong khi Zoom Air giúp đẩy bạn xuống sân. Phần dưới của giày được thiết kế trông giống như các van và ống tạo nên hoạt động bên trong của nó.', 36, 94, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -327,19 +304,19 @@ ALTER TABLE `binh_luan`
 -- AUTO_INCREMENT for table `chi_tiet_don_hang`
 --
 ALTER TABLE `chi_tiet_don_hang`
-  MODIFY `ma_ctdh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `ma_ctdh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `don_hang`
 --
 ALTER TABLE `don_hang`
-  MODIFY `ma_dh` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `ma_dh` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `gio_hang`
 --
 ALTER TABLE `gio_hang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
 
 --
 -- AUTO_INCREMENT for table `hang_hoa`
