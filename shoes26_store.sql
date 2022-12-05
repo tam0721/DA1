@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2022 at 02:45 AM
+-- Generation Time: Dec 05, 2022 at 02:54 AM
 -- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -83,6 +83,14 @@ CREATE TABLE `gio_hang` (
   `size` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `gio_hang`
+--
+
+INSERT INTO `gio_hang` (`id`, `ma_hh`, `so_luong`, `size`) VALUES
+(162, 112, 1, 35),
+(163, 104, 1, 35);
+
 -- --------------------------------------------------------
 
 --
@@ -109,12 +117,12 @@ CREATE TABLE `hang_hoa` (
 INSERT INTO `hang_hoa` (`id`, `name`, `price_old`, `price_new`, `img`, `mota`, `iddm`, `luotxem`, `trang_thai`, `special`) VALUES
 (101, 'Ralph Sampson', 4998, 0, 'puma-Ralph-Sampson.jpg', 'fdf', 38, 2, 1, 0),
 (103, 'Vans Classic Slip On ', 5559, 0, 'vans-classic-slipon.jpg', 'Classic Slipon', 39, 0, 1, 0),
-(104, 'ADIDAS HYPERTURF', 3199, 0, 'adidas-HYPERTURF.jpg', 'HYPERTURF', 37, 71, 1, 0),
+(104, 'ADIDAS HYPERTURF', 3199, 0, 'adidas-HYPERTURF.jpg', 'HYPERTURF', 37, 74, 1, 0),
 (105, 'Puma RS-X', 2135, 0, 'puma-RS-X.jpg', 'Mẫu Sneaker Puma RSX là một trong những thiết kế huyền thoại của Puma. Đây là mẫu giày Chunky được đánh giá là xuất sắc nhất của hãng, thu hút được sự yêu thích của đông đảo giới trẻ. Đây thực sự là mẫu giày đã góp phần làm nên tên tuổi của Puma như hiện tại.', 38, 26, 1, 1),
 (106, 'Jordan Series Mid', 4485, 0, 'Jordan-Series-Mid.jpg', 'Nike Jordan Series Mid', 36, 0, 1, 0),
-(112, 'VANS VN0A5', 890, 0, 'vans-VN0A5KRDBZW.jpg', 'Vans VN0A5KRDBZW thuộc dòng Authentic Collage Black/White mới nhất trong bộ sưu tập của thương hiệu Vans', 39, 4, 1, 0),
+(112, 'VANS VN0A5', 890, 0, 'vans-VN0A5KRDBZW.jpg', 'Vans VN0A5KRDBZW thuộc dòng Authentic Collage Black/White mới nhất trong bộ sưu tập của thương hiệu Vans', 39, 7, 1, 0),
 (113, 'SuperStart', 2145, 0, 'superstart1.jpg', 'z', 37, 11, 1, 0),
-(114, 'LeBron 19', 4382, 1000, 'le19.webp', '', 36, 4, 0, 0);
+(114, 'LeBron 19', 4382, 1000, 'le19.webp', '', 36, 5, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -201,6 +209,17 @@ CREATE TABLE `tin_tuc` (
   `mota` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ngaydang` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `tin_tuc`
+--
+
+INSERT INTO `tin_tuc` (`id`, `name`, `img`, `mota`, `ngaydang`) VALUES
+(26, 'Tết độc thân không đơn độc - Chương trình ưu đãi \"MUA 1 TẶNG 1\" cực hấp dẫn, xem ngay!', 'blog1.jpg', 'Tết độc thân không sợ đơn độc, AVASport tặng bạn cơn mưa ưu đãi \"MUA 1 TẶNG 1\" siêu hấp dẫn. Mua một sản phẩm bất kỳ bạn sẽ được tặng kèm theo một sản phẩm cực chất lượng. Xem ngay bài viết dưới đây để biết thêm thông tin chi tiết!', ' 02 Dec, 22'),
+(28, '[24/12-30/1] Tuần lễ adidas siêu sale cực khủng lên đến 50%, nhanh tay chốt đơn!', 'blog3.jpg', 'Nhân dịp tuần lễ adidas, Z-MHON giảm giá nhiều mặt hàng như giày dép, quần áo, phụ kiện thể thao lên đến 50%, nhanh tay chốt đơn sản phẩm chính hãng cùng với mức giá siêu hời ngay nhé!', ' 02 Dec, 22'),
+(29, '[9/12 - 25/12]Tuần lễ Puma - Siêu sale cực sốc lên đến 50%, mua ngày kẻo lỡ!', 'blog4.jpg', 'Z-MHON xin đem đến các bạn chương trình ưu đãi lên đến 50% từ thương hiệu Puma. Các mặt hàng thể thao Puma chính hãng và chất lượng tuyệt vời đang chờ bạn sở hữu, hãy thêm vào giỏ hàng ngay nào!', ' 02 Dec, 22'),
+(30, 'Cách phơi giày trắng không bị ố vàng đơn giản, hiệu quả bất ngờ', 'blog5.jpg', 'Hiện tượng giày trắng bị ố vàng khi phơi rất thường xuyên xảy ra và gây ảnh hưởng đến tính thẩm mỹ của giày. Cùng Z-MHON xem ngay bài viết hướng dẫn cách phơi giày trắng không bị ố vàng nhé!', ' 02 Dec, 22'),
+(31, '11 mẹo khử mùi hôi dép cao su cực đơn giản và hiệu quả', 'blog7.jpg', 'Dép, đặc biệt là dép cao su có mùi hăng nồng khi mới mua về, gây khó chịu khiến nhiều người phải tìm cách loại bỏ. Tuy nhiên, không phải ai cũng biết cách thực hiện hoặc làm không đúng cách mùi hôi vẫn còn bám lại. Nếu bạn vẫn còn băn khoăn, hãy tham khảo', ' 02 Dec, 22');
 
 --
 -- Indexes for dumped tables
@@ -300,7 +319,7 @@ ALTER TABLE `don_hang`
 -- AUTO_INCREMENT for table `gio_hang`
 --
 ALTER TABLE `gio_hang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
 
 --
 -- AUTO_INCREMENT for table `hang_hoa`
@@ -330,7 +349,7 @@ ALTER TABLE `tai_khoan`
 -- AUTO_INCREMENT for table `tin_tuc`
 --
 ALTER TABLE `tin_tuc`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- Constraints for dumped tables
