@@ -38,12 +38,8 @@
                 if (isset($_GET['idsp'])&&($_GET['idsp']>=0)){
                     $ma_hh=$_GET['idsp'];
                     $size=$_GET['size'];
+                    array_splice($_SESSION['giohang'],$ma_dh && $size,1);
                     delete_giohang($ma_hh,$size);
-                    // if(isset($_POST['id'],$size)){
-                    //     array_splice($_SESSION['giohang'],$_POST['id']&&$size,1);
-                    // } else {
-                    //    unset($_SESSION['giohang']);
-                    // }
                 }
                 include 'view/delcart.php';
                 break;
