@@ -36,12 +36,16 @@
                 break;
             case 'delcart':
                 if (isset($_GET['idsp'])&&($_GET['idsp']>=0)){
-                    $id=$_GET['idsp'];
+                    $ma_hh=$_GET['idsp'];
                     $size=$_GET['size'];
-               
-                           unset($_SESSION['giohang']);
+                    delete_giohang($ma_hh,$size);
+                    // if(isset($_POST['id'],$size)){
+                    //     array_splice($_SESSION['giohang'],$_POST['id']&&$size,1);
+                    // } else {
+                    //    unset($_SESSION['giohang']);
+                    // }
                 }
-                    include 'view/delcart.php';
+                include 'view/delcart.php';
                 break;
             // case 'sanpham':
             //     if(isset($_POST['kyw'])&&($_POST['kyw']!="")){
