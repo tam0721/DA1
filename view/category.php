@@ -158,7 +158,7 @@ Latest commit aae4210 1 hour ago
 											<div class="product-details">
 												<h6>'.$name.'</h6>
 											<div class="price">
-												<h6>'.$price_1.'.000 ₫</h6>
+												<h6>'.number_format($price_1, 0, '.', '.').'.000 ₫</h6>
 											</div>
 											<div class="prd-bottom">
 												<a href="'.$sphct.'" class="social-info">
@@ -201,7 +201,7 @@ Latest commit aae4210 1 hour ago
 										<div class="product-details">
 											<h6>'.$name.'</h6>
 										<div class="price">
-											<h6>'.$price_1.'.000 ₫</h6>
+											<h6>'.number_format($price_1, 0, '.', '.').'.000 ₫</h6>
 										</div>
 										
 										<form action="index.php?act=cartprocess" method="post">
@@ -296,7 +296,7 @@ Latest commit aae4210 1 hour ago
 											<div class="desc">
 												<a href="'.$sphct.'" class="title">'.$name.'</a>
 												<div class="price">
-													<h6>'.$price_1.'.000 ₫</h6>
+													<h6>'.number_format($price_1, 0, '.', '.').'.000 ₫</h6>
 												</div>
 											</div>
 										</div>

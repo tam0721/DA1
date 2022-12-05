@@ -17,10 +17,24 @@
 	<!--================Order Details Area =================-->
 	<section class="order_details section_gap">
 		<div class="container">
+			<?php
+				$sql = "SELECT ma_tk FROM tai_khoan WHERE user = '".$_SESSION['user']."'";
+				extract(pdo_query_one($sql));
+
+				$sql1 = "SELECT count(ma_dh) as sdh FROM don_hang WHERE ma_tk = '".$ma_tk."' GROUP BY ma_tk";
+				$kq = pdo_query_one($sql1);
+				
+				if ($kq == 0) {
+					echo '<h3 class="title_confirmation">Bạn chưa có đơn hàng nào.</h3>';
+				} else {
+					$sql = "SELECT * FROM don_hang WHERE ma_tk = " .$ma_tk;
+					extract(pdo_query_one($sql));
+			?>
 			<h3 class="title_confirmation">Cảm ơn! Đơn hàng của bạn đang được xử lý.</h3>
 			<div class="row order_d_inner">
 				<div class="col-lg-4">
 					<div class="details_item">
+						
 						<h4>Thông tin đặt hàng</h4>
 						<ul class="list">
 							<li><a href="#"><span>Họ tên </span>: <?=$nguoi_nhan?> </a></li>
@@ -62,7 +76,7 @@
                                         $ttien = 0;
                                         $ttien += $tong;
                                         $all +=$ttien;
-										$tien=$all+0.02;
+										$tien=$all+20;
                                         $del="index.php?act=delcart&idsp=".$ma_hh;
                                         $upd="index.php?act=cart&id=".$ma_hh;
                                         $up="index.php?act=cartupdate&id=".$ma_hh;
@@ -86,7 +100,7 @@
                                                     <h5>'.$size.'</h5>
                                                 </td>
                                                 <td>
-													<h5>'.$price_1.'.000 ₫</h5>
+													<h5>'.number_format($price_1, 0, '.', '.').'.000 ₫</h5>
                                                 </td>
                                                 <td>
                                                     <div class="product_count">
@@ -102,7 +116,7 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <h5>'.$ttien.'.000 ₫</h5>
+                                                    <h5>'.number_format($ttien, 0, '.', '.').'.000 ₫</h5>
                                                 </td>
                                                 
                                             </tr>
@@ -131,7 +145,7 @@
                                     <?php 
                                         echo '
                                         <td>
-                                            <h7>'.$all.'.000 ₫</h7>
+                                            <h7>'.number_format($all, 0, '.', '.').'.000 ₫</h7>
                                         </td>
                                         
                                         ';
@@ -176,7 +190,7 @@
 								<td>
 									<p>
 										<?php
-										echo $tien.'.000 ₫';
+										echo number_format($tien, 0, '.', '.').'.000 ₫';
 										?>
 									</p>
 								</td>
@@ -190,6 +204,7 @@
 					</table>
 				</div>
 			</div>
+			<?php } ?>
 		</div>
 	</section>
 	<!--================End Order Details Area =================-->

@@ -95,7 +95,7 @@
                                         $ttien = 0;
                                         $ttien += $tong;
                                         $all +=$ttien;
-                                        $tien=$all+0.02;
+                                        $tien=$all+20;
                                         $del="index.php?act=delcart&idsp=".$ma_hh;
                                         $upd="index.php?act=cart&id=".$ma_hh;
                                         $up="index.php?act=cartupdate&id=".$ma_hh;
@@ -119,7 +119,7 @@
                                                     <h5>'.$size.'</h5>
                                                 </td>
                                                 <td>
-                                                    <h5>'.$price_1.'.000 ₫</h5>
+                                                    <h5>'.number_format($price_1, 0, '.', '.').'.000 ₫</h5>
                                                 </td>
                                                 <td>
                                                     <div class="product_count">
@@ -135,7 +135,7 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <h5>'.$ttien.'.000 ₫</h5>
+                                                    <h5>'.number_format($ttien, 0, '.', '.').'.000 ₫</h5>
                                                 </td>
                                                 
                                             </tr>
@@ -168,7 +168,7 @@
                                     <?php 
                                         echo '
                                         <td>
-                                            <h7>'.$all.'.000 ₫</h7>
+                                            <h7>'.number_format($all, 0, '.', '.').'.000 ₫</h7>
                                         </td>
                                         
                                         ';
@@ -213,7 +213,7 @@
 								<td>
 									<p>
 										<?php
-										echo $tien.'.000 ₫';
+										echo number_format($tien, 0, '.', '.').'.000 ₫';
 										?>
 									</p>
 								</td>

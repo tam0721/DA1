@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2022 at 08:28 AM
+-- Generation Time: Dec 04, 2022 at 02:47 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -99,8 +99,8 @@ CREATE TABLE `gio_hang` (
 CREATE TABLE `hang_hoa` (
   `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `price_old` double(10,3) NOT NULL,
-  `price_new` double(10,3) NOT NULL DEFAULT 0.000,
+  `price_old` int(11) NOT NULL,
+  `price_new` int(11) NOT NULL DEFAULT 0,
   `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `mota` text COLLATE utf8_unicode_ci NOT NULL,
   `iddm` int(10) NOT NULL,
@@ -114,14 +114,14 @@ CREATE TABLE `hang_hoa` (
 --
 
 INSERT INTO `hang_hoa` (`id`, `name`, `price_old`, `price_new`, `img`, `mota`, `iddm`, `luotxem`, `trang_thai`, `special`) VALUES
-(101, 'Ralph Sampson', 4.998, 0.000, 'puma-Ralph-Sampson.jpg', 'fdf', 38, 7, 1, 0),
-(103, 'Vans Classic Slip On ', 5.559, 0.000, 'vans-classic-slipon.jpg', 'Classic Slipon', 39, 11, 1, 0),
-(104, 'ADIDAS HYPERTURF', 3.199, 0.000, 'adidas-HYPERTURF.jpg', 'HYPERTURF', 37, 8, 1, 0),
-(105, 'Puma RS-X', 2.135, 0.000, 'puma-RS-X.jpg', 'Mẫu Sneaker Puma RSX là một trong những thiết kế huyền thoại của Puma. Đây là mẫu giày Chunky được đánh giá là xuất sắc nhất của hãng, thu hút được sự yêu thích của đông đảo giới trẻ. Đây thực sự là mẫu giày đã góp phần làm nên tên tuổi của Puma như hiện tại.', 38, 7, 1, 1),
-(106, 'Jordan Series Mid', 4.485, 0.000, 'Jordan-Series-Mid.jpg', 'Nike Jordan Series Mid', 36, 7, 1, 0),
-(112, 'VANS VN0A5', 890.000, 0.000, 'vans-VN0A5KRDBZW.jpg', 'Vans VN0A5KRDBZW thuộc dòng Authentic Collage Black/White mới nhất trong bộ sưu tập của thương hiệu Vans', 39, 9, 1, 0),
-(113, 'SuperStart', 2.145, 0.000, 'superstart1.jpg', 'z', 37, 37, 1, 0),
-(114, 'LeBron 19', 4.382, 0.000, 'le19.webp', 'Hệ thống đệm được trang bị lại kết hợp Max Air có thể nhìn thấy được với bộ phận Zoom Air dày, nhạy dưới bàn chân trước. Max Air giúp tiêu tan lực tác động, trong khi Zoom Air giúp đẩy bạn xuống sân. Phần dưới của giày được thiết kế trông giống như các van và ống tạo nên hoạt động bên trong của nó.', 36, 62, 0, 0);
+(101, 'Ralph Sampson', 4998, 0, 'puma-Ralph-Sampson.jpg', 'fdf', 38, 8, 1, 0),
+(103, 'Vans Classic Slip On ', 5559, 0, 'vans-classic-slipon.jpg', 'Classic Slipon', 39, 12, 1, 0),
+(104, 'ADIDAS HYPERTURF', 3199, 0, 'adidas-HYPERTURF.jpg', 'HYPERTURF', 37, 15, 1, 0),
+(105, 'Puma RS-X', 2135, 0, 'puma-RS-X.jpg', 'Mẫu Sneaker Puma RSX là một trong những thiết kế huyền thoại của Puma. Đây là mẫu giày Chunky được đánh giá là xuất sắc nhất của hãng, thu hút được sự yêu thích của đông đảo giới trẻ. Đây thực sự là mẫu giày đã góp phần làm nên tên tuổi của Puma như hiện tại.', 38, 9, 1, 1),
+(106, 'Jordan Series Mid', 4485, 0, 'Jordan-Series-Mid.jpg', 'Nike Jordan Series Mid', 36, 10, 1, 0),
+(112, 'VANS VN0A5', 890, 0, 'vans-VN0A5KRDBZW.jpg', 'Vans VN0A5KRDBZW thuộc dòng Authentic Collage Black/White mới nhất trong bộ sưu tập của thương hiệu Vans', 39, 14, 1, 0),
+(113, 'SuperStart', 2145, 1000, 'superstart1.jpg', 'z', 37, 52, 1, 0),
+(114, 'LeBron 19', 4382, 0, 'le19.webp', 'Hệ thống đệm được trang bị lại kết hợp Max Air có thể nhìn thấy được với bộ phận Zoom Air dày, nhạy dưới bàn chân trước. Max Air giúp tiêu tan lực tác động, trong khi Zoom Air giúp đẩy bạn xuống sân. Phần dưới của giày được thiết kế trông giống như các van và ống tạo nên hoạt động bên trong của nó.', 36, 94, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -304,19 +304,19 @@ ALTER TABLE `binh_luan`
 -- AUTO_INCREMENT for table `chi_tiet_don_hang`
 --
 ALTER TABLE `chi_tiet_don_hang`
-  MODIFY `ma_ctdh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ma_ctdh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `don_hang`
 --
 ALTER TABLE `don_hang`
-  MODIFY `ma_dh` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ma_dh` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `gio_hang`
 --
 ALTER TABLE `gio_hang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
 
 --
 -- AUTO_INCREMENT for table `hang_hoa`
