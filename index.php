@@ -10,6 +10,7 @@
     include 'model/tintuc.php';
     include 'model/cart.php';
     include 'model/hinhanh.php';
+    include 'model/magiamgia.php';
     include 'var.php';
     $spnew =loadall_sanpham_home();
     $topview = get_product_top9();
@@ -17,6 +18,7 @@
     $dsdm =loadall_danhmuc();
     $spdacbiet=get_product_special();
     $cart=loadall_giohang();
+    $mgg=loadall_magiam();
     if(!isset($_SESSION['giohang'])) $_SESSION['giohang'] = [];
     $note = 0;
     if(isset($_GET['act'])){

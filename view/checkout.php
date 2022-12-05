@@ -24,13 +24,6 @@
                     $sql = "SELECT * FROM tai_khoan WHERE user = '".$_SESSION['user']."'";
                     extract(pdo_query_one($sql));
             ?>
-            <div class="cupon_area">
-                <div class="check_title">
-                    <h2>Lấy mã giảm giá? <a href="#">Click vào đây</a></h2>
-                </div>
-                <input type="text" placeholder="Nhập mã ">
-                <a class="tp_btn" href="#">Áp dụng</a>
-            </div>
             <div class="billing_details">
                 <div class="row">
                     <div class="col-lg-8">
@@ -57,9 +50,18 @@
                             <div class="col-md-12 form-group">
                                 <textarea class="form-control" name="message" id="message" rows="1" placeholder="Ghi chú"></textarea>
                             </div>
-                            
-                            
-                        
+                            <div class="col-md-6 form-group p_star">
+                                <select name="mgg" id="" class="form-select form-select-lg mb-3" aria-label=".form-select-sm example">
+                            <option selected>Chọn mã giảm giá</option>
+                            <?php 
+                                foreach ($mgg as $gg) {
+                                    extract($gg);
+                                    echo'<option value="'.$giatri.'" >'.$ma_gg.' (giảm '.$giatri.'K)</option>';
+                                }
+                            ?>
+                        </select>
+                            </div>
+
                     </div>
                     
                     <!-- <div class="col-lg-4">
