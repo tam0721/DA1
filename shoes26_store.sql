@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2022 at 02:15 AM
+-- Generation Time: Dec 05, 2022 at 02:45 AM
 -- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -63,6 +63,7 @@ CREATE TABLE `don_hang` (
   `sdt_nhan` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `dia_chi_nhan` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `payment` tinyint(1) NOT NULL,
+  `ma_gg` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
   `trang_thai_tt` tinyint(1) NOT NULL,
   `trang_thai_gh` tinyint(1) NOT NULL DEFAULT 0,
   `ghi_chu_kh` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -78,20 +79,9 @@ CREATE TABLE `don_hang` (
 CREATE TABLE `gio_hang` (
   `id` int(11) NOT NULL,
   `ma_hh` int(11) NOT NULL,
-  `name` varchar(150) NOT NULL,
-  `price` double(10,0) NOT NULL,
-  `img` varchar(250) NOT NULL,
   `so_luong` int(11) NOT NULL,
   `size` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `gio_hang`
---
-
-INSERT INTO `gio_hang` (`id`, `ma_hh`, `name`, `price`, `img`, `so_luong`, `size`) VALUES
-(160, 105, 'Puma RS-X', 130, 'puma-RS-X.jpg', 1, 35),
-(161, 105, 'Puma RS-X', 130, 'puma-RS-X.jpg', 1, 39);
 
 -- --------------------------------------------------------
 
@@ -102,8 +92,8 @@ INSERT INTO `gio_hang` (`id`, `ma_hh`, `name`, `price`, `img`, `so_luong`, `size
 CREATE TABLE `hang_hoa` (
   `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `price_old` double(10,2) NOT NULL,
-  `price_new` double(10,2) NOT NULL DEFAULT 0.00,
+  `price_old` int(11) NOT NULL,
+  `price_new` int(11) NOT NULL DEFAULT 0,
   `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `mota` text COLLATE utf8_unicode_ci NOT NULL,
   `iddm` int(10) NOT NULL,
@@ -117,14 +107,14 @@ CREATE TABLE `hang_hoa` (
 --
 
 INSERT INTO `hang_hoa` (`id`, `name`, `price_old`, `price_new`, `img`, `mota`, `iddm`, `luotxem`, `trang_thai`, `special`) VALUES
-(101, 'Ralph Sampson', 100.00, 0.00, 'puma-Ralph Sampson.jpg', 'fdf', 38, 2, 1, 0),
-(103, 'Vans Classic Slip On ', 57.00, 0.00, 'vans-classic-slipon.jpg', 'Classic Slipon', 39, 0, 1, 0),
-(104, 'ADIDAS HYPERTURF', 167.00, 0.00, 'adidas-HYPERTURF.jpg', 'HYPERTURF', 37, 70, 1, 0),
-(105, 'Puma RS-X', 130.00, 0.00, 'puma-RS-X.jpg', 'Mẫu Sneaker Puma RSX là một trong những thiết kế huyền thoại của Puma. Đây là mẫu giày Chunky được đánh giá là xuất sắc nhất của hãng, thu hút được sự yêu thích của đông đảo giới trẻ. Đây thực sự là mẫu giày đã góp phần làm nên tên tuổi của Puma như hiện tại.', 38, 26, 1, 1),
-(106, 'Jordan Series Mid', 99.00, 0.00, 'Jordan Series Mid.jpg', 'Nike Jordan Series Mid', 36, 0, 1, 0),
-(112, 'VANS VN0A5', 83.00, 0.00, 'vans VN0A5KRDBZW.jpg', 'Vans VN0A5KRDBZW thuộc dòng Authentic Collage Black/White mới nhất trong bộ sưu tập của thương hiệu Vans', 39, 4, 1, 0),
-(113, 'SuperStart', 99.00, 0.00, 'superstart1.jpg', 'z', 37, 11, 1, 0),
-(114, 'LeBron 19', 124.00, 100.00, 'LeBron 19.jpg', '', 36, 3, 0, 0);
+(101, 'Ralph Sampson', 4998, 0, 'puma-Ralph-Sampson.jpg', 'fdf', 38, 2, 1, 0),
+(103, 'Vans Classic Slip On ', 5559, 0, 'vans-classic-slipon.jpg', 'Classic Slipon', 39, 0, 1, 0),
+(104, 'ADIDAS HYPERTURF', 3199, 0, 'adidas-HYPERTURF.jpg', 'HYPERTURF', 37, 71, 1, 0),
+(105, 'Puma RS-X', 2135, 0, 'puma-RS-X.jpg', 'Mẫu Sneaker Puma RSX là một trong những thiết kế huyền thoại của Puma. Đây là mẫu giày Chunky được đánh giá là xuất sắc nhất của hãng, thu hút được sự yêu thích của đông đảo giới trẻ. Đây thực sự là mẫu giày đã góp phần làm nên tên tuổi của Puma như hiện tại.', 38, 26, 1, 1),
+(106, 'Jordan Series Mid', 4485, 0, 'Jordan-Series-Mid.jpg', 'Nike Jordan Series Mid', 36, 0, 1, 0),
+(112, 'VANS VN0A5', 890, 0, 'vans-VN0A5KRDBZW.jpg', 'Vans VN0A5KRDBZW thuộc dòng Authentic Collage Black/White mới nhất trong bộ sưu tập của thương hiệu Vans', 39, 4, 1, 0),
+(113, 'SuperStart', 2145, 0, 'superstart1.jpg', 'z', 37, 11, 1, 0),
+(114, 'LeBron 19', 4382, 1000, 'le19.webp', '', 36, 4, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -236,7 +226,8 @@ ALTER TABLE `chi_tiet_don_hang`
 --
 ALTER TABLE `don_hang`
   ADD PRIMARY KEY (`ma_dh`),
-  ADD KEY `fk_dh_tk` (`ma_tk`);
+  ADD KEY `fk_dh_tk` (`ma_tk`),
+  ADD KEY `fk_dh_mgg` (`ma_gg`);
 
 --
 -- Indexes for table `gio_hang`
@@ -362,6 +353,7 @@ ALTER TABLE `chi_tiet_don_hang`
 -- Constraints for table `don_hang`
 --
 ALTER TABLE `don_hang`
+  ADD CONSTRAINT `fk_dh_mgg` FOREIGN KEY (`ma_gg`) REFERENCES `ma_giam_gia` (`ma_gg`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_dh_tk` FOREIGN KEY (`ma_tk`) REFERENCES `tai_khoan` (`ma_tk`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
