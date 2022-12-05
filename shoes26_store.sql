@@ -2,10 +2,17 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
+<<<<<<< HEAD
 -- Máy chủ: 127.0.0.1
 -- Thời gian đã tạo: Th12 04, 2022 lúc 02:24 PM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 7.4.29
+=======
+-- Host: 127.0.0.1
+-- Generation Time: Dec 04, 2022 at 02:47 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
+>>>>>>> 19cc4a8c05b84d1f8c66ddc7ff9cc65a11f08cb0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -85,6 +92,7 @@ CREATE TABLE `gio_hang` (
   `size` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+<<<<<<< HEAD
 --
 -- Đang đổ dữ liệu cho bảng `gio_hang`
 --
@@ -93,6 +101,8 @@ INSERT INTO `gio_hang` (`id`, `ma_hh`, `name`, `price`, `img`, `so_luong`, `size
 (160, 105, 'Puma RS-X', 130, 'puma-RS-X.jpg', 1, 35),
 (161, 105, 'Puma RS-X', 130, 'puma-RS-X.jpg', 1, 39);
 
+=======
+>>>>>>> 19cc4a8c05b84d1f8c66ddc7ff9cc65a11f08cb0
 -- --------------------------------------------------------
 
 --
@@ -117,6 +127,7 @@ CREATE TABLE `hang_hoa` (
 --
 
 INSERT INTO `hang_hoa` (`id`, `name`, `price_old`, `price_new`, `img`, `mota`, `iddm`, `luotxem`, `trang_thai`, `special`) VALUES
+<<<<<<< HEAD
 (101, 'Ralph Sampson', 100.00, 0.00, 'puma-Ralph Sampson.jpg', 'fdf', 38, 2, 1, 0),
 (103, 'Vans Classic Slip On ', 57.00, 0.00, 'vans-classic-slipon.jpg', 'Classic Slipon', 39, 0, 1, 0),
 (104, 'ADIDAS HYPERTURF', 167.00, 0.00, 'adidas-HYPERTURF.jpg', 'HYPERTURF', 37, 70, 1, 0),
@@ -125,6 +136,16 @@ INSERT INTO `hang_hoa` (`id`, `name`, `price_old`, `price_new`, `img`, `mota`, `
 (112, 'VANS VN0A5', 83.00, 0.00, 'vans VN0A5KRDBZW.jpg', 'Vans VN0A5KRDBZW thuộc dòng Authentic Collage Black/White mới nhất trong bộ sưu tập của thương hiệu Vans', 39, 4, 1, 0),
 (113, 'SuperStart', 99.00, 0.00, 'superstart1.jpg', 'z', 37, 11, 1, 0),
 (114, 'LeBron 19', 124.00, 100.00, 'LeBron 19.jpg', '', 36, 3, 0, 0);
+=======
+(101, 'Ralph Sampson', 4998, 0, 'puma-Ralph-Sampson.jpg', 'fdf', 38, 8, 1, 0),
+(103, 'Vans Classic Slip On ', 5559, 0, 'vans-classic-slipon.jpg', 'Classic Slipon', 39, 12, 1, 0),
+(104, 'ADIDAS HYPERTURF', 3199, 0, 'adidas-HYPERTURF.jpg', 'HYPERTURF', 37, 15, 1, 0),
+(105, 'Puma RS-X', 2135, 0, 'puma-RS-X.jpg', 'Mẫu Sneaker Puma RSX là một trong những thiết kế huyền thoại của Puma. Đây là mẫu giày Chunky được đánh giá là xuất sắc nhất của hãng, thu hút được sự yêu thích của đông đảo giới trẻ. Đây thực sự là mẫu giày đã góp phần làm nên tên tuổi của Puma như hiện tại.', 38, 9, 1, 1),
+(106, 'Jordan Series Mid', 4485, 0, 'Jordan-Series-Mid.jpg', 'Nike Jordan Series Mid', 36, 10, 1, 0),
+(112, 'VANS VN0A5', 890, 0, 'vans-VN0A5KRDBZW.jpg', 'Vans VN0A5KRDBZW thuộc dòng Authentic Collage Black/White mới nhất trong bộ sưu tập của thương hiệu Vans', 39, 14, 1, 0),
+(113, 'SuperStart', 2145, 1000, 'superstart1.jpg', 'z', 37, 52, 1, 0),
+(114, 'LeBron 19', 4382, 0, 'le19.webp', 'Hệ thống đệm được trang bị lại kết hợp Max Air có thể nhìn thấy được với bộ phận Zoom Air dày, nhạy dưới bàn chân trước. Max Air giúp tiêu tan lực tác động, trong khi Zoom Air giúp đẩy bạn xuống sân. Phần dưới của giày được thiết kế trông giống như các van và ống tạo nên hoạt động bên trong của nó.', 36, 94, 0, 0);
+>>>>>>> 19cc4a8c05b84d1f8c66ddc7ff9cc65a11f08cb0
 
 -- --------------------------------------------------------
 
@@ -296,19 +317,31 @@ ALTER TABLE `binh_luan`
 -- AUTO_INCREMENT cho bảng `chi_tiet_don_hang`
 --
 ALTER TABLE `chi_tiet_don_hang`
+<<<<<<< HEAD
   MODIFY `ma_ctdh` int(11) NOT NULL AUTO_INCREMENT;
+=======
+  MODIFY `ma_ctdh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+>>>>>>> 19cc4a8c05b84d1f8c66ddc7ff9cc65a11f08cb0
 
 --
 -- AUTO_INCREMENT cho bảng `don_hang`
 --
 ALTER TABLE `don_hang`
+<<<<<<< HEAD
   MODIFY `ma_dh` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+=======
+  MODIFY `ma_dh` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+>>>>>>> 19cc4a8c05b84d1f8c66ddc7ff9cc65a11f08cb0
 
 --
 -- AUTO_INCREMENT cho bảng `gio_hang`
 --
 ALTER TABLE `gio_hang`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
+>>>>>>> 19cc4a8c05b84d1f8c66ddc7ff9cc65a11f08cb0
 
 --
 -- AUTO_INCREMENT cho bảng `hang_hoa`
