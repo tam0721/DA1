@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2022 at 02:54 AM
+-- Generation Time: Dec 05, 2022 at 03:05 AM
 -- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -62,6 +62,7 @@ CREATE TABLE `don_hang` (
   `nguoi_nhan` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `sdt_nhan` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `dia_chi_nhan` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `payment` tinyint(1) NOT NULL,
   `ma_gg` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
   `trang_thai_tt` tinyint(1) NOT NULL,
@@ -119,7 +120,7 @@ INSERT INTO `hang_hoa` (`id`, `name`, `price_old`, `price_new`, `img`, `mota`, `
 (103, 'Vans Classic Slip On ', 5559, 0, 'vans-classic-slipon.jpg', 'Classic Slipon', 39, 0, 1, 0),
 (104, 'ADIDAS HYPERTURF', 3199, 0, 'adidas-HYPERTURF.jpg', 'HYPERTURF', 37, 74, 1, 0),
 (105, 'Puma RS-X', 2135, 0, 'puma-RS-X.jpg', 'Mẫu Sneaker Puma RSX là một trong những thiết kế huyền thoại của Puma. Đây là mẫu giày Chunky được đánh giá là xuất sắc nhất của hãng, thu hút được sự yêu thích của đông đảo giới trẻ. Đây thực sự là mẫu giày đã góp phần làm nên tên tuổi của Puma như hiện tại.', 38, 26, 1, 1),
-(106, 'Jordan Series Mid', 4485, 0, 'Jordan-Series-Mid.jpg', 'Nike Jordan Series Mid', 36, 0, 1, 0),
+(106, 'Jordan Series Mid', 4485, 0, 'Jordan-Series-Mid.jpg', 'Nike Jordan Series Mid', 36, 1, 1, 0),
 (112, 'VANS VN0A5', 890, 0, 'vans-VN0A5KRDBZW.jpg', 'Vans VN0A5KRDBZW thuộc dòng Authentic Collage Black/White mới nhất trong bộ sưu tập của thương hiệu Vans', 39, 7, 1, 0),
 (113, 'SuperStart', 2145, 0, 'superstart1.jpg', 'z', 37, 11, 1, 0),
 (114, 'LeBron 19', 4382, 1000, 'le19.webp', '', 36, 5, 0, 0);
