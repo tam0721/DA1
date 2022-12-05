@@ -182,7 +182,7 @@
                 //     break;
                 case 'addmgg':
                     if (isset($_POST['themma'])&&($_POST['themma'])) {
-                        $ma_gg="Z-".rand(0,99999);
+                        $ma_gg="Z".rand(0,99999);
                         $ngay_bd=$_POST['ngay_bd'];
                         $ngay_kt=$_POST['ngay_kt'];
                         $giatri = $_POST['giatri'];
