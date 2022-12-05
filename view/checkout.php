@@ -52,18 +52,22 @@
                             </div>
                             <div class="col-md-6 form-group p_star">
                                 <select name="mgg" id="" class="form-select form-select-lg mb-3" aria-label=".form-select-sm example">
-                            <option selected>Chọn mã giảm giá</option>
-                            <?php 
-                                foreach ($mgg as $gg) {
-                                    extract($gg);
-                                    echo'<option value="'.$giatri.'" >'.$ma_gg.' (giảm '.$giatri.'K)</option>';
-                                }
-                            ?>
-                        </select>
+                                    <option value="NULL" selected>Chọn mã giảm giá</option>
+                                    <?php 
+                                        foreach ($mgg as $gg) {
+                                            extract($gg);
+                                            echo'<option value="'.$ma_gg.'" >'.$ma_gg.' (giảm '.$giatri.'K)</option>';
+                                        }
+                                    ?>
+                                </select>
                             </div>
 
                     </div>
-                    
+                    <script>
+                        function myFunction(ma) {
+                            document.getElementById("magiam").value = document.getElementById("giamgia").value;
+                        }
+                    </script>
                     <!-- <div class="col-lg-4">
                         <div class="order_box">
                             <h2>Hóa đơn của bạn</h2> -->
@@ -191,7 +195,11 @@
 									<h5></h5>
 								</td>
 								<td>
-									<p>0.000 ₫</p>
+									<p>
+                                        <?php
+										echo $ma_gg;
+										?>
+                                    </p>
 								</td>
 							</tr>
 							<tr>

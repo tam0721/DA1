@@ -102,13 +102,19 @@
                         $sdt_nhan=$_POST['sdt_nhan'];
                         $payment=$_POST['payment'];
                         $email=$_POST['email'];
-                        $ngay_dat = date("Y-m-d",time());  
-
-                        $sql1 = "INSERT INTO don_hang (ma_tk,ngay_dat,nguoi_nhan,dia_chi_nhan,sdt_nhan,payment,email)
-                                VALUES ('$ma_tk','$ngay_dat','$nguoi_nhan','$dia_chi_nhan','$sdt_nhan','$payment','$email')";
-                        // taodonhang($nguoi_nhan,$dia_chi_nhan,$sdt_nhan,$payment,$email,$ma_tk);
-                        // trả về in đơn
-                        pdo_execute($sql1);
+                        $ngay_dat = date("Y-m-d",time());
+                        $ma_gg = $_POST['mgg'];
+                        if ($ma_gg == 'NULL') {
+                            $ma_gg = 'NULL';
+                            $sql1 = "INSERT INTO don_hang (ma_tk,ngay_dat,nguoi_nhan,dia_chi_nhan,sdt_nhan,payment,email,ma_gg,trang_thai_tt)
+                                VALUES ('$ma_tk','$ngay_dat','$nguoi_nhan','$dia_chi_nhan','$sdt_nhan','$payment','$email',$ma_gg,'$payment')";
+                            pdo_execute($sql1);
+                        } else {
+                            $ma_gg = "'".$_POST['mgg']."'";
+                            $sql1 = "INSERT INTO don_hang (ma_tk,ngay_dat,nguoi_nhan,dia_chi_nhan,sdt_nhan,payment,email,ma_gg,trang_thai_tt)
+                                VALUES ('$ma_tk','$ngay_dat','$nguoi_nhan','$dia_chi_nhan','$sdt_nhan','$payment','$email',$ma_gg,'$payment')";
+                            pdo_execute($sql1);
+                        }
 
                         $sql2 = "SELECT * FROM don_hang WHERE ma_tk = " .$ma_tk;
                         extract(pdo_query_one($sql2));
@@ -117,8 +123,10 @@
                             $ma_hh = $_POST['ma_hh'][$i];
                             $size = $_POST['size'][$i];
                             $quantity = $_POST['so_luong'][$i];
-                            $sql = "INSERT INTO chi_tiet_don_hang (ma_dh, ma_hh, size, quantity)
+                            $sql3 = "INSERT INTO chi_tiet_don_hang (ma_dh, ma_hh, size, quantity)
                                 VALUES ('$ma_dh', '$ma_hh', $size, $quantity)";
+                            pdo_execute($sql3);
+                            $sql = "DELETE FROM gio_hang";
                             pdo_execute($sql);
                         }
                         unset($_SESSION['giohang']);

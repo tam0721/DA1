@@ -20,7 +20,7 @@
                 <form action="index.php?act=addmgg" method="post">
                     <div class="form-group">
                         <label for="email">Mã giảm</label>
-                        <input type="text" name="ma_gg" id="" disabled class=" form-control"> 
+                        <input placeholder="Random" type="text" name="ma_gg" id="" disabled class=" form-control"> 
                     </div>
                     <div class="form-group">
                         <label for="pwd">Ngày bắt đầu</label>
@@ -43,7 +43,7 @@
                     <input type="reset" value="Nhập lại" class="btn btn-default border-0" style="margin:0 0 15px 15px; width:120px; background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;">
                     <a href="index.php?act=lisdm"><input type="button" value="Danh sách" class="btn btn-default border-0" style="margin:0 0 15px 15px; width:120px; background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;"></a> -->
                     <?php
-                        if (isset($thongbao)&&($thongbao!="")) echo $thongbao;
+                        if (isset($thongbao)&&($thongbao!="")) echo '<h2 style="font-size:15px; color:red;text-align:center;" >'.$thongbao.'</h2>';
                     ?>
                 </form>
         </div>
