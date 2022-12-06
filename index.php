@@ -19,6 +19,7 @@
     $spdacbiet=get_product_special();
     $cart=loadall_giohang();
     $mgg=loadall_magiam();
+    $listbill = loadbill_mgg();
     if(!isset($_SESSION['giohang'])) $_SESSION['giohang'] = [];
     $note = 0;
     if(isset($_GET['act'])){
@@ -106,17 +107,13 @@
                         $ma_gg = $_POST['mgg'];
                         if ($ma_gg == 'NULL') {
                             $ma_gg = 'NULL';
-                            $sql1 = "INSERT INTO don_hang (ma_tk,ngay_dat,nguoi_nhan,dia_chi_nhan,sdt_nhan,payment,email,ma_gg,trang_thai_tt)
-                                VALUES ('$ma_tk','$ngay_dat','$nguoi_nhan','$dia_chi_nhan','$sdt_nhan','$payment','$email',$ma_gg,'$payment')";
-                            pdo_execute($sql1);
+                            insert_dh($ma_tk, $ngay_dat, $nguoi_nhan, $dia_chi_nhan, $sdt_nhan, $payment, $email, $ma_gg);
                         } else {
                             $ma_gg = "'".$_POST['mgg']."'";
-                            $sql1 = "INSERT INTO don_hang (ma_tk,ngay_dat,nguoi_nhan,dia_chi_nhan,sdt_nhan,payment,email,ma_gg,trang_thai_tt)
-                                VALUES ('$ma_tk','$ngay_dat','$nguoi_nhan','$dia_chi_nhan','$sdt_nhan','$payment','$email',$ma_gg,'$payment')";
-                            pdo_execute($sql1);
+                            insert_dh($ma_tk, $ngay_dat, $nguoi_nhan, $dia_chi_nhan, $sdt_nhan, $payment, $email, $ma_gg);
                         }
 
-                        $sql2 = "SELECT * FROM don_hang WHERE ma_tk = " .$ma_tk;
+                        $sql2 = "SELECT * FROM don_hang WHERE ma_tk = ".$ma_tk." ORDER BY ma_dh DESC LIMIT 1";
                         extract(pdo_query_one($sql2));
 
                         for ($i=0; $i<count($_SESSION['giohang']); $i++) {
@@ -130,6 +127,7 @@
                             pdo_execute($sql);
                         }
                         unset($_SESSION['giohang']);
+                        
                     }
                 include 'view/confirmation.php';
                 break;

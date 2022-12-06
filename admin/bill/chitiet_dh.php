@@ -38,6 +38,8 @@
             <?php
                 foreach ($listchitietdh as $bill) {
                     extract($bill);
+                    $price_1 = $price_old;
+					if ($price_new > 0) $price_1 = $price_new;
                     // $xoatk="index.php?act=xoatk&id=".$id;
                     // $suatk="index.php?act=suatk&id=".$id;
                     echo '
@@ -46,10 +48,10 @@
                             <td><input type="checkbox" name="" id=""></td>
                             <td>'.$ma_dh.'</td>
                             <td>'.$name.'</td>
-                            <td>'.$price_old.'</td>
-                            <td>'.$quantity.'</td>
+                            <td>'.$so_luong.'</td>
+                            <td>'.number_format($price_1, 0, '.', '.').'.000 ₫</td>
                             <td>'.$size.'</td>
-                            <td>'.$tong.'</td>
+                            <td>'.number_format($tong,0,'.','.').'.000 ₫</td>
                         </tr>
                     </tbody>';
                 }
