@@ -19,6 +19,12 @@
                 VALUES ('$ma_tk','$ngay_dat','$nguoi_nhan','$dia_chi_nhan','$sdt_nhan','$payment','$email',$ma_gg,'$payment')";
         pdo_execute($sql);
     }
-    
-    
+    function getlastinsertedid($ma_tk) {
+        $sql = "SELECT * FROM don_hang WHERE ma_tk = ".$ma_tk." ORDER BY ma_dh DESC LIMIT 1";
+        return pdo_query_one($sql);
+    }
+    function loaddh_by_matk($ma_tk) {
+        $sql = "SELECT * FROM don_hang WHERE ma_tk = " .$ma_tk;
+        return pdo_query_one($sql);
+    }
 ?>

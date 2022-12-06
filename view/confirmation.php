@@ -18,7 +18,7 @@
 	<section class="order_details section_gap">
 		<div class="container">
 			<?php
-				include "model/chitietdh.php";
+				include 'model/chitietdh.php';
 				$sql = "SELECT ma_tk FROM tai_khoan WHERE user = '".$_SESSION['user']."'";
 				extract(pdo_query_one($sql));
 
@@ -28,8 +28,8 @@
 				if ($kq == 0) {
 					echo '<h3 class="title_confirmation">Bạn chưa có đơn hàng nào.</h3>';
 				} else {
-					$sql = "SELECT * FROM don_hang WHERE ma_tk = " .$ma_tk;
-					extract(pdo_query_one($sql));
+					$listdh_by_matk = loaddh_by_matk($ma_tk);
+					extract($listdh_by_matk);
 					$list_ctdh = loadone_chitietdh($ma_dh);
 
 					

@@ -10,5 +10,5 @@
         $listchitietdh = pdo_query($sql);
         return $listchitietdh;
     }
-
+    
 ?>
