@@ -30,7 +30,7 @@
 				} else {
 					$sql = "SELECT * FROM don_hang WHERE ma_tk = " .$ma_tk;
 					extract(pdo_query_one($sql));
-					$list_ctdh_by_user = loadall_ctdh_by_user($ma_tk);
+					$list_ctdh = loadone_chitietdh($ma_dh);
 
 					
 			?>
@@ -69,9 +69,9 @@
                             ob_start();
                             ?>
                             <?php
-                                
+									$listbill_mgg = loadbill_mgg();
                                     $all = 0;
-                                    foreach($list_ctdh_by_user as $sp){
+                                    foreach($list_ctdh as $sp){
                                         extract($sp);
                                         if($id)
 										$price_1 = $price_old;
@@ -81,7 +81,7 @@
                                         $ttien += $tong;
                                         $all +=$ttien;
 										$giamgia = 0;
-										foreach ($listbill as $gg) {
+										foreach ($listbill_mgg as $gg) {
 											$giamgia = $gg['giatri'];
 										}
 										$tien=($all - $giamgia) + 20;

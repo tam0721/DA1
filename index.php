@@ -19,7 +19,6 @@
     $spdacbiet=get_product_special();
     $cart=loadall_giohang();
     $mgg=loadall_magiam();
-    $listbill = loadbill_mgg();
     if(!isset($_SESSION['giohang'])) $_SESSION['giohang'] = [];
     $note = 0;
     if(isset($_GET['act'])){

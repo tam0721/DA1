@@ -20,10 +20,59 @@
             <?php
                 if (!isset($_SESSION['user'])) {
                     echo '<h4 class="text-danger"><a href="index.php?act=login">Đăng nhập</a> để thanh toán</h4>';
-                } else {
+                } else if (count($_SESSION['giohang']) == 0) {
+                    echo'
+                    <div class="notice info"><p> Không có sản phẩm nào trong giỏ hàng <a href="index.php?act=category">Xem sản phẩm</a>.</p></div>
+                    ';
+            ?>
+            <style>
+                body {                        
+                    font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+                    color: #34495e;
+                    -webkit-font-smoothing: antialiased;
+                    line-height: 1.6em;
+                }
+                p {
+                    margin: 0;
+                }
+                .notice {
+                    position: relative;
+                    margin: 1em;
+                    background: #F9F9F9;
+                    padding: 1em 1em 1em 2em;
+                    border-left: 4px solid #DDD;
+                    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
+                }
+                .notice:before {
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -17px;
+                    left: -17px;
+                    background-color: #DDD;
+                    color: #FFF;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 100%;
+                    text-align: center;
+                    line-height: 30px;
+                    font-weight: bold;
+                    font-family: Georgia;
+                    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+                }
+                .info {
+                    border-color: red;
+                }
+                .info:before {
+                    content: "X";
+                    background-color:red;
+                }
+            </style>
+            <?php    } else {
                     $sql = "SELECT * FROM tai_khoan WHERE user = '".$_SESSION['user']."'";
                     extract(pdo_query_one($sql));
+                    
             ?>
+            
             <div class="billing_details">
                 <div class="row">
                     <div class="col-lg-8">
@@ -187,7 +236,7 @@
     }
 </style>
                             </tr>
-							<tr>
+							<!-- <tr>
 								<td>
 									<h4>Giảm giá</h4>
 								</td>
@@ -197,7 +246,7 @@
 								<td>
 									<p> 0.000 ₫</p>
 								</td>
-							</tr>
+							</tr> -->
 							<tr>
 								<td>
 									<h4>Phí vận chuyển</h4>
