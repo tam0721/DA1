@@ -30,7 +30,6 @@
                     <th>Mã tài khoản</th>
                     <th>Họ tên</th>
                     <th>User Name</th>
-                    <th>Mật khẩu</th>
                     <th>Email</th>
                     <th>Địa chỉ</th>
                     <th>Số điện thoại</th>
@@ -51,11 +50,10 @@
                             <td>'.$ma_tk.'</td>
                             <td>'.$ho_ten.'</td>
                             <td>'.$user.'</td>
-                            <td>'.$pass.'</td>
                             <td>'.$email.'</td>
                             <td>'.$address.'</td>
                             <td>'.$tel.'</td>
-                            <td>'.$role.'</td>
+                            <td>'.(($role==1)? "Admin":"Khách hàng").'</td>
                             <td><a href="'.$suatk.'"><input type="button" value="Sửa" style="width:120px; margin:5px; border:none;" ></a> <a href="'.$xoatk.'"><input type="button" value="Xóa" style="width:120px;margin:5px; border:none;"></a></td>
                         </tr>
                     </tbody>';

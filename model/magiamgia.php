@@ -10,7 +10,7 @@
         return $listmagiam;
     }
     function delete_magiam($ma_gg){
-        $sql = "DELETE FROM ma_giam_gia WHERE ma_gg=".$ma_gg;
+        $sql = "DELETE FROM ma_giam_gia WHERE ma_gg= '".$ma_gg."'";
         pdo_execute($sql);
     }
 ?>

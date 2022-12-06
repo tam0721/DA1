@@ -26,7 +26,7 @@
         <table class="table table-bordered">
             <thead class="thead-light">
                 <tr>
-                    <th>Mã số</th>
+                    <th>Mã số danh mục</th>
                     <th>Tên danh mục</th>
                     <th>Số lượng</th>
                     <th>Giá cao nhất</th>
@@ -45,9 +45,9 @@
                             <td>'.$madm.'</td>
                             <td>'.$tendm.'</td>
                             <td>'.$countsp.'</td>
-                            <td>'.$maxprice.'</td>
-                            <td>'.$minprice.'</td>
-                            <td>'.$avgprice.'</td>
+                            <td>'.number_format($maxprice, 0, '.', '.').'.000 ₫</td>
+                            <td>'.number_format($minprice, 0, '.', '.').'.000 ₫</td>
+                            <td>'.number_format($avgprice, 0, '.', '.').'.000 ₫</td>
                         </tr>
                     </tbody>';
                 }
