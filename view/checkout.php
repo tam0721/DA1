@@ -67,10 +67,9 @@
                     background-color:red;
                 }
             </style>
-            <?php    } else {
+            <?php } else {
                     $sql = "SELECT * FROM tai_khoan WHERE user = '".$_SESSION['user']."'";
-                    extract(pdo_query_one($sql));
-                    
+                    extract(pdo_query_one($sql));      
             ?>
             
             <div class="billing_details">
