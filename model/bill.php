@@ -11,7 +11,7 @@
         return $bill;
     }
     function loadbill_mgg() {
-        $sql = "SELECT * from don_hang dh inner join ma_giam_gia mgg on dh.ma_gg = mgg.ma_gg order by ma_dh desc";
+        $sql = "SELECT * from don_hang dh inner join ma_giam_gia mgg on dh.ma_gg = mgg.ma_gg WHERE dh.trang_thai_gh = 0 order by ma_dh desc";
         $listbillmgg = pdo_query($sql);
         return $listbillmgg;
     }
@@ -32,8 +32,8 @@
         $sql = "SELECT * FROM don_hang WHERE ma_tk = ".$ma_tk." ORDER BY ma_dh DESC LIMIT 1";
         return pdo_query_one($sql);
     }
-    function loaddh_by_matk($ma_tk) {
-        $sql = "SELECT * FROM don_hang WHERE ma_tk = " .$ma_tk;
+    function loaddh_by_matk($ma_tk, $ma_dh) {
+        $sql = "SELECT * FROM don_hang WHERE ma_tk = " .$ma_tk." AND ma_dh = " .$ma_dh;
         return pdo_query_one($sql);
     }
 ?>

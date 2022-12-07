@@ -22,13 +22,14 @@
 				$sql = "SELECT ma_tk FROM tai_khoan WHERE user = '".$_SESSION['user']."'";
 				extract(pdo_query_one($sql));
 
-				$sql1 = "SELECT count(ma_dh) FROM don_hang WHERE trang_thai_gh = 0 AND ma_tk = '".$ma_tk."' GROUP BY ma_tk";
+				$sql1 = "SELECT ma_dh, count(ma_dh) FROM don_hang WHERE trang_thai_gh = 0 AND ma_tk = ".$ma_tk;
 				$kq = pdo_query_one($sql1);
 				
 				if ($kq == 0) {
 					echo '<h3 class="title_confirmation">Bạn chưa có đơn hàng nào.</h3>';
 				} else {
-					$listdh_by_matk = loaddh_by_matk($ma_tk);
+					extract($kq);
+					$listdh_by_matk = loaddh_by_matk($ma_tk, $ma_dh);
 					extract($listdh_by_matk);
 					$list_ctdh = loadone_chitietdh($ma_dh);
 
@@ -41,6 +42,7 @@
 						
 						<h4>Thông tin đặt hàng</h4>
 						<ul class="list">
+							<li><a href="#"><span>Mã đơn hàng </span>: <?=$ma_dh?> </a></li>
 							<li><a href="#"><span>Họ tên </span>: <?=$nguoi_nhan?> </a></li>
 							<li><a href="#"><span>Email</span>: <?=$email?> </a></li>
 							<li><a href="#"><span>Số điện thoại</span>: <?=$sdt_nhan?></a></li>
