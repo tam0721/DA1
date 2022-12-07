@@ -48,9 +48,9 @@
                                 <td>'.$nguoi_nhan.'</td>
                                 <td>'.$dia_chi_nhan.'</td>
                                 <td>'.$sdt_nhan.'</td>
-                                <td>'.$payment.'</td>
-                                <td>'.$trang_thai_tt.'</td>
-                                <td>'.$trang_thai_gh.'</td>
+                                <td>'.(($payment==0)? "Thanh toán khi nhận hàng":"Thanh toán bằng thẻ").'</td>
+                                <td>'.(($trang_thai_tt==0)? "Chưa thanh toán":"Đã thanh toán").'</td>
+                                <td>'.(($trang_thai_gh==0)? "Chưa giao hàng":"Đã giao hàng").'</td>
                                 <td>'.$ngay_dat.'</td>
                                 <td> <a href="'.$xoabill.'"><input type="button" value="Xóa"></a> <a href="'.$chitiet_dh.'"><input type="button" value="Chi tiết"></a></td>
                                

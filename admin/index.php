@@ -350,7 +350,7 @@
                     header('location: index.php?act=listsp');
                     break;
                 case 'donhanglist':
-                    $listbill= loadall_bill();
+                    $listbill = loadall_bill();
                     include "bill/list.php";
                     break;
                 case 'xoabill':

@@ -18,19 +18,23 @@
 	<section class="order_details section_gap">
 		<div class="container">
 			<?php
+				include 'model/chitietdh.php';
 				$sql = "SELECT ma_tk FROM tai_khoan WHERE user = '".$_SESSION['user']."'";
 				extract(pdo_query_one($sql));
 
-				$sql1 = "SELECT count(ma_dh) as sdh FROM don_hang WHERE ma_tk = '".$ma_tk."' GROUP BY ma_tk";
+				$sql1 = "SELECT count(ma_dh) FROM don_hang WHERE ma_tk = '".$ma_tk."' GROUP BY ma_tk";
 				$kq = pdo_query_one($sql1);
 				
 				if ($kq == 0) {
 					echo '<h3 class="title_confirmation">Bạn chưa có đơn hàng nào.</h3>';
 				} else {
-					$sql = "SELECT * FROM don_hang WHERE ma_tk = " .$ma_tk;
-					extract(pdo_query_one($sql));
+					$listdh_by_matk = loaddh_by_matk($ma_tk);
+					extract($listdh_by_matk);
+					$list_ctdh = loadone_chitietdh($ma_dh);
+
+					
 			?>
-			<h3 class="title_confirmation">Cảm ơn! Đơn hàng của bạn đang được xử lý.</h3>
+			<h3 class="title_confirmation">Cảm ơn! Các đơn hàng của bạn đang được xử lý.</h3>
 			<div class="row order_d_inner">
 				<div class="col-lg-4">
 					<div class="details_item">
@@ -41,7 +45,7 @@
 							<li><a href="#"><span>Email</span>: <?=$email?> </a></li>
 							<li><a href="#"><span>Số điện thoại</span>: <?=$sdt_nhan?></a></li>
 							<li><a href="#"><span>Địa chỉ</span>: <?=$dia_chi_nhan?> </a></li>
-							<li><a href="#"><span>Phương thức thanh toán</span>:<?=($payment==0)? "Thanh toán khi nhận hàng":"Thanh toán bằng thẻ"?> </a></li>
+							<li><a href="#"><span>Phương thức thanh toán</span>: <?=($payment==0)? "Thanh toán khi nhận hàng":"Thanh toán bằng thẻ"?> </a></li>
 						</ul>
 					</div>
 				</div>
@@ -65,22 +69,26 @@
                             ob_start();
                             ?>
                             <?php
-                                
-                                    $all =0;
-                                    foreach($cart as $sp){
+									$listbill_mgg = loadbill_mgg();
+                                    $all = 0;
+                                    foreach($list_ctdh as $sp){
                                         extract($sp);
-                                        if($ma_hh)
+                                        if($id)
 										$price_1 = $price_old;
 								        if ($price_new > 0) $price_1 = $price_new;
                                         $tong = $so_luong * $price_1;
                                         $ttien = 0;
                                         $ttien += $tong;
                                         $all +=$ttien;
-										$tien=$all+20;
-                                        $del="index.php?act=delcart&idsp=".$ma_hh;
-                                        $upd="index.php?act=cart&id=".$ma_hh;
-                                        $up="index.php?act=cartupdate&id=".$ma_hh;
-                                        $sphct="index.php?act=sanphamct&idsp=".$ma_hh;
+										$giamgia = 0;
+										foreach ($listbill_mgg as $gg) {
+											$giamgia = $gg['giatri'];
+										}
+										$tien=($all - $giamgia) + 20;
+                                        $del="index.php?act=delcart&idsp=".$id;
+                                        $upd="index.php?act=cart&id=".$id;
+                                        $up="index.php?act=cartupdate&id=".$id;
+                                        $sphct="index.php?act=sanphamct&idsp=".$id;
                                         echo '
                                             <form action="index.php?act=cartupdate" method="post">
                                             <tr>
@@ -108,7 +116,7 @@
 														<h5>'.$so_luong.'</h5>
                                                             </label>
                                                         </div>
-                                                        <input type="hidden" name="id" id="ma_hh" value="'.$ma_hh.'">
+                                                        <input type="hidden" name="id" id="ma_hh" value="'.$id.'">
                                                     <div class="product_count">
                                                         <a href="'.$upd.'">
                                                             
@@ -166,7 +174,11 @@
 									<h5></h5>
 								</td>
 								<td>
-									<p>0.00</p>
+									<p>
+										<?php
+										echo number_format($giamgia, 0, '.', '.').'.000 ₫';
+										?>
+									</p>
 								</td>
 							</tr>
 							<tr>

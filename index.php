@@ -106,30 +106,27 @@
                         $ma_gg = $_POST['mgg'];
                         if ($ma_gg == 'NULL') {
                             $ma_gg = 'NULL';
-                            $sql1 = "INSERT INTO don_hang (ma_tk,ngay_dat,nguoi_nhan,dia_chi_nhan,sdt_nhan,payment,email,ma_gg,trang_thai_tt)
-                                VALUES ('$ma_tk','$ngay_dat','$nguoi_nhan','$dia_chi_nhan','$sdt_nhan','$payment','$email',$ma_gg,'$payment')";
-                            pdo_execute($sql1);
+                            insert_dh($ma_tk, $ngay_dat, $nguoi_nhan, $dia_chi_nhan, $sdt_nhan, $payment, $email, $ma_gg);
                         } else {
                             $ma_gg = "'".$_POST['mgg']."'";
-                            $sql1 = "INSERT INTO don_hang (ma_tk,ngay_dat,nguoi_nhan,dia_chi_nhan,sdt_nhan,payment,email,ma_gg,trang_thai_tt)
-                                VALUES ('$ma_tk','$ngay_dat','$nguoi_nhan','$dia_chi_nhan','$sdt_nhan','$payment','$email',$ma_gg,'$payment')";
-                            pdo_execute($sql1);
+                            insert_dh($ma_tk, $ngay_dat, $nguoi_nhan, $dia_chi_nhan, $sdt_nhan, $payment, $email, $ma_gg);
                         }
 
-                        $sql2 = "SELECT * FROM don_hang WHERE ma_tk = " .$ma_tk;
-                        extract(pdo_query_one($sql2));
+                        $lastid = getlastinsertedid($ma_tk);
+                        extract($lastid);
 
                         for ($i=0; $i<count($_SESSION['giohang']); $i++) {
                             $ma_hh = $_POST['ma_hh'][$i];
                             $size = $_POST['size'][$i];
                             $quantity = $_POST['so_luong'][$i];
-                            $sql3 = "INSERT INTO chi_tiet_don_hang (ma_dh, ma_hh, size, quantity)
-                                VALUES ('$ma_dh', '$ma_hh', $size, $quantity)";
-                            pdo_execute($sql3);
-                            $sql = "DELETE FROM gio_hang";
+                            $sql = "INSERT INTO chi_tiet_don_hang (ma_dh, ma_hh, size, quantity)
+                                    VALUES ('$ma_dh', '$ma_hh', $size, $quantity)";
                             pdo_execute($sql);
+                            $sql1 = "DELETE FROM gio_hang";
+                            pdo_execute($sql1);
                         }
                         unset($_SESSION['giohang']);
+                        
                     }
                 include 'view/confirmation.php';
                 break;

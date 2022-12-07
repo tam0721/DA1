@@ -75,8 +75,8 @@
                             <td>'.$id.'</td>
                             <td>'.$name.'</td>
                             <td class="text-center">'.$hinh.'</td>
-                            <td>'.$price_old.'</td>
-                            <td>'.$price_new.'</td>
+                            <td>'.number_format($price_old, 0, '.', '.').'.000 ₫</td>
+                            <td>'.number_format($price_new, 0, '.', '.').'.000 ₫</td>
                             <td>'.$mota.'</td>
                             <td>'.$luotxem.'</td>
                             <td class="text-center">
