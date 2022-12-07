@@ -37,8 +37,8 @@
         $sql = "SELECT * FROM don_hang WHERE ma_tk = ".$ma_tk." ORDER BY ma_dh DESC LIMIT 1";
         return pdo_query_one($sql);
     }
-    function loaddh_by_matk($ma_tk, $ma_dh) {
-        $sql = "SELECT * FROM don_hang WHERE ma_tk = " .$ma_tk." AND ma_dh = " .$ma_dh;
+    function loaddh_by_matk($ma_tk) {
+        $sql = "SELECT * FROM don_hang WHERE ma_tk = ".$ma_tk." ORDER BY ma_dh DESC LIMIT 1";
         return pdo_query_one($sql);
     }
 ?>

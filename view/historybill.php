@@ -22,14 +22,13 @@
 				$sql = "SELECT ma_tk FROM tai_khoan WHERE user = '".$_SESSION['user']."'";
 				extract(pdo_query_one($sql));
 
-				$sql1 = "SELECT ma_dh, count(ma_dh) FROM don_hang WHERE trang_thai_gh = 1 AND ma_tk = ".$ma_tk;
+				$sql1 = "SELECT count(ma_dh) as sdh FROM don_hang WHERE trang_thai_gh = 1 AND ma_tk = ".$ma_tk;
 				$kq = pdo_query_one($sql1);
-				
-				if ($kq == 0) {
+				extract($kq);
+				if ($sdh == 0) {
 					echo '<h3 class="title_confirmation">Bạn chưa có đơn hàng nào.</h3>';
 				} else {
-					extract($kq);
-					$listdh_by_matk = loaddh_by_matk($ma_tk, $ma_dh);
+					$listdh_by_matk = loaddh_by_matk($ma_tk);
 					extract($listdh_by_matk);
 					$list_ctdh = loadone_chitietdh($ma_dh);
 
