@@ -15,6 +15,11 @@
         $listbillmgg = pdo_query($sql);
         return $listbillmgg;
     }
+    function loadhistorybill_mgg() {
+        $sql = "SELECT * from don_hang dh inner join ma_giam_gia mgg on dh.ma_gg = mgg.ma_gg WHERE dh.trang_thai_gh = 1 order by ma_dh desc";
+        $listbillmgg = pdo_query($sql);
+        return $listbillmgg;
+    }
     function delete_bill($ma_dh){
         $sql = "DELETE FROM don_hang WHERE ma_dh=".$ma_dh;
         pdo_execute($sql);

@@ -133,6 +133,9 @@
             case 'contact':
                 include 'view/contact.php';
                 break;
+            case 'historybill':
+                include 'view/historybill.php';
+                break;
             case 'elements':
                 include 'view/elements.php';
                 break;
