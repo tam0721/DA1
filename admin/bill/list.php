@@ -40,6 +40,7 @@
                         //$suabill="index.php?act=suabill&ma_dh=".$ma_dh;
                         $xoabill="index.php?act=xoabill&ma_dh=".$ma_dh;
                         $chitiet_dh="index.php?act=listchitietdh&ma_dh=".$ma_dh;
+                        $updatebill="index.php?act=suadh&ma_dh=".$ma_dh;
                         echo '
                         <tbody>
                             <tr>
@@ -52,8 +53,7 @@
                                 <td>'.(($trang_thai_tt==0)? "Chưa thanh toán":"Đã thanh toán").'</td>
                                 <td>'.(($trang_thai_gh==0)? "Chưa giao hàng":"Đã giao hàng").'</td>
                                 <td>'.$ngay_dat.'</td>
-                                <td> <a href="'.$xoabill.'"><input type="button" value="Xóa"></a> <a href="'.$chitiet_dh.'"><input type="button" value="Chi tiết"></a></td>
-                               
+                                <td> <a href="'.$xoabill.'"><input type="button" value="Xóa"></a> <a href="'.$chitiet_dh.'"><input type="button" value="Chi tiết"></a> <a href="'.$updatebill.'"><input type="button" value="Cập nhật"></a></td>
                             </tr>
                         </tbody>';
                     }

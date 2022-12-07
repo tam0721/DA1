@@ -22,7 +22,7 @@
 				$sql = "SELECT ma_tk FROM tai_khoan WHERE user = '".$_SESSION['user']."'";
 				extract(pdo_query_one($sql));
 
-				$sql1 = "SELECT count(ma_dh) FROM don_hang WHERE ma_tk = '".$ma_tk."' GROUP BY ma_tk";
+				$sql1 = "SELECT count(ma_dh) FROM don_hang WHERE trang_thai_gh = 0 AND ma_tk = '".$ma_tk."' GROUP BY ma_tk";
 				$kq = pdo_query_one($sql1);
 				
 				if ($kq == 0) {
