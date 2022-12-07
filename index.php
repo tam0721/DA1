@@ -165,7 +165,7 @@
                     }elseif ($role==2){ 
                         $_SESSION['role']=$role;
                         header('location: admin/index.php'); 
-                    }else{
+                    }elseif ($role==0){
                         $_SESSION['role']=$role;
                         $_SESSION['iduser']= $kq[0]['id'];
                         $_SESSION['user']= $kq[0]['user'];
@@ -220,7 +220,10 @@
                     //header('Location:index.php?act=edit_taikhoan');
                 }
                 include "view/quenmk.php";
-                break;    
+                break;
+            case 'doimk':
+                include 'view/doimk.php';
+                break;
             case 'thoat':
                 unset($_SESSION['user']);
                 unset($_SESSION['iduser']);

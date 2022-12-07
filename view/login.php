@@ -77,6 +77,7 @@
 							<div class="col-md-12 form-group">
 								<input type="submit" value="Đăng nhập" class="primary-btn" name="dangnhap" id="submit"></input>
 								<a href="index.php?act=quenmk">Quên mật khẩu?</a>
+								<a href="index.php?act=doimk">Đổi mật khẩu?</a>
 							</div>
 						</form>
 						<!-- Kiểm tra tính hợp lệ -->
@@ -102,7 +103,7 @@
 						<h2 class="thongbao" style="color: red;font-size:15px;"> 
 							<?php
 								if(isset($thongbao)&&($thongbao!="")){
-									echo $thongbao;
+								echo $thongbao;
 								}
 							?>
 						</h2>
