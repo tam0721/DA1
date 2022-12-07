@@ -23,6 +23,7 @@
                     <tr>
                         <th></th>
                         <th style="width:360px;">Mã đơn hàng</th>
+                        <th style="width:360px;">Mã giảm giá</th>
                         <th style="width:360px;">Khách hàng</th>
                         <th style="width:360px;">Địa chỉ</th>
                         <th style="width:360px;">Số điện thoại</th>
@@ -34,8 +35,24 @@
                     </tr>
                 </thead>
                 <?php
+                    $listbill_mgg = loadbill_mgg();
+                    $giamgia = 0;
+                    // if ($ma_gg == '') {
+                    //     $giamgia = 0;
+                    // } else {
+                    //     foreach ($listbill_mgg as $gg) {
+                    //         $giamgia = $gg['giatri'];
+                    //     }
+                    // }
                     foreach ($listbill as $bill) {
                         extract($bill);
+                        if ($ma_gg == '') {
+                            $giamgia = 0;
+                        } else {
+                            foreach ($listbill_mgg as $gg) {
+                                $giamgia = $gg['giatri'];
+                            }
+                        }
                         // var_dump($bill);
                         //$suabill="index.php?act=suabill&ma_dh=".$ma_dh;
                         $xoabill="index.php?act=xoabill&ma_dh=".$ma_dh;
@@ -46,6 +63,7 @@
                             <tr>
                                 <td><input type="checkbox" name="" id=""></td>
                                 <td>'.$ma_dh.'</td>
+                                <td>'.$ma_gg.' (Giảm '.$giamgia.'K)</td>
                                 <td>'.$nguoi_nhan.'</td>
                                 <td>'.$dia_chi_nhan.'</td>
                                 <td>'.$sdt_nhan.'</td>

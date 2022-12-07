@@ -37,12 +37,13 @@
                     </div>
                     <div class="form-group">
                         <label>Trạng thái thanh toán</label>
-                        <label><input name="trang_thai_tt" type="radio" <?php if ($bill[0]['trang_thai_tt'] == 0) echo 'checked'; ?> value="0">Chưa thanh toán</label>
+                        <label><input name="trang_thai_tt" type="radio" <?php if ($bill[0]['trang_thai_tt'] == 0) echo 'checked'; ?> <?=($bill[0]['trang_thai_tt']==0)? "":"disabled"?> value="0">Chưa thanh toán</label>
                         <label><input name="trang_thai_tt" type="radio" <?php if ($bill[0]['trang_thai_tt'] == 1) echo 'checked'; ?> value="1">Đã thanh toán</label>
+                        <!-- <input type="submit" name="addgiohang" value="<?=$sanpham[0]['trang_thai']? " Đặt hàng":"Hết hàng"?>" <?=$sanpham[0]['trang_thai']? "":"disabled"?>> -->
                     </div>
                     <div class="form-group">
                         <label>Trạng thái giao hàng</label>
-                        <label><input name="trang_thai_gh" type="radio" <?php if ($bill[0]['trang_thai_gh'] == 0) echo 'checked'; ?> value="0">Chưa giao hàng</label>
+                        <label><input name="trang_thai_gh" type="radio" <?php if ($bill[0]['trang_thai_gh'] == 0) echo 'checked'; ?> <?=($bill[0]['trang_thai_gh']==0)? "":"disabled"?> value="0">Chưa giao hàng</label>
                         <label><input name="trang_thai_gh" type="radio" <?php if ($bill[0]['trang_thai_gh'] == 1) echo 'checked'; ?> value="1">Đã giao hàng</label>
                     </div>
                     <div class="d-flex justify-content-center">
