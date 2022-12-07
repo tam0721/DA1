@@ -371,7 +371,7 @@
                     }
                         $sql = "select * from don_hang order by ma_dh desc";
                         $listbill= pdo_query($sql);
-                        include "bill/list.php";
+                        // include "bill/list.php";
                         break;
                 case 'xoabill':
                     if (isset($_GET['ma_dh'])&&($_GET['ma_dh']>0)) {
