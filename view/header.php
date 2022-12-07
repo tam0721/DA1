@@ -64,7 +64,7 @@
 									<?php
 										if(isset($_SESSION['user'])&&($_SESSION['user']!="")){
 											
-											echo'<li class="nav-item"><a class="nav-link" href="index.php?act=confirmation">Chi tiết đơn hàng</a></li>';
+											echo'<li class="nav-item"><a class="nav-link" href="index.php?act=confirmation">Đơn hàng đang giao</a></li>';
 										}
 									?>
 										
