@@ -47,7 +47,7 @@
 							<li><a href="#"><span>Email</span>: <?=$email?> </a></li>
 							<li><a href="#"><span>Số điện thoại</span>: <?=$sdt_nhan?></a></li>
 							<li><a href="#"><span>Địa chỉ</span>: <?=$dia_chi_nhan?> </a></li>
-							<li><a href="#"><span>Phương thức thanh toán</span>: <?=($payment==0)? "Thanh toán khi nhận hàng":"Thanh toán bằng thẻ"?> </a></li>
+							<li><a href="#"><span>Phương thức thanh toán</span>: <?=($payment==0)? "Thanh toán khi nhận hàng":"Thanh toán online"?> </a></li>
 						</ul>
 					</div>
 				</div>
