@@ -7,12 +7,12 @@
         pdo_execute($sql);
     }
     function loadall_binhluan($idpro){
-        $sql="SELECT * FROM binh_luan bl INNER JOIN tai_khoan tk ON bl.iduser=tk.ma_tk WHERE idpro='".$idpro."' order by id desc ";
+        $sql="SELECT * FROM binh_luan bl INNER JOIN tai_khoan tk ON bl.iduser=tk.ma_tk WHERE idpro='".$idpro."' ORDER BY id DESC ";
         $listbl=pdo_query($sql);
         return $listbl;
     }
     function loadall_binhluan_admin(){
-        $sql="select * from binh_luan  order by id desc ";
+        $sql="SELECT bl.id, bl.noi_dung, bl.ngay_bl, hh.name, tk.user FROM (binh_luan bl INNER JOIN hang_hoa hh ON bl.idpro = hh.id) INNER JOIN tai_khoan tk ON bl.iduser = tk.ma_tk ORDER BY bl.id DESC";
         $listbl=pdo_query($sql);
         return $listbl;
     }

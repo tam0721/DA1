@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2022 at 03:02 PM
+-- Generation Time: Dec 08, 2022 at 02:36 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -108,14 +108,14 @@ CREATE TABLE `hang_hoa` (
 --
 
 INSERT INTO `hang_hoa` (`id`, `name`, `price_old`, `price_new`, `img`, `mota`, `iddm`, `luotxem`, `trang_thai`, `special`) VALUES
-(101, 'Ralph Sampson', 4998, 0, 'puma-Ralph-Sampson.jpg', 'Kiểu dáng giày sneaker thể thao cổ thấp \r\nPhom ôm dáng chân, dễ dàng di chuyển\r\nPhần đệm lót trong thấm hút mồ hôi tốt\r\nĐế giữa có độ đàn hồi tốt, hỗ trợ mọi hoạt động\r\nGam màu hiện đại dễ dàng phối với nhiều trang phục và phụ kiện', 38, 11, 1, 0),
-(103, 'Vans Classic Slip On ', 5559, 0, 'vans-classic-slipon.jpg', 'Họa tiết kẻ caro hay còn gọi là họa tiết kẻ caro là một trong những thương hiệu “độc quyền” của nhà Vans. Đây cũng là một trong những ấn tượng đáng nhớ nhất khi mọi người nhắc về giày Vans. Đôi giày này vẫn mang phiên bản Slip-on cổ điển nhưng chất liệu Canvas được phát huy và sử dụng một cách đặc biệt để tạo cảm giác thoải mái, mát mẻ cho đôi chân. Giày vải đế thấp đơn giản với rất ít dây buộc Logo thương hiệu VANS phía sau kết hợp với đế cao su siêu mềm đàn hồi.', 39, 8, 1, 0),
-(104, 'ADIDAS HYPERTURF', 3199, 0, 'adidas-HYPERTURF.jpg', 'Dạo phố với phong cách mượn cảm hứng từ thiên nhiên hùng vĩ. Đôi Giày adidas Hyperturf mang đến cho bạn sự thoải mái khi khám phá những con phố mới hoặc dạo bước đến quán cà phê yêu thích. Các chất liệu vải ripstop, da nubuck, da lộn và vải lưới kết hợp tạo nên thân giày bền bỉ. Lớp đệm EVA siêu nhẹ kết hợp công nghệ Adiprene+ và FORMOTION để mang lại cảm giác nhẹ nhàng và nâng đỡ cho từng bước chân.', 37, 79, 1, 0),
-(105, 'Puma RS-X', 2135, 0, 'puma-RS-X.jpg', 'Mẫu Sneaker Puma RSX là một trong những thiết kế huyền thoại của Puma. Đây là mẫu giày Chunky được đánh giá là xuất sắc nhất của hãng, thu hút được sự yêu thích của đông đảo giới trẻ. Đây thực sự là mẫu giày đã góp phần làm nên tên tuổi của Puma như hiện tại.', 38, 30, 1, 1),
-(106, 'Jordan Series Mid', 4485, 0, 'Jordan-Series-Mid.jpg', 'Phần giữa của mô hình thời trang phía trước của Jordan Brand đã được lựa chọn cực kỳ kỹ lưỡng trong suốt cả năm, với ít hơn một số đề xuất được tung ra chỉ sau vài tháng bị loại bỏ kể từ cuối năm 2022. Tuy nhiên, thời tiết bắt đầu vào mùa thu mang đến thời điểm thích hợp cho Jordan Series Mid trở lại sau khi hợp tác với Maison Château Rouge vào tháng 6.', 36, 6, 1, 0),
-(112, 'VANS VN0A5', 890, 0, 'vans-VN0A5KRDBZW.jpg', 'Vans VN0A5KRDBZW thuộc dòng Authentic Collage Black/White mới nhất trong bộ sưu tập của thương hiệu Vans', 39, 11, 1, 0),
-(113, 'SuperStart', 2145, 0, 'superstart1.jpg', 'Suốt hơn 50 năm, đôi sneaker adidas Superstar luôn là lựa chọn hàng đầu của các huyền thoại thể thao và thời trang đường phố, kết nối các nhà kiến tạo đến từ mọi nền văn hóa. Mũi giày vỏ sò dễ dàng nhận diện ngay lập tức kết hợp với ba sọc viền răng cưa và các điểm nhấn adidas Originals. Luôn hợp mốt, giày có kiểu dáng kinh điển với chất liệu da cật tăng cường độ bền chắc và thoải mái.', 37, 14, 1, 0),
-(114, 'LeBron 19', 4382, 1000, 'le19.webp', 'LeBron phát triển mạnh khi tiền đặt cược cao và áp lực tăng lên. LeBron 19 khai thác năng lượng đó bằng hệ thống đệm vừa khít và cập nhật. Ống lót bên trong vừa khít được kéo lại với nhau bằng một lớp phủ điêu khắc mà dây buộc xuyên qua để giúp ngăn bàn chân từ việc di chuyển bên trong giày. Các miếng đệm nhúng ở lưỡi gà và xung quanh cổ giày giúp giảm trọng lượng, giữ thẳng cổ chân và mang lại cho người chơi cảm giác an toàn cũng như sự tự tin để dốc hết sức khi trận đấu đang diễn ra.', 36, 12, 0, 0);
+(101, 'Ralph Sampson', 4998, 0, 'puma-Ralph-Sampson.jpg', 'Kiểu dáng giày sneaker thể thao cổ thấp \r\nPhom ôm dáng chân, dễ dàng di chuyển\r\nPhần đệm lót trong thấm hút mồ hôi tốt\r\nĐế giữa có độ đàn hồi tốt, hỗ trợ mọi hoạt động\r\nGam màu hiện đại dễ dàng phối với nhiều trang phục và phụ kiện', 38, 16, 1, 0),
+(103, 'Vans Classic Slip On ', 5559, 0, 'vans-classic-slipon.jpg', 'Họa tiết kẻ caro hay còn gọi là họa tiết kẻ caro là một trong những thương hiệu “độc quyền” của nhà Vans. Đây cũng là một trong những ấn tượng đáng nhớ nhất khi mọi người nhắc về giày Vans. Đôi giày này vẫn mang phiên bản Slip-on cổ điển nhưng chất liệu Canvas được phát huy và sử dụng một cách đặc biệt để tạo cảm giác thoải mái, mát mẻ cho đôi chân. Giày vải đế thấp đơn giản với rất ít dây buộc Logo thương hiệu VANS phía sau kết hợp với đế cao su siêu mềm đàn hồi.', 39, 12, 1, 0),
+(104, 'ADIDAS HYPERTURF', 3199, 0, 'adidas-HYPERTURF.jpg', 'Dạo phố với phong cách mượn cảm hứng từ thiên nhiên hùng vĩ. Đôi Giày adidas Hyperturf mang đến cho bạn sự thoải mái khi khám phá những con phố mới hoặc dạo bước đến quán cà phê yêu thích. Các chất liệu vải ripstop, da nubuck, da lộn và vải lưới kết hợp tạo nên thân giày bền bỉ. Lớp đệm EVA siêu nhẹ kết hợp công nghệ Adiprene+ và FORMOTION để mang lại cảm giác nhẹ nhàng và nâng đỡ cho từng bước chân.', 37, 88, 1, 0),
+(105, 'Puma RS-X', 2135, 0, 'puma-RS-X.jpg', 'Mẫu Sneaker Puma RSX là một trong những thiết kế huyền thoại của Puma. Đây là mẫu giày Chunky được đánh giá là xuất sắc nhất của hãng, thu hút được sự yêu thích của đông đảo giới trẻ. Đây thực sự là mẫu giày đã góp phần làm nên tên tuổi của Puma như hiện tại.', 38, 31, 1, 1),
+(106, 'Jordan Series Mid', 4485, 0, 'Jordan-Series-Mid.jpg', 'Phần giữa của mô hình thời trang phía trước của Jordan Brand đã được lựa chọn cực kỳ kỹ lưỡng trong suốt cả năm, với ít hơn một số đề xuất được tung ra chỉ sau vài tháng bị loại bỏ kể từ cuối năm 2022. Tuy nhiên, thời tiết bắt đầu vào mùa thu mang đến thời điểm thích hợp cho Jordan Series Mid trở lại sau khi hợp tác với Maison Château Rouge vào tháng 6.', 36, 8, 1, 0),
+(112, 'VANS VN0A5', 890, 0, 'vans-VN0A5KRDBZW.jpg', 'Vans VN0A5KRDBZW thuộc dòng Authentic Collage Black/White mới nhất trong bộ sưu tập của thương hiệu Vans', 39, 13, 1, 0),
+(113, 'SuperStart', 2145, 0, 'superstart1.jpg', 'Suốt hơn 50 năm, đôi sneaker adidas Superstar luôn là lựa chọn hàng đầu của các huyền thoại thể thao và thời trang đường phố, kết nối các nhà kiến tạo đến từ mọi nền văn hóa. Mũi giày vỏ sò dễ dàng nhận diện ngay lập tức kết hợp với ba sọc viền răng cưa và các điểm nhấn adidas Originals. Luôn hợp mốt, giày có kiểu dáng kinh điển với chất liệu da cật tăng cường độ bền chắc và thoải mái.', 37, 20, 1, 0),
+(114, 'LeBron 19', 4382, 1000, 'le19.webp', 'LeBron phát triển mạnh khi tiền đặt cược cao và áp lực tăng lên. LeBron 19 khai thác năng lượng đó bằng hệ thống đệm vừa khít và cập nhật. Ống lót bên trong vừa khít được kéo lại với nhau bằng một lớp phủ điêu khắc mà dây buộc xuyên qua để giúp ngăn bàn chân từ việc di chuyển bên trong giày. Các miếng đệm nhúng ở lưỡi gà và xung quanh cổ giày giúp giảm trọng lượng, giữ thẳng cổ chân và mang lại cho người chơi cảm giác an toàn cũng như sự tự tin để dốc hết sức khi trận đấu đang diễn ra.', 36, 18, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -194,6 +194,13 @@ CREATE TABLE `ma_giam_gia` (
   `giatri` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `ma_giam_gia`
+--
+
+INSERT INTO `ma_giam_gia` (`ma_gg`, `ngay_bd`, `ngay_kt`, `giatri`) VALUES
+('Z39599', '2022-12-07', '2022-12-08', 30);
+
 -- --------------------------------------------------------
 
 --
@@ -254,7 +261,8 @@ INSERT INTO `tin_tuc` (`id`, `name`, `img`, `mota`, `ngaydang`) VALUES
 --
 ALTER TABLE `binh_luan`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_bl_hh` (`idpro`);
+  ADD KEY `fk_bl_hh` (`idpro`),
+  ADD KEY `fk_bl_tk` (`iduser`);
 
 --
 -- Indexes for table `chi_tiet_don_hang`
@@ -325,25 +333,25 @@ ALTER TABLE `tin_tuc`
 -- AUTO_INCREMENT for table `binh_luan`
 --
 ALTER TABLE `binh_luan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `chi_tiet_don_hang`
 --
 ALTER TABLE `chi_tiet_don_hang`
-  MODIFY `ma_ctdh` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ma_ctdh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `don_hang`
 --
 ALTER TABLE `don_hang`
-  MODIFY `ma_dh` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ma_dh` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `gio_hang`
 --
 ALTER TABLE `gio_hang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=165;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173;
 
 --
 -- AUTO_INCREMENT for table `hang_hoa`
@@ -383,7 +391,8 @@ ALTER TABLE `tin_tuc`
 -- Constraints for table `binh_luan`
 --
 ALTER TABLE `binh_luan`
-  ADD CONSTRAINT `fk_bl_hh` FOREIGN KEY (`idpro`) REFERENCES `hang_hoa` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_bl_hh` FOREIGN KEY (`idpro`) REFERENCES `hang_hoa` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_bl_tk` FOREIGN KEY (`iduser`) REFERENCES `tai_khoan` (`ma_tk`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `chi_tiet_don_hang`

@@ -26,7 +26,8 @@
         <table class="table table-bordered">
             <thead class="thead-light">
                 <tr>
-                    <th></th>
+                    <th>Tên hàng hóa</th>
+                    <th>Tên tài khoản</th>
                     <th>Nội dung</th>
                     <th>Ngày đăng</th>
                     <th style="width:200px;">Cài đặt</th>
@@ -41,7 +42,8 @@
                     echo '
                     <tbody>
                         <tr>
-                            <td><input type="checkbox" name="" id=""></td>
+                            <td>'.$name.'</td>
+                            <td>'.$user.'</td>
                             <td>'.$noi_dung.'</td>
                             <td>'.$ngay_bl.'</td>
                             <td style="text-align:center;"><a href="'.$suabl.'"><input type="button" value="Sửa" style="width:120px; margin:5px; border:none;" ></a> <a href="'.$xoabl.'"><input type="button" value="Xóa" style="width:120px;margin:5px; border:none;"></a></td>
