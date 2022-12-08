@@ -3,6 +3,7 @@
     session_start();
     include 'view/header.php';
     include 'model/bill.php';
+    include 'model/chitietdh.php';
     include 'model/pdo.php';
     include 'model/taikhoan.php';
     include 'model/sanpham.php';
@@ -119,11 +120,8 @@
                             $ma_hh = $_POST['ma_hh'][$i];
                             $size = $_POST['size'][$i];
                             $quantity = $_POST['so_luong'][$i];
-                            $sql = "INSERT INTO chi_tiet_don_hang (ma_dh, ma_hh, size, quantity)
-                                    VALUES ('$ma_dh', '$ma_hh', $size, $quantity)";
-                            pdo_execute($sql);
-                            $sql1 = "DELETE FROM gio_hang";
-                            pdo_execute($sql1);
+                            insert_chitietdh($ma_dh, $ma_hh, $size, $quantity);
+                            delete_cart();
                         }
                         unset($_SESSION['giohang']);
                         

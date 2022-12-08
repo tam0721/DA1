@@ -18,7 +18,6 @@
 	<section class="order_details section_gap">
 		<div class="container">
 			<?php
-				include 'model/chitietdh.php';
 				$sql = "SELECT ma_tk FROM tai_khoan WHERE user = '".$_SESSION['user']."'";
 				extract(pdo_query_one($sql));
 
