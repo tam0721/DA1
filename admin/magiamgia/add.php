@@ -24,15 +24,15 @@
                     </div>
                     <div class="form-group">
                         <label for="pwd">Ngày bắt đầu</label>
-                        <input type="date" name="ngay_bd" id="" class=" form-control">
+                        <input type="date" name="ngay_bd" id="" class=" form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="pwd">Ngày Kết Thúc</label>
-                        <input type="date" name="ngay_kt" id="" class=" form-control">
+                        <input type="date" name="ngay_kt" id="" class=" form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="pwd">Giá trị</label>
-                        <input type="text" name="giatri" id="" class=" form-control">
+                        <input type="text" name="giatri" id="" class=" form-control" required>
                     </div>
                     <div class="d-flex justify-content-center">
                         <input type="submit" value="Thêm mới" name="themma" class="form-control " style=" width:120px;background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;">

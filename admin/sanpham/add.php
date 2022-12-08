@@ -21,8 +21,8 @@
                 <form action="index.php?act=addsp" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="email">Danh mục</label> <br>
-                        <select name="iddm" id="" class="form-select form-select-lg mb-3" aria-label=".form-select-sm example">
-                            <option selected>Chọn danh mục</option>
+                        <select name="iddm" id="" class="form-select form-select-lg mb-3" aria-label=".form-select-sm example" required>
+                            <option>Chọn danh mục</option>
                             <?php 
                                 foreach ($listdanhmuc as $danhmuc) {
                                     extract($danhmuc);
@@ -33,15 +33,15 @@
                     </div> <br><br>
                     <div class="form-group">
                         <label for="pwd">Mã sản phẩm</label>
-                        <input type="text" name="ma_hh" value="auto increment" id="" class=" form-control" disabled>
+                        <input type="text" name="ma_hh" value="Auto Increment" id="" class=" form-control" disabled>
                     </div>
                     <div class="form-group">
                         <label for="pwd">Tên sản phẩm</label>
-                        <input type="search" name="tensp" id="" class=" form-control">
+                        <input type="search" name="tensp" id="" class=" form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="pwd">Giá</label>
-                        <input type="text" name="giasp" id="" class=" form-control">
+                        <input type="text" name="giasp" id="" class=" form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="pwd">Giá giảm</label>
@@ -49,11 +49,11 @@
                     </div>
                     <div class="form-group">
                         <label for="pwd">Hình ảnh</label> <br>
-                        <input type="file" name="hinh" id="" class="" multiple>
+                        <input type="file" name="hinh" id="" class="" multiple required>
                     </div>
                     <div class="form-group">
                         <label for="pwd">Mô tả</label>
-                        <textarea name="mota" id="" cols="30" rows="5" class=" form-control"></textarea>
+                        <textarea name="mota" id="" cols="30" rows="5" class=" form-control" required></textarea>
                     </div>
                     <div class="d-flex justify-content-center">
                         <input type="submit" value="Thêm Mới" name="themmoi" class="form-control" style=" width:120px;background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;">
