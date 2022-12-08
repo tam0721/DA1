@@ -315,7 +315,7 @@
         
 
         <p class="acordeon__contenido">
-          <br>  TÀI KHOẢN CỦA SHOP : Ngân hàng Vietcombank <img src="img/qr.jpg." alt=""style="width: 80px;
+           TÀI KHOẢN CỦA SHOP : Ngân hàng Vietcombank <img src="img/qr.jpg." alt=""style="width: 80px;
         height: 100px;">
           <br>Số tài khoản: 9862123203<br> Tên tài khoản: Nguyễn Tuấn Kiệt <br>Nội dung chuyển khoản bạn vui lòng điền theo CÚ PHÁP như sau: MÃ ĐƠN HÀNG + SĐT + TÊN Cảm ơn bạn.
         </p>
@@ -332,7 +332,7 @@
                            
                             <!-- <a class="primary-btn" href="#">Thanh toán</a> -->
                             <div class="creat_account"><br><br><br><br><br><br><br><br>
-                            <br><br><br>  <input type="checkbox" id="f-option4" name="selector" required>
+                             <input type="checkbox" id="f-option4" name="selector" required>
                                 <label for="f-option4">Tôi đã đọc và chấp nhận </label>
                                 <a href="#">điều kiện & điều khoản</a>
                             </div>
