@@ -221,9 +221,6 @@
                 }
                 include "view/quenmk.php";
                 break;
-            case 'doimk':
-                include 'view/doimk.php';
-                break;
             case 'thoat':
                 unset($_SESSION['user']);
                 unset($_SESSION['iduser']);
