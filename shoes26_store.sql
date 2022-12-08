@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 07, 2022 lúc 02:44 AM
--- Phiên bản máy phục vụ: 10.4.24-MariaDB
--- Phiên bản PHP: 8.1.6
+-- Host: 127.0.0.1
+-- Generation Time: Dec 07, 2022 at 03:02 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `shoes26_store`
+-- Database: `shoes26_store`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `binh_luan`
+-- Table structure for table `binh_luan`
 --
 
 CREATE TABLE `binh_luan` (
@@ -38,7 +38,7 @@ CREATE TABLE `binh_luan` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `chi_tiet_don_hang`
+-- Table structure for table `chi_tiet_don_hang`
 --
 
 CREATE TABLE `chi_tiet_don_hang` (
@@ -52,7 +52,7 @@ CREATE TABLE `chi_tiet_don_hang` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `don_hang`
+-- Table structure for table `don_hang`
 --
 
 CREATE TABLE `don_hang` (
@@ -64,7 +64,7 @@ CREATE TABLE `don_hang` (
   `dia_chi_nhan` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `payment` tinyint(1) NOT NULL,
-  `ma_gg` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `ma_gg` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `trang_thai_tt` tinyint(1) NOT NULL,
   `trang_thai_gh` tinyint(1) NOT NULL DEFAULT 0,
   `ghi_chu_kh` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -74,7 +74,7 @@ CREATE TABLE `don_hang` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `gio_hang`
+-- Table structure for table `gio_hang`
 --
 
 CREATE TABLE `gio_hang` (
@@ -84,19 +84,10 @@ CREATE TABLE `gio_hang` (
   `size` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Đang đổ dữ liệu cho bảng `gio_hang`
---
-
-INSERT INTO `gio_hang` (`id`, `ma_hh`, `so_luong`, `size`) VALUES
-(162, 112, 1, 35),
-(163, 104, 1, 35),
-(164, 106, 1, 41);
-
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `hang_hoa`
+-- Table structure for table `hang_hoa`
 --
 
 CREATE TABLE `hang_hoa` (
@@ -113,23 +104,23 @@ CREATE TABLE `hang_hoa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `hang_hoa`
+-- Dumping data for table `hang_hoa`
 --
 
 INSERT INTO `hang_hoa` (`id`, `name`, `price_old`, `price_new`, `img`, `mota`, `iddm`, `luotxem`, `trang_thai`, `special`) VALUES
-(101, 'Ralph Sampson', 4998, 0, 'puma-Ralph-Sampson.jpg', 'Kiểu dáng giày sneaker thể thao cổ thấp \r\nPhom ôm dáng chân, dễ dàng di chuyển\r\nPhần đệm lót trong thấm hút mồ hôi tốt\r\nĐế giữa có độ đàn hồi tốt, hỗ trợ mọi hoạt động\r\nGam màu hiện đại dễ dàng phối với nhiều trang phục và phụ kiện', 38, 7, 1, 0),
-(103, 'Vans Classic Slip On ', 5559, 0, 'vans-classic-slipon.jpg', 'Họa tiết kẻ caro hay còn gọi là họa tiết kẻ caro là một trong những thương hiệu “độc quyền” của nhà Vans. Đây cũng là một trong những ấn tượng đáng nhớ nhất khi mọi người nhắc về giày Vans. Đôi giày này vẫn mang phiên bản Slip-on cổ điển nhưng chất liệu Canvas được phát huy và sử dụng một cách đặc biệt để tạo cảm giác thoải mái, mát mẻ cho đôi chân. Giày vải đế thấp đơn giản với rất ít dây buộc Logo thương hiệu VANS phía sau kết hợp với đế cao su siêu mềm đàn hồi.', 39, 7, 1, 0),
-(104, 'ADIDAS HYPERTURF', 3199, 0, 'adidas-HYPERTURF.jpg', 'Dạo phố với phong cách mượn cảm hứng từ thiên nhiên hùng vĩ. Đôi Giày adidas Hyperturf mang đến cho bạn sự thoải mái khi khám phá những con phố mới hoặc dạo bước đến quán cà phê yêu thích. Các chất liệu vải ripstop, da nubuck, da lộn và vải lưới kết hợp tạo nên thân giày bền bỉ. Lớp đệm EVA siêu nhẹ kết hợp công nghệ Adiprene+ và FORMOTION để mang lại cảm giác nhẹ nhàng và nâng đỡ cho từng bước chân.', 37, 78, 1, 0),
-(105, 'Puma RS-X', 2135, 0, 'puma-RS-X.jpg', 'Mẫu Sneaker Puma RSX là một trong những thiết kế huyền thoại của Puma. Đây là mẫu giày Chunky được đánh giá là xuất sắc nhất của hãng, thu hút được sự yêu thích của đông đảo giới trẻ. Đây thực sự là mẫu giày đã góp phần làm nên tên tuổi của Puma như hiện tại.', 38, 29, 1, 1),
-(106, 'Jordan Series Mid', 4485, 0, 'Jordan-Series-Mid.jpg', 'Phần giữa của mô hình thời trang phía trước của Jordan Brand đã được lựa chọn cực kỳ kỹ lưỡng trong suốt cả năm, với ít hơn một số đề xuất được tung ra chỉ sau vài tháng bị loại bỏ kể từ cuối năm 2022. Tuy nhiên, thời tiết bắt đầu vào mùa thu mang đến thời điểm thích hợp cho Jordan Series Mid trở lại sau khi hợp tác với Maison Château Rouge vào tháng 6.', 36, 5, 1, 0),
-(112, 'VANS VN0A5', 890, 0, 'vans-VN0A5KRDBZW.jpg', 'Vans VN0A5KRDBZW thuộc dòng Authentic Collage Black/White mới nhất trong bộ sưu tập của thương hiệu Vans', 39, 10, 1, 0),
-(113, 'SuperStart', 2145, 0, 'superstart1.jpg', 'Suốt hơn 50 năm, đôi sneaker adidas Superstar luôn là lựa chọn hàng đầu của các huyền thoại thể thao và thời trang đường phố, kết nối các nhà kiến tạo đến từ mọi nền văn hóa. Mũi giày vỏ sò dễ dàng nhận diện ngay lập tức kết hợp với ba sọc viền răng cưa và các điểm nhấn adidas Originals. Luôn hợp mốt, giày có kiểu dáng kinh điển với chất liệu da cật tăng cường độ bền chắc và thoải mái.', 37, 13, 1, 0),
-(114, 'LeBron 19', 4382, 1000, 'le19.webp', 'LeBron phát triển mạnh khi tiền đặt cược cao và áp lực tăng lên. LeBron 19 khai thác năng lượng đó bằng hệ thống đệm vừa khít và cập nhật. Ống lót bên trong vừa khít được kéo lại với nhau bằng một lớp phủ điêu khắc mà dây buộc xuyên qua để giúp ngăn bàn chân từ việc di chuyển bên trong giày. Các miếng đệm nhúng ở lưỡi gà và xung quanh cổ giày giúp giảm trọng lượng, giữ thẳng cổ chân và mang lại cho người chơi cảm giác an toàn cũng như sự tự tin để dốc hết sức khi trận đấu đang diễn ra.', 36, 11, 0, 0);
+(101, 'Ralph Sampson', 4998, 0, 'puma-Ralph-Sampson.jpg', 'Kiểu dáng giày sneaker thể thao cổ thấp \r\nPhom ôm dáng chân, dễ dàng di chuyển\r\nPhần đệm lót trong thấm hút mồ hôi tốt\r\nĐế giữa có độ đàn hồi tốt, hỗ trợ mọi hoạt động\r\nGam màu hiện đại dễ dàng phối với nhiều trang phục và phụ kiện', 38, 11, 1, 0),
+(103, 'Vans Classic Slip On ', 5559, 0, 'vans-classic-slipon.jpg', 'Họa tiết kẻ caro hay còn gọi là họa tiết kẻ caro là một trong những thương hiệu “độc quyền” của nhà Vans. Đây cũng là một trong những ấn tượng đáng nhớ nhất khi mọi người nhắc về giày Vans. Đôi giày này vẫn mang phiên bản Slip-on cổ điển nhưng chất liệu Canvas được phát huy và sử dụng một cách đặc biệt để tạo cảm giác thoải mái, mát mẻ cho đôi chân. Giày vải đế thấp đơn giản với rất ít dây buộc Logo thương hiệu VANS phía sau kết hợp với đế cao su siêu mềm đàn hồi.', 39, 8, 1, 0),
+(104, 'ADIDAS HYPERTURF', 3199, 0, 'adidas-HYPERTURF.jpg', 'Dạo phố với phong cách mượn cảm hứng từ thiên nhiên hùng vĩ. Đôi Giày adidas Hyperturf mang đến cho bạn sự thoải mái khi khám phá những con phố mới hoặc dạo bước đến quán cà phê yêu thích. Các chất liệu vải ripstop, da nubuck, da lộn và vải lưới kết hợp tạo nên thân giày bền bỉ. Lớp đệm EVA siêu nhẹ kết hợp công nghệ Adiprene+ và FORMOTION để mang lại cảm giác nhẹ nhàng và nâng đỡ cho từng bước chân.', 37, 79, 1, 0),
+(105, 'Puma RS-X', 2135, 0, 'puma-RS-X.jpg', 'Mẫu Sneaker Puma RSX là một trong những thiết kế huyền thoại của Puma. Đây là mẫu giày Chunky được đánh giá là xuất sắc nhất của hãng, thu hút được sự yêu thích của đông đảo giới trẻ. Đây thực sự là mẫu giày đã góp phần làm nên tên tuổi của Puma như hiện tại.', 38, 30, 1, 1),
+(106, 'Jordan Series Mid', 4485, 0, 'Jordan-Series-Mid.jpg', 'Phần giữa của mô hình thời trang phía trước của Jordan Brand đã được lựa chọn cực kỳ kỹ lưỡng trong suốt cả năm, với ít hơn một số đề xuất được tung ra chỉ sau vài tháng bị loại bỏ kể từ cuối năm 2022. Tuy nhiên, thời tiết bắt đầu vào mùa thu mang đến thời điểm thích hợp cho Jordan Series Mid trở lại sau khi hợp tác với Maison Château Rouge vào tháng 6.', 36, 6, 1, 0),
+(112, 'VANS VN0A5', 890, 0, 'vans-VN0A5KRDBZW.jpg', 'Vans VN0A5KRDBZW thuộc dòng Authentic Collage Black/White mới nhất trong bộ sưu tập của thương hiệu Vans', 39, 11, 1, 0),
+(113, 'SuperStart', 2145, 0, 'superstart1.jpg', 'Suốt hơn 50 năm, đôi sneaker adidas Superstar luôn là lựa chọn hàng đầu của các huyền thoại thể thao và thời trang đường phố, kết nối các nhà kiến tạo đến từ mọi nền văn hóa. Mũi giày vỏ sò dễ dàng nhận diện ngay lập tức kết hợp với ba sọc viền răng cưa và các điểm nhấn adidas Originals. Luôn hợp mốt, giày có kiểu dáng kinh điển với chất liệu da cật tăng cường độ bền chắc và thoải mái.', 37, 14, 1, 0),
+(114, 'LeBron 19', 4382, 1000, 'le19.webp', 'LeBron phát triển mạnh khi tiền đặt cược cao và áp lực tăng lên. LeBron 19 khai thác năng lượng đó bằng hệ thống đệm vừa khít và cập nhật. Ống lót bên trong vừa khít được kéo lại với nhau bằng một lớp phủ điêu khắc mà dây buộc xuyên qua để giúp ngăn bàn chân từ việc di chuyển bên trong giày. Các miếng đệm nhúng ở lưỡi gà và xung quanh cổ giày giúp giảm trọng lượng, giữ thẳng cổ chân và mang lại cho người chơi cảm giác an toàn cũng như sự tự tin để dốc hết sức khi trận đấu đang diễn ra.', 36, 12, 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `hinh_anh`
+-- Table structure for table `hinh_anh`
 --
 
 CREATE TABLE `hinh_anh` (
@@ -139,7 +130,7 @@ CREATE TABLE `hinh_anh` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `hinh_anh`
+-- Dumping data for table `hinh_anh`
 --
 
 INSERT INTO `hinh_anh` (`id`, `ma_hh`, `img`) VALUES
@@ -153,9 +144,9 @@ INSERT INTO `hinh_anh` (`id`, `ma_hh`, `img`) VALUES
 (25, 113, '31cf91f6e16c4f0aa11caad6009a4590_9366.webp'),
 (26, 113, '3708ab90979a4ba59535aad6009a2fa8_9366.webp'),
 (27, 113, 'ff2e419f1eda4ebab23faad6009a3a9e_9366.webp'),
-(28, 101, 'PUMA-x-TMC-Ralph-Sampson-Sneakers (1).webp'),
-(29, 101, 'PUMA-x-TMC-Ralph-Sampson-Sneakers (2).webp'),
-(30, 101, 'PUMA-x-TMC-Ralph-Sampson-Sneakers (3).webp'),
+(28, 101, 'PUMA-x-TMC-Ralph-Sampson-Sneakers(1).webp'),
+(29, 101, 'PUMA-x-TMC-Ralph-Sampson-Sneakers(2).webp'),
+(30, 101, 'PUMA-x-TMC-Ralph-Sampson-Sneakers(3).webp'),
 (31, 101, 'PUMA-x-TMC-Ralph-Sampson-Sneakers.webp'),
 (32, 103, '2_2c4f03feec894860aa5127d5bb7fa579_master.webp'),
 (33, 103, '3_2d4a9051fdcb4f92affb894c20e06161_master.webp'),
@@ -172,7 +163,7 @@ INSERT INTO `hinh_anh` (`id`, `ma_hh`, `img`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `loai`
+-- Table structure for table `loai`
 --
 
 CREATE TABLE `loai` (
@@ -181,7 +172,7 @@ CREATE TABLE `loai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `loai`
+-- Dumping data for table `loai`
 --
 
 INSERT INTO `loai` (`ma_loai`, `ten_loai`) VALUES
@@ -193,7 +184,7 @@ INSERT INTO `loai` (`ma_loai`, `ten_loai`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `ma_giam_gia`
+-- Table structure for table `ma_giam_gia`
 --
 
 CREATE TABLE `ma_giam_gia` (
@@ -206,7 +197,7 @@ CREATE TABLE `ma_giam_gia` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tai_khoan`
+-- Table structure for table `tai_khoan`
 --
 
 CREATE TABLE `tai_khoan` (
@@ -222,7 +213,7 @@ CREATE TABLE `tai_khoan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tai_khoan`
+-- Dumping data for table `tai_khoan`
 --
 
 INSERT INTO `tai_khoan` (`ma_tk`, `img`, `ho_ten`, `user`, `pass`, `email`, `address`, `tel`, `role`) VALUES
@@ -232,7 +223,7 @@ INSERT INTO `tai_khoan` (`ma_tk`, `img`, `ho_ten`, `user`, `pass`, `email`, `add
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tin_tuc`
+-- Table structure for table `tin_tuc`
 --
 
 CREATE TABLE `tin_tuc` (
@@ -244,7 +235,7 @@ CREATE TABLE `tin_tuc` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tin_tuc`
+-- Dumping data for table `tin_tuc`
 --
 
 INSERT INTO `tin_tuc` (`id`, `name`, `img`, `mota`, `ngaydang`) VALUES
@@ -255,18 +246,18 @@ INSERT INTO `tin_tuc` (`id`, `name`, `img`, `mota`, `ngaydang`) VALUES
 (31, '11 mẹo khử mùi hôi dép cao su cực đơn giản và hiệu quả', 'blog7.jpg', 'Dép, đặc biệt là dép cao su có mùi hăng nồng khi mới mua về, gây khó chịu khiến nhiều người phải tìm cách loại bỏ. Tuy nhiên, không phải ai cũng biết cách thực hiện hoặc làm không đúng cách mùi hôi vẫn còn bám lại. Nếu bạn vẫn còn băn khoăn, hãy tham khảo', ' 02 Dec, 22');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `binh_luan`
+-- Indexes for table `binh_luan`
 --
 ALTER TABLE `binh_luan`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_bl_hh` (`idpro`);
 
 --
--- Chỉ mục cho bảng `chi_tiet_don_hang`
+-- Indexes for table `chi_tiet_don_hang`
 --
 ALTER TABLE `chi_tiet_don_hang`
   ADD PRIMARY KEY (`ma_ctdh`),
@@ -274,7 +265,7 @@ ALTER TABLE `chi_tiet_don_hang`
   ADD KEY `fk_ctdh_hh` (`ma_hh`);
 
 --
--- Chỉ mục cho bảng `don_hang`
+-- Indexes for table `don_hang`
 --
 ALTER TABLE `don_hang`
   ADD PRIMARY KEY (`ma_dh`),
@@ -282,146 +273,146 @@ ALTER TABLE `don_hang`
   ADD KEY `fk_dh_mgg` (`ma_gg`);
 
 --
--- Chỉ mục cho bảng `gio_hang`
+-- Indexes for table `gio_hang`
 --
 ALTER TABLE `gio_hang`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_giohang_sanpham` (`ma_hh`);
 
 --
--- Chỉ mục cho bảng `hang_hoa`
+-- Indexes for table `hang_hoa`
 --
 ALTER TABLE `hang_hoa`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_hh_lh` (`iddm`);
 
 --
--- Chỉ mục cho bảng `hinh_anh`
+-- Indexes for table `hinh_anh`
 --
 ALTER TABLE `hinh_anh`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_ha_hh` (`ma_hh`);
 
 --
--- Chỉ mục cho bảng `loai`
+-- Indexes for table `loai`
 --
 ALTER TABLE `loai`
   ADD PRIMARY KEY (`ma_loai`);
 
 --
--- Chỉ mục cho bảng `ma_giam_gia`
+-- Indexes for table `ma_giam_gia`
 --
 ALTER TABLE `ma_giam_gia`
   ADD PRIMARY KEY (`ma_gg`);
 
 --
--- Chỉ mục cho bảng `tai_khoan`
+-- Indexes for table `tai_khoan`
 --
 ALTER TABLE `tai_khoan`
   ADD PRIMARY KEY (`ma_tk`);
 
 --
--- Chỉ mục cho bảng `tin_tuc`
+-- Indexes for table `tin_tuc`
 --
 ALTER TABLE `tin_tuc`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `binh_luan`
+-- AUTO_INCREMENT for table `binh_luan`
 --
 ALTER TABLE `binh_luan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `chi_tiet_don_hang`
+-- AUTO_INCREMENT for table `chi_tiet_don_hang`
 --
 ALTER TABLE `chi_tiet_don_hang`
   MODIFY `ma_ctdh` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `don_hang`
+-- AUTO_INCREMENT for table `don_hang`
 --
 ALTER TABLE `don_hang`
   MODIFY `ma_dh` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT cho bảng `gio_hang`
+-- AUTO_INCREMENT for table `gio_hang`
 --
 ALTER TABLE `gio_hang`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=165;
 
 --
--- AUTO_INCREMENT cho bảng `hang_hoa`
+-- AUTO_INCREMENT for table `hang_hoa`
 --
 ALTER TABLE `hang_hoa`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 
 --
--- AUTO_INCREMENT cho bảng `hinh_anh`
+-- AUTO_INCREMENT for table `hinh_anh`
 --
 ALTER TABLE `hinh_anh`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
--- AUTO_INCREMENT cho bảng `loai`
+-- AUTO_INCREMENT for table `loai`
 --
 ALTER TABLE `loai`
   MODIFY `ma_loai` int(10) NOT NULL AUTO_INCREMENT COMMENT 'Mã loại hàng', AUTO_INCREMENT=45;
 
 --
--- AUTO_INCREMENT cho bảng `tai_khoan`
+-- AUTO_INCREMENT for table `tai_khoan`
 --
 ALTER TABLE `tai_khoan`
   MODIFY `ma_tk` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1952;
 
 --
--- AUTO_INCREMENT cho bảng `tin_tuc`
+-- AUTO_INCREMENT for table `tin_tuc`
 --
 ALTER TABLE `tin_tuc`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `binh_luan`
+-- Constraints for table `binh_luan`
 --
 ALTER TABLE `binh_luan`
   ADD CONSTRAINT `fk_bl_hh` FOREIGN KEY (`idpro`) REFERENCES `hang_hoa` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `chi_tiet_don_hang`
+-- Constraints for table `chi_tiet_don_hang`
 --
 ALTER TABLE `chi_tiet_don_hang`
   ADD CONSTRAINT `fk_ctdh_dh` FOREIGN KEY (`ma_dh`) REFERENCES `don_hang` (`ma_dh`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_ctdh_hh` FOREIGN KEY (`ma_hh`) REFERENCES `hang_hoa` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `don_hang`
+-- Constraints for table `don_hang`
 --
 ALTER TABLE `don_hang`
   ADD CONSTRAINT `fk_dh_mgg` FOREIGN KEY (`ma_gg`) REFERENCES `ma_giam_gia` (`ma_gg`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_dh_tk` FOREIGN KEY (`ma_tk`) REFERENCES `tai_khoan` (`ma_tk`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `gio_hang`
+-- Constraints for table `gio_hang`
 --
 ALTER TABLE `gio_hang`
   ADD CONSTRAINT `fk_giohang_sanpham` FOREIGN KEY (`ma_hh`) REFERENCES `hang_hoa` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `hang_hoa`
+-- Constraints for table `hang_hoa`
 --
 ALTER TABLE `hang_hoa`
   ADD CONSTRAINT `fk_hh_lh` FOREIGN KEY (`iddm`) REFERENCES `loai` (`ma_loai`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `hinh_anh`
+-- Constraints for table `hinh_anh`
 --
 ALTER TABLE `hinh_anh`
   ADD CONSTRAINT `fk_ha_hh` FOREIGN KEY (`ma_hh`) REFERENCES `hang_hoa` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
