@@ -13,9 +13,7 @@
         include "../model/hinhanh.php";
         include "../model/bill.php";
         include "../model/chitietdh.php";
-        include "../model/magiamgia.php";
-
-        
+        include "../model/magiamgia.php";  
         include "header.php";
         if (isset($_GET['act'])) {
             # code...
@@ -353,26 +351,6 @@
                     $listbill = loadall_bill();
                     include "bill/list.php";
                     break;
-                case 'suadh':
-                    if(isset($_GET['ma_dh'])&&($_GET['ma_dh']>0)){
-                        $bill = loadone_bill($_GET['ma_dh']);
-                    }
-                    $sql = "SELECT * from don_hang dh order by ma_dh desc";
-                    $listbill = pdo_query($sql);
-                    include "bill/update.php";
-                    break;
-                case 'updatedh':
-                    if (isset($_POST['capnhap'])&&($_POST['capnhap'])) {
-                        $ma_dh=$_POST['ma_dh'];
-                        $trang_thai_tt = $_POST['trang_thai_tt'];
-                        $trang_thai_gh = $_POST['trang_thai_gh'];
-                        update_dh($trang_thai_tt, $trang_thai_gh, $ma_dh);
-                        $thongbao="Cập nhập thành công";
-                    }
-                        $sql = "select * from don_hang order by ma_dh desc";
-                        $listbill= pdo_query($sql);
-                        include "bill/list.php";
-                        break;
                 case 'xoabill':
                     if (isset($_GET['ma_dh'])&&($_GET['ma_dh']>0)) {
                         delete_bill($_GET['ma_dh']);

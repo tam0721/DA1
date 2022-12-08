@@ -133,9 +133,8 @@
 							</tr>
 						</thead>
 						<tbody>
-                            <?php 
-                        
-                            ob_start();
+                            <?php           
+                                ob_start();
                             ?>
                             <?php
                                 
@@ -228,24 +227,14 @@
                                         ';
                                 
                                 ?>
-								<style>
-    .media img{
-        width: 120px;
-        height: 130px;
-    }
-</style>
+                        <style>
+                            .media img{
+                                width: 120px;
+                                height: 130px;
+                            }
+                        </style>
                             </tr>
-							<!-- <tr>
-								<td>
-									<h4>Giảm giá</h4>
-								</td>
-								<td>
-									<h5></h5>
-								</td>
-								<td>
-									<p> 0.000 ₫</p>
-								</td>
-							</tr> -->
+							
 							<tr>
 								<td>
 									<h4>Phí vận chuyển</h4>

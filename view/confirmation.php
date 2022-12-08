@@ -67,8 +67,7 @@
 						</thead>
 						<tbody>
                             <?php 
-                        
-                            ob_start();
+                            	ob_start();
                             ?>
                             <?php
 									$listbill_mgg = loadbill_mgg();
@@ -162,11 +161,11 @@
                                 
                                 ?>
 								<style>
-    .media img{
-        width: 120px;
-        height: 130px;
-    }
-</style>
+									.media img{
+										width: 120px;
+										height: 130px;
+									}
+								</style>
                             </tr>
 							<tr>
 								<td>

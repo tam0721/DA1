@@ -20,4 +20,5 @@
                     header('location: index.php?act=cart'); 
             }
         }
+    }
 ?>

@@ -39,7 +39,7 @@
 
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2020 Copyright - Shoes26
+    © 2022 Copyright - Shoes26
   </div>
   <!-- Copyright -->
   

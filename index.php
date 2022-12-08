@@ -106,35 +106,35 @@
                         $ma_gg = $_POST['mgg'];
                         if ($ma_gg == 'NULL') {
                             $ma_gg = 'NULL';
-                            insert_dh($ma_tk, $ngay_dat, $nguoi_nhan, $dia_chi_nhan, $sdt_nhan, $payment, $email, $ma_gg);
+                            $sql1 = "INSERT INTO don_hang (ma_tk,ngay_dat,nguoi_nhan,dia_chi_nhan,sdt_nhan,payment,email,ma_gg,trang_thai_tt)
+                                VALUES ('$ma_tk','$ngay_dat','$nguoi_nhan','$dia_chi_nhan','$sdt_nhan','$payment','$email',$ma_gg,'$payment')";
+                            pdo_execute($sql1);
                         } else {
                             $ma_gg = "'".$_POST['mgg']."'";
-                            insert_dh($ma_tk, $ngay_dat, $nguoi_nhan, $dia_chi_nhan, $sdt_nhan, $payment, $email, $ma_gg);
+                            $sql1 = "INSERT INTO don_hang (ma_tk,ngay_dat,nguoi_nhan,dia_chi_nhan,sdt_nhan,payment,email,ma_gg,trang_thai_tt)
+                                VALUES ('$ma_tk','$ngay_dat','$nguoi_nhan','$dia_chi_nhan','$sdt_nhan','$payment','$email',$ma_gg,'$payment')";
+                            pdo_execute($sql1);
                         }
 
-                        $lastid = getlastinsertedid($ma_tk);
-                        extract($lastid);
+                        $sql2 = "SELECT * FROM don_hang WHERE ma_tk = " .$ma_tk;
+                        extract(pdo_query_one($sql2));
 
                         for ($i=0; $i<count($_SESSION['giohang']); $i++) {
                             $ma_hh = $_POST['ma_hh'][$i];
                             $size = $_POST['size'][$i];
                             $quantity = $_POST['so_luong'][$i];
-                            $sql = "INSERT INTO chi_tiet_don_hang (ma_dh, ma_hh, size, quantity)
-                                    VALUES ('$ma_dh', '$ma_hh', $size, $quantity)";
+                            $sql3 = "INSERT INTO chi_tiet_don_hang (ma_dh, ma_hh, size, quantity)
+                                VALUES ('$ma_dh', '$ma_hh', $size, $quantity)";
+                            pdo_execute($sql3);
+                            $sql = "DELETE FROM gio_hang";
                             pdo_execute($sql);
-                            $sql1 = "DELETE FROM gio_hang";
-                            pdo_execute($sql1);
                         }
                         unset($_SESSION['giohang']);
-                        
                     }
                 include 'view/confirmation.php';
                 break;
             case 'contact':
                 include 'view/contact.php';
-                break;
-            case 'historybill':
-                include 'view/historybill.php';
                 break;
             case 'elements':
                 include 'view/elements.php';
@@ -221,9 +221,7 @@
                 }
                 include "view/quenmk.php";
                 break;
-            case 'doimk':
-                include 'view/doimk.php';
-                break;
+        
             case 'thoat':
                 unset($_SESSION['user']);
                 unset($_SESSION['iduser']);

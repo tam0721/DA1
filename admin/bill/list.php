@@ -23,7 +23,6 @@
                     <tr>
                         <th></th>
                         <th style="width:360px;">Mã đơn hàng</th>
-                        <th style="width:360px;">Mã giảm giá</th>
                         <th style="width:360px;">Khách hàng</th>
                         <th style="width:360px;">Địa chỉ</th>
                         <th style="width:360px;">Số điện thoại</th>
@@ -35,35 +34,17 @@
                     </tr>
                 </thead>
                 <?php
-                    $listbill_mgg = loadbill_mgg();
-                    $giamgia = 0;
-                    // if ($ma_gg == '') {
-                    //     $giamgia = 0;
-                    // } else {
-                    //     foreach ($listbill_mgg as $gg) {
-                    //         $giamgia = $gg['giatri'];
-                    //     }
-                    // }
                     foreach ($listbill as $bill) {
                         extract($bill);
-                        if ($ma_gg == '') {
-                            $giamgia = 0;
-                        } else {
-                            foreach ($listbill_mgg as $gg) {
-                                $giamgia = $gg['giatri'];
-                            }
-                        }
                         // var_dump($bill);
                         //$suabill="index.php?act=suabill&ma_dh=".$ma_dh;
                         $xoabill="index.php?act=xoabill&ma_dh=".$ma_dh;
                         $chitiet_dh="index.php?act=listchitietdh&ma_dh=".$ma_dh;
-                        $updatebill="index.php?act=suadh&ma_dh=".$ma_dh;
                         echo '
                         <tbody>
                             <tr>
                                 <td><input type="checkbox" name="" id=""></td>
                                 <td>'.$ma_dh.'</td>
-                                <td>'.$ma_gg.' (Giảm '.$giamgia.'K)</td>
                                 <td>'.$nguoi_nhan.'</td>
                                 <td>'.$dia_chi_nhan.'</td>
                                 <td>'.$sdt_nhan.'</td>
@@ -71,7 +52,7 @@
                                 <td>'.(($trang_thai_tt==0)? "Chưa thanh toán":"Đã thanh toán").'</td>
                                 <td>'.(($trang_thai_gh==0)? "Chưa giao hàng":"Đã giao hàng").'</td>
                                 <td>'.$ngay_dat.'</td>
-                                <td> <a href="'.$xoabill.'"><input type="button" value="Xóa"></a> <a href="'.$chitiet_dh.'"><input type="button" value="Chi tiết"></a> <a href="'.$updatebill.'"><input type="button" value="Cập nhật"></a></td>
+                                <td> <a href="'.$xoabill.'"><input type="button" value="Xóa"></a> <a href="'.$chitiet_dh.'"><input type="button" value="Chi tiết"></a></td>                 
                             </tr>
                         </tbody>';
                     }
