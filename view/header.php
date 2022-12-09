@@ -66,7 +66,7 @@
 										if(isset($_SESSION['user'])&&($_SESSION['user']!="")){
 											
 											echo'<li class="nav-item"><a class="nav-link" href="index.php?act=shippingbill">Đơn hàng đang giao</a></li>';
-											echo'<li class="nav-item"><a class="nav-link" href="index.php?act=historybill">Lịch sử giao hàng</a></li>';
+											echo'<li class="nav-item"><a class="nav-link" href="index.php?act=historybill">Lịch sử mua hàng</a></li>';
 										}
 									?>
 										

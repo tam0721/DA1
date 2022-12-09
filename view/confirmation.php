@@ -69,8 +69,8 @@
                             ob_start();
                             ?>
                             <?php
-									$listbill_mgg = loadbill_mgg();
                                     $all = 0;
+									$giamgia = 0;
                                     foreach($list_ctdh as $sp){
                                         extract($sp);
                                         if($id)
@@ -80,9 +80,13 @@
                                         $ttien = 0;
                                         $ttien += $tong;
                                         $all +=$ttien;
-										$giamgia = 0;
-										foreach ($listbill_mgg as $gg) {
-											$giamgia = $gg['giatri'];
+										if ($ma_gg == '') {
+											$giamgia = 0;
+										} else {
+											$listbill_mgg = loadbill_mgg();
+											foreach ($listbill_mgg as $gg) {
+												$giamgia = $gg['giatri'];
+											}
 										}
 										$tien=($all - $giamgia) + 20;
                                         $del="index.php?act=delcart&idsp=".$id;

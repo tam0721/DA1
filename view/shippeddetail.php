@@ -32,8 +32,8 @@
                             ob_start();
                             ?>
                             <?php
-                                    $listbill_mgg = loadhistorybill_mgg();
                                     $all = 0;
+									$giamgia = 0;
                                     foreach($listchitietdh as $sp){
                                         extract($sp);
                                         if($id)
@@ -43,14 +43,15 @@
                                         $ttien = 0;
                                         $ttien += $tong;
                                         $all += $ttien;
-										$giamgia = 0;
-										foreach ($listbill_mgg as $gg) {
-											$giamgia = $gg['giatri'];
+										if ($ma_gg == '') {
+											$giamgia = 0;
+										} else {
+											$listbill_mgg = loadhistorybill_mgg();
+											foreach ($listbill_mgg as $gg) {
+												$giamgia = $gg['giatri'];
+											}
 										}
 										$tien=($all - $giamgia) + 20;
-                                        $del="index.php?act=delcart&idsp=".$id;
-                                        $upd="index.php?act=cart&id=".$id;
-                                        $up="index.php?act=cartupdate&id=".$id;
                                         $sphct="index.php?act=sanphamct&idsp=".$id;
                                         echo '
                                             <form action="index.php?act=cartupdate" method="post">
@@ -78,13 +79,7 @@
                                                         <label for="ma_hh">
 														<h5>'.$so_luong.'</h5>
                                                             </label>
-                                                        </div>
-                                                        <input type="hidden" name="id" id="ma_hh" value="'.$id.'">
-                                                    <div class="product_count">
-                                                        <a href="'.$upd.'">
-                                                            
-                                                        </a>
-                                                    </div>
+                                                	</div>
                                                 </td>
                                                 <td>
                                                     <h5>'.number_format($ttien, 0, '.', '.').'.000 ₫</h5>

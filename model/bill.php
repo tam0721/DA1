@@ -11,12 +11,12 @@
         return $bill;
     }
     function loadbill_mgg() {
-        $sql = "SELECT * from don_hang dh inner join ma_giam_gia mgg on dh.ma_gg = mgg.ma_gg";
+        $sql = "SELECT * from don_hang dh inner join ma_giam_gia mgg on dh.ma_gg = mgg.ma_gg WHERE trang_thai_gh = 0";
         $listbillmgg = pdo_query($sql);
         return $listbillmgg;
     }
     function loadhistorybill_mgg() {
-        $sql = "SELECT * from don_hang dh inner join ma_giam_gia mgg on dh.ma_gg = mgg.ma_gg WHERE dh.trang_thai_gh = 1";
+        $sql = "SELECT * from don_hang dh inner join ma_giam_gia mgg on dh.ma_gg = mgg.ma_gg WHERE trang_thai_gh = 1";
         $listbillmgg = pdo_query($sql);
         return $listbillmgg;
     }

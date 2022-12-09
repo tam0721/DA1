@@ -35,15 +35,8 @@
                     </tr>
                 </thead>
                 <?php
-                    $listbill_mgg = loadbill_mgg();
+                    $listbill_mgg = loadall_magiam();
                     $giamgia = 0;
-                    // if ($ma_gg == '') {
-                    //     $giamgia = 0;
-                    // } else {
-                    //     foreach ($listbill_mgg as $gg) {
-                    //         $giamgia = $gg['giatri'];
-                    //     }
-                    // }
                     foreach ($listbill as $bill) {
                         extract($bill);
                         if ($ma_gg == '') {
@@ -53,8 +46,6 @@
                                 $giamgia = $gg['giatri'];
                             }
                         }
-                        // var_dump($bill);
-                        //$suabill="index.php?act=suabill&ma_dh=".$ma_dh;
                         $xoabill="index.php?act=xoabill&ma_dh=".$ma_dh;
                         $chitiet_dh="index.php?act=listchitietdh&ma_dh=".$ma_dh;
                         $updatebill="index.php?act=suadh&ma_dh=".$ma_dh;
