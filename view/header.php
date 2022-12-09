@@ -82,22 +82,20 @@
 								</ul> 
 							</li> -->
 							<li class="nav-item submenu dropdown">
+								<?php
+										if(isset($_SESSION['user'])&&($_SESSION['user']!="")){
+											echo '<a href="index.php?act=suatk&user='.$_SESSION['user'].'" class="nav-link"><span style="color:red;font-weight:800;"> '.$_SESSION['user'].'</span></a>';
+											echo'<li class="nav-item"><a href="index.php?act=thoat" class="nav-link"><span>Đăng xuất</span></a></li>';
+										}else{
+									?>
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Thành viên</a>
 								<ul class="dropdown-menu">
-									<?php
-											if(isset($_SESSION['user'])&&($_SESSION['user']!="")){
-												echo'<li class="nav-item"><a href="index.php?act=suatk&user='.$_SESSION['user'].'" class="nav-link"><span style="color:red;font-weight:800;"> '.$_SESSION['user'].'</span></a></li>';
-												echo'<li class="nav-item"><a href="index.php?act=thoat" class="nav-link"><span>Đăng xuất</span></a></li>';
-											}else{
-									
-									
-										?>
 											<li class="nav-item"><a class="nav-link" href="index.php?act=login">Đăng nhập</a></li>
 											<li class="nav-item"><a class="nav-link" href="index.php?act=signup">Đăng ký</a></li>	
-										<?php } ?>
+										
 								</ul>
-							</li>
+							</li> <?php } ?>
 							<li class="nav-item"><a class="nav-link" href="index.php?act=contact">Liên hệ</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
