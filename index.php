@@ -128,6 +128,21 @@
                     }
                 include 'view/confirmation.php';
                 break;
+            case 'shippingbill':
+                include "view/shippingbill.php";
+                break;
+            case 'listshippeddetail':
+                if(isset($_GET['ma_dh'])&&($_GET['ma_dh']>0)){
+                    $listchitietdh = loadone_chitietdh($_GET['ma_dh']);
+                }
+                include "view/shippeddetail.php";
+                break;
+            case 'listshippingdetail':
+                if(isset($_GET['ma_dh'])&&($_GET['ma_dh']>0)){
+                    $listchitietdh = loadone_chitietdh($_GET['ma_dh']);
+                }
+                include "view/shippingdetail.php";
+                break;
             case 'contact':
                 include 'view/contact.php';
                 break;
