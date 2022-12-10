@@ -19,7 +19,7 @@
     $dsdm =loadall_danhmuc();
     $spdacbiet=get_product_special();
     $cart=loadall_giohang();
-    $mgg=loadall_magiam();
+    $mgg=loadmgg(date('Y-m-d'));
     if(!isset($_SESSION['giohang'])) $_SESSION['giohang'] = [];
     $note = 0;
     if(isset($_GET['act'])){
@@ -134,12 +134,14 @@
             case 'listshippeddetail':
                 if(isset($_GET['ma_dh'])&&($_GET['ma_dh']>0)){
                     $listchitietdh = loadone_chitietdh($_GET['ma_dh']);
+                    $bill_mgg = loaddetailbill_mgg($_GET['ma_dh']);
                 }
                 include "view/shippeddetail.php";
                 break;
             case 'listshippingdetail':
                 if(isset($_GET['ma_dh'])&&($_GET['ma_dh']>0)){
                     $listchitietdh = loadone_chitietdh($_GET['ma_dh']);
+                    $bill_mgg = loaddetailbill_mgg($_GET['ma_dh']);
                 }
                 include "view/shippingdetail.php";
                 break;

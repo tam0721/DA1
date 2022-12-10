@@ -46,8 +46,7 @@
 										if ($ma_gg == '') {
 											$giamgia = 0;
 										} else {
-											$listbill_mgg = loadbill_mgg();
-											foreach ($listbill_mgg as $gg) {
+											foreach ($bill_mgg as $gg) {
 												$giamgia = $gg['giatri'];
 											}
 										}

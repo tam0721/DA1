@@ -46,14 +46,14 @@
                     </tr>
                 </thead>
                 <?php
-                    $listbill_mgg = loadhistorybill_mgg();
                     $giamgia = 0;
                     foreach ($listdh_by_matk as $bill) {
                         extract($bill);
                         if ($ma_gg == '') {
                             $giamgia = 0;
                         } else {
-                            foreach ($listbill_mgg as $gg) {
+                            $bill_mgg = loaddetailbill_mgg($ma_dh);
+                            foreach ($bill_mgg as $gg) {
                                 $giamgia = $gg['giatri'];
                             }
                         }

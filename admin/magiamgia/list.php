@@ -28,7 +28,6 @@
                     <th>Ngày bắt đầu</th>
                     <th>Ngày kết thúc</th>
                     <th>Giá trị</th>
-                    <th style="width:200px;">Cài đặt</th>
                 </tr>
             </thead>
             <?php
@@ -42,7 +41,6 @@
                             <td>'.$ngay_bd.'</td>
                             <td>'.$ngay_kt.'</td>
                             <td>'.number_format($giatri, 0, '.', '.').'.000 ₫</td>
-                            <td><a href="'.$xoagg.'"><input type="button" value="Xóa" style="width:120px;margin:5px; border:none;"></a></td>
                         </tr>
                     </tbody>';
                 }
