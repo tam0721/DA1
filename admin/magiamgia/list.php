@@ -15,17 +15,15 @@
 	<!-- End banner Area -->
 <div class="container-fluid">
     <div class="row-title text-center" style="margin-top:20px;">
-        <h3>Các Mã Giảm Giá</h3>
+        <h3>Danh sách mã giảm giá</h3>
     </div>
     <div class="table-responsive-sm">
         <div class="d-flex ">
-            <input type="submit" value="Chọn tất cả" name="" class="form-control " style=" width:120px;background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;">
             <a href="index.php?act=addmgg"><input type="submit" name="themma" value="Thêm mới" class="btn btn-default border-0" style="margin:0 0 15px 15px; width:120px; background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;"></a>
             </div>
         <table class="table table-bordered">
             <thead class="thead-light">
                 <tr>
-                    <th></th>
                     <th>Mã giảm giá</th>
                     <th>Ngày bắt đầu</th>
                     <th>Ngày kết thúc</th>
@@ -36,12 +34,10 @@
             <?php
                 foreach ($listmagiam as $giamgia) {
                     extract($giamgia);
-                    // $suatk="index.php?act=suatk&id=".$id;
                     $xoagg="index.php?act=xoamgg&ma_gg=".$ma_gg;
                     echo '
                     <tbody>
                         <tr>
-                            <td><input type="checkbox" name="" id=""></td>
                             <td>'.$ma_gg.'</td>
                             <td>'.$ngay_bd.'</td>
                             <td>'.$ngay_kt.'</td>

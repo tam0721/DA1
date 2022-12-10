@@ -15,13 +15,12 @@
 	<!-- End banner Area -->
     <div class="container-fluid">
         <div class="row-title text-center" style="margin-top:20px;">
-            <h3>Danh sách đơn hàng:</h3>
+            <h3>Danh sách đơn hàng</h3>
         </div>
         <div class="table-responsive-sm">
             <table class="table table-bordered">
                 <thead class="thead-light">
                     <tr>
-                        <th></th>
                         <th style="width:360px;">Mã đơn hàng</th>
                         <th style="width:360px;">Mã giảm giá</th>
                         <th style="width:360px;">Khách hàng</th>
@@ -52,7 +51,6 @@
                         echo '
                         <tbody>
                             <tr>
-                                <td><input type="checkbox" name="" id=""></td>
                                 <td>'.$ma_dh.'</td>
                                 <td>'.$ma_gg.' (Giảm '.$giamgia.'K)</td>
                                 <td>'.$nguoi_nhan.'</td>
