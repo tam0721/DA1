@@ -301,6 +301,7 @@
                         $giaspnew = $_POST['giaspnew'];
                         $mota = $_POST['mota'];
                         $hinh = $_FILES['hinh']['name'];
+                        $trang_thai = $_POST['trang_thai'];
                         $target_dir = "../upload/";
                         $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
                         if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
@@ -308,7 +309,7 @@
                         } else {
                             // echo "Sorry, there was an error uploading your file.";
                         }
-                        update_sanpham($id,$tensp,$giasp,$giaspnew,$mota,$hinh); 
+                        update_sanpham($id,$tensp,$giasp,$giaspnew,$mota,$hinh,$trang_thai); 
                         // update_sanpham($id,$tensp,$giasp,$mota,$hinh,$iddm);
                         $thongbao="Cập nhập thành công";
                     }

@@ -61,6 +61,11 @@
                         <?php echo $sanpham[0]['img']?>
                     </div>
                     <div class="form-group">
+                        <label for="pwd">Trạng thái</label><br>
+                        <label><input name="trang_thai" type="radio" <?php if ($sanpham[0]['trang_thai'] == 0) echo 'checked'; ?> value="0">Hết hàng</label>
+                        <label><input name="trang_thai" type="radio" <?php if ($sanpham[0]['trang_thai'] == 1) echo 'checked'; ?> value="1">Còn hàng</label>
+                    </div>
+                    <div class="form-group">
                         <label for="pwd">Mô tả</label>
                         <textarea name="mota" id="" cols="30" rows="10" class=" form-control" value=""><?php echo $sanpham[0]['mota']?></textarea>
                     </div>
