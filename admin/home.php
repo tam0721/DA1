@@ -85,9 +85,9 @@
       <div class="card-body">
 
         <!--Title-->
-        <h4 class="card-title">Comment</h4>
+        <h4 class="card-title">Bình luận</h4>
         <!--Text-->
-        <p class="card-text">Danh sách comment của khách hàng. Các thông tin cần thiết, giúp quản trị viên nắm rõ nội dung comment của khách hàng.</p>
+        <p class="card-text">Danh sách bình luận của khách hàng. Các thông tin cần thiết, giúp quản trị viên nắm rõ nội dung bình luận của khách hàng.</p>
         <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
 
       </div>

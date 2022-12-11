@@ -15,7 +15,7 @@
 	<!-- End banner Area -->
 <div class="container-fluid">
     <div class="row-title text-center" style="margin-top:20px;">
-        <h3>Chi tiết</h3>
+        <h3>Chi tiết đơn hàng</h3>
     </div>
     <div class="table-responsive-sm">
         <!-- <div class="d-flex ">
