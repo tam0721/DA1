@@ -38,12 +38,12 @@
         return pdo_query_one($sql);
     }
     function loaddhshipping_by_matk($ma_tk) {
-        $sql = "SELECT * FROM don_hang WHERE trang_thai_gh = 0 AND ma_tk = ".$ma_tk;
+        $sql = "SELECT * FROM don_hang WHERE trang_thai_gh = 0 AND ma_tk = ".$ma_tk." ORDER BY ma_dh DESC";
         $listbill_by_matk = pdo_query($sql);
         return $listbill_by_matk;
     }
     function loaddhshipped_by_matk($ma_tk) {
-        $sql = "SELECT * FROM don_hang WHERE trang_thai_gh = 1 AND ma_tk = ".$ma_tk;
+        $sql = "SELECT * FROM don_hang WHERE trang_thai_gh = 1 AND ma_tk = ".$ma_tk." ORDER BY ma_dh DESC";
         $listbill_by_matk = pdo_query($sql);
         return $listbill_by_matk;
     }
