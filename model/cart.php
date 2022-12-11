@@ -21,10 +21,10 @@ function loadall_giohang(){
     $cart = pdo_query($sql);
     return $cart;
 }
-// function loadone_giohang($id){
-//     $sql = "SELECT * from gio_hang where ma_hh=".$id;
-//     $cart = pdo_query($sql);
-//     return $cart;
-// }
+
+function delete_cart() {
+    $sql = "DELETE FROM gio_hang";
+    pdo_execute($sql);
+}
     
 ?>

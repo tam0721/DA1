@@ -31,6 +31,8 @@
 				<div class="col-lg-6">
 					<div class="login_form_inner">
 						<h3>Đăng nhập</h3>
+						
+						
 						<?php
 
 							if(isset($_SESSION['user'])){
@@ -105,7 +107,13 @@
 								echo $thongbao;
 								}
 							?>
+							<?php
+								if(isset($_GET['error'])==true){
+									echo '<p>Sai mật khẩu</p>';
+								}
+							?>
 						</h2>
+
 					</div>
 				</div>
 			</div>

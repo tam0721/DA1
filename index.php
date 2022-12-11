@@ -3,6 +3,7 @@
     session_start();
     include 'view/header.php';
     include 'model/bill.php';
+    include 'model/chitietdh.php';
     include 'model/pdo.php';
     include 'model/taikhoan.php';
     include 'model/sanpham.php';
@@ -106,35 +107,32 @@
                         $ma_gg = $_POST['mgg'];
                         if ($ma_gg == 'NULL') {
                             $ma_gg = 'NULL';
-                            $sql1 = "INSERT INTO don_hang (ma_tk,ngay_dat,nguoi_nhan,dia_chi_nhan,sdt_nhan,payment,email,ma_gg,trang_thai_tt)
-                                VALUES ('$ma_tk','$ngay_dat','$nguoi_nhan','$dia_chi_nhan','$sdt_nhan','$payment','$email',$ma_gg,'$payment')";
-                            pdo_execute($sql1);
+                            insert_dh($ma_tk, $ngay_dat, $nguoi_nhan, $dia_chi_nhan, $sdt_nhan, $payment, $email, $ma_gg);
                         } else {
                             $ma_gg = "'".$_POST['mgg']."'";
-                            $sql1 = "INSERT INTO don_hang (ma_tk,ngay_dat,nguoi_nhan,dia_chi_nhan,sdt_nhan,payment,email,ma_gg,trang_thai_tt)
-                                VALUES ('$ma_tk','$ngay_dat','$nguoi_nhan','$dia_chi_nhan','$sdt_nhan','$payment','$email',$ma_gg,'$payment')";
-                            pdo_execute($sql1);
+                            insert_dh($ma_tk, $ngay_dat, $nguoi_nhan, $dia_chi_nhan, $sdt_nhan, $payment, $email, $ma_gg);
                         }
 
-                        $sql2 = "SELECT * FROM don_hang WHERE ma_tk = " .$ma_tk;
-                        extract(pdo_query_one($sql2));
+                        $lastid = getlastinsertedid($ma_tk);
+                        extract($lastid);
 
                         for ($i=0; $i<count($_SESSION['giohang']); $i++) {
                             $ma_hh = $_POST['ma_hh'][$i];
                             $size = $_POST['size'][$i];
                             $quantity = $_POST['so_luong'][$i];
-                            $sql3 = "INSERT INTO chi_tiet_don_hang (ma_dh, ma_hh, size, quantity)
-                                VALUES ('$ma_dh', '$ma_hh', $size, $quantity)";
-                            pdo_execute($sql3);
-                            $sql = "DELETE FROM gio_hang";
-                            pdo_execute($sql);
+                            insert_chitietdh($ma_dh, $ma_hh, $size, $quantity);
+                            delete_cart();
                         }
                         unset($_SESSION['giohang']);
+                        
                     }
                 include 'view/confirmation.php';
                 break;
             case 'contact':
                 include 'view/contact.php';
+                break;
+            case 'historybill':
+                include 'view/historybill.php';
                 break;
             case 'elements':
                 include 'view/elements.php';
@@ -165,14 +163,21 @@
                     }elseif ($role==2){ 
                         $_SESSION['role']=$role;
                         header('location: admin/index.php'); 
-                    }elseif ($role==0){
+                    }
+                    elseif($role!=0){ 
+                       
+                        $_SESSION['user']!= $kq[0]['user'];
+                        include 'view/login.php?er';
+                        
+                    }  elseif ($role==0){
                         $_SESSION['role']=$role;
                         $_SESSION['iduser']= $kq[0]['id'];
                         $_SESSION['user']= $kq[0]['user'];
                         header('location: index.php'); //note
                         break;
                     }
-                }
+                    
+                }    
                 include 'view/login.php';
                 break;
             case 'signup':
@@ -221,7 +226,6 @@
                 }
                 include "view/quenmk.php";
                 break;
-        
             case 'thoat':
                 unset($_SESSION['user']);
                 unset($_SESSION['iduser']);
@@ -251,3 +255,4 @@
 
     include 'view/footer.php';
 ?>
+

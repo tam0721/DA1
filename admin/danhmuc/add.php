@@ -21,11 +21,11 @@
                 <form action="index.php?act=adddm" method="post">
                     <div class="form-group">
                         <label for="email">Mã danh mục</label>
-                        <input type="text" name="maloai" id="" disabled class=" form-control"> 
+                        <input placeholder="Auto Increment" type="text" name="maloai" id="" disabled class=" form-control"> 
                     </div>
                     <div class="form-group">
                         <label for="pwd">Tên danh mục</label>
-                        <input type="text" name="tenloai" id="" class=" form-control">
+                        <input type="text" name="tenloai" id="" class=" form-control" required>
                     </div>
                     <div class="d-flex justify-content-center">
                         <input type="submit" value="Thêm mới" name="themmoi" class="form-control " style=" width:120px;background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;">
@@ -36,7 +36,7 @@
                     <input type="reset" value="Nhập lại" class="btn btn-default border-0" style="margin:0 0 15px 15px; width:120px; background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;">
                     <a href="index.php?act=lisdm"><input type="button" value="Danh sách" class="btn btn-default border-0" style="margin:0 0 15px 15px; width:120px; background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;"></a> -->
                     <?php
-                        if (isset($thongbao)&&($thongbao!="")) echo $thongbao;
+                        if (isset($thongbao)&&($thongbao!="")) echo '<h2 style="font-size:15px; color:red;text-align:center;" >'.$thongbao.'</h2>';
                     ?>
                 </form>
             </div>

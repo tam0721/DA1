@@ -26,7 +26,6 @@
         <table class="table table-bordered">
             <thead class="thead-light">
                 <tr>
-                    <th>Mã số danh mục</th>
                     <th>Tên danh mục</th>
                     <th>Số lượng</th>
                     <th>Giá cao nhất</th>
@@ -42,7 +41,6 @@
                     echo '
                     <tbody>
                         <tr>
-                            <td>'.$madm.'</td>
                             <td>'.$tendm.'</td>
                             <td>'.$countsp.'</td>
                             <td>'.number_format($maxprice, 0, '.', '.').'.000 ₫</td>

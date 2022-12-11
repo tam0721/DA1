@@ -40,7 +40,7 @@
                                     <input type="text" class="form-control" name="user" placeholder="Username" value="<?=$user?>">
                                 </div>
                                 <div class="col-md-12 form-group">
-                                    <input type="text" class="form-control" name="pass" placeholder="Mật khẩu" value="<?=$pass?>">
+                                    <input type="password" class="form-control" name="pass" placeholder="Mật khẩu" value="<?=$pass?>">
                                 </div>
                                 <div class="col-md-12 form-group">
                                     <input type="text" class="form-control" name="email" placeholder="Email" value="<?=$email?>" disabled>

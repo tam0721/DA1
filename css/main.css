@@ -1468,7 +1468,7 @@ h6 {
     display: none;
 }
 
-.header_area .navbar .nav .nav-item:hover .nav-item:focus  .nav-link,
+.header_area .navbar .nav .nav-item:hover .nav-item:focus .nav-link,
 .header_area .navbar .nav .nav-item.active .nav-link {
     color: #ffba00;
 }
@@ -7077,7 +7077,7 @@ label {
 }
 
 .radion_btn input[type=radio]:checked~label {
-    color: #000;
+    color: #38a4ff;
 }
 
 

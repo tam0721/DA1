@@ -10,5 +10,9 @@
         $listchitietdh = pdo_query($sql);
         return $listchitietdh;
     }
-    
+    function insert_chitietdh($ma_dh, $ma_hh, $size, $quantity) {
+        $sql = "INSERT INTO chi_tiet_don_hang (ma_dh, ma_hh, size, quantity)
+                VALUES ('$ma_dh', '$ma_hh', $size, $quantity)";
+        pdo_execute($sql);
+    }
 ?>
