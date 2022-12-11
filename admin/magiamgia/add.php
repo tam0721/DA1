@@ -15,7 +15,10 @@
 	<!-- End Banner Area -->
 
 	<!--================Login Box Area =================-->
-    <div class="col d-flex justify-content-center">
+    <div class="row-form">
+        <div class="row-title text-center" style="margin-top:20px;">
+            <h3>Thêm mã giảm giá mới</h3>
+        </div>
         <div class="container">
                 <form action="index.php?act=addmgg" method="post">
                     <div class="form-group">
