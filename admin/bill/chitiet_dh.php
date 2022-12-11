@@ -35,10 +35,23 @@
                 </tr>
             </thead>
             <?php
+                $all = 0;
+                $giamgia = 0;
                 foreach ($listchitietdh as $bill) {
                     extract($bill);
                     $price_1 = $price_old;
 					if ($price_new > 0) $price_1 = $price_new;
+                    $ttien = 0;
+                    $ttien += $tong;
+                    $all += $ttien;
+                    if ($ma_gg == '') {
+                        $giamgia = 0;
+                    } else {
+                        foreach ($bill_mgg as $gg) {
+                            $giamgia = $gg['giatri'];
+                        }
+                    }
+                    $tien = ($all - $giamgia) + 20;
                     echo '
                     <tbody>
                         <tr>
@@ -57,41 +70,20 @@
                     <th colspan="5" style="text-align: right">Giảm giá</th>
                     <?php
                         $giamgia = 0;
-                        foreach ($listchitietdh as $bill) {
-                            extract($bill);
-                            if ($ma_gg == '') {
-                                $giamgia = 0;
-                            } else {
-                                foreach ($bill_mgg as $gg) {
-                                    $giamgia = $gg['giatri'];
-                                }
+                        if ($ma_gg == '') {
+                            $giamgia = 0;
+                        } else {
+                            foreach ($bill_mgg as $gg) {
+                                $giamgia = $gg['giatri'];
                             }
-                            echo '<td>'.number_format($giamgia,0,'.','.').'.000 ₫</td>';
                         }
+                        echo '<td>'.number_format($giamgia,0,'.','.').'.000 ₫</td>';
                     ?>
                 </tr>
                 <tr>
                     <th colspan="5" style="text-align: right">Tổng tiền</th>
                     <?php
-                        $all = 0;
-                        $giamgia = 0;
-                        foreach ($listchitietdh as $bill) {
-                            extract($bill);
-                            $price_1 = $price_old;
-                            if ($price_new > 0) $price_1 = $price_new;
-                            $ttien = 0;
-                            $ttien += $tong;
-                            $all += $ttien;
-                            if ($ma_gg == '') {
-                                $giamgia = 0;
-                            } else {
-                                foreach ($bill_mgg as $gg) {
-                                    $giamgia = $gg['giatri'];
-                                }
-                            }
-                            $tien = ($all - $giamgia) + 20;
-                            echo '<td>'.number_format($tien,0,'.','.').'.000 ₫</td>';
-                        }
+                        echo '<td>'.number_format($tien,0,'.','.').'.000 ₫</td>';
                     ?>
                 </tr>
             </thead>
