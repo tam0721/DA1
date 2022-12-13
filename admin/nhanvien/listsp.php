@@ -36,20 +36,19 @@
         <table class="table table-bordered">
             <thead class="thead-light">
                 <tr>
-                    <th></th>
-                    <th>Mã sản phẩm</th>
+                    <th style="max-width:80px">Mã sản phẩm</th>
                     <th>Tên sản phẩm</th>
                     <th>Hình ảnh</th>
                     <th>Giá</th>
-                    <th>Mô tả</th>
+                    <th>Giá giảm</th>
+                    <th style="width:400px">Mô tả</th>
                     <th>View</th>
+                    <th style="width:150px">Cài đặt</th>
                 </tr>
             </thead>
             <?php
                 foreach ($listsanpham as $sanpham) {
                     extract($sanpham);
-                    $xoasp="index.php?act=xoasp&id=".$id;
-                    $suasp="index.php?act=suasp&id=".$id;
                     $imgsp="index.php?act=listimg&id=".$id;
                     $ha="../upload/".$img;
                     if (is_file($ha)) {
@@ -60,13 +59,16 @@
                     echo '
                     <tbody>
                         <tr>
-                            <td><input type="checkbox" name="" id=""></td>
                             <td>'.$id.'</td>
                             <td>'.$name.'</td>
                             <td class="text-center">'.$hinh.'</td>
-                            <td>'.$price_old.'</td>
+                            <td>'.number_format($price_old, 0, '.', '.').'.000 ₫</td>
+                            <td>'.number_format($price_new, 0, '.', '.').'.000 ₫</td>
                             <td>'.$mota.'</td>
                             <td>'.$luotxem.'</td>
+                            <td class="text-center">
+                                <a href="'.$imgsp.'"><input type="button" value="Hình ảnh" style="width:120px;margin:5px; border:none;"></a>
+                            </td>
                         </tr>
                     </tbody>';
                 }

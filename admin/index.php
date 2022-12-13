@@ -401,6 +401,9 @@
         include "../model/tintuc.php";
         include "../model/binhluan.php";
         include "../model/hinhanh.php";
+        include "../model/bill.php";
+        include "../model/chitietdh.php";
+        include "../model/magiamgia.php";
         include 'header.php';
         if(isset($_GET['act'])){
             $act = $_GET['act'];
@@ -442,7 +445,29 @@
                 case 'listtt':
                     $listtintuc = loadall_tintuc();
                     include 'nhanvien/listblog.php';
-                    break;  
+                    break;
+                case 'listimg':
+                    if(isset($_GET['id'])&&($_GET['id']>0)){
+                        $sanpham = loadone_sanpham($_GET['id']);
+                    }
+                    $listimg = loadall_img($_GET['id']);
+                    include "nhanvien/listimg.php";
+                    break;
+                case 'donhanglist':
+                    $listbill = loadall_bill();
+                    include "nhanvien/listdh.php";
+                    break;
+                case 'listchitietdh':
+                    if(isset($_GET['ma_dh'])&&($_GET['ma_dh']>0)){
+                        $listchitietdh = loadone_chitietdh($_GET['ma_dh']);
+                        $bill_mgg = loaddetailbill_mgg($_GET['ma_dh']);
+                    }
+                    include "nhanvien/chitiet_dh.php";
+                    break;
+                case 'dsmgg':
+                    $listmagiam=loadall_magiam();
+                    include "nhanvien/listmgg.php";
+                    break;
                 default:
                     include 'home.php';
                     break;
