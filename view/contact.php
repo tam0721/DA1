@@ -28,8 +28,8 @@
 					<div class="contact_info">
 						<div class="info_item">
 							<i class="lnr lnr-home"></i>
-							<h6>Bảo Lâm, Lâm Đồng</h6>
-							<p>JRFW+VVV, ĐT725, Lộc Ngãi</p>
+							<h6>FPT Polytechnic</h6>
+							<p>Quang Trung, Quận 12</p>
 						</div>
 						<div class="info_item">
 							<i class="lnr lnr-phone-handset"></i>
@@ -38,7 +38,7 @@
 						</div>
 						<div class="info_item">
 							<i class="lnr lnr-envelope"></i>
-							<h6><a href="#">duyntps24415@fpt.edu.vn</a></h6>
+							<h6><a href="#">duan1@fpt.edu.vn</a></h6>
 							<p>Gửi cho chúng tôi những thắc mắc của bạn bất cứ lúc nào!</p>
 						</div>
 					</div>
