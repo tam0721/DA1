@@ -26,7 +26,6 @@
                     <th>Hình ảnh</th>
                     <th>Mô tả</th>
                     <th>Ngày đăng</th>
-                    <th style="width:200px">Cài đặt</th>
                 </tr>
             </thead>
             <?php
@@ -50,7 +49,6 @@
                             <td class="text-center">'.$hinh.'</td>
                             <td>'.$mota.'</td>
                             <td>'.$ngaydang.'</td>
-                            <td class="text-center"><a href="'.$suatt.'"><input type="button" value="Sửa" style="width:120px; margin:5px; border:none;" ></a> <a href="'.$xoatt.'"><input type="button" value="Xóa" style="width:120px;margin:5px; border:none;"></a></td>
                         </tr>
                     </tbody>';
                 }
