@@ -17,8 +17,11 @@
 	<!--================Contact Area =================-->
 	<section class="contact_area section_gap_bottom">
 		<div class="container">
-			<div id="mapBox" class="mapBox" data-lat="11.624914932014901" data-lon="107.84710765252952" data-zoom="13" data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
+			<!-- <div id="mapBox" class="mapBox" data-lat="11.624914932014901" data-lon="107.84710765252952" data-zoom="13" data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
 			 data-mlat="40.701083" data-mlon="-74.1522848">
+			</div> -->
+			<div id="" style="margin:15px 0;">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.456158413961!2d106.62973275510298!3d10.852868003375896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529b6a2b351a5%3A0x11690ada8c36f9bc!2sFPT%20Polytechnic!5e0!3m2!1sen!2s!4v1670979499149!5m2!1sen!2s" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 			</div>
 			<div class="row">
 				<div class="col-lg-3">
