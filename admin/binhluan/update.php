@@ -27,7 +27,7 @@
                 ?>
         <div class="row-form">
             <div class="row-title text-center" style="margin-top:20px;">
-                <h3>Cập nhật Comment</h3>
+                <h3>Cập nhật bình luận</h3>
             </div>
             <div class="container">
                 <form action="index.php?act=updatebl" method="post">
