@@ -19,14 +19,11 @@
     </div>
     <div class="table-responsive-sm">
         <div class="d-flex ">
-            <input type="submit" value="Chọn tất cả" name="themmoi" class="form-control " style="margin:0 0 15px 0;  width:120px;background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;">
             <a href="index.php?act=addtt"><input type="submit" value="Thêm mới" class="btn btn-default border-0" style="margin:0 0 15px 15px; width:120px; background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;"></a>
-            <input type="submit" value="Sửa" class="btn btn-default border-0" style="margin:0 0 15px 15px; width:120px; background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;">
         </div>
         <table class="table table-bordered">
             <thead class="thead-light">
                 <tr>
-                    <th></th>
                     <th>Mã Blog</th>
                     <th>Tên Blog</th>
                     <th>Hình ảnh</th>
@@ -51,7 +48,6 @@
                     echo '
                     <tbody>
                         <tr>
-                            <td><input type="checkbox" name="" id=""></td>
                             <td>'.$id.'</td>
                             <td>'.$name.'</td>
                             <td class="text-center">'.$hinh.'</td>

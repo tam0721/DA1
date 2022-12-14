@@ -15,13 +15,12 @@
 	<!-- End banner Area -->
     <div class="container-fluid">
         <div class="row-title text-center" style="margin-top:20px;">
-            <h3>Danh sách đơn hàng:</h3>
+            <h3>Danh sách đơn hàng</h3>
         </div>
         <div class="table-responsive-sm">
             <table class="table table-bordered">
                 <thead class="thead-light">
                     <tr>
-                        <th></th>
                         <th style="width:360px;">Mã đơn hàng</th>
                         <th style="width:360px;">Khách hàng</th>
                         <th style="width:360px;">Địa chỉ</th>
@@ -34,16 +33,29 @@
                     </tr>
                 </thead>
                 <?php
+<<<<<<< HEAD
                     foreach ($listbill as $bill) {
                         extract($bill);
                         // var_dump($bill);
                         //$suabill="index.php?act=suabill&ma_dh=".$ma_dh;
+=======
+                    $listbill_mgg = loadall_magiam();
+                    $giamgia = 0;
+                    foreach ($listbill as $bill) {
+                        extract($bill);
+                        if ($ma_gg == '') {
+                            $giamgia = 0;
+                        } else {
+                            foreach ($listbill_mgg as $gg) {
+                                $giamgia = $gg['giatri'];
+                            }
+                        }
+>>>>>>> 43ba219d9ff745f1758e8d2a282a525befc14986
                         $xoabill="index.php?act=xoabill&ma_dh=".$ma_dh;
                         $chitiet_dh="index.php?act=listchitietdh&ma_dh=".$ma_dh;
                         echo '
                         <tbody>
                             <tr>
-                                <td><input type="checkbox" name="" id=""></td>
                                 <td>'.$ma_dh.'</td>
                                 <td>'.$nguoi_nhan.'</td>
                                 <td>'.$dia_chi_nhan.'</td>

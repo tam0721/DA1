@@ -18,11 +18,7 @@
         <h3>Nhận xét của khách hàng</h3>
     </div>
     <div class="table-responsive-sm">
-        <div class="d-flex ">
-            <input type="submit" value="Chọn tất cả" name="" class="form-control " style=" width:120px;background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;">
-            <a href="index.php?act=addtk"><input type="submit" value="Thêm mới" class="btn btn-default border-0" style="margin:0 0 15px 15px; width:120px; background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;"></a>
-            <input type="submit" value="Sửa" class="btn btn-default border-0" style="margin:0 0 15px 15px; width:120px; background: linear-gradient(131deg, rgba(255,117,0,1) 12%, rgba(255,184,0,1) 86%); color:#fff;">
-        </div>
+        <div class="d-flex "></div>
         <table class="table table-bordered">
             <thead class="thead-light">
                 <tr>
@@ -36,7 +32,6 @@
             <?php
                 foreach ($listbl as $bl) {
                     extract($bl);
-                    // $suatk="index.php?act=suatk&id=".$id;
                     $xoabl="index.php?act=xoabl&id=".$id;
                     $suabl="index.php?act=suabl&id=".$id;
                     echo '

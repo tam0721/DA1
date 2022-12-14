@@ -15,7 +15,7 @@
 	<!-- End banner Area -->
 <div class="container">
     <div class="row-title text-center" style="margin-top:20px;">
-        <h3>Cập nhật người dùng</h3>
+        <h3>Cập nhật tài khoản</h3>
     </div>
     <?php 
         if(isset($_GET['ma_tk'])){

@@ -193,13 +193,6 @@
                     $listmagiam=loadall_magiam();
                     include "magiamgia/list.php";
                     break;
-                case 'xoamgg':
-                    if (isset($_GET['ma_gg'])&&($_GET['ma_gg']>0)) {
-                        delete_magiam($_GET['ma_gg']);
-                    }
-                    $listmagiam=loadall_magiam();
-                    include "magiamgia/list.php";
-                    break;
                 case 'thoat':
                     if(isset($_SESSION['role'])) unset($_SESSION['role']);
                     header('location: ../index.php');
@@ -299,6 +292,7 @@
                         $giaspnew = $_POST['giaspnew'];
                         $mota = $_POST['mota'];
                         $hinh = $_FILES['hinh']['name'];
+                        $trang_thai = $_POST['trang_thai'];
                         $target_dir = "../upload/";
                         $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
                         if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
@@ -306,7 +300,7 @@
                         } else {
                             // echo "Sorry, there was an error uploading your file.";
                         }
-                        update_sanpham($id,$tensp,$giasp,$giaspnew,$mota,$hinh); 
+                        update_sanpham($id,$tensp,$giasp,$giaspnew,$mota,$hinh,$trang_thai); 
                         // update_sanpham($id,$tensp,$giasp,$mota,$hinh,$iddm);
                         $thongbao="Cập nhập thành công";
                     }
@@ -356,15 +350,13 @@
                         delete_bill($_GET['ma_dh']);
                     }
                     $listbill= loadall_bill();
-                    // $listbill= loadall_bill("", 0);
                     include "bill/list.php";
                 break;
                 case 'listchitietdh':
                     if(isset($_GET['ma_dh'])&&($_GET['ma_dh']>0)){
                         $listchitietdh = loadone_chitietdh($_GET['ma_dh']);
+                        $bill_mgg = loaddetailbill_mgg($_GET['ma_dh']);
                     }
-                    $sql = "select * from don_hang order by ma_dh desc";
-                    $chitietdh= pdo_query($sql);
                     include "bill/chitiet_dh.php";
                     break;
                 // -----------------------------------------------------
