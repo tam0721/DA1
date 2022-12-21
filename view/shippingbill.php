@@ -45,6 +45,7 @@
                             <th style="width:360px;">Trạng thái đơn hàng</th>
                             <th style="width:360px;">Trạng thái giao hàng</th>
                             <th style="width:360px;">Ngày đặt hàng</th>
+                            <th style="width:360px;">Thao tác</th>
                         </tr>
                     </thead>
                     <?php

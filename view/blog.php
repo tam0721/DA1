@@ -103,7 +103,6 @@
                                             <h2>'.$name.'</h2>
                                         </a>
                                         <p>'.$mota.'</p>
-                                        <a href="single-blog.html" class="white_bg_btn">Xem thêm</a>
                                     </div>
                                 </div>
                             </div>

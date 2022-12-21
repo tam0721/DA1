@@ -153,24 +153,17 @@
                                         ';  
                                     } 
                                 ?>
-                                    <tr class="bottom_button">
-                                        <td>
-                                            <input type="submit" name="upgiohang" id="up" class="gray_btn" value="Cập nhập giỏ hàng">
-                                            </form>
-                                        </td>
+                                <tr class="bottom_button">
+                                    </form>
+                                    </td>
                                 
-                                        <td>
+                                    <td>
                                     </td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
                                     <td>
-                                        <div class="cupon_text d-flex align-items-center">
-                                            <input type="text" placeholder="Coupon Code">
-                                            <a class="primary-btn" href="#">Nhập</a>
-                                            <a class="gray_btn" href="#">Đóng</a>
-                                        </div>
                                     </td>
                                 </tr>
                                 <tr>

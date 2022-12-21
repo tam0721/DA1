@@ -48,20 +48,7 @@
                   '.$noi_dung.'
                 </p>
     
-                <div class="small d-flex justify-content-start">
-                  <a href="#!" class="d-flex align-items-center me-3">
-                    <i class="far fa-thumbs-up me-2"></i>&nbsp;
-                    <p class="mb-0">Like</p>
-                  </a>
-                  <a href="#!" class="d-flex align-items-center me-3" style="margin-left: 10px;">
-                    <i class="far fa-comment-dots me-2"></i>&nbsp;
-                    <p class="mb-0">Comment</p>
-                  </a>
-                  <a href="#!" class="d-flex align-items-center me-3" style="margin-left: 10px;">
-                    <i class="fas fa-share me-2"></i>&nbsp;
-                    <p class="mb-0">Share</p>
-                  </a>
-                </div>
+                
               </div>';
             }
             
