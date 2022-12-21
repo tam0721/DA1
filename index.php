@@ -46,6 +46,19 @@
                 }
                 include 'view/delcart.php';
                 break;
+            case 'listsp':
+                if (isset($_POST['listgo'])&&($_POST['listgo'])){
+                    $kyw =$_POST['kyw'];
+                    $iddm =$_POST['iddm'];
+                }else{
+                    $kyw='';
+                    $iddm=0;
+                }
+                $sql = "select * from loai order by ten_loai desc";
+                $listdanhmuc= pdo_query($sql);
+                $spnew= loadall_sanpham1($kyw,$iddm);
+                include "view/category.php";
+                break;
             // case 'sanpham':
             //     if(isset($_POST['kyw'])&&($_POST['kyw']!="")){
             //         $kyw=$_POST['kyw'];
@@ -180,32 +193,31 @@
                     }elseif ($role==2){ 
                         $_SESSION['role']=$role;
                         header('location: admin/index.php'); 
-                    }
-                    elseif($role!=0){ 
-                       
-                        $_SESSION['user']!= $kq[0]['user'];
-                        include 'view/login.php?er';
-                        
-                    }  elseif ($role==0){
+                    }elseif ($role==0){
                         $_SESSION['role']=$role;
                         $_SESSION['iduser']= $kq[0]['id'];
                         $_SESSION['user']= $kq[0]['user'];
                         header('location: index.php'); //note
                         break;
                     }
-                    
-                }    
+                }
                 include 'view/login.php';
                 break;
             case 'signup':
                 if(isset($_POST['dangky'])&&($_POST['dangky'])){
+                    // $query = $pdo->prepare("SELECT * FROM  tai_khoan WHERE email = ?");
+                    // $query -> execute([$email]);
+                    // $result = $query->rowCount();
+                    // if($result>0){
+                    //     $error = "Chọn mail khác đê";
+                    // }
                     $email = $_POST['email'];
                     $fullname = $_POST['fullname'];
                     $user = $_POST['user'];
                     $pass = $_POST['pass'];
                     $address = $_POST['address'];
                     $tel = $_POST['tel'];
-                    insert_taikhoan($email,$fullname,$user,$pass,$address,$tel); 
+                    insert_taikhoan($email,$fullname,$user,$pass,$address,$tel);    
                     $thongbao="Đăng ký thành công. Vui lòng <a href='index.php?act=login'>đăng nhập</a>";
                 }
                 include 'view/signup.php';
@@ -231,16 +243,16 @@
                 include 'view/capnhat_tk.php';
                 break;
             case 'quenmk':
-                if(isset($_POST['guiemail'])&&($_POST['guiemail'])){
-                    $email=$_POST['email'];
-                    $checkemail=checkemail($email);
-                    if(is_array($checkemail)){
-                        $thongbao="Mật khẩu của bạn là: ".$checkemail['pass'];
-                    } else {
-                        $thongbao="Email này không tồn tại!";
-                    }
-                    //header('Location:index.php?act=edit_taikhoan');
-                }
+                // if(isset($_POST['guiemail'])&&($_POST['guiemail'])){
+                //     $email=$_POST['email'];
+                //     $checkemail=checkemail($email);
+                //     if(is_array($checkemail)){
+                //         $thongbao="Mật khẩu của bạn là: ".$checkemail['pass'];
+                //     } else {
+                //         $thongbao="Email này không tồn tại!";
+                //     }
+                //     //header('Location:index.php?act=edit_taikhoan');
+                // }
                 include "view/quenmk.php";
                 break;
             case 'thoat':
@@ -272,4 +284,3 @@
 
     include 'view/footer.php';
 ?>
-

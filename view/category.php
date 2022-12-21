@@ -92,19 +92,11 @@
 						</select> -->
 					</div>	
 					<div class="pagination">
-					    <!-- <div>
-							<form action="index.php?act=sanpham" method="post">
-								<input type="text" name="search" id="">
-								<input type="submit" name="timkiem" value="Tìm kiếm">
-							</form>
-						</div> -->
-						<a href="#" class="prev-arrow"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></a>
-						<a href="#" class="active">1</a>
-						<a href="#">2</a>
-						<a href="#">3</a>
-						<a href="#" class="dot-dot"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
-						<a href="#">6</a>
-						<a href="#" class="next-arrow"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+					<div class="form-group">
+						<input type="text" name="kyw" class="" placeholder="Tìm..." style="border: 1px solid gray;border-radius:5px;outline:none;padding-left:5px;">
+						<input type="submit" name="listgo" value="Go" style="border:1px solid gray;border-radius:5px;">
+					</div>
+						
 					</div>
 				</div>
 				<!-- End Filter Bar -->
@@ -297,3 +289,54 @@
 		}
 	</style>
 
+<script>
+	let thisPage = 1;
+	let limit = 6;
+	let list = document.querySelectorAll('.col-lg-4 col-md-6 .single-product');
+
+	function loadItem(){
+		let beginGet = limit * (thisPage - 1);
+		let endGet = limit * thisPage - 1;
+		list.forEach((item, key)=>{
+			if(key >= beginGet && key <= endGet){
+				item.style.display = 'block';
+			}else{
+				item.style.display = 'none';
+			}
+		})
+		listPage();
+	}
+	loadItem();
+	function listPage(){
+		let count = Math.ceil(list.length / limit);
+		document.querySelector('.listPage').innerHTML = '';
+
+		if(thisPage != 1){
+			let prev = document.createElement('li');
+			prev.innerText = 'PREV';
+			prev.setAttribute('onclick', "changePage(" + (thisPage - 1) + ")");
+			document.querySelector('.listPage').appendChild(prev);
+		}
+
+		for(i = 1; i <= count; i++){
+			let newPage = document.createElement('li');
+			newPage.innerText = i;
+			if(i == thisPage){
+				newPage.classList.add('active');
+			}
+			newPage.setAttribute('onclick', "changePage(" + i + ")");
+			document.querySelector('.listPage').appendChild(newPage);
+		}
+
+		if(thisPage != count){
+			let next = document.createElement('li');
+			next.innerText = 'NEXT';
+			next.setAttribute('onclick', "changePage(" + (thisPage + 1) + ")");
+			document.querySelector('.listPage').appendChild(next);
+		}
+	}
+	function changePage(i){
+		thisPage = i;
+		loadItem();
+	}
+</script>

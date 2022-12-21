@@ -31,6 +31,7 @@
 				<div class="col-lg-6">
 					<div class="login_form_inner">
 						<h3>Tạo tài khoản thành viên</h3>
+						<
 						<form class="row login_form requires-validation" action="index.php?act=signup" method="post" id="contactForm" novalidate="novalidate" >
 							<div class="col-md-12 form-group">
 								<input type="email" class="form-control" id="name" name="email" placeholder="Nhập Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nhập Email'" required>

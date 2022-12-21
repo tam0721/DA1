@@ -39,19 +39,6 @@
 								extract($_SESSION['user']);
 								// var_dump($user);}
 						?>
-						
-							<!-- <div class="col-md-12 form-group">
-								Xin chào <?=$user?>
-							</div>
-							<div class="col-md-12 form-group">
-								<a href="">Quên mật khẩu</a>
-							</div>
-							<div class="col-md-12 form-group">
-								<a href="">Cập nhập tài khoản</a>
-							</div>
-							<div class="col-md-12 form-group">
-								<a href="index.php?act=thoat">Thoát</a>
-							</div> -->
 						<?php
 
 							}else{

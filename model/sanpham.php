@@ -21,16 +21,22 @@
         $listsanpham = pdo_query($sql);
         return $listsanpham;
     }
+    function loadall_sanpham1($kyw="",$iddm=0){
+        $sql = "SELECT * from hang_hoa WHERE 1";
+        if ($kyw!="") {
+            $sql.=" and name like '%".$kyw."%'";
+        }
+        if ($iddm>0) {
+            $sql.=" and iddm ='".$iddm."'";
+        }
+        $sql.=" order by id desc";
+        $filtersp = pdo_query($sql);
+        return $filtersp;
+    }
     function loadall_sanpham_home(){
-        // $sql = "SELECT * from hang_hoa WHERE 1 order by id desc";
+        
         $sql = "SELECT * from hang_hoa WHERE 1 order by id desc limit 9";   //load 8 sản phẩm
-        // if ($kyw!="") {
-        //     $sql.=" and name like '%".$kyw."%'";
-        // }
-        // if ($iddm>0) {
-        //     $sql.=" and iddm ='".$iddm."'";
-        // }
-        // $sql.=" order by id desc";
+        
         $listsanpham = pdo_query($sql);
         return $listsanpham;
     }
