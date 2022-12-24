@@ -16,7 +16,6 @@
         include "../model/magiamgia.php";  
         include "header.php";
         if (isset($_GET['act'])) {
-            # code...
             $act = $_GET['act'];
             switch ($act) {
                 // tin tức
@@ -175,9 +174,6 @@
                     $listtaikhoan= pdo_query($sql);
                     include "taikhoann/list.php";
                     break;
-                // case 'dsmgg':
-                //     include "magiamgia/list.php";
-                //     break;
                 case 'addmgg':
                     if (isset($_POST['themma'])&&($_POST['themma'])) {
                         $ma_gg="Z".rand(0,99999);

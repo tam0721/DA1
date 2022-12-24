@@ -59,22 +59,6 @@
                 $spnew= loadall_sanpham1($kyw,$iddm);
                 include "view/category.php";
                 break;
-            // case 'sanpham':
-            //     if(isset($_POST['kyw'])&&($_POST['kyw']!="")){
-            //         $kyw=$_POST['kyw'];
-            //     }else{
-            //         $kyw="";
-            //     }
-            //     // if(isset($_GET['iddm'])&&($_GET['iddm']>0)){
-            //     //     $iddm=$_GET['iddm'];
-            //     // }else{
-            //     //     $iddm="";
-            //     // }
-            //     $dssp=loadall_sanpham($kyw,$iddm);
-            //     // $ten_loai=load_ten_dm($iddm);
-            //     include 'view/category.php';
-            //     break;
-            
             case 'category':
                 $react = 0;
                 $spnew_tang = loadall_sanpham_tang();
@@ -182,7 +166,6 @@
                 break;
             case 'login':
                 if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])){
-                    # code...
                     $user = $_POST['user'];
                     $pass = $_POST['pass'];
                     $kq = getuserinfo($user,$pass);
@@ -205,12 +188,6 @@
                 break;
             case 'signup':
                 if(isset($_POST['dangky'])&&($_POST['dangky'])){
-                    // $query = $pdo->prepare("SELECT * FROM  tai_khoan WHERE email = ?");
-                    // $query -> execute([$email]);
-                    // $result = $query->rowCount();
-                    // if($result>0){
-                    //     $error = "Chọn mail khác đê";
-                    // }
                     $email = $_POST['email'];
                     $fullname = $_POST['fullname'];
                     $user = $_POST['user'];
@@ -224,7 +201,6 @@
                 break;
             case 'suatk':
                 if(isset($_GET['ma_tk'])&&($_GET['ma_tk'])){
-                    // $id=$_GET['id'];
                     $sql = "SELECT * FROM tai_khoan WHERE ma_tk =".$_GET['ma_tk'];
                     $dm = pdo_query_one($sql);
                 }
@@ -243,16 +219,6 @@
                 include 'view/capnhat_tk.php';
                 break;
             case 'quenmk':
-                // if(isset($_POST['guiemail'])&&($_POST['guiemail'])){
-                //     $email=$_POST['email'];
-                //     $checkemail=checkemail($email);
-                //     if(is_array($checkemail)){
-                //         $thongbao="Mật khẩu của bạn là: ".$checkemail['pass'];
-                //     } else {
-                //         $thongbao="Email này không tồn tại!";
-                //     }
-                //     //header('Location:index.php?act=edit_taikhoan');
-                // }
                 include "view/quenmk.php";
                 break;
             case 'thoat':
