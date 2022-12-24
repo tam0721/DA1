@@ -33,12 +33,10 @@
                     </tr>
                 </thead>
                 <?php
-<<<<<<< HEAD
                     foreach ($listbill as $bill) {
                         extract($bill);
                         // var_dump($bill);
                         //$suabill="index.php?act=suabill&ma_dh=".$ma_dh;
-=======
                     $listbill_mgg = loadall_magiam();
                     $giamgia = 0;
                     foreach ($listbill as $bill) {
@@ -50,7 +48,7 @@
                                 $giamgia = $gg['giatri'];
                             }
                         }
->>>>>>> 43ba219d9ff745f1758e8d2a282a525befc14986
+                    }
                         $xoabill="index.php?act=xoabill&ma_dh=".$ma_dh;
                         $chitiet_dh="index.php?act=listchitietdh&ma_dh=".$ma_dh;
                         echo '

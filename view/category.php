@@ -165,13 +165,13 @@
 										<div class="product-details">
 											<h6>'.$name.'</h6>
 										<div class="price">
-											<h6>'.number_format($price_1, 0, '.', '.').'.000 ₫</h6>
+											<h6>'.number_format($price_old, 0, '.', '.').'.000 ₫</h6>
 										</div>
 										
 										<form action="index.php?act=cartprocess" method="post">
 												<input type="hidden" name="id" value="'.$id.'">
 												<input type="hidden" name="name" value="'.$name.'">
-												<input type="hidden" name="price" value="'.$price_1.'">
+												<input type="hidden" name="price" value="'.$price_old.'">
 												<input type="hidden" name="img" value="'.$img.'">
 												<input type="hidden" name="soluong" value="1">
 										<div class="prd-bottom">
